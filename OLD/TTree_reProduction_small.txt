@@ -1,0 +1,10 @@
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_100.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_101.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_102.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_103.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_104.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_105.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_106.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_107.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_108.root
+/eos/purdue/store/user/wxie/D0_2023PbPb_ReProduced_Trees/HIPhysicsRawPrime16/HIPhysicsRawPrime16_Oct25/251030_155257/0000/TTree_fromEDM_109.root

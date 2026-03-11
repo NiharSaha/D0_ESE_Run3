@@ -1,13 +1,14 @@
-# Ignore large files
-*.pdf
-*.txt
-*.root
+# Ignore heavy results specifically
+flow_extraction/*.pdf
+flow_extraction/*.root
+Compare_PubResults/*.txt
+Compare_PubResults/*.root
+
+# Ignore general large/binary files
 *.png
 *.jpg
-# Specific folders that might have large outputs
-flow_extraction/
-Compare_PubResults/
-# Ignore compiled binaries
 *.so
 *.d
 *.pcm
+*.root
+*.pdf
