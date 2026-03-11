@@ -4,6 +4,9 @@ flow_extraction/*.root
 Compare_PubResults/*.txt
 Compare_PubResults/*.root
 
+# Ignore editor backup files
+*~
+
 # Ignore general large/binary files
 *.png
 *.jpg
