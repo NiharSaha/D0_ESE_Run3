@@ -1,30 +1,32 @@
-
-Update: 19 Feb, 2026
-
-
-
 +++++++++++++++++++++++++++++++++++++++++++++
-Step-1 (Prepare ingradients for the analysis)
+Prepare ingradients for the analysis!
 +++++++++++++++++++++++++++++++++++++++++++++
 
 1. Save q2, q3 and weights values in a ntuple
-/home/saha115/D0_ESE/CMSSW_13_2_11/src/make_q2_slices.C
+/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/make_q2_slices.C
 
 2. Extract quantiles and save in a header (one-time)
-/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantile/PbPb2023/ExtractQuantiles_sortFunc_new.C
+/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/Quantile/PbPb2023/ExtractQuantiles_sortFunc_new.C
 
 3. Calculate resolution factor (denominator of SP)
-/home/saha115/D0_ESE/CMSSW_13_2_11/src/Calculate_Resolution_latest.C
+/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/Calculate_Resolution_latest.C
 
 4. Save all mass, v2, v3 etc in ntuple after applying optimized bdt cuts
-/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_Analysis_latest.C
+/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/flow_Analysis_latest.C
 
 5. ploting macro (local)
 /Users/saha115/cernbox/Analysis/D0_ESE/compare_PbPb2018vs2023.C
 /Users/saha115/cernbox/Analysis/D0_ESE/ESE_Diagnostics.C
 
+
 +++++++++++++++++++++++++++++++
-Step-2 (Doing the analysis)
+Compare with publish results!
++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++
+Doing the analysis!
 +++++++++++++++++++++++++++++++
 
 1. Get the vnbinning and save in a header file (one time)
