@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=ESE_Sort
+#SBATCH --array=0-89
+#SBATCH --mem=4G
+#SBATCH --time=01:00:00
+#SBATCH --partition=cpu
+#SBATCH -A physics
+#SBATCH --output=logs/job_%a.out
+
+# Create necessary directories
+mkdir -p logs
+
+# Execute the macro
+root -l -b -q "ExtractQuantiles_sortFunc_new.C(${SLURM_ARRAY_TASK_ID})"

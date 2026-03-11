@@ -1,0 +1,13 @@
+# Ignore large files
+*.pdf
+*.txt
+*.root
+*.png
+*.jpg
+# Specific folders that might have large outputs
+flow_extraction/
+Compare_PubResults/
+# Ignore compiled binaries
+*.so
+*.d
+*.pcm
