@@ -1,0 +1,4105 @@
+
+==========================================
+  Run summary: all (cent1pct, pT) bins
+  Wed Feb 18 15:56:00 EST 2026
+==========================================
+--- cen=0  pt=0 ---
+  q2 cand max/min ratio: 1.1837
+  q3 cand max/min ratio: 1.0917
+--- cen=0  pt=1 ---
+  q2 cand max/min ratio: 1.1651
+  q3 cand max/min ratio: 1.0694
+--- cen=0  pt=2 ---
+  q2 cand max/min ratio: 1.1959
+  q3 cand max/min ratio: 1.0608
+--- cen=0  pt=3 ---
+  q2 cand max/min ratio: 1.1093
+  q3 cand max/min ratio: 1.1522
+--- cen=0  pt=4 ---
+  q2 cand max/min ratio: 1.1866
+  q3 cand max/min ratio: 1.1410
+--- cen=0  pt=5 ---
+  q2 cand max/min ratio: 1.2556
+  q3 cand max/min ratio: 1.3167
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=0  pt=6 ---
+  q2 cand max/min ratio: 1.7692
+  q3 cand max/min ratio: 1.5600
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=0  pt=7 ---
+  q2 cand max/min ratio: 1.5294
+  q3 cand max/min ratio: 1.8438
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=0  pt=8 ---
+  q2 cand max/min ratio: 4.0000
+  q3 cand max/min ratio: 2.8000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=0  pt=9 ---
+  q2 cand max/min ratio: 1.3378
+  q3 cand max/min ratio: 1.2511
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 1.6695
+  q3 cand max/min ratio: 1.2756
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 1.7316
+  q3 cand max/min ratio: 1.2468
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 1.7173
+  q3 cand max/min ratio: 1.2563
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 1.6391
+  q3 cand max/min ratio: 1.2561
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 1.8019
+  q3 cand max/min ratio: 1.1711
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 1.5970
+  q3 cand max/min ratio: 1.3816
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 2.0811
+  q3 cand max/min ratio: 1.6250
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 1.8276
+  q3 cand max/min ratio: 2.7143
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 2.4286
+  q3 cand max/min ratio: 2.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=1  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 1.3980
+  q3 cand max/min ratio: 1.6000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 2.6749
+  q3 cand max/min ratio: 1.5112
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 2.6493
+  q3 cand max/min ratio: 1.3983
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 2.4759
+  q3 cand max/min ratio: 1.3940
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 2.4946
+  q3 cand max/min ratio: 1.5156
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 3.3137
+  q3 cand max/min ratio: 1.4645
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 2.4000
+  q3 cand max/min ratio: 1.7705
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 3.8667
+  q3 cand max/min ratio: 2.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 2.9231
+  q3 cand max/min ratio: 2.4375
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 16.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=2  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 3.0385
+  q3 cand max/min ratio: 1.5213
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 4.1923
+  q3 cand max/min ratio: 1.7193
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 4.4206
+  q3 cand max/min ratio: 1.6357
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 4.4744
+  q3 cand max/min ratio: 1.7306
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 4.5075
+  q3 cand max/min ratio: 1.4802
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 4.7755
+  q3 cand max/min ratio: 1.7255
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 3.4074
+  q3 cand max/min ratio: 2.7879
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 7.1429
+  q3 cand max/min ratio: 1.8571
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.6250
+  q3 cand max/min ratio: 2.5385
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 3.6667
+  q3 cand max/min ratio: 3.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=3  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 3.8571
+  q3 cand max/min ratio: 1.6420
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.9488
+  q3 cand max/min ratio: 1.6853
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 6.2170
+  q3 cand max/min ratio: 1.7929
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.9942
+  q3 cand max/min ratio: 1.7269
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 6.1732
+  q3 cand max/min ratio: 1.9020
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.5833
+  q3 cand max/min ratio: 2.9375
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.8421
+  q3 cand max/min ratio: 1.8636
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.0000
+  q3 cand max/min ratio: 2.4286
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.1429
+  q3 cand max/min ratio: 1.7778
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 10.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=4  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.0506
+  q3 cand max/min ratio: 1.9114
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 9.6955
+  q3 cand max/min ratio: 2.0062
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.9215
+  q3 cand max/min ratio: 1.9047
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.8237
+  q3 cand max/min ratio: 1.8190
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.5048
+  q3 cand max/min ratio: 2.2050
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 7.1852
+  q3 cand max/min ratio: 1.8025
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 7.2308
+  q3 cand max/min ratio: 2.1250
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.0000
+  q3 cand max/min ratio: 2.7273
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.3750
+  q3 cand max/min ratio: 3.2222
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 3.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=5  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.1389
+  q3 cand max/min ratio: 1.7233
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 11.5029
+  q3 cand max/min ratio: 2.0401
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.3708
+  q3 cand max/min ratio: 2.0056
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 10.5829
+  q3 cand max/min ratio: 2.1286
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 10.9506
+  q3 cand max/min ratio: 1.9349
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 9.4091
+  q3 cand max/min ratio: 2.0270
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 11.7000
+  q3 cand max/min ratio: 4.0588
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 9.0000
+  q3 cand max/min ratio: 3.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.0000
+  q3 cand max/min ratio: 9.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.0000
+  q3 cand max/min ratio: 5.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=6  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 9.9545
+  q3 cand max/min ratio: 2.4554
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.6548
+  q3 cand max/min ratio: 2.2107
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.4004
+  q3 cand max/min ratio: 2.1041
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.1335
+  q3 cand max/min ratio: 2.2771
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.1750
+  q3 cand max/min ratio: 2.0195
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.0769
+  q3 cand max/min ratio: 2.6032
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.6000
+  q3 cand max/min ratio: 2.4242
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.3333
+  q3 cand max/min ratio: 3.8333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 61.0000
+  q3 cand max/min ratio: 2.9091
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 10.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=7  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.7200
+  q3 cand max/min ratio: 2.9368
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 17.4213
+  q3 cand max/min ratio: 2.4506
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.3218
+  q3 cand max/min ratio: 2.3190
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.6790
+  q3 cand max/min ratio: 2.6259
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.9231
+  q3 cand max/min ratio: 2.0913
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.0000
+  q3 cand max/min ratio: 2.9808
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.1667
+  q3 cand max/min ratio: 2.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.3333
+  q3 cand max/min ratio: 4.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 3.5556
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 10.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=8  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.6471
+  q3 cand max/min ratio: 2.2389
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.3636
+  q3 cand max/min ratio: 2.5162
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.4068
+  q3 cand max/min ratio: 2.5618
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.7071
+  q3 cand max/min ratio: 2.5710
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.5306
+  q3 cand max/min ratio: 2.7743
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.9333
+  q3 cand max/min ratio: 2.8846
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.6667
+  q3 cand max/min ratio: 2.7857
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 59.0000
+  q3 cand max/min ratio: 2.9286
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 50.0000
+  q3 cand max/min ratio: 4.0909
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 5.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=9  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.5000
+  q3 cand max/min ratio: 2.5849
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.4200
+  q3 cand max/min ratio: 2.7775
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.5159
+  q3 cand max/min ratio: 2.7373
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.9263
+  q3 cand max/min ratio: 2.7471
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.4750
+  q3 cand max/min ratio: 2.3772
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.1429
+  q3 cand max/min ratio: 3.1111
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.0000
+  q3 cand max/min ratio: 2.4643
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.5000
+  q3 cand max/min ratio: 3.8182
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 4.2222
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 6.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=10  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.4706
+  q3 cand max/min ratio: 2.8952
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 28.7284
+  q3 cand max/min ratio: 2.8825
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.5434
+  q3 cand max/min ratio: 2.9172
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 26.3476
+  q3 cand max/min ratio: 2.7020
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 27.5263
+  q3 cand max/min ratio: 2.9497
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.8000
+  q3 cand max/min ratio: 2.9216
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 143.0000
+  q3 cand max/min ratio: 3.0455
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 71.0000
+  q3 cand max/min ratio: 4.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.0000
+  q3 cand max/min ratio: 4.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=11  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=11  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 42.2143
+  q3 cand max/min ratio: 2.9895
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 35.5891
+  q3 cand max/min ratio: 2.9832
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.8661
+  q3 cand max/min ratio: 3.3061
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.2345
+  q3 cand max/min ratio: 3.3168
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.5814
+  q3 cand max/min ratio: 2.8377
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 26.9167
+  q3 cand max/min ratio: 2.9107
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 28.4000
+  q3 cand max/min ratio: 3.4000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 47.0000
+  q3 cand max/min ratio: 3.5455
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.0000
+  q3 cand max/min ratio: 13.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 14.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=12  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.8182
+  q3 cand max/min ratio: 3.3371
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 38.3793
+  q3 cand max/min ratio: 3.3433
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 39.7209
+  q3 cand max/min ratio: 3.3090
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 38.4597
+  q3 cand max/min ratio: 3.0799
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 50.8095
+  q3 cand max/min ratio: 2.8053
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 27.4000
+  q3 cand max/min ratio: 2.9565
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.0000
+  q3 cand max/min ratio: 2.7241
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 74.0000
+  q3 cand max/min ratio: 3.0909
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.0000
+  q3 cand max/min ratio: 2.6364
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 14.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=13  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.8235
+  q3 cand max/min ratio: 3.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 55.1184
+  q3 cand max/min ratio: 3.8043
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.1573
+  q3 cand max/min ratio: 3.2421
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 40.0893
+  q3 cand max/min ratio: 3.0382
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 34.7500
+  q3 cand max/min ratio: 3.2189
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 99.3333
+  q3 cand max/min ratio: 3.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.7500
+  q3 cand max/min ratio: 2.8636
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 35.5000
+  q3 cand max/min ratio: 5.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 8.2000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 11.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=14  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.5833
+  q3 cand max/min ratio: 2.2778
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 41.4300
+  q3 cand max/min ratio: 3.8650
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 43.9551
+  q3 cand max/min ratio: 3.7269
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.8100
+  q3 cand max/min ratio: 3.7554
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.0385
+  q3 cand max/min ratio: 3.4038
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.6250
+  q3 cand max/min ratio: 3.9231
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 39.2500
+  q3 cand max/min ratio: 5.0714
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 84.0000
+  q3 cand max/min ratio: 5.1250
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 45.0000
+  q3 cand max/min ratio: 4.4000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=15  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=15  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.3077
+  q3 cand max/min ratio: 3.9265
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 39.8283
+  q3 cand max/min ratio: 4.0832
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 46.0182
+  q3 cand max/min ratio: 3.7065
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.9490
+  q3 cand max/min ratio: 4.1273
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 50.3684
+  q3 cand max/min ratio: 4.2017
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 56.6000
+  q3 cand max/min ratio: 3.8919
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 36.7500
+  q3 cand max/min ratio: 4.1000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 70.0000
+  q3 cand max/min ratio: 8.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 4.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=16  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=16  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 193.3333
+  q3 cand max/min ratio: 3.4868
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 43.4762
+  q3 cand max/min ratio: 4.0794
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 50.2857
+  q3 cand max/min ratio: 4.0831
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 47.1379
+  q3 cand max/min ratio: 3.6978
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 90.0909
+  q3 cand max/min ratio: 5.2941
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.6667
+  q3 cand max/min ratio: 3.9487
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 108.0000
+  q3 cand max/min ratio: 5.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 3.3750
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 8.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 13.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=17  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 42.0000
+  q3 cand max/min ratio: 5.5319
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 61.6441
+  q3 cand max/min ratio: 3.9450
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 59.7544
+  q3 cand max/min ratio: 4.4935
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 50.2564
+  q3 cand max/min ratio: 4.6563
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 49.2222
+  q3 cand max/min ratio: 4.1774
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 38.0000
+  q3 cand max/min ratio: 3.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 5.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 5.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 66.0000
+  q3 cand max/min ratio: 41.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=18  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=18  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.8182
+  q3 cand max/min ratio: 4.2836
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 91.7027
+  q3 cand max/min ratio: 4.5351
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 64.0800
+  q3 cand max/min ratio: 5.3013
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 41.2737
+  q3 cand max/min ratio: 5.2324
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 47.2105
+  q3 cand max/min ratio: 5.2796
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 60.0000
+  q3 cand max/min ratio: 4.3030
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 41.6667
+  q3 cand max/min ratio: 4.7857
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 4.7000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 8.1667
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 14.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=19  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 67.7143
+  q3 cand max/min ratio: 5.7347
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 46.9552
+  q3 cand max/min ratio: 4.8764
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.0964
+  q3 cand max/min ratio: 4.9623
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.1714
+  q3 cand max/min ratio: 4.1079
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 66.4000
+  q3 cand max/min ratio: 3.7037
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 48.2500
+  q3 cand max/min ratio: 4.1290
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 35.0000
+  q3 cand max/min ratio: 5.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 3.5455
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 3.4444
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 4.3333
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=20  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 29.9286
+  q3 cand max/min ratio: 5.7115
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 53.2909
+  q3 cand max/min ratio: 5.6824
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 55.4545
+  q3 cand max/min ratio: 5.2754
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 50.5429
+  q3 cand max/min ratio: 5.2100
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 58.2727
+  q3 cand max/min ratio: 5.4225
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 43.4000
+  q3 cand max/min ratio: 4.2759
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 45.5000
+  q3 cand max/min ratio: 4.4737
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 7.6000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.0000
+  q3 cand max/min ratio: 4.8571
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 9.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=21  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.5556
+  q3 cand max/min ratio: 5.4524
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 62.3256
+  q3 cand max/min ratio: 5.9891
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 41.6392
+  q3 cand max/min ratio: 5.7415
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 53.2000
+  q3 cand max/min ratio: 6.2949
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 61.2000
+  q3 cand max/min ratio: 6.6607
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 39.2000
+  q3 cand max/min ratio: 6.6471
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 59.0000
+  q3 cand max/min ratio: 7.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.3333
+  q3 cand max/min ratio: 8.8000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.5000
+  q3 cand max/min ratio: 6.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=22  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=22  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 91.8000
+  q3 cand max/min ratio: 6.2381
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.4286
+  q3 cand max/min ratio: 6.2688
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 94.3500
+  q3 cand max/min ratio: 5.9873
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.0000
+  q3 cand max/min ratio: 5.8448
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 79.7500
+  q3 cand max/min ratio: 4.9494
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 35.0000
+  q3 cand max/min ratio: 7.9444
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 116.0000
+  q3 cand max/min ratio: 8.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 6.8000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.5000
+  q3 cand max/min ratio: 6.5714
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=23  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=23  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 40.3636
+  q3 cand max/min ratio: 5.5510
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 56.6190
+  q3 cand max/min ratio: 5.8217
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 51.7500
+  q3 cand max/min ratio: 7.1250
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 38.5833
+  q3 cand max/min ratio: 5.9317
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 104.3333
+  q3 cand max/min ratio: 6.3448
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 95.0000
+  q3 cand max/min ratio: 5.9200
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.6667
+  q3 cand max/min ratio: 4.6316
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 10.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 8.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 6.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=24  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 83.0000
+  q3 cand max/min ratio: 6.4000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 56.6667
+  q3 cand max/min ratio: 7.7677
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 72.3182
+  q3 cand max/min ratio: 7.1438
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 50.9643
+  q3 cand max/min ratio: 6.7234
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 51.9000
+  q3 cand max/min ratio: 8.0909
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 91.0000
+  q3 cand max/min ratio: 7.0588
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.2500
+  q3 cand max/min ratio: 4.0667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 72.0000
+  q3 cand max/min ratio: 21.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=25  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 12.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=25  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 61.5000
+  q3 cand max/min ratio: 7.2973
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 46.1277
+  q3 cand max/min ratio: 6.8145
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.9322
+  q3 cand max/min ratio: 8.6443
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 76.3333
+  q3 cand max/min ratio: 7.6202
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 48.3333
+  q3 cand max/min ratio: 9.7027
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 29.1667
+  q3 cand max/min ratio: 12.4545
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 3.6000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 15.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 37.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 10.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=26  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 82.2500
+  q3 cand max/min ratio: 7.0588
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.3611
+  q3 cand max/min ratio: 9.2517
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 57.4200
+  q3 cand max/min ratio: 9.6136
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 84.5000
+  q3 cand max/min ratio: 11.1071
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 34.3077
+  q3 cand max/min ratio: 7.7843
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 34.2000
+  q3 cand max/min ratio: 4.1923
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.5000
+  q3 cand max/min ratio: 16.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 66.0000
+  q3 cand max/min ratio: 12.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 13.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=27  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=27  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 71.6000
+  q3 cand max/min ratio: 12.4545
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 59.4839
+  q3 cand max/min ratio: 8.7059
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 51.8679
+  q3 cand max/min ratio: 10.0556
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 48.3200
+  q3 cand max/min ratio: 9.3750
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 57.0000
+  q3 cand max/min ratio: 8.5641
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 68.5000
+  q3 cand max/min ratio: 12.6250
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.2000
+  q3 cand max/min ratio: 8.1000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 7.2000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 27.5000
+  q3 cand max/min ratio: 11.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 7.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=28  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 163.5000
+  q3 cand max/min ratio: 5.6222
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 56.5862
+  q3 cand max/min ratio: 8.4467
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 55.8409
+  q3 cand max/min ratio: 9.3704
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.1429
+  q3 cand max/min ratio: 10.7778
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 36.5455
+  q3 cand max/min ratio: 7.9302
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 167.0000
+  q3 cand max/min ratio: 7.1667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 8.5556
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 26.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 45.0000
+  q3 cand max/min ratio: 11.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=29  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=29  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 29.7000
+  q3 cand max/min ratio: 17.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 61.7407
+  q3 cand max/min ratio: 8.4839
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 74.0606
+  q3 cand max/min ratio: 10.1716
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 55.4444
+  q3 cand max/min ratio: 10.7654
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.9333
+  q3 cand max/min ratio: 11.6970
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 81.0000
+  q3 cand max/min ratio: 14.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 43.0000
+  q3 cand max/min ratio: 8.5556
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 7.7500
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 59.0000
+  q3 cand max/min ratio: 6.8333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 10.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=30  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 108.6667
+  q3 cand max/min ratio: 20.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 67.6087
+  q3 cand max/min ratio: 11.4711
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 59.1282
+  q3 cand max/min ratio: 11.0166
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 74.3077
+  q3 cand max/min ratio: 13.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 40.9000
+  q3 cand max/min ratio: 10.4865
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 23.6667
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 58.5000
+  q3 cand max/min ratio: 38.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 41.0000
+  q3 cand max/min ratio: 17.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 19.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=31  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=31  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 39.3750
+  q3 cand max/min ratio: 13.2917
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 60.9677
+  q3 cand max/min ratio: 12.2727
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.0333
+  q3 cand max/min ratio: 12.4398
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 42.8846
+  q3 cand max/min ratio: 12.8810
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 50.4444
+  q3 cand max/min ratio: 11.4103
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.3750
+  q3 cand max/min ratio: 8.1765
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 95.0000
+  q3 cand max/min ratio: 25.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 47.0000
+  q3 cand max/min ratio: 46.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 8.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=32  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=32  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.4286
+  q3 cand max/min ratio: 9.0741
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.4651
+  q3 cand max/min ratio: 15.7350
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.9362
+  q3 cand max/min ratio: 15.2771
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 31.3889
+  q3 cand max/min ratio: 13.3176
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.6923
+  q3 cand max/min ratio: 19.1739
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 73.5000
+  q3 cand max/min ratio: 11.2727
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.8000
+  q3 cand max/min ratio: 8.6923
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 28.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 14.3333
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=33  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=33  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.3333
+  q3 cand max/min ratio: 12.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 53.4118
+  q3 cand max/min ratio: 17.0900
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 39.2381
+  q3 cand max/min ratio: 18.4388
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.1053
+  q3 cand max/min ratio: 19.9123
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.8750
+  q3 cand max/min ratio: 17.1250
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 26.0000
+  q3 cand max/min ratio: 11.5833
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.2500
+  q3 cand max/min ratio: 31.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.0000
+  q3 cand max/min ratio: 13.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 10.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=34  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 31.1111
+  q3 cand max/min ratio: 12.4737
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.9024
+  q3 cand max/min ratio: 17.4845
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 48.5208
+  q3 cand max/min ratio: 20.7984
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 41.8696
+  q3 cand max/min ratio: 20.7170
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 34.6364
+  q3 cand max/min ratio: 11.8857
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 124.0000
+  q3 cand max/min ratio: 13.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 31.0000
+  q3 cand max/min ratio: 13.4444
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 52.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 27.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=35  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=35  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 84.6667
+  q3 cand max/min ratio: 13.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.1224
+  q3 cand max/min ratio: 22.2949
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.1458
+  q3 cand max/min ratio: 20.1951
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.0370
+  q3 cand max/min ratio: 22.7273
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.9286
+  q3 cand max/min ratio: 19.2727
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.2857
+  q3 cand max/min ratio: 23.5714
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.2500
+  q3 cand max/min ratio: 36.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 26.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 46.0000
+  q3 cand max/min ratio: 48.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=36  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=36  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 56.0000
+  q3 cand max/min ratio: 16.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 56.7037
+  q3 cand max/min ratio: 19.1978
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 45.2500
+  q3 cand max/min ratio: 31.7674
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 51.1667
+  q3 cand max/min ratio: 20.9245
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 89.0000
+  q3 cand max/min ratio: 27.5882
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 26.8000
+  q3 cand max/min ratio: 20.8750
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.0000
+  q3 cand max/min ratio: 14.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.5000
+  q3 cand max/min ratio: 45.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 15.6667
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=37  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=37  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 62.2500
+  q3 cand max/min ratio: 21.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.7321
+  q3 cand max/min ratio: 22.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 35.8611
+  q3 cand max/min ratio: 20.9597
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 29.9459
+  q3 cand max/min ratio: 33.1628
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 31.6923
+  q3 cand max/min ratio: 19.6552
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.7778
+  q3 cand max/min ratio: 22.1000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 100.0000
+  q3 cand max/min ratio: 33.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 59.0000
+  q3 cand max/min ratio: 60.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 45.0000
+  q3 cand max/min ratio: 20.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=38  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=38  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.5000
+  q3 cand max/min ratio: 33.7143
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.8846
+  q3 cand max/min ratio: 42.3519
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.6795
+  q3 cand max/min ratio: 26.3051
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.0000
+  q3 cand max/min ratio: 31.1277
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.4545
+  q3 cand max/min ratio: 27.3000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.0000
+  q3 cand max/min ratio: 63.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.0000
+  q3 cand max/min ratio: 66.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.0000
+  q3 cand max/min ratio: 13.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=39  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.6667
+  q3 cand max/min ratio: 34.4286
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.5098
+  q3 cand max/min ratio: 37.6349
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.6393
+  q3 cand max/min ratio: 44.3944
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 27.2941
+  q3 cand max/min ratio: 25.7222
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 17.0455
+  q3 cand max/min ratio: 61.4444
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.6000
+  q3 cand max/min ratio: 26.7143
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.5000
+  q3 cand max/min ratio: 60.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 55.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 30.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=40  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=40  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.5000
+  q3 cand max/min ratio: 17.6923
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 31.6531
+  q3 cand max/min ratio: 40.3571
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.5323
+  q3 cand max/min ratio: 43.5616
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 31.8387
+  q3 cand max/min ratio: 39.2424
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 34.0000
+  q3 cand max/min ratio: 49.2727
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 64.0000
+  q3 cand max/min ratio: 38.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.0000
+  q3 cand max/min ratio: 47.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.0000
+  q3 cand max/min ratio: 52.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=41  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=41  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.3333
+  q3 cand max/min ratio: 34.8571
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 31.5227
+  q3 cand max/min ratio: 50.1628
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.9333
+  q3 cand max/min ratio: 58.1887
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.4545
+  q3 cand max/min ratio: 59.2609
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.6667
+  q3 cand max/min ratio: 39.2308
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 46.0000
+  q3 cand max/min ratio: 112.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 52.5000
+  q3 cand max/min ratio: 29.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 70.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.0000
+  q3 cand max/min ratio: 22.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 7.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=42  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 272.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.8000
+  q3 cand max/min ratio: 76.9062
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.8090
+  q3 cand max/min ratio: 45.1688
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 28.0000
+  q3 cand max/min ratio: 77.0500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.3333
+  q3 cand max/min ratio: 63.5556
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.6667
+  q3 cand max/min ratio: 89.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 27.3333
+  q3 cand max/min ratio: 131.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 26.0000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=43  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=43  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.2500
+  q3 cand max/min ratio: 116.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.0000
+  q3 cand max/min ratio: 103.6522
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.3750
+  q3 cand max/min ratio: 57.0333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 29.8667
+  q3 cand max/min ratio: 119.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.5000
+  q3 cand max/min ratio: 85.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.7778
+  q3 cand max/min ratio: 47.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.6667
+  q3 cand max/min ratio: 162.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 13.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=44  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=44  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.0000
+  q3 cand max/min ratio: 126.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=45  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.1333
+  q3 cand max/min ratio: 76.0909
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=45  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.2099
+  q3 cand max/min ratio: 79.6136
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=45  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.8387
+  q3 cand max/min ratio: 93.1875
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=45  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.4000
+  q3 cand max/min ratio: 61.5556
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=45  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 67.5000
+  q3 cand max/min ratio: 47.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=45  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.8333
+  q3 cand max/min ratio: 32.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=45  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=45  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=45  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=45  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.0000
+  q3 cand max/min ratio: 49.8000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=46  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.2826
+  q3 cand max/min ratio: 70.8421
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=46  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.5934
+  q3 cand max/min ratio: 106.5263
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=46  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.0263
+  q3 cand max/min ratio: 178.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=46  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.8333
+  q3 cand max/min ratio: 64.3636
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=46  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 9.2308
+  q3 cand max/min ratio: 59.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=46  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.6667
+  q3 cand max/min ratio: 169.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=46  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q3 cand max/min ratio: 32.5000
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=46  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=46  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=46  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.8571
+  q3 cand max/min ratio: 281.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.6212
+  q3 cand max/min ratio: 232.5833
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.4828
+  q3 cand max/min ratio: 112.8824
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.1064
+  q3 cand max/min ratio: 103.1176
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 27.1538
+  q3 cand max/min ratio: 111.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.5714
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.6000
+  q3 cand max/min ratio: 156.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.4000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=47  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=47  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 11.1818
+  q3 cand max/min ratio: 88.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.6275
+  q3 cand max/min ratio: 269.7000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.6196
+  q3 cand max/min ratio: 148.8148
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 28.6667
+  q3 cand max/min ratio: 426.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.6190
+  q3 cand max/min ratio: 167.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.8889
+  q3 cand max/min ratio: 57.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 10.2222
+  q3 cand max/min ratio: 170.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 13.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=48  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=48  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 78.0000
+  q3 cand max/min ratio: 144.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 13.7093
+  q3 cand max/min ratio: 111.6087
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.7500
+  q3 cand max/min ratio: 135.4643
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.5750
+  q3 cand max/min ratio: 96.5882
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.2609
+  q3 cand max/min ratio: 340.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 11.8000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 41.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=49  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 7.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=49  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.6000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=50  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.0408
+  q3 cand max/min ratio: 296.4444
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=50  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.6762
+  q3 cand max/min ratio: 555.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=50  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 28.8000
+  q3 cand max/min ratio: 431.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=50  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.4286
+  q3 cand max/min ratio: 166.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=50  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.0000
+  q3 cand max/min ratio: 134.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=50  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.3333
+  q3 cand max/min ratio: 147.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=50  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 10.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=50  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=50  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=50  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.3750
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.7424
+  q3 cand max/min ratio: 1139.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.5619
+  q3 cand max/min ratio: 420.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 13.9839
+  q3 cand max/min ratio: 533.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.1600
+  q3 cand max/min ratio: 311.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 27.2000
+  q3 cand max/min ratio: 313.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.0909
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 43.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=51  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=51  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 5.8000
+  q3 cand max/min ratio: 285.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=52  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.4561
+  q3 cand max/min ratio: 304.1818
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=52  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.3740
+  q3 cand max/min ratio: 473.6000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=52  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.5185
+  q3 cand max/min ratio: 422.8000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=52  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 10.1875
+  q3 cand max/min ratio: 816.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=52  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 11.5455
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=52  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 11.7143
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=52  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=52  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=52  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=52  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 58.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.8333
+  q3 cand max/min ratio: 1658.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 17.0283
+  q3 cand max/min ratio: 550.4444
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.4250
+  q3 cand max/min ratio: 546.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.1538
+  q3 cand max/min ratio: 203.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.2222
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 27.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=53  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=53  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 12.3750
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.0423
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.3750
+  q3 cand max/min ratio: 817.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.2075
+  q3 cand max/min ratio: 690.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.2353
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 34.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 7.4286
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 13.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=54  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=55  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.1385
+  q3 cand max/min ratio: 3347.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=55  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.7654
+  q3 cand max/min ratio: 2485.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=55  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.7234
+  q3 cand max/min ratio: 2161.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=55  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.2857
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=55  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 28.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=55  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=55  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 11.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=55  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 13.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=55  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=55  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.3571
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=56  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.0169
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=56  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=56  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 19.2000
+  q3 cand max/min ratio: 758.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=56  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 18.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=56  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=56  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=56  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=56  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=56  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=56  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.8000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=57  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 26.1364
+  q3 cand max/min ratio: 3338.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=57  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.3538
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=57  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 14.8571
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=57  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 26.9000
+  q3 cand max/min ratio: 845.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***
+--- cen=57  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 110.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=57  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 7.8889
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=57  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=57  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=57  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+--- cen=57  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 15.1667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 40.4167
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.7949
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.9333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.2500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 16.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 8.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=58  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=58  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=59  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 58.7143
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=59  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 24.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=59  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.0909
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=59  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 38.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=59  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 9.7143
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=59  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=59  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=59  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=59  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=59  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.6000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=60  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 26.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=60  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.1034
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=60  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 20.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=60  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.8000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=60  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=60  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 57.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=60  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=60  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=60  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=60  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 57.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=61  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 22.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=61  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.8125
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=61  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 35.1000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=61  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 145.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=61  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 17.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=61  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 21.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=61  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=61  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=61  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=61  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 46.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=62  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 45.2000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=62  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.9091
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=62  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 23.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=62  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 65.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=62  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=62  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 62.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=62  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=62  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 29.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=62  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=62  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 45.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=63  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 30.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=63  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 44.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=63  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.8182
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=63  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 58.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=63  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 11.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=63  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=63  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=63  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=63  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=63  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 51.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=64  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 97.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=64  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 54.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=64  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 49.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=64  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 70.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=64  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 29.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=64  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=64  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 36.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=64  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 34.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=64  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=64  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=65  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=65  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 48.0909
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=65  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 48.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=65  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 39.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=65  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 55.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=65  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=65  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=65  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=65  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=65  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=66  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 40.7500
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=66  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 63.4444
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=66  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 69.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=66  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 38.3333
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=66  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 33.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=66  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 25.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=66  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=66  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=66  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=66  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 85.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=67  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 69.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=67  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 87.2857
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=67  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 89.6667
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=67  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 59.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=67  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=67  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=67  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 31.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=67  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 32.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=67  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=67  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=68  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=68  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 568.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=68  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=68  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 74.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=68  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=68  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=68  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=68  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=68  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=68  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=69  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=69  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 357.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=69  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=69  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=69  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=69  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=69  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 37.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=69  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=69  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=69  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=70  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=70  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 91.4286
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=70  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 162.0000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=70  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=70  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=70  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=70  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=70  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=70  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=70  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=71  pt=0 ---
+--- cen=71  pt=1 ---
+--- cen=71  pt=2 ---
+--- cen=71  pt=3 ---
+--- cen=71  pt=4 ---
+--- cen=71  pt=5 ---
+--- cen=71  pt=6 ---
+--- cen=71  pt=7 ---
+--- cen=71  pt=8 ---
+--- cen=71  pt=9 ---
+--- cen=72  pt=0 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=72  pt=1 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+  q2 cand max/min ratio: 173.5000
+  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***
+--- cen=72  pt=2 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=72  pt=3 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=72  pt=4 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=72  pt=5 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=72  pt=6 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=72  pt=7 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=72  pt=8 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=72  pt=9 ---
+  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***
+--- cen=73  pt=0 ---
+--- cen=73  pt=1 ---
+--- cen=73  pt=2 ---
+--- cen=73  pt=3 ---
+--- cen=73  pt=4 ---
+--- cen=73  pt=5 ---
+--- cen=73  pt=6 ---
+--- cen=73  pt=7 ---
+--- cen=73  pt=8 ---
+--- cen=73  pt=9 ---
+--- cen=74  pt=0 ---
+--- cen=74  pt=1 ---
+--- cen=74  pt=2 ---
+--- cen=74  pt=3 ---
+--- cen=74  pt=4 ---
+--- cen=74  pt=5 ---
+--- cen=74  pt=6 ---
+--- cen=74  pt=7 ---
+--- cen=74  pt=8 ---
+--- cen=74  pt=9 ---
+--- cen=75  pt=0 ---

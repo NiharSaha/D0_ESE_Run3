@@ -1,0 +1,191 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <iomanip>
+#include <regex>
+#include <string>
+#include <map>
+#include <vector>
+#include <filesystem>
+using namespace std;
+namespace fs = std::filesystem;
+
+static string sanitize_ident(const string &s) {
+    string out;
+    for (char c: s) {
+        if (isalnum((unsigned char)c) || c=='_') out.push_back(c);
+        else out.push_back('_');
+    }
+    if (!out.empty() && isdigit((unsigned char)out.front())) out = string("_") + out;
+    return out;
+}
+
+// --- Define fixed ordering ---
+static const vector<string> CEN_ORDER = {
+    "cent0to10", "cent10to30", "cent30to50"
+};
+
+static const vector<string> PT_ORDER = {
+    "pT1to2",   "pT2to3",   "pT3to4",   "pT4to5",
+    "pT5to6",   "pT6to8",   "pT8to10",  "pT10to15",
+    "pT15to20", "pT20to40", "pT40to60", "pT60to100"
+};
+
+static const vector<string> VN_ORDER = {"v2", "v3"};
+
+// --- Separate sizes for v2 and v3 ---
+static const size_t TARGET_N_V2 = 63;   // N_VBINS_V2+1 = 62+1
+static const size_t TARGET_N_V3 = 67;   // N_VBINS_V3+1 = 66+1
+
+static size_t get_target_n(const string &ident) {
+    // ident starts with "vnbinning_v2_..." or "vnbinning_v3_..."
+    if (ident.find("vnbinning_v2_") != string::npos) return TARGET_N_V2;
+    if (ident.find("vnbinning_v3_") != string::npos) return TARGET_N_V3;
+    return TARGET_N_V2;  // fallback
+}
+
+static int get_sort_key(const string &ident) {
+    for (int iv = 0; iv < (int)VN_ORDER.size(); ++iv) {
+        for (int ic = 0; ic < (int)CEN_ORDER.size(); ++ic) {
+            for (int ip = 0; ip < (int)PT_ORDER.size(); ++ip) {
+                string expected = sanitize_ident(
+                    string("vnbinning_") + VN_ORDER[iv]
+                    + "_" + CEN_ORDER[ic]
+                    + "_" + PT_ORDER[ip]
+                );
+                if (ident == expected)
+                    return iv * 10000 + ic * 100 + ip;
+            }
+        }
+    }
+    return -1;
+}
+
+// --- Helper to write one array ---
+static void write_array(ofstream &os, const string &ident,
+                        vector<double> vals, size_t target_n)
+{
+    if (vals.size() < target_n) {
+        cerr << "WARNING: " << ident << " has " << vals.size()
+             << " elements, expected " << target_n << " — zero-padding\n";
+        vals.resize(target_n, 0.0);
+    } else if (vals.size() > target_n) {
+        cerr << "WARNING: " << ident << " has " << vals.size()
+             << " elements, trimming to " << target_n << "\n";
+        vals.resize(target_n);
+    }
+
+    os << "static const double " << ident << "[" << target_n << "] = {";
+    for (size_t i = 0; i < target_n; ++i) {
+        os.setf(ios::fixed);
+        os << setprecision(2) << vals[i];
+        if (i + 1 < target_n) os << ", ";
+    }
+    os << "};\n\n";
+}
+
+void generate_vnbinning_header(
+    const char *input_dir  = "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_PubRes_Mar9_v0/output",
+    const char *out_header = "/home/saha115/D0_ESE/CMSSW_13_2_11/src/Compare_PubResults/vnbinning_generated_Mar9.h"
+)
+{
+    string INPUT_DIR  = input_dir;
+    string OUT_HEADER = out_header;
+
+    if (!fs::is_directory(INPUT_DIR)) {
+        cerr << "Input path not a directory: " << INPUT_DIR << "\n"; return;
+    }
+
+    // Matches lines like:
+    //   v2_cent0to10_pT1to2[63]={...}   (new format with size)
+    //   v2_cent0to10_pT1to2={...}        (old format without size)
+    regex line_re(R"(^\s*(v[23]_[^=\[\s]+)\s*(?:\[\d+\])?\s*=\s*\{([^}]*)\})");
+
+    map<string, pair<fs::file_time_type, vector<double>>> arrays;
+
+    for (auto &entry : fs::directory_iterator(INPUT_DIR)) {
+        if (!entry.is_regular_file()) continue;
+        if (entry.path().extension() != ".txt") continue;
+        ifstream ifs(entry.path());
+        if (!ifs.is_open()) continue;
+        auto mtime = fs::last_write_time(entry.path());
+
+        string line;
+        while (getline(ifs, line)) {
+            smatch m;
+            if (!regex_search(line, m, line_re)) continue;
+            string name = m[1].str();   // e.g. "v2_cent0to10_pT1to2"
+            string vals_str = m[2].str();
+
+            vector<double> v;
+            string token;
+            stringstream ss(vals_str);
+            while (getline(ss, token, ',')) {
+                size_t a = token.find_first_not_of(" \t\r\n");
+                if (a == string::npos) continue;
+                size_t b = token.find_last_not_of(" \t\r\n");
+                try { v.push_back(stod(token.substr(a, b-a+1))); } catch(...) {}
+            }
+            if (v.empty()) continue;
+
+            string simple = sanitize_ident(string("vnbinning_") + name);
+            auto it = arrays.find(simple);
+            if (it == arrays.end() || mtime > it->second.first)
+                arrays[simple] = make_pair(mtime, move(v));
+        }
+    }
+
+    if (arrays.empty()) { cerr << "No arrays found in " << INPUT_DIR << "\n"; return; }
+
+    // --- Build ordered list ---
+    vector<pair<int,string>> ordered_keys;
+    vector<string> unknown_keys;
+
+    for (auto &kv : arrays) {
+        int key = get_sort_key(kv.first);
+        if (key >= 0) ordered_keys.push_back({key, kv.first});
+        else          unknown_keys.push_back(kv.first);
+    }
+    sort(ordered_keys.begin(), ordered_keys.end(),
+         [](const pair<int,string> &a, const pair<int,string> &b){
+             return a.first < b.first; });
+    sort(unknown_keys.begin(), unknown_keys.end());
+
+    // --- Write header ---
+    ofstream os(OUT_HEADER);
+    if (!os.is_open()) { cerr << "Cannot write header: " << OUT_HEADER << "\n"; return; }
+
+    os << "// Auto-generated vnbinning header\n";
+    os << "// v2 arrays: " << TARGET_N_V2 << " edges (" << TARGET_N_V2-1 << " bins)\n";
+    os << "// v3 arrays: " << TARGET_N_V3 << " edges (" << TARGET_N_V3-1 << " bins)\n";
+    os << "#pragma once\n\n";
+    os << "#include <cstddef>\n\n";
+
+    int written = 0;
+
+    // known keys in physics order (v2 all cent/pT first, then v3)
+    for (auto &kp : ordered_keys) {
+        const string &ident = kp.second;
+        size_t target_n = get_target_n(ident);   // 63 for v2, 67 for v3
+        write_array(os, ident, arrays[ident].second, target_n);
+        ++written;
+    }
+
+    // unknown keys at end
+    if (!unknown_keys.empty()) {
+        os << "// WARNING: unrecognized array names:\n";
+        for (auto &ident : unknown_keys) {
+            size_t target_n = get_target_n(ident);
+            write_array(os, ident, arrays[ident].second, target_n);
+            ++written;
+            cerr << "WARNING: unrecognized array: " << ident << "\n";
+        }
+    }
+
+    os.close();
+    cout << "Wrote header: " << OUT_HEADER << "\n"
+         << "  v2 arrays: " << TARGET_N_V2 << " edges each\n"
+         << "  v3 arrays: " << TARGET_N_V3 << " edges each\n"
+         << "  Total arrays written: " << written
+         << " (" << unknown_keys.size() << " unrecognized)\n";
+}

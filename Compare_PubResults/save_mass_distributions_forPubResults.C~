@@ -1,0 +1,226 @@
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+#include <fstream>
+#include <vector>
+#include "TChain.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TString.h"
+#include "TObjString.h"
+#include "TSystem.h"
+#include "TROOT.h"
+#include "TFileCollection.h"
+#include "TLegend.h"
+
+#include "TMath.h"
+#include "TComplex.h"
+#include "TH1.h"
+#include "TH2.h"
+#include "TH3.h"
+#include "TF1.h"
+#include <TNtuple.h>
+#include <TGraphErrors.h>
+#include <TLatex.h>
+#include <TCanvas.h>
+#include <algorithm> 
+#include <iomanip>
+
+
+using namespace std;
+
+const int N_CENTBINS = 3;
+const int cen_coarse_edges[N_CENTBINS+1] = {0, 10, 30, 50};
+const char *cen_coarse_label[N_CENTBINS] = {"0to10", "10to30", "30to50"};
+
+const int    N_PTBINS  = 12;
+const double pt_edges[N_PTBINS+1] = {1,2,3,4,5,6,8,10,15,20,40,60,100};
+const char  *pt_name[N_PTBINS]    = {"1to2","2to3","3to4","4to5","5to6",
+                                      "6to8","8to10","10to15","15to20",
+                                      "20to40","40to60","60to100"};
+
+const int    N_MASSBINS    = 60;
+const double fit_range_low  = 1.74;
+const double fit_range_high = 2.00;
+
+const int N_VBINS = 62;   // 63 edges → 62 bins
+static const double vnbinning_manual[N_VBINS+1] = {
+    -15.00, -12.00, -10.00, -8.20, -6.60, -5.20, -4.60, -4.00,
+     -3.50,  -3.00,  -2.70, -2.40, -2.14, -1.95, -1.79, -1.66,
+     -1.53,  -1.42,  -1.32, -1.21, -1.11, -1.01, -0.91, -0.81,
+     -0.72,  -0.62,  -0.52, -0.41, -0.31, -0.21, -0.10,  0.00,
+      0.10,   0.21,   0.31,  0.41,  0.52,  0.62,  0.72,  0.81,
+      0.91,   1.01,   1.11,  1.21,  1.32,  1.42,  1.53,  1.66,
+      1.79,   1.95,   2.14,  2.40,  2.70,  3.00,  3.50,  4.00,
+      4.60,   5.20,   6.60,  8.20, 10.00, 12.00, 15.00};
+
+int save_mass_distributions(int target_cen_coarse = -1, int target_pt = -1)
+{
+
+  //auto nt_Data = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/SP_MB11to21_Feb19_v2/ROOT/flow_Analysis_out_combined.root");
+  auto nt_Data = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/SP_MB11to21_Mar5_PubResults_v0/ROOT/flow_Analysis_out_combined.root");
+  auto input_nt = (TNtuple*)nt_Data->Get("nt");
+  if (!nt_Data || nt_Data->IsZombie()) { cerr << "Cannot open input file\n"; return 1; }
+  if (!input_nt) { cerr << "Cannot find TNtuple 'nt'\n"; return 1; }
+
+	Float_t cen_val, pT_val, mass_val, v2_val, v3_val, dca_val, y_val;
+
+	input_nt->SetBranchAddress("cent",&cen_val); //cent=0..89 saved!
+	input_nt->SetBranchAddress("pT",&pT_val);
+	input_nt->SetBranchAddress("mass",&mass_val);
+	input_nt->SetBranchAddress("dca",&dca_val);
+	input_nt->SetBranchAddress("y",&y_val);
+	input_nt->SetBranchAddress("v2",&v2_val);
+	input_nt->SetBranchAddress("v3",&v3_val);
+
+
+	// determine which 10% centrality group we need (if any)
+	const int needed_cen_group = target_cen_coarse;
+
+	TH1D *h_mass_default[N_CENTBINS][N_PTBINS]          = {};
+    TH1D *h_mass_v2[N_CENTBINS][N_PTBINS][N_VBINS]      = {};
+    TH1D *h_mass_v3[N_CENTBINS][N_PTBINS][N_VBINS]      = {};
+
+
+	Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS+1];
+    Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS+1];
+
+	for (int i_cen=0; i_cen<N_CENTBINS; i_cen++) {
+	  if (needed_cen_group >= 0 && i_cen != needed_cen_group) continue; // skip other 10% groups
+	  for (int i_pt=0; i_pt<N_PTBINS; i_pt++) {
+	    if (target_pt >= 0 && i_pt != target_pt) continue; // skip other pT bins
+	    
+	    for (int ib=0; ib<=N_VBINS; ++ib) {
+	      vnbinning_v2[i_cen][i_pt][ib] = vnbinning_manual[ib];
+	      vnbinning_v3[i_cen][i_pt][ib] = vnbinning_manual[ib];
+	    }    
+	  }
+	}
+	
+	
+	TString h_name;
+    for (int i_cen = 0; i_cen < N_CENTBINS; ++i_cen) {
+        if (needed_cen_group >= 0 && i_cen != needed_cen_group) continue;
+
+        for (int i_pt = 0; i_pt < N_PTBINS; ++i_pt) {
+            if (target_pt >= 0 && i_pt != target_pt) continue;
+
+            h_name = TString::Format("h_mass_cent%s_pT%s_def", cen_coarse_label[i_cen], pt_name[i_pt]);
+            h_mass_default[i_cen][i_pt] = new TH1D(h_name, h_name, N_MASSBINS, fit_range_low, fit_range_high);
+
+            for (int iv = 0; iv < N_VBINS; ++iv) {
+                h_name = TString::Format("h_mass_v2_cent%s_pT%s_v2bin%d",cen_coarse_label[i_cen], pt_name[i_pt], iv);
+                h_mass_v2[i_cen][i_pt][iv] = new TH1D(h_name, h_name, N_MASSBINS, fit_range_low, fit_range_high);
+                h_name = TString::Format("h_mass_v3_cent%s_pT%s_v3bin%d",cen_coarse_label[i_cen], pt_name[i_pt], iv);
+                h_mass_v3[i_cen][i_pt][iv] = new TH1D(h_name, h_name, N_MASSBINS, fit_range_low, fit_range_high);                                           
+            }
+        }
+    }
+
+
+	Long64_t N_ENTRIES = input_nt->GetEntriesFast();
+	//Long64_t maxEvents = 5000000;
+	//if (maxEvents > 0 && N_ENTRIES > maxEvents) N_ENTRIES = maxEvents;
+  	
+
+	for(Long64_t i_entry=0; i_entry<N_ENTRIES; i_entry++) {
+		input_nt->GetEntry(i_entry);
+		if(i_entry%1000000==0) cout <<i_entry<<" / "<<N_ENTRIES<< "  "<<100*i_entry/N_ENTRIES<<"%"<<endl;
+
+		if(dca_val>=0.0085) continue;
+		if(TMath::Abs(y_val) >= 1.0) continue;
+		
+		for (int i_cen=0; i_cen<N_CENTBINS; i_cen++) {
+			if (needed_cen_group >= 0 && i_cen != needed_cen_group) continue;
+
+		    if (cen_val < cen_coarse_edges[i_cen] || cen_val >= cen_coarse_edges[i_cen+1]) continue;
+
+			for (int i_pt=0; i_pt<N_PTBINS; i_pt++) {
+				if (target_pt >= 0 && i_pt != target_pt) continue;
+				if (pT_val<pt_edges[i_pt] || pT_val>=pt_edges[i_pt+1]) continue;
+
+				if (h_mass_default[i_cen][i_pt])
+                    h_mass_default[i_cen][i_pt]->Fill(mass_val);
+
+				for (int iv = 0; iv < N_VBINS; ++iv) {
+                    if (v2_val >= vnbinning_v2[i_cen][i_pt][iv] && v2_val <  vnbinning_v2[i_cen][i_pt][iv+1])
+                        if (h_mass_v2[i_cen][i_pt][iv]) h_mass_v2[i_cen][i_pt][iv]->Fill(mass_val);
+
+                    if (v3_val >= vnbinning_v3[i_cen][i_pt][iv] && v3_val <  vnbinning_v3[i_cen][i_pt][iv+1])
+                        if (h_mass_v3[i_cen][i_pt][iv]) h_mass_v3[i_cen][i_pt][iv]->Fill(mass_val);
+                }
+            }
+        }
+    }
+	
+	
+	// Save histograms to file
+	// choose output filename per-request to allow many jobs in parallel
+
+	std::string outname = "mass_distributions_pubcomp";
+    if (needed_cen_group >= 0)
+        outname += std::string("_cent") + cen_coarse_label[needed_cen_group];
+    if (target_pt >= 0)
+        outname += "_pt" + to_string(target_pt);
+    outname += ".root";
+
+
+	TFile *outf = new TFile(outname.c_str(),"recreate");
+	outf->cd();
+
+	for (int i_cen = 0; i_cen < N_CENTBINS; ++i_cen) {
+        if (needed_cen_group >= 0 && i_cen != needed_cen_group) continue;
+        for (int i_pt = 0; i_pt < N_PTBINS; ++i_pt) {
+            if (target_pt >= 0 && i_pt != target_pt) continue;
+
+            if (h_mass_default[i_cen][i_pt])
+                h_mass_default[i_cen][i_pt]->Write();
+
+            for (int iv = 0; iv < N_VBINS; ++iv) {
+                if (h_mass_v2[i_cen][i_pt][iv]) h_mass_v2[i_cen][i_pt][iv]->Write();
+                if (h_mass_v3[i_cen][i_pt][iv]) h_mass_v3[i_cen][i_pt][iv]->Write();
+            }
+        }
+    }
+
+	
+	outf->Close();
+
+
+	cout<<"Saved  "<<outname<<endl;
+	return 0;
+}
+
+int main(int argc, char *argv[])
+{
+    if (argc == 1) {
+        save_mass_distributions();
+    } else if (argc == 2) {
+        int idx = atoi(argv[1]);
+        // 5. Add bounds check
+        if (idx < 0 || idx >= N_CENTBINS) {
+            cerr << "ERROR: target_cen_coarse must be 0-" << N_CENTBINS-1
+                 << " (0=0-10%, 1=10-30%, 2=30-50%)\n"; return 1;
+        }
+        save_mass_distributions(idx);
+    } else if (argc == 3) {
+        int cen_idx = atoi(argv[1]);
+        int pt_idx  = atoi(argv[2]);
+        if (cen_idx < 0 || cen_idx >= N_CENTBINS) {
+            cerr << "ERROR: target_cen_coarse must be 0-" << N_CENTBINS-1 << "\n"; return 1;
+        }
+        if (pt_idx < 0 || pt_idx >= N_PTBINS) {
+            cerr << "ERROR: target_pt must be 0-" << N_PTBINS-1 << "\n"; return 1;
+        }
+        save_mass_distributions(cen_idx, pt_idx);
+    } else {
+        // 6. Fix usage message
+        cout << "Usage: ./save_mass_distributions "
+             << "[target_cen_coarse (0=0-10,1=10-30,2=30-50)] "
+             << "[target_pt_index (0-11)]\n";
+        return 1;
+    }
+    return 0;
+}
+

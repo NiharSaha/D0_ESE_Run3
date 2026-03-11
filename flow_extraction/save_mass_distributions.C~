@@ -1,0 +1,404 @@
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+#include <fstream>
+#include <vector>
+#include "TChain.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TString.h"
+#include "TObjString.h"
+#include "TSystem.h"
+#include "TROOT.h"
+#include "TFileCollection.h"
+#include "TLegend.h"
+
+#include "TMath.h"
+#include "TComplex.h"
+#include "TH1.h"
+#include "TH2.h"
+#include "TH3.h"
+#include "TF1.h"
+#include <TNtuple.h>
+#include <TGraphErrors.h>
+#include <TLatex.h>
+#include <TCanvas.h>
+#include <algorithm> 
+#include <iomanip>
+
+#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/ESE_Cuts_MB11to21_Jan22.h"
+#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/Analysis_bin.h"
+
+using namespace std;
+
+
+int save_mass_distributions(int target1pct = -1, int target_pt = -1)
+{
+
+  Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS+1];
+  Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS+1];
+  
+  auto get_cent_group = [&](int cent1pct)->int {
+    for (int g=0; g<N_CENTBINS; ++g) {
+      if (cent1pct >= min_centbin[g] && cent1pct < max_centbin[g]) return g;
+    }
+    return -1;
+  };
+  
+  
+  //auto nt_Data = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/SP_MB11to21_Feb19_v2/ROOT/flow_Analysis_out_combined.root");
+  auto nt_Data = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/SP_MB11to21_Feb20_v4/ROOT/Flow_combined.root");
+  auto input_nt = (TNtuple*)nt_Data->Get("nt");
+  
+	Float_t cen_val, q2_val, q3_val, pT_val, mass_val, v2_val, v3_val, dca_val, y_val;
+
+	input_nt->SetBranchAddress("cent",&cen_val); //cent=0..89 saved!
+	input_nt->SetBranchAddress("pT",&pT_val);
+	input_nt->SetBranchAddress("mass",&mass_val);
+	input_nt->SetBranchAddress("dca",&dca_val);
+	input_nt->SetBranchAddress("y",&y_val);
+	input_nt->SetBranchAddress("q2_hf_total",&q2_val);
+	input_nt->SetBranchAddress("q3_hf_total",&q3_val);
+	input_nt->SetBranchAddress("v2",&v2_val);
+	input_nt->SetBranchAddress("v3",&v3_val);
+
+	//auto h_v2_bin = new TH1D("h_v2_bin","h_v2_bin",N_BINS,-2.3,0);
+	//auto h_v3_bin = new TH1D("h_v3_bin","h_v3_bin",N_BINS,-2.3,0);
+
+
+	// determine which 10% centrality group we need (if any)
+	int needed_cen_group = -1;
+	if (target1pct >= 0) needed_cen_group = get_cent_group(target1pct);
+
+
+	for (int i_cen=0; i_cen<N_CENTBINS; i_cen++) {
+	  if (needed_cen_group >= 0 && i_cen != needed_cen_group) continue; // skip other 10% groups
+	  for (int i_pt=0; i_pt<N_PTBINS; i_pt++) {
+	    if (target_pt >= 0 && i_pt != target_pt) continue; // skip other pT bins
+	    
+	    for (int ib=0; ib<=N_VBINS; ++ib) {
+	      vnbinning_v2[i_cen][i_pt][ib] = vnb_v2_table[i_cen][i_pt][ib];
+	      vnbinning_v3[i_cen][i_pt][ib] = vnb_v3_table[i_cen][i_pt][ib];
+	    }
+	    
+	  }
+	}
+	
+	// histograms declarations
+	TH1D *h_mass_default_1percent_cen[N_CENTBINS_1][N_PTBINS]={};
+	TH1D *h_mass_1pecent_cen_q2[N_CENTBINS_1][N_QBINS][N_PTBINS]={};
+	TH1D *h_mass_1pecent_cen_q3[N_CENTBINS_1][N_QBINS][N_PTBINS]={};
+	TH1D *h_mass_v2_fit_1pecent_cen[N_CENTBINS_1][N_QBINS][N_PTBINS][N_VBINS]={};
+	TH1D *h_mass_v3_fit_1pecent_cen[N_CENTBINS_1][N_QBINS][N_PTBINS][N_VBINS]={};
+	
+	TH1D *h_v2dist_1pct_q2[N_CENTBINS_1][N_QBINS][N_PTBINS] = {};
+	TH1D *h_v3dist_1pct_q3[N_CENTBINS_1][N_QBINS][N_PTBINS] = {};
+
+
+	TString h_name_0, h_name_1;
+
+	for (int i_cen=0; i_cen<N_CENTBINS_1; i_cen++) {
+		if (target1pct >= 0 && i_cen != target1pct) continue;
+		int cen_group = get_cent_group(i_cen);   // ADD THIS — maps 1% bin → coarse group index
+        if (cen_group < 0) continue;
+
+		//int cen_group_for_binning = get_cent_group(i_cen);
+		//if (cen_group_for_binning < 0) continue;
+		for (int i_pt=0; i_pt<N_PTBINS; i_pt++) {
+			if (target_pt >= 0 && i_pt != target_pt) continue;
+			h_name_0 = "h_mass_cen"+to_string(i_cen)+"_"+pt_name[i_pt]+"_def";
+			h_mass_default_1percent_cen[i_cen][i_pt] = new TH1D(h_name_0,h_name_0,N_MASSBINS,fit_range_low,fit_range_high);
+			for (int i_q2=0; i_q2<N_QBINS; i_q2++) {
+				h_name_0 = "h_mass_cen"+to_string(i_cen)+"_q2bin"+to_string(i_q2)+"_"+pt_name[i_pt];
+				h_mass_1pecent_cen_q2[i_cen][i_q2][i_pt] = new TH1D(h_name_0,h_name_0,N_MASSBINS,fit_range_low,fit_range_high);
+
+				h_name_0 = "h_mass_cen"+to_string(i_cen)+"_q3bin"+to_string(i_q2)+"_"+pt_name[i_pt];
+				h_mass_1pecent_cen_q3[i_cen][i_q2][i_pt] = new TH1D(h_name_0,h_name_0,N_MASSBINS,fit_range_low,fit_range_high);
+
+				h_name_0 = "h_v2dist_cen"+to_string(i_cen)+"_q2bin"+to_string(i_q2)+"_"+pt_name[i_pt];
+                h_v2dist_1pct_q2[i_cen][i_q2][i_pt] = new TH1D(h_name_0, h_name_0, 500, -25.0, 25.0);
+				h_v2dist_1pct_q2[i_cen][i_q2][i_pt]->Sumw2();
+
+                h_name_0 = "h_v3dist_cen"+to_string(i_cen)+"_q3bin"+to_string(i_q2)+"_"+pt_name[i_pt];
+                h_v3dist_1pct_q3[i_cen][i_q2][i_pt] = new TH1D(h_name_0, h_name_0, 500, -25.0, 25.0);
+				h_v3dist_1pct_q3[i_cen][i_q2][i_pt]->Sumw2();
+
+				for(int i_v2=0; i_v2<N_VBINS; i_v2++)
+				{
+					
+				  h_name_1 = "hist_mass_v2_cen"+to_string(i_cen)+"_q2bin"+to_string(i_q2)+"_"+pt_name[i_pt]+"_in_v2bin_idx_"+to_string(i_v2);
+				  h_mass_v2_fit_1pecent_cen[i_cen][i_q2][i_pt][i_v2] = new TH1D(h_name_1,h_name_1,N_MASSBINS,fit_range_low,fit_range_high);
+
+				  h_name_1 = "hist_mass_v3_cen"+to_string(i_cen)+"_q3bin"+to_string(i_q2)+"_"+pt_name[i_pt]+"_in_v3bin_idx_"+to_string(i_v2);
+				  h_mass_v3_fit_1pecent_cen[i_cen][i_q2][i_pt][i_v2] = new TH1D(h_name_1,h_name_1,N_MASSBINS,fit_range_low,fit_range_high);
+				}
+			}
+		}
+	}
+
+
+
+
+	Long64_t N_ENTRIES = input_nt->GetEntriesFast();
+	//Long64_t maxEvents = 5000000;
+	//if (maxEvents > 0 && N_ENTRIES > maxEvents) N_ENTRIES = maxEvents;
+
+     	// These count how many ntuple entries pass the q-cut regardless of pT/mass
+	//Long64_t n_evts_q2_cut[N_CENTBINS_1][N_QBINS] = {};
+	//Long64_t n_evts_q3_cut[N_CENTBINS_1][N_QBINS] = {};
+
+	for(Long64_t i_entry=0; i_entry<N_ENTRIES; i_entry++) {
+		input_nt->GetEntry(i_entry);
+		if(i_entry%1000000==0) cout <<i_entry<<" / "<<N_ENTRIES<< "  "<<100*i_entry/N_ENTRIES<<"%"<<endl;
+
+		if(dca_val>=0.0085) continue;
+		if(TMath::Abs(y_val) >= 1.0) continue;
+		
+		for (int i_cen=0; i_cen<N_CENTBINS_1; i_cen++) {
+			if (target1pct >= 0 && i_cen != target1pct) continue;
+			if(cen_val<(i_cen) || cen_val>=(i_cen+1)) continue;
+			int cen_group = get_cent_group(i_cen);
+			if (cen_group < 0) continue;
+
+			// Count events passing q-cuts (before pT or mass selection)
+			/*for (int iq=0; iq<N_QBINS; iq++) {
+				if (q2_val>=q2_cuts[i_cen][iq] && q2_val<q2_cuts[i_cen][iq+1])
+				  n_evts_q2_cut[i_cen][iq]++;
+				if (q3_val>=q3_cuts[i_cen][iq] && q3_val<q3_cuts[i_cen][iq+1])
+				  n_evts_q3_cut[i_cen][iq]++;
+				  }*/
+
+			for (int i_pt=0; i_pt<N_PTBINS; i_pt++) {
+				if (target_pt >= 0 && i_pt != target_pt) continue;
+				if (pT_val<pt_edges[i_pt] || pT_val>=pt_edges[i_pt+1]) continue;
+
+				h_mass_default_1percent_cen[i_cen][i_pt]->Fill(mass_val);
+
+				for (int iq=0; iq<N_QBINS; iq++) {
+				  if (q2_val>=q2_cuts[i_cen][iq] && q2_val<q2_cuts[i_cen][iq+1]) {
+				    h_mass_1pecent_cen_q2[i_cen][iq][i_pt]->Fill(mass_val);
+				    h_v2dist_1pct_q2[i_cen][iq][i_pt]->Fill(v2_val);
+
+				    for(int i_v2=0; i_v2<N_VBINS; i_v2++) {
+				      if(v2_val>=vnbinning_v2[cen_group][i_pt][i_v2] && v2_val<vnbinning_v2[cen_group][i_pt][i_v2+1]){
+					if(h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][i_v2]) h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][i_v2]->Fill(mass_val);
+				      }
+				    }
+				  }
+				  if (q3_val>=q3_cuts[i_cen][iq] && q3_val<q3_cuts[i_cen][iq+1]) {
+				    h_mass_1pecent_cen_q3[i_cen][iq][i_pt]->Fill(mass_val);
+				    h_v3dist_1pct_q3[i_cen][iq][i_pt]->Fill(v3_val);
+
+				    for(int i_v3=0; i_v3<N_VBINS; i_v3++) {
+				      
+				      if(v3_val>=vnbinning_v3[cen_group][i_pt][i_v3] && v3_val<vnbinning_v3[cen_group][i_pt][i_v3+1]){
+					if (h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][i_v3]) h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][i_v3]->Fill(mass_val);
+				      }
+				    }
+				  }
+
+				}// -- iq loop ----
+			}// --- i_pt loop ----
+		}// --- i_cen loop ----
+	}// -- event loop --
+	
+	// =====================================================================
+	// DIAGNOSTIC: Summary report of entries per iq bin
+	// =====================================================================
+	/*std::cout << "\n========================================================" << std::endl;
+	std::cout << "  DIAGNOSTIC: q-cut events vs histogram candidates per iq bin" << std::endl;
+	std::cout << "========================================================" << std::endl;
+	
+	for (int i_cen = 0; i_cen < N_CENTBINS_1; ++i_cen) {
+	  if (target1pct >= 0 && i_cen != target1pct) continue;
+	  
+	  // --- Print event-level q-cut counts (pT/mass independent) ---
+	  std::cout << "\n[cen1pct=" << i_cen << "] EVENT counts passing q-cuts (no pT/mass selection):" << std::endl;
+	  std::cout << std::left
+		    << std::setw(8)  << "iq"
+		    << std::setw(25) << "n_evts_q2_cut"
+		    << std::setw(25) << "n_evts_q3_cut"
+		    << std::setw(20) << "q2/q3 evt ratio"
+		    << std::endl;
+	  std::cout << std::string(78, '-') << std::endl;
+	  
+	  Long64_t evtq2_total = 0, evtq3_total = 0;
+	  Long64_t evtq2_max = 0, evtq2_min = LLONG_MAX;
+	  Long64_t evtq3_max = 0, evtq3_min = LLONG_MAX;
+	  
+	  for (int iq = 0; iq < N_QBINS; ++iq) {
+            evtq2_total += n_evts_q2_cut[i_cen][iq];
+            evtq3_total += n_evts_q3_cut[i_cen][iq];
+            evtq2_max = std::max(evtq2_max, n_evts_q2_cut[i_cen][iq]);
+            evtq2_min = std::min(evtq2_min, n_evts_q2_cut[i_cen][iq]);
+            evtq3_max = std::max(evtq3_max, n_evts_q3_cut[i_cen][iq]);
+            evtq3_min = std::min(evtq3_min, n_evts_q3_cut[i_cen][iq]);
+	    
+            double evt_ratio = (n_evts_q3_cut[i_cen][iq] > 0)
+	      ? (double)n_evts_q2_cut[i_cen][iq] / n_evts_q3_cut[i_cen][iq]
+	      : -1.0;
+            std::cout << std::left
+                      << std::setw(8)  << iq
+                      << std::setw(25) << n_evts_q2_cut[i_cen][iq]
+                      << std::setw(25) << n_evts_q3_cut[i_cen][iq]
+                      << std::setw(20) << std::fixed << std::setprecision(4) << evt_ratio
+                      << std::endl;
+	  }
+	  std::cout << std::string(78, '-') << std::endl;
+	  std::cout << std::left << std::setw(8) << "TOTAL"
+		    << std::setw(25) << evtq2_total
+		    << std::setw(25) << evtq3_total << std::endl;
+	  if (evtq2_min > 0)
+            std::cout << "  q2 evt max/min ratio: " << std::fixed << std::setprecision(4)
+                      << (double)evtq2_max/evtq2_min << std::endl;
+	  if (evtq3_min > 0)
+            std::cout << "  q3 evt max/min ratio: " << std::fixed << std::setprecision(4)
+                      << (double)evtq3_max/evtq3_min << std::endl;
+	  if (evtq2_min > 0 && (double)evtq2_max/evtq2_min > 1.2)
+            std::cout << "  *** WARNING: q2 event counts imbalanced (max/min > 1.2) ***" << std::endl;
+	  if (evtq3_min > 0 && (double)evtq3_max/evtq3_min > 1.2)
+            std::cout << "  *** WARNING: q3 event counts imbalanced (max/min > 1.2) ***" << std::endl;
+	  
+	  // --- Per pT: histogram candidate counts ---
+	  for (int i_pt = 0; i_pt < N_PTBINS; ++i_pt) {
+            if (target_pt >= 0 && i_pt != target_pt) continue;
+	    
+            std::cout << "\n  [cen1pct=" << i_cen << ", pt=" << pt_name[i_pt]
+                      << "] CANDIDATE entries in mass histograms:" << std::endl;
+            std::cout << std::left
+                      << std::setw(8)  << "iq"
+                      << std::setw(20) << "q2 candidates"
+                      << std::setw(20) << "q3 candidates"
+                      << std::setw(20) << "cand/evt q2"
+                      << std::setw(20) << "cand/evt q3"
+                      << std::endl;
+            std::cout << std::string(88, '-') << std::endl;
+	    
+            double q2_total = 0, q3_total = 0;
+            double q2_max = 0, q2_min = 1e18;
+            double q3_max = 0, q3_min = 1e18;
+
+            for (int iq = 0; iq < N_QBINS; ++iq) {
+                double q2_cand = 0, q3_cand = 0;
+                if (h_mass_1pecent_cen_q2[i_cen][iq][i_pt])
+                    q2_cand = h_mass_1pecent_cen_q2[i_cen][iq][i_pt]->GetEntries();
+                if (h_mass_1pecent_cen_q3[i_cen][iq][i_pt])
+                    q3_cand = h_mass_1pecent_cen_q3[i_cen][iq][i_pt]->GetEntries();
+
+                q2_total += q2_cand; q3_total += q3_cand;
+                q2_max = std::max(q2_max, q2_cand); q2_min = std::min(q2_min, q2_cand);
+                q3_max = std::max(q3_max, q3_cand); q3_min = std::min(q3_min, q3_cand);
+
+                // candidates per event: how many D0 candidates per passing event
+                double cpe_q2 = (n_evts_q2_cut[i_cen][iq] > 0) ? q2_cand / n_evts_q2_cut[i_cen][iq] : -1.0;
+                double cpe_q3 = (n_evts_q3_cut[i_cen][iq] > 0) ? q3_cand / n_evts_q3_cut[i_cen][iq] : -1.0;
+
+                std::cout << std::left
+			  << std::setw(8)  << iq
+                          << std::setw(20) << q2_cand
+                          << std::setw(20) << q3_cand
+                          << std::setw(20) << std::fixed << std::setprecision(6) << cpe_q2
+                          << std::setw(20) << std::fixed << std::setprecision(6) << cpe_q3
+                          << std::endl;
+            }
+            std::cout << std::string(88, '-') << std::endl;
+            std::cout << std::left << std::setw(8) << "TOTAL"
+                      << std::setw(20) << q2_total
+                      << std::setw(20) << q3_total << std::endl;
+            if (q2_min > 0)
+                std::cout << "  q2 cand max/min ratio: " << std::fixed << std::setprecision(4) << q2_max/q2_min << std::endl;
+            if (q3_min > 0)
+                std::cout << "  q3 cand max/min ratio: " << std::fixed << std::setprecision(4) << q3_max/q3_min << std::endl;
+            if (q2_min > 0 && q2_max/q2_min > 1.2)
+                std::cout << "  *** WARNING: q2 candidates imbalanced (max/min > 1.2) ***" << std::endl;
+            if (q3_min > 0 && q3_max/q3_min > 1.2)
+                std::cout << "  *** WARNING: q3 candidates imbalanced (max/min > 1.2) ***" << std::endl;
+        }
+    }
+    std::cout << "\n========================================================\n" << std::endl;
+    // =====================================================================
+    */
+
+
+
+
+
+		  
+
+	// Save histograms to file
+	// choose output filename per-request to allow many jobs in parallel
+	std::string outname = "mass_distributions";
+	if (target1pct >= 0) outname += "_1pcent"+to_string(target1pct);
+	if (target_pt >= 0)   outname += "_pt"+to_string(target_pt);
+	outname += ".root";
+
+
+	TFile *outf = new TFile(outname.c_str(),"recreate");
+	outf->cd();
+
+	for (int i_cen=0; i_cen<N_CENTBINS_1; ++i_cen) {
+		if (target1pct >= 0 && i_cen != target1pct) continue;
+
+		for (int i_pt=0; i_pt<N_PTBINS; ++i_pt) {
+			if (target_pt >= 0 && i_pt != target_pt) continue;
+
+			if (h_mass_default_1percent_cen[i_cen][i_pt]) {
+				h_mass_default_1percent_cen[i_cen][i_pt]->Write();
+			} 
+
+			for (int iq=0; iq<N_QBINS; ++iq) {
+				if (h_mass_1pecent_cen_q2[i_cen][iq][i_pt]) {
+					h_mass_1pecent_cen_q2[i_cen][iq][i_pt]->Write();
+				} 
+
+				if (h_mass_1pecent_cen_q3[i_cen][iq][i_pt]) {
+					h_mass_1pecent_cen_q3[i_cen][iq][i_pt]->Write();
+				} 
+
+				if (h_v2dist_1pct_q2[i_cen][iq][i_pt])
+				  h_v2dist_1pct_q2[i_cen][iq][i_pt]->Write();
+				
+				if (h_v3dist_1pct_q3[i_cen][iq][i_pt])
+				  h_v3dist_1pct_q3[i_cen][iq][i_pt]->Write();
+
+				for (int iv=0; iv<N_VBINS; ++iv) {
+					if (h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][iv]) {
+						h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][iv]->Write();
+					}
+
+					if (h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][iv]) {
+						h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][iv]->Write();
+					}
+				}
+			}
+			outf->cd();
+		}
+	}
+
+	//outf->Write();
+	outf->Close();
+
+
+	cout<<"Saved  "<<outname<<endl;
+	return 0;
+}
+
+int main(int argc, char *argv[])
+{
+	if (argc==1) {
+		save_mass_distributions();
+	} else if (argc==2) {
+		int idx = atoi(argv[1]);
+		save_mass_distributions(idx);
+	} else if (argc==3) {
+		int cen_idx = atoi(argv[1]);
+		int pt_idx  = atoi(argv[2]);
+		save_mass_distributions(cen_idx, pt_idx);
+	} else {
+		std::cout << "Usage: ./save_mass_distributions [target1pct_index] [target_pt_index]" << std::endl;
+		return 1;
+	}
+	return 0;
+}
+
