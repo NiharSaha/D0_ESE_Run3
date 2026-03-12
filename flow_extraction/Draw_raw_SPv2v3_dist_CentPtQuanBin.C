@@ -12,7 +12,7 @@
 
 #include "Analysis_bin.h"
 
-void plot_vndist() {
+void Draw_raw_SPv2v3_dist_CentPtQuanBin() {
 
     const char* inputFile = "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_Mar9_v0/output/Flow_out_combined.root";
     TFile *inf = TFile::Open(inputFile);

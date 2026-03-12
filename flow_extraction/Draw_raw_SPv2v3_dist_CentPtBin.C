@@ -10,7 +10,7 @@
 
 #include "Analysis_bin.h"
 
-void Draw_raw_v2v3_dist()
+void Draw_raw_SPv2v3_dist_CentPtBin()
 {
     const char* infile = "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_Mar9_v0/build/vnbinning_out_combined.root";
 
