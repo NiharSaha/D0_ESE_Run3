@@ -63,40 +63,6 @@ int fit_mass_and_flow(int target_cent = -1)
     TH1D *h_mass_v2_fit[N_CENTBINS][N_PTBINS][N_VBINS_V2]       = {};  // was N_VBINS
     TH1D *h_mass_v3_fit[N_CENTBINS][N_PTBINS][N_VBINS_V3]       = {};
 
-
-    // histogram names produced by save_mass_distributions_forPubResults.C:
-    // h_mass_cent<label>_pT<label>_def
-    // h_mass_v2_cent<label>_pT<label>_v2bin<iv>
-    // h_mass_v3_cent<label>_pT<label>_v3bin<iv>
-    /*for (int i_cen = 0; i_cen < N_CENTBINS; ++i_cen) {
-        if (needed_cen_group >= 0 && i_cen != needed_cen_group) continue;
-        for (int i_pt = 0; i_pt < N_PTBINS; ++i_pt) {
-
-            TString name_def = TString::Format("h_mass_cent%s_%s_def",
-                                               cen_name[i_cen], pt_name[i_pt]);
-            h_mass_default[i_cen][i_pt] = (TH1D*)massFile->Get(name_def);
-            if (!h_mass_default[i_cen][i_pt])
-                cerr << "[WARN] Missing: " << name_def << "\n";
-            else
-                h_mass_default[i_cen][i_pt]->SetDirectory(nullptr);
-
-            for (int iv = 0; iv < N_VBINS; ++iv) {
-                TString name_v2 = TString::Format("h_mass_v2_cent%s_%s_v2bin%d",
-                                                  cen_name[i_cen], pt_name[i_pt], iv);
-                h_mass_v2_fit[i_cen][i_pt][iv] = (TH1D*)massFile->Get(name_v2);
-                if (h_mass_v2_fit[i_cen][i_pt][iv])
-                    h_mass_v2_fit[i_cen][i_pt][iv]->SetDirectory(nullptr);
-
-                TString name_v3 = TString::Format("h_mass_v3_cent%s_%s_v3bin%d",
-                                                  cen_name[i_cen], pt_name[i_pt], iv);
-                h_mass_v3_fit[i_cen][i_pt][iv] = (TH1D*)massFile->Get(name_v3);
-                if (h_mass_v3_fit[i_cen][i_pt][iv])
-                    h_mass_v3_fit[i_cen][i_pt][iv]->SetDirectory(nullptr);
-            }
-        }
-    }*/
-
-
     static Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS_V2+1];  // was N_VBINS+1
     static Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS_V3+1];  // was N_VBINS+1
     for (int ic = 0; ic < N_CENTBINS; ++ic) {
@@ -142,7 +108,7 @@ int fit_mass_and_flow(int target_cent = -1)
 
         for (int i_cen = 0; i_cen < N_CENTBINS; ++i_cen) {
             if (needed_cen_group >= 0 && i_cen != needed_cen_group) continue;
-            if (cen_val < cen_coarse_edges[i_cen] || cen_val >= cen_coarse_edges[i_cen+1]) continue;
+            if (cen_val < cen_edges[i_cen] || cen_val >= cen_edges[i_cen+1]) continue;
 
             for (int i_pt = 0; i_pt < N_PTBINS; ++i_pt) {
                 if (pT_val < pt_edges[i_pt] || pT_val >= pt_edges[i_pt+1]) continue;
@@ -268,7 +234,6 @@ int fit_mass_and_flow(int target_cent = -1)
             TH1D *h_mc_match_signal;
             TH1D *h_mc_match_all;
 
-
             h_mc_match_signal = (TH1D*)inf_MC->Get(Form("hMass_Signal_%s", pt_name[i_pt]));
             h_mc_match_all    = (TH1D*)inf_MC->Get(Form("hMass_Signal_Plus_Swap_%s", pt_name[i_pt]));
 
@@ -288,35 +253,38 @@ int fit_mass_and_flow(int target_cent = -1)
             //TH1D *h_def  = h_mass_default[i_cen][i_pt];
             TH1D *hist_mass = h_mass_default[i_cen][i_pt];  
             
-            
-        
-
             int ymax = hist_mass->GetBinContent(hist_mass->GetMaximumBin());
-
 
             TF1 *f = new TF1(Form("f_ptbin_%d_%d", i_cen, i_pt),
                 "[0]*([5]*([4]*TMath::Gaus(x,[1],[2]*(1.0+[6]))/(sqrt(2*3.14159)*[2]*(1.0+[6]))+(1-[4])*TMath::Gaus(x,[1],[3]*(1.0+[6]))/(sqrt(2*3.14159)*[3]*(1.0+[6])))+(1-[5])*TMath::Gaus(x,[1],[7]*(1.0+[6]))/(sqrt(2*3.14159)*[7]*(1.0+[6])))+ [8]+[9]*x+[10]*x*x+ [11]*ROOT::Math::crystalball_function(x,2.2,17,0.0267*(1+[6]),1.96*(1+[12]))+ 4*[11]*(ROOT::Math::crystalball_function(x,0.34,5,0.0146*(1+[6]),1.7734*(1+[13])))",
                 fit_range_low, fit_range_high);
 
             f->SetLineColor(2); f->SetLineWidth(1);
-            f->SetParameter(0, 100.); 
-            f->SetParameter(1, 1.8648);
-            f->SetParameter(2, 0.03); 
-            f->SetParameter(3, 0.005);
-            f->SetParameter(4, 0.1);
-            f->FixParameter(5, 1);   
-            f->FixParameter(6, 0);
-            f->FixParameter(7, 0.1); 
-            f->FixParameter(8, 0);
-            f->FixParameter(9, 0);   
-            f->FixParameter(10, 0);
-            f->FixParameter(11, 0);  
-            f->FixParameter(12, 0);
-            f->FixParameter(13, 0);
+            f->SetParameter(0,  100.   );  // [0]  overall normalization (total yield)
+            f->SetParameter(1,  1.8648 );  // [1]  D0 mass mean (GeV/c^2)
+            f->SetParameter(2,  0.03   );  // [2]  sigma of wide Gaussian (core signal width)
+            f->SetParameter(3,  0.005  );  // [3]  sigma of narrow Gaussian (tail signal width)
+            f->SetParameter(4,  0.1    );  // [4]  fraction of narrow Gaussian in signal double-Gaussian
+            f->FixParameter(5,  1      );  // [5]  signal fraction (1 - swap fraction): signal/(signal+swap)
+            f->FixParameter(6,  0      );  // [6]  global width smearing factor (sigma scale shift, shared by sig/swap/KK)
+            f->FixParameter(7,  0.1    );  // [7]  sigma of K-pi swap Gaussian
+            f->FixParameter(8,  0      );  // [8]  polynomial background p0 (constant term)
+            f->FixParameter(9,  0      );  // [9]  polynomial background p1 (linear term)
+            f->FixParameter(10, 0      );  // [10] polynomial background p2 (quadratic term)
+            f->FixParameter(11, 0      );  // [11] KK/pipi Crystal Ball normalization
+            f->FixParameter(12, 0      );  // [12] CB mean shift for KK peak (1.96 GeV region)
+            f->FixParameter(13, 0      );  // [13] CB mean shift for pipi peak (1.7734 GeV region)
 
-            if (i_pt < 5) { f->SetParLimits(2,0.01,0.5);  f->SetParLimits(3,0.001,0.25); }
-            else { f->SetParLimits(2,0.005,0.15); f->SetParLimits(3,0.001,0.08); }
-            f->SetParLimits(4,0,1); f->SetParLimits(5,0,1);
+            if (i_pt < 5) { 
+                f->SetParLimits(2,0.01,0.5);  
+                f->SetParLimits(3,0.001,0.25); 
+            }
+            else { 
+                f->SetParLimits(2,0.005,0.15); 
+                f->SetParLimits(3,0.001,0.08); 
+            }
+            f->SetParLimits(4,0,1); 
+            f->SetParLimits(5,0,1);
 
 
             if (h_mc_match_signal) {
@@ -353,20 +321,6 @@ int fit_mass_and_flow(int target_cent = -1)
             f->ReleaseParameter(8); f->ReleaseParameter(9); f->ReleaseParameter(10);
 
 
-            /*if (h_def) {
-                f->FixParameter(1, 1.8648); f->FixParameter(6, 0);
-                h_def->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "Lq",  "", fit_range_low, fit_range_high);
-                h_def->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "Lq",  "", fit_range_low, fit_range_high);
-                f->ReleaseParameter(1); f->ReleaseParameter(6);
-                
-                h_def->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "Lq", "", fit_range_low, fit_range_high);
-                h_def->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "Lq", "", fit_range_low, fit_range_high);
-                h_def->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "Lq", "", fit_range_low, fit_range_high);
-
-                f->FixParameter(6, f->GetParameter(6));
-                f->FixParameter(1, f->GetParameter(1));
-            }*/
-
             f->FixParameter(1, 1.8648); f->FixParameter(6, 0);
             hist_mass->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "q",   "", fit_range_low, fit_range_high);
             hist_mass->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "q",   "", fit_range_low, fit_range_high);
@@ -390,8 +344,6 @@ int fit_mass_and_flow(int target_cent = -1)
             f->SetParLimits(13,-0.03,0.03);
             f->ReleaseParameter(12); 
             f->ReleaseParameter(13);
-            
-            
             hist_mass->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "L q m", "", fit_range_low, fit_range_high);
             hist_mass->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "L q m", "", fit_range_low, fit_range_high);
             hist_mass->Fit(Form("f_ptbin_%d_%d",i_cen,i_pt), "L q m", "", fit_range_low, fit_range_high);
@@ -465,8 +417,7 @@ int fit_mass_and_flow(int target_cent = -1)
             texSign->SetNDC();  texSign->SetTextFont(42); texSign->SetTextSize(0.035);  texSign->Draw();
             TLatex *texChi   = new TLatex(0.14,0.70,Form("#chi^{2}/ndf = %.2f",chi2ndf_mass));
             texChi->SetNDC();   texChi->SetTextFont(42); texChi->SetTextSize(0.035);   texChi->Draw();
-            TLatex *texCENT  = new TLatex(0.14,0.86,Form("Cent %d-%d%%",
-                                          cen_coarse_edges[i_cen], cen_coarse_edges[i_cen+1]));
+            TLatex *texCENT  = new TLatex(0.14,0.86,Form("Cent %d-%d%%",cen_edges[i_cen], cen_edges[i_cen+1]));
             texCENT->SetNDC();  texCENT->SetTextFont(42); texCENT->SetTextSize(0.035); texCENT->Draw();
 
             //c1->SaveAs(Form("prompt_mass_plot_withchi2_sigma/hmassfit_def_%s_%s.pdf", cen_name[i_cen], pt_name[i_pt]));
@@ -497,14 +448,15 @@ int fit_mass_and_flow(int target_cent = -1)
 
                 v2_x[i_v]     = 0.5*(vnbinning_v2[i_cen][i_pt][i_v] + vnbinning_v2[i_cen][i_pt][i_v+1]);
                 v2_x_err[i_v] = 0.5*fabs(vnbinning_v2[i_cen][i_pt][i_v+1] - vnbinning_v2[i_cen][i_pt][i_v]);
-               v2_x_store[i_cen][i_pt][i_v]     = v2_x[i_v];
+                v2_x_store[i_cen][i_pt][i_v]     = v2_x[i_v];
                 v2_x_err_store[i_cen][i_pt][i_v] = v2_x_err[i_v];
 
 
                 TH1D *h_v2 = h_mass_v2_fit[i_cen][i_pt][i_v];
                 if (!h_v2 || h_v2->GetEntries() < 10) {
                     yield_v2[i_v]=0; yield_error_v2[i_v]=0;
-                    chi2_ndf_v2[i_cen][i_pt][i_v]=-10; sigma_v2[i_cen][i_pt][i_v]=-10;
+                    chi2_ndf_v2[i_cen][i_pt][i_v]=-10; 
+                    sigma_v2[i_cen][i_pt][i_v]=-10;
                     continue;
                 }
 
@@ -514,58 +466,116 @@ int fit_mass_and_flow(int target_cent = -1)
 
                 fitFcn_v2->SetParameter(0, 100);
                 for (int p=1; p<=7;  ++p) fitFcn_v2->FixParameter(p, f->GetParameter(p));
-                fitFcn_v2->FixParameter(11, f->GetParameter(11));
-                fitFcn_v2->FixParameter(12, f->GetParameter(12));
-                fitFcn_v2->FixParameter(13, f->GetParameter(13));
-
-                // Float: normalization [0] and background [8],[9],[10]
-                fitFcn_v2->SetParameter(0, f->GetParameter(0));  // start from inclusive yield
-                fitFcn_v2->SetParameter(8, f->GetParameter(8));
-                fitFcn_v2->SetParameter(9, f->GetParameter(9));
-                fitFcn_v2->SetParameter(10, f->GetParameter(10));
+                fitFcn_v2->SetParameter(8,1);
+                fitFcn_v2->SetParameter(9,1);
+                fitFcn_v2->SetParameter(10,1);
+                fitFcn_v2->FixParameter(11,0);
 
                 h_v2->Fit(fitFcn_v2,"M",  "", fit_range_low, fit_range_high);
                 h_v2->Fit(fitFcn_v2,"LQ", "", fit_range_low, fit_range_high);
                 h_v2->Fit(fitFcn_v2,"LQ", "", fit_range_low, fit_range_high);
                 h_v2->Fit(fitFcn_v2,"LM", "", fit_range_low, fit_range_high);
 
-                chi2_ndf_v2[i_cen][i_pt][i_v] = (fitFcn_v2->GetNDF()>0) ?
-                    fitFcn_v2->GetChisquare()/fitFcn_v2->GetNDF() : -1.;
-
+                c1->cd();
+		h_v2->SetStats(kFALSE);
+		h_v2->GetXaxis()->SetRangeUser(fit_range_low, fit_range_high);
+		h_v2->GetXaxis()->SetTitle("m_{#piK} (GeV/c^{2})");
+		h_v2->GetYaxis()->SetTitle("Entries / 5 MeV");
+		h_v2->SetMarkerStyle(20);
+		h_v2->SetMarkerSize(0.5);
+		h_v2->SetLineWidth(1);
+		h_v2->Draw("ep");
+		
+		// Build signal/swap/bkg/KK functions using fixed params from f
+		TF1* fv2_sig = new TF1(Form("fv2_sig_%d_%d",i_pt,i_v), "[0]*([5]*([4]*TMath::Gaus(x,[1],[2]*(1.0+[6]))/(sqrt(2*3.14159)*[2]*(1.0+[6]))+(1-[4])*TMath::Gaus(x,[1],[3]*(1.0+[6]))/(sqrt(2*3.14159)*[3]*(1.0+[6]))))", fit_range_low, fit_range_high);
+		fv2_sig->FixParameter(0, fitFcn_v2->GetParameter(0));
+		fv2_sig->FixParameter(1, f->GetParameter(1));
+		fv2_sig->FixParameter(2, f->GetParameter(2));
+		fv2_sig->FixParameter(3, f->GetParameter(3));
+		fv2_sig->FixParameter(4, f->GetParameter(4));
+		fv2_sig->FixParameter(5, f->GetParameter(5));
+		fv2_sig->FixParameter(6, f->GetParameter(6));
+		fv2_sig->SetLineColor(kOrange-3); fv2_sig->SetLineWidth(1); fv2_sig->SetLineStyle(2);
+		
+		TF1* fv2_swap = new TF1(Form("fv2_swap_%d_%d",i_pt,i_v), "[0]*((1-[1])*TMath::Gaus(x,[4],[3]*(1.0+[2]))/(sqrt(2*3.14159)*[3]*(1.0+[2])))", fit_range_low, fit_range_high);
+		fv2_swap->FixParameter(0, fitFcn_v2->GetParameter(0));
+		fv2_swap->FixParameter(1, f->GetParameter(5));
+		fv2_swap->FixParameter(2, f->GetParameter(6));
+		fv2_swap->FixParameter(3, f->GetParameter(7));
+		fv2_swap->FixParameter(4, f->GetParameter(1));
+		fv2_swap->SetLineColor(kGreen+4); fv2_swap->SetLineWidth(1); fv2_swap->SetLineStyle(1);
+		
+		TF1* fv2_bkg = new TF1(Form("fv2_bkg_%d_%d",i_pt,i_v), "[0]+[1]*x+[2]*x*x", fit_range_low, fit_range_high);
+		fv2_bkg->FixParameter(0, fitFcn_v2->GetParameter(8));
+		fv2_bkg->FixParameter(1, fitFcn_v2->GetParameter(9));
+		fv2_bkg->FixParameter(2, fitFcn_v2->GetParameter(10));
+		fv2_bkg->SetLineColor(4); fv2_bkg->SetLineWidth(1); fv2_bkg->SetLineStyle(2);
+		
+		TF1* fv2_kk = new TF1(Form("fv2_kk_%d_%d",i_pt,i_v), "[0]*ROOT::Math::crystalball_function(x, 2.2, 17, 0.0267*(1+[1]), 1.96*(1+[2])) + 4*[0]*(ROOT::Math::crystalball_function(x, 0.34, 5, 0.0146*(1+[1]), 1.7734*(1+[3])))", fit_range_low, fit_range_high);
+		fv2_kk->FixParameter(0, fitFcn_v2->GetParameter(11));  // normalization from v2 fit (fixed=0 if i_pt==0)
+		fv2_kk->FixParameter(1, f->GetParameter(6));           // smearing factor from inclusive
+		fv2_kk->FixParameter(2, f->GetParameter(12));          // CB mean shift
+		fv2_kk->FixParameter(3, f->GetParameter(13));          // CB mean shift pipi
+		fv2_kk->SetLineColor(kViolet-4); fv2_kk->SetLineWidth(1); fv2_kk->SetLineStyle(1);
+		fv2_kk->SetFillColorAlpha(kViolet-4, 0.3); fv2_kk->SetFillStyle(1001);
+		
+		fitFcn_v2->SetLineColor(2); fitFcn_v2->SetLineWidth(1);
+		fitFcn_v2->Draw("LSAME");
+		fv2_sig->Draw("LSAME");
+		fv2_swap->Draw("LSAME");
+		fv2_bkg->Draw("LSAME");
+		fv2_kk->Draw("LSAME");
+		
+		TLegend* leg_v2 = new TLegend(0.65,0.6,0.81,0.9,NULL,"brNDC");
+		leg_v2->SetBorderSize(0); leg_v2->SetTextSize(0.035); leg_v2->SetTextFont(42); leg_v2->SetFillStyle(0);
+		leg_v2->AddEntry(h_v2," Data","lep");
+		leg_v2->AddEntry(fitFcn_v2," Fit","L");
+		leg_v2->AddEntry(fv2_sig," D^{0} Signal","l");
+		leg_v2->AddEntry(fv2_swap," K-#pi swap","l");
+		leg_v2->AddEntry(fv2_kk," K-#bar{K}, #pi-#bar{#pi}","l");
+		leg_v2->AddEntry(fv2_bkg," Combinatorial","l");
+		leg_v2->Draw("SAME");
+		
+		chi2_ndf_v2[i_cen][i_pt][i_v] = (fitFcn_v2->GetNDF()>0) ? (1.0*fitFcn_v2->GetChisquare()/fitFcn_v2->GetNDF()) : -1.0;
+		
+		//tex->DrawLatex(0.14, 0.86, Form("cent %s pT %s q2bin %d v2bin %d", cen_name[i_cen], pt_name[i_pt], i_q, i_v));
+		double yv2_val = fitFcn_v2->GetParameter(0)*fitFcn_v2->GetParameter(5)/width;
+		double yv2_err = fitFcn_v2->GetParError(0)*fitFcn_v2->GetParameter(5)/width;
+		TLatex* texCENT = new TLatex(0.14,0.85,Form("%i < Cent < %i", cen_edges[i_cen], cen_edges[i_cen+1]));
+		texCENT->SetNDC(); texCENT->SetTextFont(42); texCENT->SetTextSize(0.035); texCENT->Draw();
+		TLatex* texPT = new TLatex(0.14,0.80,Form("%.1f < p_{T} < %.1f GeV/c", pt_edges[i_pt], pt_edges[i_pt+1]));
+		texPT->SetNDC(); texPT->SetTextFont(42); texPT->SetTextSize(0.035); texPT->Draw();
+		TLatex* texVbin = new TLatex(0.14,0.75,Form("%.3f < v_{2}^{i} < %.3f", vnbinning_v2[i_cen][i_pt][i_v], vnbinning_v2[i_cen][i_pt][i_v+1]));
+		texVbin->SetNDC(); texVbin->SetTextFont(42); texVbin->SetTextSize(0.035); texVbin->Draw();
+		TLatex* texY = new TLatex(0.14,0.70,Form("Yield = %.0f #pm %.0f", yv2_val, yv2_err));
+		texY->SetNDC(); texY->SetTextFont(42); texY->SetTextSize(0.035); texY->Draw();
+		TLatex* texC = new TLatex(0.14,0.65,Form("#chi^{2}/ndf = %.2f", chi2_ndf_v2[i_cen][i_pt][i_v]));
+		texC->SetNDC(); texC->SetTextFont(42); texC->SetTextSize(0.035); texC->Draw();
+		
+		c1->SaveAs(Form("prompt_mass_plot_withchi2_sigma/hmassfit_%s_%s_v2bin_%d.pdf", pt_name[i_pt], cen_name[i_cen], i_v));
+		
+		c1->Clear();
+		
+                
+		
                 yield_v2[i_v]       = fitFcn_v2->GetParameter(0)*fitFcn_v2->GetParameter(5)/width;
                 yield_error_v2[i_v] = fitFcn_v2->GetParError(0)*fitFcn_v2->GetParameter(5)/width;
                 sigma_v2[i_cen][i_pt][i_v] = (yield_error_v2[i_v]>0) ? yield_v2[i_v]/yield_error_v2[i_v] : -10;
 
-                /*double chi2_v2   = chi2_ndf_v2[i_cen][i_pt][i_v];
-                double sig_v2    = sigma_v2[i_cen][i_pt][i_v];        // yield/error
-                double norm_v2   = fitFcn_v2->GetParameter(0);
-                double norm_err_v2 = fitFcn_v2->GetParError(0);
 
-                
-                bool chi2_ok_v2  = (chi2_v2 > 0.0 && chi2_v2 < 6.0);
-                bool sig_ok_v2   = (sig_v2 > 1.0);
-                bool norm_ok_v2  = (norm_v2 > 0 && norm_err_v2 > 0 && norm_v2 > norm_err_v2);
-                bool ndf_ok_v2   = (fitFcn_v2->GetNDF() > 0);
-                double inclusive_yield = f->GetParameter(0)*f->GetParameter(5)/width;
-                bool range_ok_v2 = (yield_v2[i_v] < 3.0 * inclusive_yield);
+                if (yield_v2[i_v] <= 0) {
 
-                good_v2[i_cen][i_pt][i_v] = chi2_ok_v2 && sig_ok_v2 && norm_ok_v2 && ndf_ok_v2 && range_ok_v2;
-
-                if (!good_v2[i_cen][i_pt][i_v]) {
-                    yield_v2[i_v]                  = 0;
-                    yield_error_v2[i_v]            = 0;
-                    chi2_ndf_v2[i_cen][i_pt][i_v]  = -10;
-                    sigma_v2[i_cen][i_pt][i_v]     = -10;
-                }*/
-
-
-                /*if (yield_v2[i_v] <= 0) {
+                    logf << "[WARN] yield_v2 <= 0 at cen=" << cen_name[i_cen]
+                             << " pt=" << pt_name[i_pt]
+                             << " i_v=" << i_v
+                             << " (v2_x=" << v2_x[i_v] << ")"
+                             << " => zeroing out.\n";
                         yield_v2[i_v]=0; yield_error_v2[i_v]=0;
                         chi2_ndf_v2[i_cen][i_pt][i_v]=-10;
                         sigma_v2[i_cen][i_pt][i_v]=-10;
-                    }*/
+                    }
 
-                    if (yield_v2[i_v] <= 0) {
+                    /*if (yield_v2[i_v] <= 0) {
                     bool in_sp_range = (v2_x[i_v] >= -5.0 && v2_x[i_v] <= 5.0);
                     if (in_sp_range && i_v > 0 && yield_v2[i_v-1] > 0) {
                         logf << "[WARN] yield_v2 <= 0 at cen=" << cen_name[i_cen]
@@ -590,41 +600,15 @@ int fit_mass_and_flow(int target_cent = -1)
                         chi2_ndf_v2[i_cen][i_pt][i_v]      = -10;
                         sigma_v2[i_cen][i_pt][i_v]         = -10;
                     }
-                }
+                }*/
                 
 
                 h_v2_hist[i_cen][i_pt]->SetBinContent(i_v+1, yield_v2[i_v]);
                 h_v2_hist[i_cen][i_pt]->SetBinError  (i_v+1, yield_error_v2[i_v]);
 
-                // draw v2 bin mass fit
-                c1->cd();
-                h_v2->SetStats(kFALSE);
-                h_v2->GetXaxis()->SetRangeUser(fit_range_low,fit_range_high);
-                h_v2->GetXaxis()->SetTitle("m_{#piK} (GeV/c^{2})");
-                h_v2->GetYaxis()->SetTitle("Entries / 5 MeV");
-                h_v2->SetMarkerStyle(20); h_v2->SetMarkerSize(0.5); h_v2->SetLineWidth(1);
-                h_v2->Draw("ep");
-                fitFcn_v2->SetLineColor(2); 
-                fitFcn_v2->SetLineWidth(1); 
-                fitFcn_v2->Draw("LSAME");
-
-                TLatex *texCENT_v2 = new TLatex(0.14,0.85,Form("%d < Cent < %d",
-                                      cen_coarse_edges[i_cen],cen_coarse_edges[i_cen+1]));
-                texCENT_v2->SetNDC(); texCENT_v2->SetTextFont(42); texCENT_v2->SetTextSize(0.035); texCENT_v2->Draw();
-                TLatex *texPT_v2   = new TLatex(0.14,0.80,Form("%.1f < p_{T} < %.1f GeV/c",
-                                      pt_edges[i_pt],pt_edges[i_pt+1]));
-                texPT_v2->SetNDC();   texPT_v2->SetTextFont(42);   texPT_v2->SetTextSize(0.035); texPT_v2->Draw();
-                TLatex *texVbin_v2 = new TLatex(0.14, 0.75, Form("%.3f < v_{2}^{i} < %.3f",
-                          vnbinning_v2[i_cen][i_pt][i_v], vnbinning_v2[i_cen][i_pt][i_v+1]));
-                texVbin_v2->SetNDC(); texVbin_v2->SetTextFont(42); texVbin_v2->SetTextSize(0.035); texVbin_v2->Draw();
-                TLatex *texY_v2    = new TLatex(0.14,0.70,Form("Yield = %.0f #pm %.0f",yield_v2[i_v],yield_error_v2[i_v]));
-                texY_v2->SetNDC();    texY_v2->SetTextFont(42);    texY_v2->SetTextSize(0.035); texY_v2->Draw();
-                TLatex *texC_v2    = new TLatex(0.14,0.65,Form("#chi^{2}/ndf = %.2f",chi2_ndf_v2[i_cen][i_pt][i_v]));
-                texC_v2->SetNDC();    texC_v2->SetTextFont(42);    texC_v2->SetTextSize(0.035); texC_v2->Draw();
-
-                //c1->SaveAs(Form("prompt_mass_plot_withchi2_sigma/hmassfit_%s_%s_v2bin_%d.pdf", cen_name[i_cen], pt_name[i_pt], i_v));
-                c1->Clear();
-                }// ---i_v loop for v2
+                
+                
+            }// ---i_v loop for v2
 
                 for (int i_v = 0; i_v < N_VBINS_V3; ++i_v) {
 
@@ -647,17 +631,10 @@ int fit_mass_and_flow(int target_cent = -1)
 
                 fitFcn_v3->SetParameter(0,100);
                 for (int p=1; p<=7; ++p) fitFcn_v3->FixParameter(p, f->GetParameter(p));
-                //fitFcn_v3->SetParameter(8,1); fitFcn_v3->SetParameter(9,1); fitFcn_v3->SetParameter(10,1);
-                //fitFcn_v3->FixParameter(11,0);
-                fitFcn_v3->FixParameter(11, f->GetParameter(11));
-                fitFcn_v3->FixParameter(12, f->GetParameter(12));
-                fitFcn_v3->FixParameter(13, f->GetParameter(13));
-
-                // Float: normalization [0] and background [8],[9],[10]
-                fitFcn_v3->SetParameter(0,  f->GetParameter(0));
-                fitFcn_v3->SetParameter(8,  f->GetParameter(8));
-                fitFcn_v3->SetParameter(9,  f->GetParameter(9));
-                fitFcn_v3->SetParameter(10, f->GetParameter(10));
+                fitFcn_v3->SetParameter(8,1);
+                fitFcn_v3->SetParameter(9,1);
+                fitFcn_v3->SetParameter(10,1);
+                fitFcn_v3->FixParameter(11,0);
 
 
                 h_v3->Fit(fitFcn_v3,"M",  "", fit_range_low, fit_range_high);
@@ -665,41 +642,108 @@ int fit_mass_and_flow(int target_cent = -1)
                 h_v3->Fit(fitFcn_v3,"LQ", "", fit_range_low, fit_range_high);
                 h_v3->Fit(fitFcn_v3,"LM", "", fit_range_low, fit_range_high);
 
-                chi2_ndf_v3[i_cen][i_pt][i_v] = (fitFcn_v3->GetNDF()>0) ?
-                    fitFcn_v3->GetChisquare()/fitFcn_v3->GetNDF() : -1.;
-
+                c1->cd();
+		h_v3->SetStats(kFALSE);
+		h_v3->GetXaxis()->SetRangeUser(fit_range_low, fit_range_high);
+		h_v3->GetXaxis()->SetTitle("m_{#piK} (GeV/c^{2})");
+		h_v3->GetYaxis()->SetTitle("Entries / 5 MeV");
+		h_v3->SetMarkerStyle(20);
+		h_v3->SetMarkerSize(0.5);
+		h_v3->SetLineWidth(1);
+		h_v3->Draw("ep");
+		
+		// Signal
+		TF1* fv3_sig = new TF1(Form("fv3_sig_%d_%d",i_pt,i_v), "[0]*([5]*([4]*TMath::Gaus(x,[1],[2]*(1.0+[6]))/(sqrt(2*3.14159)*[2]*(1.0+[6]))+(1-[4])*TMath::Gaus(x,[1],[3]*(1.0+[6]))/(sqrt(2*3.14159)*[3]*(1.0+[6]))))", fit_range_low, fit_range_high);
+		fv3_sig->FixParameter(0, fitFcn_v3->GetParameter(0));
+		fv3_sig->FixParameter(1, f->GetParameter(1));
+		fv3_sig->FixParameter(2, f->GetParameter(2));
+		fv3_sig->FixParameter(3, f->GetParameter(3));
+		fv3_sig->FixParameter(4, f->GetParameter(4));
+		fv3_sig->FixParameter(5, f->GetParameter(5));
+		fv3_sig->FixParameter(6, f->GetParameter(6));
+		fv3_sig->SetLineColor(kOrange-3); fv3_sig->SetLineWidth(1); fv3_sig->SetLineStyle(2);
+		
+		// Swap
+		TF1* fv3_swap = new TF1(Form("fv3_swap_%d_%d",i_pt,i_v), "[0]*((1-[1])*TMath::Gaus(x,[4],[3]*(1.0+[2]))/(sqrt(2*3.14159)*[3]*(1.0+[2])))", fit_range_low, fit_range_high);
+		fv3_swap->FixParameter(0, fitFcn_v3->GetParameter(0));
+		fv3_swap->FixParameter(1, f->GetParameter(5));
+		fv3_swap->FixParameter(2, f->GetParameter(6));
+		fv3_swap->FixParameter(3, f->GetParameter(7));
+		fv3_swap->FixParameter(4, f->GetParameter(1));
+		fv3_swap->SetLineColor(kGreen+4); fv3_swap->SetLineWidth(1); fv3_swap->SetLineStyle(1);
+		
+		// Combinatorial background
+		TF1* fv3_bkg = new TF1(Form("fv3_bkg_%d_%d",i_pt,i_v), "[0]+[1]*x+[2]*x*x", fit_range_low, fit_range_high);
+		fv3_bkg->FixParameter(0, fitFcn_v3->GetParameter(8));
+		fv3_bkg->FixParameter(1, fitFcn_v3->GetParameter(9));
+		fv3_bkg->FixParameter(2, fitFcn_v3->GetParameter(10));
+		fv3_bkg->SetLineColor(4); fv3_bkg->SetLineWidth(1); fv3_bkg->SetLineStyle(2);
+		
+		// KK/pipi
+		TF1* fv3_kk = new TF1(Form("fv3_kk_%d_%d",i_pt,i_v), "[0]*ROOT::Math::crystalball_function(x, 2.2, 17, 0.0267*(1+[1]), 1.96*(1+[2])) + 4*[0]*(ROOT::Math::crystalball_function(x, 0.34, 5, 0.0146*(1+[1]), 1.7734*(1+[3])))", fit_range_low, fit_range_high);
+		fv3_kk->FixParameter(0, fitFcn_v3->GetParameter(11));
+		fv3_kk->FixParameter(1, f->GetParameter(6));
+		fv3_kk->FixParameter(2, f->GetParameter(12));
+		fv3_kk->FixParameter(3, f->GetParameter(13));
+		fv3_kk->SetLineColor(kViolet-4); fv3_kk->SetLineWidth(1); fv3_kk->SetLineStyle(1);
+		fv3_kk->SetFillColorAlpha(kViolet-4, 0.3); fv3_kk->SetFillStyle(1001);
+		
+		fitFcn_v3->SetLineColor(2); fitFcn_v3->SetLineWidth(1);
+		fitFcn_v3->Draw("LSAME");
+		fv3_sig->Draw("LSAME");
+		fv3_swap->Draw("LSAME");
+		fv3_bkg->Draw("LSAME");
+		fv3_kk->Draw("LSAME");
+		
+		TLegend* leg_v3 = new TLegend(0.65,0.6,0.81,0.9,NULL,"brNDC");
+		leg_v3->SetBorderSize(0); leg_v3->SetTextSize(0.035); leg_v3->SetTextFont(42); leg_v3->SetFillStyle(0);
+		leg_v3->AddEntry(h_v3," Data","lep");
+		leg_v3->AddEntry(fitFcn_v3," Fit","L");
+		leg_v3->AddEntry(fv3_sig," D^{0} Signal","l");
+		leg_v3->AddEntry(fv3_swap," K-#pi swap","l");
+		leg_v3->AddEntry(fv3_kk," K-#bar{K}, #pi-#bar{#pi}","l");
+		leg_v3->AddEntry(fv3_bkg," Combinatorial","l");
+		leg_v3->Draw("SAME");
+		
+		chi2_ndf_v3[i_cen][i_pt][i_v] = (fitFcn_v3->GetNDF()>0) ? (1.0*fitFcn_v3->GetChisquare()/fitFcn_v3->GetNDF()) : -1.0;
+		
+		double yv3_val = fitFcn_v3->GetParameter(0)*fitFcn_v3->GetParameter(5)/width;
+		double yv3_err = fitFcn_v3->GetParError(0)*fitFcn_v3->GetParameter(5)/width;
+		
+		TLatex* texCENT_v3 = new TLatex(0.14,0.85,Form("%i < Cent < %i", cen_edges[i_cen], cen_edges[i_cen+1]));
+		texCENT_v3->SetNDC(); texCENT_v3->SetTextFont(42); texCENT_v3->SetTextSize(0.035); texCENT_v3->Draw();
+		TLatex* texPT_v3 = new TLatex(0.14,0.80,Form("%.1f < p_{T} < %.1f GeV/c", pt_edges[i_pt], pt_edges[i_pt+1]));
+		texPT_v3->SetNDC(); texPT_v3->SetTextFont(42); texPT_v3->SetTextSize(0.035); texPT_v3->Draw();
+		TLatex* texVbin_v3 = new TLatex(0.14,0.75,Form("%.3f < v_{3}^{i} < %.3f", vnbinning_v3[i_cen][i_pt][i_v], vnbinning_v3[i_cen][i_pt][i_v+1]));
+		texVbin_v3->SetNDC(); texVbin_v3->SetTextFont(42); texVbin_v3->SetTextSize(0.035); texVbin_v3->Draw();
+		TLatex* texY_v3 = new TLatex(0.14,0.70,Form("Yield = %.0f #pm %.0f", yv3_val, yv3_err));
+		texY_v3->SetNDC(); texY_v3->SetTextFont(42); texY_v3->SetTextSize(0.035); texY_v3->Draw();
+		TLatex* texC_v3 = new TLatex(0.14,0.65,Form("#chi^{2}/ndf = %.2f", chi2_ndf_v3[i_cen][i_pt][i_v]));
+		texC_v3->SetNDC(); texC_v3->SetTextFont(42); texC_v3->SetTextSize(0.035); texC_v3->Draw();
+		
+		c1->SaveAs(Form("prompt_mass_plot_withchi2_sigma/hmassfit_%s_%s_v3bin_%d.pdf", pt_name[i_pt], cen_name[i_cen], i_v));
+		c1->Clear();
+		
+                
+		
                 yield_v3[i_v]       = fitFcn_v3->GetParameter(0)*fitFcn_v3->GetParameter(5)/width;
                 yield_error_v3[i_v] = fitFcn_v3->GetParError(0)*fitFcn_v3->GetParameter(5)/width;
                 sigma_v3[i_cen][i_pt][i_v] = (yield_error_v3[i_v]>0) ? yield_v3[i_v]/yield_error_v3[i_v] : -10;
 
-                /*double chi2_v3_val = chi2_ndf_v3[i_cen][i_pt][i_v];
-                double sig_v3      = sigma_v3[i_cen][i_pt][i_v];
-                double norm_v3     = fitFcn_v3->GetParameter(0);
-                double norm_err_v3 = fitFcn_v3->GetParError(0);
+                
 
-                bool chi2_ok_v3  = (chi2_v3_val > 0.0 && chi2_v3_val < 6.0);
-                bool sig_ok_v3   = (sig_v3 > 1.0);
-                bool norm_ok_v3  = (norm_v3 > 0 && norm_err_v3 > 0 && norm_v3 > norm_err_v3);
-                bool ndf_ok_v3   = (fitFcn_v3->GetNDF() > 0);
-                double inclusive_yield = f->GetParameter(0)*f->GetParameter(5)/width;
-                bool range_ok_v3 = (yield_v3[i_v] < 3.0 * inclusive_yield);
-
-                good_v3[i_cen][i_pt][i_v] = chi2_ok_v3 && sig_ok_v3 && norm_ok_v3 && ndf_ok_v3 && range_ok_v3;
-
-                if (!good_v3[i_cen][i_pt][i_v]) {
-                    yield_v3[i_v]                  = 0;
-                    yield_error_v3[i_v]            = 0;
-                    chi2_ndf_v3[i_cen][i_pt][i_v]  = -10;
-                    sigma_v3[i_cen][i_pt][i_v]     = -10;
-                }*/
-
-                /*if (yield_v3[i_v] <= 0) {
+                if (yield_v3[i_v] <= 0) {
+                    logf << "[WARN] yield_v3 <= 0 at cen=" << cen_name[i_cen]
+                             << " pt=" << pt_name[i_pt]
+                             << " i_v=" << i_v
+                             << " (v3_x=" << v3_x[i_v] << ")"
+                             << " => zeroing out.\n";
                         yield_v3[i_v]=0; yield_error_v3[i_v]=0;
                         chi2_ndf_v3[i_cen][i_pt][i_v]=-10;
                         sigma_v3[i_cen][i_pt][i_v]=-10;
-                    }*/
+                    }
 
-                    if (yield_v3[i_v] <= 0) {
+                    /*if (yield_v3[i_v] <= 0) {
                     bool in_sp_range = (v3_x[i_v] >= -5.0 && v3_x[i_v] <= 5.0);
                     if (in_sp_range && i_v > 0 && yield_v3[i_v-1] > 0) {
                         logf << "[WARN] yield_v3 <= 0 at cen=" << cen_name[i_cen]
@@ -724,40 +768,14 @@ int fit_mass_and_flow(int target_cent = -1)
                         chi2_ndf_v3[i_cen][i_pt][i_v]      = -10;
                         sigma_v3[i_cen][i_pt][i_v]         = -10;
                     }
-                }
+                }*/
                 
 
                 h_v3_hist[i_cen][i_pt]->SetBinContent(i_v+1, yield_v3[i_v]);
                 h_v3_hist[i_cen][i_pt]->SetBinError  (i_v+1, yield_error_v3[i_v]);
 
-                // draw v3 bin mass fit
-                c1->cd();
-                h_v3->SetStats(kFALSE);
-                h_v3->GetXaxis()->SetRangeUser(fit_range_low,fit_range_high);
-                h_v3->GetXaxis()->SetTitle("m_{#piK} (GeV/c^{2})");
-                h_v3->GetYaxis()->SetTitle("Entries / 5 MeV");
-                h_v3->SetMarkerStyle(20); h_v3->SetMarkerSize(0.5); h_v3->SetLineWidth(1);
-                h_v3->Draw("ep");
-                fitFcn_v3->SetLineColor(2); fitFcn_v3->SetLineWidth(1); fitFcn_v3->Draw("LSAME");
 
-                TLatex *texCENT_v3 = new TLatex(0.14,0.85,Form("%d < Cent < %d",
-                                      cen_coarse_edges[i_cen],cen_coarse_edges[i_cen+1]));
-                texCENT_v3->SetNDC(); texCENT_v3->SetTextFont(42); texCENT_v3->SetTextSize(0.035); texCENT_v3->Draw();
-                TLatex *texPT_v3   = new TLatex(0.14,0.80,Form("%.1f < p_{T} < %.1f GeV/c",
-                                      pt_edges[i_pt],pt_edges[i_pt+1]));
-                texPT_v3->SetNDC();   texPT_v3->SetTextFont(42);   texPT_v3->SetTextSize(0.035); texPT_v3->Draw();
-                TLatex *texVbin_v3 = new TLatex(0.14,0.75,Form("%.3f < v_{3}^{i} < %.3f",
-                                      vnbinning_v3[i_cen][i_pt][i_v],vnbinning_v3[i_cen][i_pt][i_v+1]));
-                texVbin_v3->SetNDC(); texVbin_v3->SetTextFont(42); texVbin_v3->SetTextSize(0.035); texVbin_v3->Draw();
-                TLatex *texY_v3    = new TLatex(0.14,0.70,Form("Yield = %.0f #pm %.0f",yield_v3[i_v],yield_error_v3[i_v]));
-                texY_v3->SetNDC();    texY_v3->SetTextFont(42);    texY_v3->SetTextSize(0.035); texY_v3->Draw();
-                TLatex *texC_v3    = new TLatex(0.14,0.65,Form("#chi^{2}/ndf = %.2f",chi2_ndf_v3[i_cen][i_pt][i_v]));
-                texC_v3->SetNDC();    texC_v3->SetTextFont(42);    texC_v3->SetTextSize(0.035); texC_v3->Draw();
-
-                //c1->SaveAs(Form("prompt_mass_plot_withchi2_sigma/hmassfit_%s_%s_v3bin_%d.pdf", cen_name[i_cen], pt_name[i_pt], i_v));
-                c1->Clear();
-
-            }
+            }// ---i_v loop for v3
 
             // build yield graphs per (cen, pt)
             yield_v2_graph[i_cen][i_pt] = new TGraphErrors(N_VBINS_V2,v2_x,yield_v2,v2_x_err,yield_error_v2);

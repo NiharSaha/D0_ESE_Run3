@@ -22,6 +22,17 @@ Prepare ingradients for the analysis!
 +++++++++++++++++++++++++++++++
 Compare with publish results!
 +++++++++++++++++++++++++++++++
+1. Calculate the SP resolution for coarser centrality bins (0-10%, 10-30%, 30-50%)
+/home/saha115/D0_ESE/CMSSW_13_2_11/src/Compare_PubResults/Calculate_Resolution_forPubResults.C
+
+2. Save ntuple with all flow ingradients for same centrality bins.
+/home/saha115/D0_ESE/CMSSW_13_2_11/src/Compare_PubResults/flow_Analysis_ingradients_forPubResults.C
+
+3. Make SP binning
+/home/saha115/D0_ESE/CMSSW_13_2_11/src/Compare_PubResults/save_vnbinning_to_txt.C 
+
+4. Get the flow results
+/home/saha115/D0_ESE/CMSSW_13_2_11/src/Compare_PubResults/fit_mass_flow_forPubResults.C
 
 
 

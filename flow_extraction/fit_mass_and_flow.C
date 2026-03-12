@@ -662,7 +662,7 @@ int fit_mass_and_flow(int target_cent = -1)
 
           TF1* fitFcn_v2 = new TF1(Form("fit_v2_%d_%d_%d", i_pt, i_q, i_v),"[0]*([5]*([4]*TMath::Gaus(x,[1],[2]*(1.0 +[6]))/(sqrt(2*3.14159)*[2]*(1.0 +[6]))+(1-[4])*TMath::Gaus(x,[1],[3]*(1.0 +[6]))/(sqrt(2*3.14159)*[3]*(1.0 +[6])))+(1-[5])*TMath::Gaus(x,[1],[7]*(1.0 +[6]))/(sqrt(2*3.14159)*[7]*(1.0 +[6])) ) + [8] + [9]*x + [10]*x*x + [11]*ROOT::Math::crystalball_function(x, 2.2, 17, 0.0267*(1+[6]), 1.96*(1+[12])) + 4*[11]*(ROOT::Math::crystalball_function(x, 0.34, 5, 0.0146*(1+[6]), 1.7734*(1+[13])) )", fit_range_low, fit_range_high);
 
-	  fitFcn_v2->SetParameter(0,100);
+	        fitFcn_v2->SetParameter(0,100);
           fitFcn_v2->FixParameter(1,f->GetParameter(1));
           fitFcn_v2->FixParameter(2,f->GetParameter(2));
           fitFcn_v2->FixParameter(3,f->GetParameter(3));
@@ -676,7 +676,7 @@ int fit_mass_and_flow(int target_cent = -1)
           fitFcn_v2->FixParameter(11,0);
 
           
-	  h_v2->Fit(fitFcn_v2,"M","",fit_range_low,fit_range_high);
+	        h_v2->Fit(fitFcn_v2,"M","",fit_range_low,fit_range_high);
           h_v2->Fit(fitFcn_v2,"L Q","",fit_range_low,fit_range_high);
           h_v2->Fit(fitFcn_v2,"L Q","",fit_range_low,fit_range_high);
           h_v2->Fit(fitFcn_v2,"L M","",fit_range_low,fit_range_high);

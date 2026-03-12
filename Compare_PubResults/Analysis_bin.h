@@ -4,8 +4,8 @@
 
 
 const int N_CENTBINS = 3;
-const int cen_coarse_edges[N_CENTBINS+1] = {0, 10, 30, 50};
-const char *cen_name[N_CENTBINS] = {"0to10", "10to30", "30to50"};
+const int cen_edges[N_CENTBINS+1] = {0, 10, 30, 50};
+const char *cen_name[N_CENTBINS] = {"cent0to10", "cent10to30", "cent30to50"};
 
 
 const int    N_PTBINS  = 12;
