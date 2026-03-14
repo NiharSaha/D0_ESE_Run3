@@ -16,7 +16,9 @@ static const int N_QBINS      = 10;
 static const int N_CENTBINS_1 = 80;
 static const int N_CENTBINS   = 6;
 static const int N_PTBINS     = 12;
-static const int N_VBINS      = 62;   // <--- Equal to VNBINNING array size -1 
+//static const int N_VBINS      = 62;
+static const int N_VBINS_V2   = 62;   // <-- v2 specific
+static const int N_VBINS_V3   = 62;   // <--- Equal to VNBINNING array size -1 
 static const int N_BINS       = 2300;
 
 // ---- Centrality bin definitions ---
