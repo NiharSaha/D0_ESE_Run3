@@ -7,21 +7,21 @@ import time
 # ==============================================================================
 #---For qn quantiles ---
 STEP="Quantiles"
-DATE_tag= "Feb26_weight" # include version here!!
-DATASET= "MB11to31"
-SOURCE_CODE_NAME="make_q2_slices.C"
+DATE_tag= "Mar30" # include version here!!
+DATASET= "MB0to31"
+SOURCE_CODE_NAME="make_q2_slices_PbPb2023.C"
 
 #--- Resolution ---
 #STEP="Resolution"
 #DATE_tag= "Jan29" # include version here!!
 #DATASET= "MB11to21"
-#SOURCE_CODE_NAME="Calculate_Resolution_latest.C"
+#SOURCE_CODE_NAME="Calculate_Resolution.C"
 
 #--- SP ingradients ---
 #STEP="SP"
 #DATE_tag= "Feb20_v4" # include version here!!
 #DATASET= "MB11to21"
-#SOURCE_CODE_NAME="flow_Analysis_latest.C"
+#SOURCE_CODE_NAME="flow_Analysis_ingradients.C"
 
 #extra!
 #STEP="MC_template"
@@ -36,9 +36,8 @@ IS_TEST_RUN = False   # True: Only submit first 10 files (2 jobs). False: FULL R
 
 USERNAME    = "saha115"
 CMSSW_DIR   = f"/home/{USERNAME}/D0_ESE/CMSSW_13_2_11/src"
-#INPUT_FLIST = f"{CMSSW_DIR}/SlurmJob_submission/inputFiles_PbPb2018.txt"
-#INPUT_FLIST = f"{CMSSW_DIR}/SlurmJob_submission/mc_TTree.txt"
-INPUT_FLIST = f"{CMSSW_DIR}/SlurmJob_submission/inputFiles_MB11to31.txt"
+INPUT_FLIST = f"{CMSSW_DIR}/Quantiles/SlurmJob_submission/inputFiles_PbPb2023_MB0to31.txt"
+#INPUT_FLIST = f"{CMSSW_DIR}/Quantiles/SlurmJob_submission/inputFiles_MB11to31.txt"
 OUTPUT_BASE = f"/scratch/negishi/{USERNAME}/D0_ESE_out/CMSSW_13_2_11/src/{STEP}_{DATASET}_{DATE_tag}"
 
 
@@ -48,12 +47,13 @@ SOURCE_CODE = f"../{SOURCE_CODE_NAME}"
 SLURM_ACCOUNT   = "physics"      
 SLURM_PARTITION = "cpu"
 SLURM_TIME      = "04:00:00"
-N_FILES_PER_JOB = 100
+N_FILES_PER_JOB = 200
 MAX_JOBS_QUEUE  = 1500  
 
 # GRID PROXY
 PROXY_PATH      = f"/home/{USERNAME}/myproxy"
-# ==============================================================================
+
+# ================== USER CONFIGURATION ==============================================
 
 def setup_environment():
     """Checks for a valid proxy and compiles the C++ code."""

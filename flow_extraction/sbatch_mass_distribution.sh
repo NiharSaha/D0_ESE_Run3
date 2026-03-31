@@ -13,7 +13,7 @@
 set -euo pipefail
 
 SRC="/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/save_mass_distributions.C"
-SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_mass_outputs_Mar9_v0}"
+SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_mass_outputs_Mar16_v0}"
 LOG_DIR="${SCRATCH_BASE}/logs"
 BUILD_DIR="${SCRATCH_BASE}/build"
 OUT_DIR="${SCRATCH_BASE}/output"

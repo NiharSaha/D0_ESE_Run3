@@ -13,7 +13,7 @@
 set -euo pipefail
 
 SRC="/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/save_vnbinning_to_txt.C"
-SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_Mar9_v0}"
+SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_Mar16_v1}"
 LOG_DIR="${SCRATCH_BASE}/logs"
 BUILD_DIR="${SCRATCH_BASE}/build"
 #BUILD_DIR="${SCRATCH_BASE}/build_job${SLURM_ARRAY_JOB_ID:-${SLURM_JOB_ID:-unknown}}_task${SLURM_ARRAY_TASK_ID:-0}"

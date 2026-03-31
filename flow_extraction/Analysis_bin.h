@@ -1,6 +1,7 @@
 #pragma once
 
-#include "vnbinning_generated_Mar5.h"
+#include "vnbinning_generated.h" 
+#include "ESE_Cuts_MB11to21_Jan22.h"
 
 // --- Mass distribution fit settings ---
 const int N_MASSBINS = 48; //48 
@@ -18,7 +19,7 @@ static const int N_CENTBINS   = 6;
 static const int N_PTBINS     = 12;
 //static const int N_VBINS      = 62;
 static const int N_VBINS_V2   = 62;   // <-- v2 specific
-static const int N_VBINS_V3   = 62;   // <--- Equal to VNBINNING array size -1 
+static const int N_VBINS_V3   = 66;   // <--- Equal to VNBINNING array size -1 
 static const int N_BINS       = 2300;
 
 // ---- Centrality bin definitions ---

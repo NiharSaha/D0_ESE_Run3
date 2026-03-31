@@ -27,8 +27,8 @@
 #include <algorithm> 
 #include <iomanip>
 
-#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/ESE_Cuts_MB11to21_Jan22.h"
-#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/Analysis_bin.h"
+
+#include "Analysis_bin.h"
 
 using namespace std;
 
@@ -36,8 +36,8 @@ using namespace std;
 int save_mass_distributions(int target1pct = -1, int target_pt = -1)
 {
 
-  Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS+1];
-  Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS+1];
+  Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS_V2+1];
+  Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS_V3+1];
   
   auto get_cent_group = [&](int cent1pct)->int {
     for (int g=0; g<N_CENTBINS; ++g) {
@@ -77,10 +77,10 @@ int save_mass_distributions(int target1pct = -1, int target_pt = -1)
 	  for (int i_pt=0; i_pt<N_PTBINS; i_pt++) {
 	    if (target_pt >= 0 && i_pt != target_pt) continue; // skip other pT bins
 	    
-	    for (int ib=0; ib<=N_VBINS; ++ib) {
-	      vnbinning_v2[i_cen][i_pt][ib] = vnb_v2_table[i_cen][i_pt][ib];
-	      vnbinning_v3[i_cen][i_pt][ib] = vnb_v3_table[i_cen][i_pt][ib];
-	    }
+	    for (int ib=0; ib<=N_VBINS_V2; ++ib)
+        vnbinning_v2[i_cen][i_pt][ib] = vnb_v2_table[i_cen][i_pt][ib];
+      for (int ib=0; ib<=N_VBINS_V3; ++ib)
+        vnbinning_v3[i_cen][i_pt][ib] = vnb_v3_table[i_cen][i_pt][ib];
 	    
 	  }
 	}
@@ -89,8 +89,8 @@ int save_mass_distributions(int target1pct = -1, int target_pt = -1)
 	TH1D *h_mass_default_1percent_cen[N_CENTBINS_1][N_PTBINS]={};
 	TH1D *h_mass_1pecent_cen_q2[N_CENTBINS_1][N_QBINS][N_PTBINS]={};
 	TH1D *h_mass_1pecent_cen_q3[N_CENTBINS_1][N_QBINS][N_PTBINS]={};
-	TH1D *h_mass_v2_fit_1pecent_cen[N_CENTBINS_1][N_QBINS][N_PTBINS][N_VBINS]={};
-	TH1D *h_mass_v3_fit_1pecent_cen[N_CENTBINS_1][N_QBINS][N_PTBINS][N_VBINS]={};
+	TH1D *h_mass_v2_fit_1pecent_cen[N_CENTBINS_1][N_QBINS][N_PTBINS][N_VBINS_V2]={};
+	TH1D *h_mass_v3_fit_1pecent_cen[N_CENTBINS_1][N_QBINS][N_PTBINS][N_VBINS_V3]={};
 	
 	TH1D *h_v2dist_1pct_q2[N_CENTBINS_1][N_QBINS][N_PTBINS] = {};
 	TH1D *h_v3dist_1pct_q3[N_CENTBINS_1][N_QBINS][N_PTBINS] = {};
@@ -124,14 +124,15 @@ int save_mass_distributions(int target1pct = -1, int target_pt = -1)
 				h_v3dist_1pct_q3[i_cen][i_q2][i_pt] = new TH1D(h_name_0, h_name_0, 250, -25.0, 25.0);
 				h_v3dist_1pct_q3[i_cen][i_q2][i_pt]->Sumw2();
 
-				for(int i_v2=0; i_v2<N_VBINS; i_v2++)
+				for(int i_v2=0; i_v2<N_VBINS_V2; i_v2++)
 				{
 					
 				  h_name_1 = "hist_mass_v2_cen"+to_string(i_cen)+"_q2bin"+to_string(i_q2)+"_"+pt_name[i_pt]+"_in_v2bin_idx_"+to_string(i_v2);
 				  h_mass_v2_fit_1pecent_cen[i_cen][i_q2][i_pt][i_v2] = new TH1D(h_name_1,h_name_1,N_MASSBINS,fit_range_low,fit_range_high);
-
-				  h_name_1 = "hist_mass_v3_cen"+to_string(i_cen)+"_q3bin"+to_string(i_q2)+"_"+pt_name[i_pt]+"_in_v3bin_idx_"+to_string(i_v2);
-				  h_mass_v3_fit_1pecent_cen[i_cen][i_q2][i_pt][i_v2] = new TH1D(h_name_1,h_name_1,N_MASSBINS,fit_range_low,fit_range_high);
+				}
+				for (int i_v3=0; i_v3<N_VBINS_V3; i_v3++) {
+				  h_name_1 = "hist_mass_v3_cen"+to_string(i_cen)+"_q3bin"+to_string(i_q2)+"_"+pt_name[i_pt]+"_in_v3bin_idx_"+to_string(i_v3);
+				  h_mass_v3_fit_1pecent_cen[i_cen][i_q2][i_pt][i_v3] = new TH1D(h_name_1,h_name_1,N_MASSBINS,fit_range_low,fit_range_high);
 				}
 			}
 		}
@@ -180,7 +181,7 @@ int save_mass_distributions(int target1pct = -1, int target_pt = -1)
 				    h_mass_1pecent_cen_q2[i_cen][iq][i_pt]->Fill(mass_val);
 				    h_v2dist_1pct_q2[i_cen][iq][i_pt]->Fill(v2_val);
 
-				    for(int i_v2=0; i_v2<N_VBINS; i_v2++) {
+				    for(int i_v2=0; i_v2<N_VBINS_V2; i_v2++) {
 				      if(v2_val>=vnbinning_v2[cen_group][i_pt][i_v2] && v2_val<vnbinning_v2[cen_group][i_pt][i_v2+1]){
 					if(h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][i_v2]) h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][i_v2]->Fill(mass_val);
 				      }
@@ -190,7 +191,7 @@ int save_mass_distributions(int target1pct = -1, int target_pt = -1)
 				    h_mass_1pecent_cen_q3[i_cen][iq][i_pt]->Fill(mass_val);
 				    h_v3dist_1pct_q3[i_cen][iq][i_pt]->Fill(v3_val);
 
-				    for(int i_v3=0; i_v3<N_VBINS; i_v3++) {
+				    for(int i_v3=0; i_v3<N_VBINS_V3; i_v3++) {
 				      
 				      if(v3_val>=vnbinning_v3[cen_group][i_pt][i_v3] && v3_val<vnbinning_v3[cen_group][i_pt][i_v3+1]){
 					if (h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][i_v3]) h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][i_v3]->Fill(mass_val);
@@ -362,15 +363,14 @@ int save_mass_distributions(int target1pct = -1, int target_pt = -1)
 				if (h_v3dist_1pct_q3[i_cen][iq][i_pt])
 				  h_v3dist_1pct_q3[i_cen][iq][i_pt]->Write();
 
-				for (int iv=0; iv<N_VBINS; ++iv) {
-					if (h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][iv]) {
-						h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][iv]->Write();
-					}
-
-					if (h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][iv]) {
-						h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][iv]->Write();
-					}
-				}
+				for (int iv=0; iv<N_VBINS_V2; ++iv) {
+                    if (h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][iv])
+                        h_mass_v2_fit_1pecent_cen[i_cen][iq][i_pt][iv]->Write();
+                }
+                for (int iv=0; iv<N_VBINS_V3; ++iv) {
+                    if (h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][iv])
+                        h_mass_v3_fit_1pecent_cen[i_cen][iq][i_pt][iv]->Write();
+                }
 			}
 			outf->cd();
 		}
@@ -378,6 +378,7 @@ int save_mass_distributions(int target1pct = -1, int target_pt = -1)
 
 	//outf->Write();
 	outf->Close();
+	nt_Data->Close();
 
 
 	cout<<"Saved  "<<outname<<endl;

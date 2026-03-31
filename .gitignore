@@ -7,6 +7,10 @@ Compare_PubResults/*.root
 # Ignore editor backup files
 *~
 
+# Ignore Slurm and job output/error logs
+*.out
+*.err
+
 # Block executables
 *.exe
 *.out

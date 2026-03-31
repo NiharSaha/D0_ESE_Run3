@@ -1,0 +1,391 @@
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+#include <fstream>
+#include <vector>
+#include "TChain.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TString.h"
+#include "TObjString.h"
+#include "TSystem.h"
+#include "TROOT.h"
+#include "TFileCollection.h"
+#include "TLegend.h"
+
+#include "TMath.h"
+#include "TComplex.h"
+#include "TH1.h"
+#include "TH2.h"
+#include "TH3.h"
+#include "TF1.h"
+#include <TNtuple.h>
+#include <TGraphErrors.h>
+#include <TLatex.h>
+#include <TCanvas.h>
+#include <algorithm> //
+#include <iomanip>
+
+
+using namespace std;
+
+
+// ensure bin edges are strictly increasing (fix tiny duplicates/zeros)                                                                                                     
+static void fix_bin_edges(Double_t *edges, int nBins, Double_t eps = 1e-6) {
+        for (int i = 1; i <= nBins; ++i) {
+                if (!(edges[i] > edges[i-1])) {
+                        edges[i] = edges[i-1] + eps;
+                        //std::cout << "[DEBUG] Fixed bin edge at idx " << i << " to " << edges[i] << std::endl;                                                            
+                }
+        }
+}
+
+static void fill_missing_edges(Double_t *edges, int nBins, Double_t sentinel = -1e9, Double_t eps = 1e-12) {
+    // collect indices with valid values
+    std::vector<int> idx;
+    for (int i = 0; i <= nBins; ++i) if (edges[i] != sentinel) idx.push_back(i);
+    if (idx.empty()) {
+        // fallback: set uniform tiny-spaced ascending values
+        for (int i = 0; i <= nBins; ++i) edges[i] = (Double_t)i * eps;
+        return;
+    }
+    // fill head
+    int first = idx.front();
+    for (int i = 0; i < first; ++i) edges[i] = edges[first] - (first - i) * eps;
+    // fill gaps between known points by linear interpolation
+    for (size_t k = 0; k + 1 < idx.size(); ++k) {
+        int a = idx[k], b = idx[k+1];
+        Double_t va = edges[a], vb = edges[b];
+        int gap = b - a;
+        for (int i = 1; i < gap; ++i) {
+            edges[a + i] = va + (vb - va) * (Double_t(i) / gap);
+        }
+    }
+    // fill tail
+    int last = idx.back();
+    for (int i = last + 1; i <= nBins; ++i) edges[i] = edges[last] + (i - last) * eps;
+    // enforce strict monotonicity
+    fix_bin_edges(edges, nBins, eps);
+}
+
+
+
+int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
+{
+
+  std::string outname;
+  const char *env_job  = std::getenv("SLURM_ARRAY_JOB_ID");
+  if (!env_job) env_job = std::getenv("SLURM_JOB_ID");
+  const char *env_task = std::getenv("SLURM_ARRAY_TASK_ID");
+  if (target_cen_group >= 0 && target_pt >= 0) {
+    outname = TString::Format("vnbinning_c%d_pt%d", target_cen_group, target_pt).Data();
+  } else if (target_cen_group >= 0) {
+    outname = TString::Format("vnbinning_c%d_all", target_cen_group).Data();
+  } else if (target_pt >= 0) {
+    outname = TString::Format("vnbinning_all_pt%d", target_pt).Data();
+  } else {
+    outname = "vnbinning_all";
+  }
+  if (env_job)  outname += std::string("_job") + env_job;
+  if (env_task) outname += std::string("_task") + env_task;
+  outname += ".txt";
+
+  
+  const int N_CENTBINS = 6;  
+  Int_t cen_edges[N_CENTBINS+1]={0, 10, 20, 30, 40, 50, 80};
+  static const char* cen_name[N_CENTBINS] = {"cent0to10", "cent10to20", "cent20to30", "cent30to40", "cent40to50", "cent50to80"};
+
+  const int N_PTBINS = 12;  
+  static const char* pt_name[N_PTBINS] = {"pT1to2",   "pT2to3",   "pT3to4",   "pT4to5", "pT5to6",   "pT6to8",   "pT8to10",  "pT10to15", "pT15to20", "pT20to40", "pT40to60", "pT60to100"};
+  const char *pt_label[N_PTBINS] = {"1to2","2to3","3to4","4to5","5to6","6to8","8to10","10to15","15to20","20to40","40to60","60to100"};
+  double pt_edges[N_PTBINS+1] = {1,2,3,4,5,6,8,10,15,20,40, 60, 100};
+  
+  const int N_BINS       = 2400;              // histogram bins for quantile search
+  const int N_EDGES      = 21;                // quantile edges per side (incl. 0)
+  const int N_SIDE_EDGES = 12;                // fixed side edges per side
+  const int N_VBINS      = (N_EDGES-1)*2 + (N_SIDE_EDGES-1)*2; // 62 total bins
+  
+  Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS+1];
+  Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS+1];
+  //Double_t vnbinning_side[16] = {-10,-8.2,-6.6,-5.2,-4.0,-3.5,-3.0,-2.3,2.3,3.0,3.5,4.0,5.2,6.6,8.2,10};
+  Double_t vnbinning_side_v2[24] = {-15.0,-12.0,-10.0,-8.2,-6.6,-5.2,-4.6,-4.0,-3.5,-3.0,-2.7,-2.4, 2.4,2.7,3.0,3.5,4.0,4.6,5.2,6.6,8.2,10.0,12.0,15.0};
+  //Double_t vnbinning_side_v3[24] = {-15.0,-10.0,-6.0,-4.5,-3.5,-2.8,-2.2,-1.8,-1.5,-1.3,-1.25,-1.2,1.2, 1.25, 1.3, 1.5, 1.8, 2.2, 2.8, 3.5, 4.5, 6.0, 10.0, 15.0};
+  Double_t vnbinning_side_v3[24] = {-10.0, -8.2, -6.2, -5.4, -4.6, -4.0, -3.4, -2.9, -2.4, -2.0, -1.6, -1.2, 1.2, 1.6, 2.0, 2.4, 2.9, 3.4, 4.0, 4.6, 5.4, 6.2, 8.2, 10.0};
+  
+  
+    // open input ntuple (adjust path if needed)
+  TFile *f = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/SP_MB11to21_Feb20_v4/ROOT/Flow_combined.root");
+  if (!f || f->IsZombie()) { std::cerr << "Cannot open ntuple file\n"; return 1; }
+  TNtuple *nt = (TNtuple*)f->Get("nt");
+  if (!nt) { std::cerr<<"Cannot find TNtuple 'nt'\n"; return 1; }
+
+
+  const Double_t SENTINEL = -1e9;
+  for (int i=0; i<N_CENTBINS; ++i){
+    for (int j=0; j<N_PTBINS; ++j){
+      for (int k=0; k<=N_VBINS; ++k) {
+        vnbinning_v2[i][j][k] = SENTINEL;
+        vnbinning_v3[i][j][k] = SENTINEL;
+      }
+    }
+  }
+  // histogram covers only the negative half of v2; positive edges are mirrored by symmetry
+  TH1D *h_v2_bin = new TH1D("h_v2_bin","h_v2_bin",N_BINS,-2.4,0);
+  TH1D *h_v3_bin = new TH1D("h_v3_bin","h_v3_bin",N_BINS,-1.2,0);
+
+
+  
+  // branch variables
+  Float_t cen_val, q2_val, q3_val, pT_val, mass_val, v2_val, v3_val, dca_val, y_val;
+  nt->SetBranchAddress("cent",&cen_val);
+  nt->SetBranchAddress("pT",&pT_val);
+  nt->SetBranchAddress("mass",&mass_val);
+  nt->SetBranchAddress("dca",&dca_val);
+  nt->SetBranchAddress("y",&y_val);
+  nt->SetBranchAddress("q2_hf_total",&q2_val);
+  nt->SetBranchAddress("q3_hf_total",&q3_val);
+  nt->SetBranchAddress("v2",&v2_val);
+  nt->SetBranchAddress("v3",&v3_val);
+  
+  
+  TString cuts;
+
+  std::string rootname = outname;
+  size_t dot = rootname.rfind(".txt");
+  if (dot != std::string::npos) rootname.replace(dot, 4, "_vndist.root");
+  else rootname += "_vndist.root";
+  TFile *fout = TFile::Open(rootname.c_str(), "RECREATE");
+  if (!fout || fout->IsZombie()) { std::cerr << "Cannot open output ROOT file\n"; return 1; }
+
+  /*std::string plotdir = rootname;
+  size_t slash = plotdir.rfind('/');
+  if (slash != std::string::npos) plotdir = plotdir.substr(0, slash+1) + "vndist_plots";
+  else plotdir = "vndist_plots";
+  gSystem->mkdir(plotdir.c_str(), kTRUE);
+  std::cout << "[INFO] Saving plots to: " << plotdir << std::endl;
+  */
+  // separate canvases for v2 and v3
+  TCanvas *cv2 = new TCanvas("cv2","v2 distribution",800,600);
+  TCanvas *cv3 = new TCanvas("cv3","v3 distribution",800,600);
+  
+
+
+  // Use TTree::Draw to fill histogram with selection string for each centrality group and pt bin.
+    for (int i_cen=0; i_cen<N_CENTBINS; ++i_cen) {
+      if (target_cen_group >= 0 && i_cen != target_cen_group) continue;
+      
+      for (int i_pt=0; i_pt<N_PTBINS; ++i_pt) {
+	if (target_pt >= 0 && i_pt != target_pt) continue;
+	
+	
+	cuts = TString::Format("dca<0.0085 && mass<2.0 && mass>1.74 && fabs(y)<1.0 && cent>=%d && cent<%d && pT>=%g && pT<%g", cen_edges[i_cen], cen_edges[i_cen+1], pt_edges[i_pt], pt_edges[i_pt+1]);
+	
+	
+	std::cout << std::endl << std::endl << cuts << std::endl;
+	
+	h_v2_bin->Reset(); h_v3_bin->Reset();
+	nt->Draw("v2>>h_v2_bin", cuts, "goff");
+	nt->Draw("v3>>h_v3_bin", cuts, "goff");
+	Int_t n_v2 = static_cast<Int_t>(h_v2_bin->GetEntries());
+	Int_t n_v3 = static_cast<Int_t>(h_v3_bin->GetEntries());
+	
+	if (n_v2 == 0)
+	  std::cerr << "WARNING: zero v2 entries for i_cen=" << i_cen
+		    << " i_pt=" << i_pt << " cuts=" << cuts << std::endl;
+	if (n_v3 == 0)
+	  std::cerr << "WARNING: zero v3 entries for i_cen=" << i_cen
+		    << " i_pt=" << i_pt << " cuts=" << cuts << std::endl;
+	
+    
+    
+	// 1) fixed negative side edges
+	for (int i_bin=0; i_bin<N_SIDE_EDGES; ++i_bin) {
+	  vnbinning_v2[i_cen][i_pt][i_bin] = vnbinning_side_v2[i_bin];
+	  vnbinning_v3[i_cen][i_pt][i_bin] = vnbinning_side_v3[i_bin];
+	}
+	
+	double total2 = h_v2_bin->Integral(1, N_BINS);
+	double total3 = h_v3_bin->Integral(1, N_BINS);
+
+	// h_v2_bin and h_v3_bin are your working histograms for v2 and v3, respectively
+	for (int i_edge=1; i_edge<N_EDGES; ++i_edge) {
+	  
+	  const double thr2 = i_edge * total2 / double(N_EDGES-1);
+	  const double thr3 = i_edge * total3 / double(N_EDGES-1);
+	  for (int i_bin=1; i_bin<N_BINS; ++i_bin) {
+	    if (h_v2_bin->Integral(1, i_bin) <= thr2 && h_v2_bin->Integral(1, i_bin+1) > thr2)
+	      vnbinning_v2[i_cen][i_pt][i_edge + N_SIDE_EDGES - 1] = h_v2_bin->GetBinLowEdge(i_bin+1);
+	    if (h_v3_bin->Integral(1, i_bin) <= thr3 && h_v3_bin->Integral(1, i_bin+1) > thr3)
+	      vnbinning_v3[i_cen][i_pt][i_edge + N_SIDE_EDGES - 1] = h_v3_bin->GetBinLowEdge(i_bin+1);
+	  }
+	}
+	
+	// 3) zero edge
+	const int idx_zero = N_SIDE_EDGES + N_EDGES - 2; // 31
+	vnbinning_v2[i_cen][i_pt][idx_zero] = 0.0;
+	vnbinning_v3[i_cen][i_pt][idx_zero] = 0.0;
+
+  fill_missing_edges(vnbinning_v2[i_cen][i_pt], idx_zero, SENTINEL);
+  fill_missing_edges(vnbinning_v3[i_cen][i_pt], idx_zero, SENTINEL);
+	
+	// 4) mirror to positive side
+	for (int i_v=0; i_v<=N_VBINS; ++i_v) {
+	  if (i_v >= N_SIDE_EDGES + N_EDGES - 1) { // indices 32..62
+	    vnbinning_v2[i_cen][i_pt][i_v] = -vnbinning_v2[i_cen][i_pt][N_VBINS - i_v];
+	    vnbinning_v3[i_cen][i_pt][i_v] = -vnbinning_v3[i_cen][i_pt][N_VBINS - i_v];
+	  }
+	  	    
+	}
+
+  fill_missing_edges(vnbinning_v2[i_cen][i_pt], N_VBINS, SENTINEL);
+  fill_missing_edges(vnbinning_v3[i_cen][i_pt], N_VBINS, SENTINEL);
+  fix_bin_edges(vnbinning_v2[i_cen][i_pt], N_VBINS);
+  fix_bin_edges(vnbinning_v3[i_cen][i_pt], N_VBINS);
+
+    
+
+  // fill full-range distributions
+    TString hname_v2 = TString::Format("h_v2_dist_%s_%s", cen_name[i_cen], pt_name[i_pt]);
+    TString hname_v3 = TString::Format("h_v3_dist_%s_%s", cen_name[i_cen], pt_name[i_pt]);
+    TH1D *h_v2_full = new TH1D(hname_v2, TString::Format("v2 dist %s %s;v2;Counts", cen_name[i_cen], pt_name[i_pt]), 160, -20, 20);
+    TH1D *h_v3_full = new TH1D(hname_v3, TString::Format("v3 dist %s %s;v3;Counts", cen_name[i_cen], pt_name[i_pt]), 160, -20, 20);
+    nt->Draw(TString::Format("v2>>%s", hname_v2.Data()), cuts, "goff");
+    nt->Draw(TString::Format("v3>>%s", hname_v3.Data()), cuts, "goff");
+
+    fout->cd();
+    h_v2_full->Write();
+    h_v3_full->Write();
+
+
+    // --- save v2 to PDF ---
+    /*cv2->cd();
+    cv2->Clear();
+    gPad->SetLogy(1);
+    gPad->SetLeftMargin(0.12);
+    gPad->SetBottomMargin(0.12);
+    h_v2_full->SetLineColor(kBlue+1);
+    h_v2_full->SetLineWidth(2);
+    h_v2_full->GetXaxis()->SetTitle("v_{2}");
+    h_v2_full->GetYaxis()->SetTitle("Counts");
+    h_v2_full->GetXaxis()->SetTitleSize(0.05);
+    h_v2_full->GetYaxis()->SetTitleSize(0.05);
+    h_v2_full->Draw("HIST");
+    TLatex lat2;
+    lat2.SetNDC(); lat2.SetTextSize(0.04);
+    lat2.DrawLatex(0.15, 0.88, TString::Format("cent %d-%d%%  p_{T}=%s GeV",
+        cen_edges[i_cen], cen_edges[i_cen+1], pt_label[i_pt]));
+    lat2.DrawLatex(0.15, 0.82, TString::Format("Entries=%.0f  Mean=%.3f  RMS=%.3f",
+        h_v2_full->GetEntries(), h_v2_full->GetMean(), h_v2_full->GetRMS()));
+    {
+      std::string pdfname = plotdir + TString::Format("/v2dist_c%d_pt%d.pdf", i_cen, i_pt).Data();
+      cv2->SaveAs(pdfname.c_str());
+      std::cout << "[INFO] Saved v2 plot: " << pdfname << std::endl;
+    }
+    // --- save v3 to PDF ---
+    cv3->cd();
+    cv3->Clear();
+    gPad->SetLogy(1);
+    gPad->SetLeftMargin(0.12);
+    gPad->SetBottomMargin(0.12);
+    h_v3_full->SetLineColor(kRed+1);
+    h_v3_full->SetLineWidth(2);
+    h_v3_full->GetXaxis()->SetTitle("v_{3}");
+    h_v3_full->GetYaxis()->SetTitle("Counts");
+    h_v3_full->GetXaxis()->SetTitleSize(0.05);
+    h_v3_full->GetYaxis()->SetTitleSize(0.05);
+    h_v3_full->Draw("HIST");
+    TLatex lat3;
+    lat3.SetNDC(); lat3.SetTextSize(0.04);
+    lat3.DrawLatex(0.15, 0.88, TString::Format("cent %d-%d%%  p_{T}=%s GeV",
+        cen_edges[i_cen], cen_edges[i_cen+1], pt_label[i_pt]));
+    lat3.DrawLatex(0.15, 0.82, TString::Format("Entries=%.0f  Mean=%.3f  RMS=%.3f",
+        h_v3_full->GetEntries(), h_v3_full->GetMean(), h_v3_full->GetRMS()));
+    {
+      std::string pdfname = plotdir + TString::Format("/v3dist_c%d_pt%d.pdf", i_cen, i_pt).Data();
+      cv3->SaveAs(pdfname.c_str());
+      std::cout << "[INFO] Saved v3 plot: " << pdfname << std::endl;
+    }
+
+    delete h_v2_full;
+    delete h_v3_full;
+    */
+      }//
+    }
+
+    //=====================
+    // write to text file
+    //=====================
+    std::ofstream out(outname.c_str());
+    if (!out.is_open()) { std::cerr<<"Cannot open output file\n"; return 1; }
+    // print only the requested (cen,pt) pair if provided; otherwise print all
+    out << std::fixed << std::setprecision(3);
+
+    auto print_array_line = [&](std::ofstream &os, const char *type, int i_cen, int i_pt, Double_t arr[]) {
+      os << type << "_cent" << cen_edges[i_cen] << "to" << cen_edges[i_cen+1]
+	 << "_pT" << pt_label[i_pt] << "={";
+      for (int ib=0; ib<=N_VBINS; ++ib) {
+	os << arr[ib];
+            if (ib < N_VBINS) os << ", ";
+        }
+        os << "}\n";
+    };
+
+    if (target_cen_group >= 0 && target_pt >= 0) {
+        // single pair -> write exactly two arrays (V2 and V3)
+        print_array_line(out, "v2", target_cen_group, target_pt, vnbinning_v2[target_cen_group][target_pt]);
+        print_array_line(out, "v3", target_cen_group, target_pt, vnbinning_v3[target_cen_group][target_pt]);
+    } else {
+        // fallback: write all arrays (existing behavior)
+        for (int i_cen=0; i_cen<N_CENTBINS; ++i_cen) {
+            if (target_cen_group >= 0 && i_cen != target_cen_group) continue;
+            for (int i_pt=0; i_pt<N_PTBINS; ++i_pt) {
+                if (target_pt >= 0 && i_pt != target_pt) continue;
+                print_array_line(out, "v2", i_cen, i_pt, vnbinning_v2[i_cen][i_pt]);
+                print_array_line(out, "v3", i_cen, i_pt, vnbinning_v3[i_cen][i_pt]);
+            }
+        }
+    }
+    
+    
+
+    out.close();
+    std::cout<<"Saved vnbinning to "<<outname<<"\n";
+    fout->Close(); 
+    f->Close();
+     
+     return 0;
+ }
+
+int main(int argc, char **argv)
+{
+  if (argc==1) {
+    save_vnbinning_to_txt();
+  } else if (argc==2) {
+    int idx = atoi(argv[1]);
+    if (idx < 0 || idx > 5) {
+      std::cerr << "ERROR: target_cen_group must be 0-5, got " << idx << std::endl;
+      return 1;
+    }
+    save_vnbinning_to_txt(idx);
+  } else if (argc==3) {
+    int cen_idx = atoi(argv[1]);
+    int pt_idx  = atoi(argv[2]);
+    
+    if (cen_idx < 0 || cen_idx > 5) {
+      std::cerr << "ERROR: target_cen_group must be 0-5, got " << cen_idx << std::endl;
+      return 1;
+    }
+    if (pt_idx < 0 || pt_idx > 11) {
+      std::cerr << "ERROR: target_pt must be 0-11, got " << pt_idx << std::endl;
+      return 1;
+    }
+    
+    save_vnbinning_to_txt(cen_idx, pt_idx);
+  } else {
+    std::cout << "Usage: ./save_vnbinning_to_txt [target_cen_group] [target_pt_index]" << std::endl;
+    return 1;
+  }
+  return 0;
+  
+}

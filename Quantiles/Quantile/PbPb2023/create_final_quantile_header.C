@@ -5,13 +5,13 @@
 #include "TSystem.h"
 
 void create_final_quantile_header() {
-    std::ofstream hf("q_cuts_2023.h");
+    std::ofstream hf("quantile_cuts_2023_MB0to31.h");
     hf << "#ifndef Q_CUTS_2023_H\n#define Q_CUTS_2023_H\n\n";
 
     std::vector<std::string> q2_lines, q3_lines;
 
     for (int i = 0; i < 90; i++) {
-        std::ifstream fIn(Form("temp_cuts/cuts_bin%d.txt", i));
+        std::ifstream fIn(Form("temp_cuts_MB0to31/cuts_bin%d.txt", i));
         std::string l2, l3;
         if (fIn && std::getline(fIn, l2) && std::getline(fIn, l3)) {
             q2_lines.push_back("  {" + l2 + "}");
@@ -31,5 +31,5 @@ void create_final_quantile_header() {
     hf << "\n};\n\n#endif";
     hf.close();
 
-    std::cout << "Header q_cuts_2023.h created." << std::endl;
+    std::cout << "Header file created." << std::endl;
 }

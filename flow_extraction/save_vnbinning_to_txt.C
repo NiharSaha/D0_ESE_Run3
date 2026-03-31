@@ -92,7 +92,7 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
   outname += ".txt";
 
   
-  const int N_CENTBINS = 6;  
+  const int N_CENTBINS = 6;
   Int_t cen_edges[N_CENTBINS+1]={0, 10, 20, 30, 40, 50, 80};
   static const char* cen_name[N_CENTBINS] = {"cent0to10", "cent10to20", "cent20to30", "cent30to40", "cent40to50", "cent50to80"};
 
@@ -103,15 +103,22 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
   
   const int N_BINS       = 2400;              // histogram bins for quantile search
   const int N_EDGES      = 21;                // quantile edges per side (incl. 0)
-  const int N_SIDE_EDGES = 12;                // fixed side edges per side
-  const int N_VBINS      = (N_EDGES-1)*2 + (N_SIDE_EDGES-1)*2; // 62 total bins
+  //const int N_SIDE_EDGES = 12;                // fixed side edges per side
+  //const int N_VBINS      = (N_EDGES-1)*2 + (N_SIDE_EDGES-1)*2; // 62 total bins
+
+  const int N_SIDE_EDGES_V2 = 12;              // was N_SIDE_EDGES, for v2: 24 elements -> 12 per side
+  const int N_SIDE_EDGES_V3 = 14;              // NEW: for v3: 28 elements -> 14 per side
+  const int N_VBINS_V2    = (N_EDGES-1)*2 + (N_SIDE_EDGES_V2-1)*2;  // = 40+22 = 62
+  const int N_VBINS_V3    = (N_EDGES-1)*2 + (N_SIDE_EDGES_V3-1)*2; 
   
-  Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS+1];
-  Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS+1];
+  Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS_V2+1];
+  Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS_V3+1];
   //Double_t vnbinning_side[16] = {-10,-8.2,-6.6,-5.2,-4.0,-3.5,-3.0,-2.3,2.3,3.0,3.5,4.0,5.2,6.6,8.2,10};
-  Double_t vnbinning_side_v2[24] = {-15.0,-12.0,-10.0,-8.2,-6.6,-5.2,-4.6,-4.0,-3.5,-3.0,-2.7,-2.4, 2.4,2.7,3.0,3.5,4.0,4.6,5.2,6.6,8.2,10.0,12.0,15.0};
   //Double_t vnbinning_side_v3[24] = {-15.0,-10.0,-6.0,-4.5,-3.5,-2.8,-2.2,-1.8,-1.5,-1.3,-1.25,-1.2,1.2, 1.25, 1.3, 1.5, 1.8, 2.2, 2.8, 3.5, 4.5, 6.0, 10.0, 15.0};
-  Double_t vnbinning_side_v3[24] = {-10.0, -8.2, -6.2, -5.4, -4.6, -4.0, -3.4, -2.9, -2.4, -2.0, -1.6, -1.2, 1.2, 1.6, 2.0, 2.4, 2.9, 3.4, 4.0, 4.6, 5.4, 6.2, 8.2, 10.0};
+  //Double_t vnbinning_side_v3[24] = {-20.0, -15,  -8.2, -6.2, -5.4, -4.6, -4.0, -3.4, -2.9, -2.4, 1.2, 1.6, 2.0, 2.4, 2.9, 3.4, 4.0, 4.6, 5.4, 6.2, 8.2, 10.0};
+
+  Double_t vnbinning_side_v2[24] = {-15.0,-12.0,-10.0,-8.2,-6.6,-5.2,-4.6,-4.0,-3.5,-3.0,-2.7,-2.4, 2.4,2.7,3.0,3.5,4.0,4.6,5.2,6.6,8.2,10.0,12.0,15.0};
+  Double_t vnbinning_side_v3[28] = {-25, -15, -12.5, -12, -10, -8, -6.5, -5.5, -4.5, -4.0, -3.5, -3.1, -2.7, -2.4, 2.4, 2.7, 3.1, 3.5, 4.0, 4.5, 5.5, 6.5, 8.0, 10.0, 12.0, 12.5, 15.0, 25.0};
   
   
     // open input ntuple (adjust path if needed)
@@ -121,18 +128,18 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
   if (!nt) { std::cerr<<"Cannot find TNtuple 'nt'\n"; return 1; }
 
 
-  const Double_t SENTINEL = -1e9;
+  
+      const Double_t SENTINEL = -1e9;
   for (int i=0; i<N_CENTBINS; ++i){
-    for (int j=0; j<N_PTBINS; ++j){
-      for (int k=0; k<=N_VBINS; ++k) {
-        vnbinning_v2[i][j][k] = SENTINEL;
-        vnbinning_v3[i][j][k] = SENTINEL;
-      }
+    for (int j=0; j<N_PTBINS; ++j) {
+      for (int k=0; k<=N_VBINS_V2; ++k) vnbinning_v2[i][j][k] = SENTINEL;
+      for (int k=0; k<=N_VBINS_V3; ++k) vnbinning_v3[i][j][k] = SENTINEL;
     }
-  }
+    }
+  
   // histogram covers only the negative half of v2; positive edges are mirrored by symmetry
   TH1D *h_v2_bin = new TH1D("h_v2_bin","h_v2_bin",N_BINS,-2.4,0);
-  TH1D *h_v3_bin = new TH1D("h_v3_bin","h_v3_bin",N_BINS,-1.2,0);
+  TH1D *h_v3_bin = new TH1D("h_v3_bin","h_v3_bin",N_BINS,-2.4,0);
 
 
   
@@ -200,56 +207,58 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
     
     
 	// 1) fixed negative side edges
-	for (int i_bin=0; i_bin<N_SIDE_EDGES; ++i_bin) {
-	  vnbinning_v2[i_cen][i_pt][i_bin] = vnbinning_side_v2[i_bin];
-	  vnbinning_v3[i_cen][i_pt][i_bin] = vnbinning_side_v3[i_bin];
-	}
+	for (int i_bin=0; i_bin < N_SIDE_EDGES_V2; ++i_bin)
+        vnbinning_v2[i_cen][i_pt][i_bin] = vnbinning_side_v2[i_bin];
+      for (int i_bin=0; i_bin < N_SIDE_EDGES_V3; ++i_bin)
+        vnbinning_v3[i_cen][i_pt][i_bin] = vnbinning_side_v3[i_bin];
 	
 	double total2 = h_v2_bin->Integral(1, N_BINS);
 	double total3 = h_v3_bin->Integral(1, N_BINS);
 
 	// h_v2_bin and h_v3_bin are your working histograms for v2 and v3, respectively
-	for (int i_edge=1; i_edge<N_EDGES; ++i_edge) {
+	
 	  
-	  const double thr2 = i_edge * total2 / double(N_EDGES-1);
-	  const double thr3 = i_edge * total3 / double(N_EDGES-1);
-	  for (int i_bin=1; i_bin<N_BINS; ++i_bin) {
-	    if (h_v2_bin->Integral(1, i_bin) <= thr2 && h_v2_bin->Integral(1, i_bin+1) > thr2)
-	      vnbinning_v2[i_cen][i_pt][i_edge + N_SIDE_EDGES - 1] = h_v2_bin->GetBinLowEdge(i_bin+1);
-	    if (h_v3_bin->Integral(1, i_bin) <= thr3 && h_v3_bin->Integral(1, i_bin+1) > thr3)
-	      vnbinning_v3[i_cen][i_pt][i_edge + N_SIDE_EDGES - 1] = h_v3_bin->GetBinLowEdge(i_bin+1);
-	  }
-	}
+	  for (int i_edge=1; i_edge<N_EDGES; ++i_edge) {
+        const double thr2 = i_edge * total2 / double(N_EDGES-1);
+        const double thr3 = i_edge * total3 / double(N_EDGES-1);
+        for (int i_bin=1; i_bin<N_BINS; ++i_bin) {
+          if (h_v2_bin->Integral(1,i_bin) <= thr2 && h_v2_bin->Integral(1,i_bin+1) > thr2)
+            vnbinning_v2[i_cen][i_pt][i_edge + N_SIDE_EDGES_V2 - 1] = h_v2_bin->GetBinLowEdge(i_bin+1);
+          if (h_v3_bin->Integral(1,i_bin) <= thr3 && h_v3_bin->Integral(1,i_bin+1) > thr3)
+            vnbinning_v3[i_cen][i_pt][i_edge + N_SIDE_EDGES_V3 - 1] = h_v3_bin->GetBinLowEdge(i_bin+1);
+        }
+      }
 	
 	// 3) zero edge
-	const int idx_zero = N_SIDE_EDGES + N_EDGES - 2; // 31
-	vnbinning_v2[i_cen][i_pt][idx_zero] = 0.0;
-	vnbinning_v3[i_cen][i_pt][idx_zero] = 0.0;
+	    const int idx_zero_v2 = N_SIDE_EDGES_V2 + N_EDGES - 2;  // = 31
+      const int idx_zero_v3 = N_SIDE_EDGES_V3 + N_EDGES - 2;  // = 33
+      vnbinning_v2[i_cen][i_pt][idx_zero_v2] = 0.0;
+      vnbinning_v3[i_cen][i_pt][idx_zero_v3] = 0.0;
 
-  fill_missing_edges(vnbinning_v2[i_cen][i_pt], idx_zero, SENTINEL);
-  fill_missing_edges(vnbinning_v3[i_cen][i_pt], idx_zero, SENTINEL);
+      fill_missing_edges(vnbinning_v2[i_cen][i_pt], idx_zero_v2, SENTINEL);
+      fill_missing_edges(vnbinning_v3[i_cen][i_pt], idx_zero_v3, SENTINEL);
 	
 	// 4) mirror to positive side
-	for (int i_v=0; i_v<=N_VBINS; ++i_v) {
-	  if (i_v >= N_SIDE_EDGES + N_EDGES - 1) { // indices 32..62
-	    vnbinning_v2[i_cen][i_pt][i_v] = -vnbinning_v2[i_cen][i_pt][N_VBINS - i_v];
-	    vnbinning_v3[i_cen][i_pt][i_v] = -vnbinning_v3[i_cen][i_pt][N_VBINS - i_v];
-	  }
-	  	    
-	}
+	for (int i_v=0; i_v<=N_VBINS_V2; ++i_v)
+        if (i_v >= N_SIDE_EDGES_V2 + N_EDGES - 1)  // idx >= 32
+          vnbinning_v2[i_cen][i_pt][i_v] = -vnbinning_v2[i_cen][i_pt][N_VBINS_V2 - i_v];
 
-  fill_missing_edges(vnbinning_v2[i_cen][i_pt], N_VBINS, SENTINEL);
-  fill_missing_edges(vnbinning_v3[i_cen][i_pt], N_VBINS, SENTINEL);
-  fix_bin_edges(vnbinning_v2[i_cen][i_pt], N_VBINS);
-  fix_bin_edges(vnbinning_v3[i_cen][i_pt], N_VBINS);
+      for (int i_v=0; i_v<=N_VBINS_V3; ++i_v)
+        if (i_v >= N_SIDE_EDGES_V3 + N_EDGES - 1)  // idx >= 34
+          vnbinning_v3[i_cen][i_pt][i_v] = -vnbinning_v3[i_cen][i_pt][N_VBINS_V3 - i_v];
+
+      fill_missing_edges(vnbinning_v2[i_cen][i_pt], N_VBINS_V2, SENTINEL);
+      fill_missing_edges(vnbinning_v3[i_cen][i_pt], N_VBINS_V3, SENTINEL);
+      fix_bin_edges(vnbinning_v2[i_cen][i_pt], N_VBINS_V2);
+      fix_bin_edges(vnbinning_v3[i_cen][i_pt], N_VBINS_V3);
 
     
 
   // fill full-range distributions
     TString hname_v2 = TString::Format("h_v2_dist_%s_%s", cen_name[i_cen], pt_name[i_pt]);
     TString hname_v3 = TString::Format("h_v3_dist_%s_%s", cen_name[i_cen], pt_name[i_pt]);
-    TH1D *h_v2_full = new TH1D(hname_v2, TString::Format("v2 dist %s %s;v2;Counts", cen_name[i_cen], pt_name[i_pt]), 160, -20, 20);
-    TH1D *h_v3_full = new TH1D(hname_v3, TString::Format("v3 dist %s %s;v3;Counts", cen_name[i_cen], pt_name[i_pt]), 160, -20, 20);
+    TH1D *h_v2_full = new TH1D(hname_v2, TString::Format("v2 dist %s %s;v2;Counts", cen_name[i_cen], pt_name[i_pt]), 80, -20, 20);
+    TH1D *h_v3_full = new TH1D(hname_v3, TString::Format("v3 dist %s %s;v3;Counts", cen_name[i_cen], pt_name[i_pt]), 80, -20, 20);
     nt->Draw(TString::Format("v2>>%s", hname_v2.Data()), cuts, "goff");
     nt->Draw(TString::Format("v3>>%s", hname_v3.Data()), cuts, "goff");
 
@@ -305,11 +314,11 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
       std::string pdfname = plotdir + TString::Format("/v3dist_c%d_pt%d.pdf", i_cen, i_pt).Data();
       cv3->SaveAs(pdfname.c_str());
       std::cout << "[INFO] Saved v3 plot: " << pdfname << std::endl;
-    }
+      }*/
 
     delete h_v2_full;
     delete h_v3_full;
-    */
+
       }//
     }
 
@@ -321,28 +330,33 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
     // print only the requested (cen,pt) pair if provided; otherwise print all
     out << std::fixed << std::setprecision(3);
 
-    auto print_array_line = [&](std::ofstream &os, const char *type, int i_cen, int i_pt, Double_t arr[]) {
+    auto print_array_line = [&](std::ofstream &os, const char *type, int i_cen, int i_pt,
+                                Double_t arr[], int nBins) {
       os << type << "_cent" << cen_edges[i_cen] << "to" << cen_edges[i_cen+1]
-	 << "_pT" << pt_label[i_pt] << "={";
-      for (int ib=0; ib<=N_VBINS; ++ib) {
-	os << arr[ib];
-            if (ib < N_VBINS) os << ", ";
-        }
-        os << "}\n";
+         << "_pT" << pt_label[i_pt]
+         << "[" << nBins+1 << "]"       // <-- array size e.g. [63] or [67]
+         << "={";
+      for (int ib=0; ib<=nBins; ++ib) {
+        os << arr[ib];
+        if (ib < nBins) os << ", ";
+      }
+      os << "}\n";
     };
 
     if (target_cen_group >= 0 && target_pt >= 0) {
-        // single pair -> write exactly two arrays (V2 and V3)
-        print_array_line(out, "v2", target_cen_group, target_pt, vnbinning_v2[target_cen_group][target_pt]);
-        print_array_line(out, "v3", target_cen_group, target_pt, vnbinning_v3[target_cen_group][target_pt]);
+        print_array_line(out, "v2", target_cen_group, target_pt,
+                         vnbinning_v2[target_cen_group][target_pt], N_VBINS_V2);
+        print_array_line(out, "v3", target_cen_group, target_pt,
+                         vnbinning_v3[target_cen_group][target_pt], N_VBINS_V3);
     } else {
-        // fallback: write all arrays (existing behavior)
         for (int i_cen=0; i_cen<N_CENTBINS; ++i_cen) {
             if (target_cen_group >= 0 && i_cen != target_cen_group) continue;
             for (int i_pt=0; i_pt<N_PTBINS; ++i_pt) {
                 if (target_pt >= 0 && i_pt != target_pt) continue;
-                print_array_line(out, "v2", i_cen, i_pt, vnbinning_v2[i_cen][i_pt]);
-                print_array_line(out, "v3", i_cen, i_pt, vnbinning_v3[i_cen][i_pt]);
+                print_array_line(out, "v2", i_cen, i_pt,
+                                 vnbinning_v2[i_cen][i_pt], N_VBINS_V2);   // N_VBINS_V2=62 -> [63]
+                print_array_line(out, "v3", i_cen, i_pt,
+                                 vnbinning_v3[i_cen][i_pt], N_VBINS_V3);   // N_VBINS_V3=66 -> [67]
             }
         }
     }
@@ -363,7 +377,7 @@ int main(int argc, char **argv)
     save_vnbinning_to_txt();
   } else if (argc==2) {
     int idx = atoi(argv[1]);
-    if (idx < 0 || idx > 5) {
+    if (idx < 0 || idx > 5) {  // was > 2, now 6 bins (0-5)
       std::cerr << "ERROR: target_cen_group must be 0-5, got " << idx << std::endl;
       return 1;
     }
@@ -372,7 +386,7 @@ int main(int argc, char **argv)
     int cen_idx = atoi(argv[1]);
     int pt_idx  = atoi(argv[2]);
     
-    if (cen_idx < 0 || cen_idx > 5) {
+    if (cen_idx < 0 || cen_idx > 5) {  // was > 2, now 6 bins (0-5)
       std::cerr << "ERROR: target_cen_group must be 0-5, got " << cen_idx << std::endl;
       return 1;
     }
@@ -387,5 +401,4 @@ int main(int argc, char **argv)
     return 1;
   }
   return 0;
-  
 }
