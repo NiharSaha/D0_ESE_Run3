@@ -16,11 +16,11 @@ module purge
 module load texlive parallel
 
 # --- CONFIGURATION ---
-PLOT_SOURCE_DIR="/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_Mar4_v4/output/prompt_mass_plot_withchi2_sigma"
+PLOT_SOURCE_DIR="/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_Apr1_v0/output/prompt_mass_plot_withchi2_sigma"
 PLOTS_PER_PAGE=100
 GRID="10x10"
-FINAL_OUTPUT_V2="All_Plots_Combined_v2_Mar5.pdf"
-FINAL_OUTPUT_V3="All_Plots_Combined_v3_Mar5.pdf"
+FINAL_OUTPUT_V2="All_Plots_Combined_v2_Apr2.pdf"
+FINAL_OUTPUT_V3="All_Plots_Combined_v3_Apr2.pdf"
 TEMP_DIR_V2="temp_parallel_v2_$SLURM_JOB_ID"
 TEMP_DIR_V3="temp_parallel_v3_$SLURM_JOB_ID"
 

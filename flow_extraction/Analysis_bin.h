@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 
 #include "vnbinning_generated.h" 
 #include "ESE_Cuts_MB11to21_Jan22.h"
@@ -17,10 +18,19 @@ static const int N_QBINS      = 10;
 static const int N_CENTBINS_1 = 80;
 static const int N_CENTBINS   = 6;
 static const int N_PTBINS     = 12;
-//static const int N_VBINS      = 62;
-static const int N_VBINS_V2   = 62;   // <-- v2 specific
-static const int N_VBINS_V3   = 66;   // <--- Equal to VNBINNING array size -1 
-static const int N_BINS       = 2300;
+
+  //const int N_PTBINS = 12;  
+  
+  
+  const int N_BINS       = 2400;              // histogram bins for quantile search
+  const int N_EDGES      = 11;                // quantile edges per side (incl. 0)
+
+  const int N_SIDE_EDGES_V2 = 12;              // was N_SIDE_EDGES, for v2: 24 elements -> 12 per side
+  const int N_SIDE_EDGES_V3 = 15;              // NEW: for v3: 30 elements -> 15 per side
+  const int N_VBINS_V2    = (N_EDGES-1)*2 + (N_SIDE_EDGES_V2-1)*2;  // = 20+22 = 42
+  const int N_VBINS_V3    = (N_EDGES-1)*2 + (N_SIDE_EDGES_V3-1)*2;  // = 20+28 = 48
+
+
 
 // ---- Centrality bin definitions ---
 
@@ -58,6 +68,10 @@ static const char* pTbin[N_PTBINS] = {
     "15.0 < pT < 20.0 GeV", "20.0 < pT < 40.0 GeV",
     "40.0 < pT < 60.0 GeV", "60.0 < pT < 100.0 GeV"
 };
+
+//static const char* pt_name[N_PTBINS] = {"pT1to2",   "pT2to3",   "pT3to4",   "pT4to5", "pT5to6",   "pT6to8",   "pT8to10",  "pT10to15", "pT15to20", "pT20to40", "pT40to60", "pT60to100"};
+  //const char *pt_label[N_PTBINS] = {"1to2","2to3","3to4","4to5","5to6","6to8","8to10","10to15","15to20","20to40","40to60","60to100"};
+  //double pt_edges[N_PTBINS+1] = {1,2,3,4,5,6,8,10,15,20,40, 60, 100};
 
 // --- vnbinning v2 lookup table [N_CENTBINS][N_PTBINS] ----
 
@@ -154,3 +168,21 @@ static const double* vnb_v3_table[N_CENTBINS][N_PTBINS] = {
       vnbinning_v3_cent50to80_pT40to60, vnbinning_v3_cent50to80_pT60to100 }
 
 };
+
+inline double WeightedMeanError(int n, const double* Vi,const double* Yi,const double* dYi,const double* dVi)
+{
+    double sumY = 0.0;
+    for (int i = 0; i < n; ++i) sumY += Yi[i];
+    if (sumY <= 0.0) return 0.0;
+
+    double V = 0.0;
+    for (int i = 0; i < n; ++i) V += Yi[i] * Vi[i];
+    V /= sumY;
+
+    double var = 0.0;
+    for (int i = 0; i < n; ++i) {
+        double dV = Vi[i] - V;
+        var += (dV * dV * dYi[i] * dYi[i])+ (Yi[i] * Yi[i] * dVi[i] * dVi[i]);        
+    }
+    return std::sqrt(var / (sumY * sumY));
+}

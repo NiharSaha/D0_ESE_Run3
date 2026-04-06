@@ -147,12 +147,12 @@ int fit_mass_and_flow(int target_cent = -1)
         h_mass_q3[ic][iq][ip]->SetDirectory(nullptr);
 
         TString hv2d = Form("h_v2dist_%s_q2bin%d_%s", cen_name[ic], iq, pt_name[ip]);
-        h_v2dist_grouped[ic][iq][ip] = new TH1D(hv2d, hv2d, 250, -25.0, 25.0);
+        h_v2dist_grouped[ic][iq][ip] = new TH1D(hv2d, hv2d, 250, -25.0, 25.0); // This is just to see distribution, so const bin width is not a problem!
         h_v2dist_grouped[ic][iq][ip]->Sumw2();
         h_v2dist_grouped[ic][iq][ip]->SetDirectory(nullptr);
 
         TString hv3d = Form("h_v3dist_%s_q3bin%d_%s", cen_name[ic], iq, pt_name[ip]);
-        h_v3dist_grouped[ic][iq][ip] = new TH1D(hv3d, hv3d, 250, -25.0, 25.0);
+        h_v3dist_grouped[ic][iq][ip] = new TH1D(hv3d, hv3d, 500, -50.0, 50.0); // Same here!
         h_v3dist_grouped[ic][iq][ip]->Sumw2();
         h_v3dist_grouped[ic][iq][ip]->SetDirectory(nullptr);
 
@@ -230,7 +230,7 @@ int fit_mass_and_flow(int target_cent = -1)
         h_v2dist_1pct[i_cen1][iq][ip]->SetDirectory(nullptr);
 
         TString hv3d = Form("h_v3dist_cen%d_q3bin%d_%s", i_cen1, iq, pt_name[ip]);
-        h_v3dist_1pct[i_cen1][iq][ip] = new TH1D(hv3d, hv3d, 250, -25.0, 25.0);
+        h_v3dist_1pct[i_cen1][iq][ip] = new TH1D(hv3d, hv3d, 500, -50.0, 50.0);
         h_v3dist_1pct[i_cen1][iq][ip]->Sumw2();
         h_v3dist_1pct[i_cen1][iq][ip]->SetDirectory(nullptr);
 
@@ -309,8 +309,7 @@ int fit_mass_and_flow(int target_cent = -1)
               h_v2dist_1pct[i_cen1][iq][i_pt]->Fill(v2_val);
             for (int i_v2 = 0; i_v2 < N_VBINS_V2; i_v2++)
             {
-              if (v2_val >= vnbinning_v2[cen_group][i_pt][i_v2] &&
-                  v2_val < vnbinning_v2[cen_group][i_pt][i_v2 + 1])
+              if (v2_val >= vnbinning_v2[cen_group][i_pt][i_v2] && v2_val < vnbinning_v2[cen_group][i_pt][i_v2 + 1])
                 if (h_mass_v2_fit_1pct[i_cen1][iq][i_pt][i_v2])
                   h_mass_v2_fit_1pct[i_cen1][iq][i_pt][i_v2]->Fill(mass_val);
             } // -- v2 slice --
@@ -325,8 +324,7 @@ int fit_mass_and_flow(int target_cent = -1)
               h_v3dist_1pct[i_cen1][iq][i_pt]->Fill(v3_val);
             for (int i_v3 = 0; i_v3 < N_VBINS_V3; i_v3++)
             {
-              if (v3_val >= vnbinning_v3[cen_group][i_pt][i_v3] &&
-                  v3_val < vnbinning_v3[cen_group][i_pt][i_v3 + 1])
+              if (v3_val >= vnbinning_v3[cen_group][i_pt][i_v3] && v3_val < vnbinning_v3[cen_group][i_pt][i_v3 + 1])
                 if (h_mass_v3_fit_1pct[i_cen1][iq][i_pt][i_v3])
                   h_mass_v3_fit_1pct[i_cen1][iq][i_pt][i_v3]->Fill(mass_val);
             } // -- v3 slice --
@@ -460,6 +458,16 @@ int fit_mass_and_flow(int target_cent = -1)
     outname += std::string("_task") + env_task;
   outname += ".root";
   TFile *outf = new TFile(outname.c_str(), "recreate");
+  // --- per-centrality sigma=-10 bad-bin log file (one per sbatch job/centrality) ---
+  std::string logName = "sigma_bad_bins_";
+  logName += (target_cen_group >= 0) ? cen_name[target_cen_group] : "allcent";
+  logName += ".log";
+  std::ofstream bad_bin_log(logName);
+  // tag helper: is this v-bin in the central (mid) region?
+  auto v2_is_mid = [](int iv) { return iv >= (N_SIDE_EDGES_V2-1) && iv < N_VBINS_V2-(N_SIDE_EDGES_V2-1); };
+  auto v3_is_mid = [](int iv) { return iv >= (N_SIDE_EDGES_V3-1) && iv < N_VBINS_V3-(N_SIDE_EDGES_V3-1); };
+  bad_bin_log << "# Bins where sigma_v2 or sigma_v3 was forced to -10 (problematic fits)\n";
+  bad_bin_log << "# type | i_cen | cen_name | i_q | i_pt | pt_name | i_v | reason\n";
 
   TDirectory *dir_yield_vn = outf->mkdir("yields_vN");
   TDirectory *dir_hist_sp = outf->mkdir("histograms_SP");
@@ -877,6 +885,9 @@ int fit_mass_and_flow(int target_cent = -1)
             yield_error_v2[i_v] = 0;
             chi2_ndf_for_q2_v2[i_cen][i_q][i_pt][i_v] = -10;
             sigma_v2[i_cen][i_q][i_pt][i_v] = -10;
+            bad_bin_log << "v2 | " << i_cen << " | " << cen_name[i_cen]
+                        << " | " << i_q << " | " << i_pt << " | " << pt_name[i_pt]
+                        << " | " << i_v << " | low_stats\n";
             continue;
           }
 
@@ -1010,6 +1021,7 @@ int fit_mass_and_flow(int target_cent = -1)
           yield_error_v2[i_v] = fitFcn_v2->GetParError(0) * fitFcn_v2->GetParameter(5) / width;
           // sigma_v2[i_cen][i_q][i_pt][i_v] = yield_v2[i_v]/yield_error_v2[i_v];
           sigma_v2[i_cen][i_q][i_pt][i_v] = (yield_error_v2[i_v] > 0) ? yield_v2[i_v] / yield_error_v2[i_v] : -10;
+          bool v2_zero_error = !(yield_error_v2[i_v] > 0);
 
           if (yield_v2[i_v] <= 0)
           {
@@ -1017,6 +1029,14 @@ int fit_mass_and_flow(int target_cent = -1)
             yield_error_v2[i_v] = 0;
             chi2_ndf_for_q2_v2[i_cen][i_q][i_pt][i_v] = -10;
             sigma_v2[i_cen][i_q][i_pt][i_v] = -10;
+          }
+          if (sigma_v2[i_cen][i_q][i_pt][i_v] < 0)
+          {
+            const char *reason_v2 = v2_zero_error ? "zero_error" : "neg_yield";
+            bad_bin_log << "v2 | " << i_cen << " | " << cen_name[i_cen]
+            << " | " << i_q << " | " << i_pt << " | " << pt_name[i_pt]
+            << " | " << i_v << " | " << reason_v2 << " | "
+            << (v2_is_mid(i_v) ? "MID" : "TAIL") << "\n";
           }
 
           h_v2_hist[i_cen][i_q][i_pt]->SetBinContent(i_v + 1, yield_v2[i_v]);
@@ -1074,6 +1094,9 @@ int fit_mass_and_flow(int target_cent = -1)
             yield_error_v3[i_v] = 0;
             chi2_ndf_for_q3_v3[i_cen][i_q][i_pt][i_v] = -10;
             sigma_v3[i_cen][i_q][i_pt][i_v] = -10;
+            bad_bin_log << "v3 | " << i_cen << " | " << cen_name[i_cen]
+                        << " | " << i_q << " | " << i_pt << " | " << pt_name[i_pt]
+                        << " | " << i_v << " | low_stats\n";
             continue;
           }
 
@@ -1213,6 +1236,7 @@ int fit_mass_and_flow(int target_cent = -1)
           yield_error_v3[i_v] = fitFcn_v3->GetParError(0) * fitFcn_v3->GetParameter(5) / width;
           // sigma_v3[i_cen][i_q][i_pt][i_v] = yield_v3[i_v]/yield_error_v3[i_v];
           sigma_v3[i_cen][i_q][i_pt][i_v] = (yield_error_v3[i_v] > 0) ? yield_v3[i_v] / yield_error_v3[i_v] : -10;
+          bool v3_zero_error = !(yield_error_v3[i_v] > 0);
 
           if (yield_v3[i_v] <= 0)
           {
@@ -1220,6 +1244,14 @@ int fit_mass_and_flow(int target_cent = -1)
             yield_error_v3[i_v] = 0;
             chi2_ndf_for_q3_v3[i_cen][i_q][i_pt][i_v] = -10;
             sigma_v3[i_cen][i_q][i_pt][i_v] = -10;
+          }
+          if (sigma_v3[i_cen][i_q][i_pt][i_v] < 0)
+          {
+            const char *reason_v3 = v3_zero_error ? "zero_error" : "neg_yield";
+            bad_bin_log << "v3 | " << i_cen << " | " << cen_name[i_cen]
+            << " | " << i_q << " | " << i_pt << " | " << pt_name[i_pt]
+            << " | " << i_v << " | " << reason_v3 << " | "
+            << (v3_is_mid(i_v) ? "MID" : "TAIL") << "\n";
           }
 
           h_v3_hist[i_cen][i_q][i_pt]->SetBinContent(i_v + 1, yield_v3[i_v]);
@@ -1275,10 +1307,12 @@ int fit_mass_and_flow(int target_cent = -1)
         pt_x_error[i_pt] = (-1.0 * pt_edges[i_pt] + pt_edges[i_pt + 1]) / 2;
 
         mean_val_v2[i_pt] = h_v2_hist[i_cen][i_q][i_pt]->GetMean();
-        mean_error_v2[i_pt] = h_v2_hist[i_cen][i_q][i_pt]->GetMeanError();
+        //mean_error_v2[i_pt] = h_v2_hist[i_cen][i_q][i_pt]->GetMeanError();
+        mean_error_v2[i_pt] = WeightedMeanError(N_VBINS_V2, v2_x_store[i_cen][i_pt], yield_v2, yield_error_v2, v2_x_err_store[i_cen][i_pt]);
 
         mean_val_v3[i_pt] = h_v3_hist[i_cen][i_q][i_pt]->GetMean();
-        mean_error_v3[i_pt] = h_v3_hist[i_cen][i_q][i_pt]->GetMeanError();
+        //mean_error_v3[i_pt] = h_v3_hist[i_cen][i_q][i_pt]->GetMeanError();
+        mean_error_v3[i_pt] = WeightedMeanError(N_VBINS_V3, v3_x_store[i_cen][i_pt], yield_v3, yield_error_v3, v3_x_err_store[i_cen][i_pt]);
 
         chi2_ndf_for_q2_v2_graph[i_cen][i_q][i_pt] = new TGraph(N_VBINS_V2, v2_x_store[i_cen][i_pt], chi2_ndf_for_q2_v2[i_cen][i_q][i_pt]);
 
@@ -1302,7 +1336,7 @@ int fit_mass_and_flow(int target_cent = -1)
             Form("chi2ndf_graph_%s_%s_q3bin_%d", pt_name[i_pt], cen_name[i_cen], i_q));
 
         // chi2_ndf_for_q3_v3_graph[i_cen][i_q][i_pt]->Write();
-        chi2_ndf_for_q3_v3_graph[i_cen][i_q][i_pt]->GetXaxis()->SetTitle("v2");
+        chi2_ndf_for_q3_v3_graph[i_cen][i_q][i_pt]->GetXaxis()->SetTitle("v3");
         chi2_ndf_for_q3_v3_graph[i_cen][i_q][i_pt]->GetYaxis()->SetTitle("chi2/ndf");
         chi2_ndf_for_q3_v3_graph[i_cen][i_q][i_pt]->SetMarkerStyle(20);
         chi2_ndf_for_q3_v3_graph[i_cen][i_q][i_pt]->SetMarkerSize(0.8);

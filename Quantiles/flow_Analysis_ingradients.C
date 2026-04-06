@@ -205,8 +205,7 @@ void flow_Analysis_latest(TString input_txt, TString output_path, int istart, in
       float sumW2 = ephfpSumW[1] + ephfmSumW[1];
       float sumW3 = ephfpSumW[2] + ephfmSumW[2];
 
-      if (sumW2 <= 0 || sumW3 <= 0)
-        continue;
+      if (sumW2 <= 0 || sumW3 <= 0) continue;
       q2_hf_total = (ephfpQ[1] + ephfmQ[1]) / sumW2;
       q3_hf_total = (ephfpQ[2] + ephfmQ[2]) / sumW3;
 

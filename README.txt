@@ -49,4 +49,16 @@ Doing the analysis!
 3. Fit mass distributions to get flow results
 /home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/fit_mass_and_flow.C
 
-4. Plotting macro (local)
+4. Plotting/Showing macros/scripts
+    -To merge all SP bin mass fit plots in pdf format
+    /home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/sbatch_combined_mass_pdf_v2v3.sh
+
+    - To draw SP distribution of candidates for different (cent, pT) bin
+    /home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/Draw_raw_SPv2v3_dist_CentPtBin.C
+
+    - To draw SP distribution of candidates for different (cent, pT, Qn) bin
+    /home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/Draw_raw_SPv2v3_dist_CentPtQuanBin.C
+
+
+5. Plotting macro (local)
+

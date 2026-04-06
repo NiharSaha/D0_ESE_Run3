@@ -27,6 +27,7 @@
 #include <algorithm> //
 #include <iomanip>
 
+#include "Analysis_bin.h"
 
 using namespace std;
 
@@ -96,21 +97,7 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
   Int_t cen_edges[N_CENTBINS+1]={0, 10, 20, 30, 40, 50, 80};
   static const char* cen_name[N_CENTBINS] = {"cent0to10", "cent10to20", "cent20to30", "cent30to40", "cent40to50", "cent50to80"};
 
-  const int N_PTBINS = 12;  
-  static const char* pt_name[N_PTBINS] = {"pT1to2",   "pT2to3",   "pT3to4",   "pT4to5", "pT5to6",   "pT6to8",   "pT8to10",  "pT10to15", "pT15to20", "pT20to40", "pT40to60", "pT60to100"};
-  const char *pt_label[N_PTBINS] = {"1to2","2to3","3to4","4to5","5to6","6to8","8to10","10to15","15to20","20to40","40to60","60to100"};
-  double pt_edges[N_PTBINS+1] = {1,2,3,4,5,6,8,10,15,20,40, 60, 100};
-  
-  const int N_BINS       = 2400;              // histogram bins for quantile search
-  const int N_EDGES      = 21;                // quantile edges per side (incl. 0)
-  //const int N_SIDE_EDGES = 12;                // fixed side edges per side
-  //const int N_VBINS      = (N_EDGES-1)*2 + (N_SIDE_EDGES-1)*2; // 62 total bins
 
-  const int N_SIDE_EDGES_V2 = 12;              // was N_SIDE_EDGES, for v2: 24 elements -> 12 per side
-  const int N_SIDE_EDGES_V3 = 14;              // NEW: for v3: 28 elements -> 14 per side
-  const int N_VBINS_V2    = (N_EDGES-1)*2 + (N_SIDE_EDGES_V2-1)*2;  // = 40+22 = 62
-  const int N_VBINS_V3    = (N_EDGES-1)*2 + (N_SIDE_EDGES_V3-1)*2; 
-  
   Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS_V2+1];
   Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS_V3+1];
   //Double_t vnbinning_side[16] = {-10,-8.2,-6.6,-5.2,-4.0,-3.5,-3.0,-2.3,2.3,3.0,3.5,4.0,5.2,6.6,8.2,10};
@@ -118,7 +105,7 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
   //Double_t vnbinning_side_v3[24] = {-20.0, -15,  -8.2, -6.2, -5.4, -4.6, -4.0, -3.4, -2.9, -2.4, 1.2, 1.6, 2.0, 2.4, 2.9, 3.4, 4.0, 4.6, 5.4, 6.2, 8.2, 10.0};
 
   Double_t vnbinning_side_v2[24] = {-15.0,-12.0,-10.0,-8.2,-6.6,-5.2,-4.6,-4.0,-3.5,-3.0,-2.7,-2.4, 2.4,2.7,3.0,3.5,4.0,4.6,5.2,6.6,8.2,10.0,12.0,15.0};
-  Double_t vnbinning_side_v3[28] = {-25, -15, -12.5, -12, -10, -8, -6.5, -5.5, -4.5, -4.0, -3.5, -3.1, -2.7, -2.4, 2.4, 2.7, 3.1, 3.5, 4.0, 4.5, 5.5, 6.5, 8.0, 10.0, 12.0, 12.5, 15.0, 25.0};
+  Double_t vnbinning_side_v3[30] = {-50.0, -25, -15, -12.5, -12, -10, -8, -6.5, -5.5, -4.5, -4.0, -3.5, -3.1, -2.7, -2.4, 2.4, 2.7, 3.1, 3.5, 4.0, 4.5, 5.5, 6.5, 8.0, 10.0, 12.0, 12.5, 15.0, 25.0, 50.0};
   
   
     // open input ntuple (adjust path if needed)
@@ -333,7 +320,7 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
     auto print_array_line = [&](std::ofstream &os, const char *type, int i_cen, int i_pt,
                                 Double_t arr[], int nBins) {
       os << type << "_cent" << cen_edges[i_cen] << "to" << cen_edges[i_cen+1]
-         << "_pT" << pt_label[i_pt]
+         << "_" << pt_name[i_pt]
          << "[" << nBins+1 << "]"       // <-- array size e.g. [63] or [67]
          << "={";
       for (int ib=0; ib<=nBins; ++ib) {

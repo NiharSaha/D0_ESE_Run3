@@ -34,8 +34,8 @@ static const vector<string> PT_ORDER = {
 static const vector<string> VN_ORDER = {"v2", "v3"};
 
 // --- Separate sizes for v2 and v3 ---
-static const size_t TARGET_N_V2 = 63;   // N_VBINS_V2+1 = 62+1
-static const size_t TARGET_N_V3 = 67;   // N_VBINS_V3+1 = 66+1
+static const size_t TARGET_N_V2 = 43;   // N_VBINS_V2+1 = 42+1
+static const size_t TARGET_N_V3 = 49;   // N_VBINS_V3+1 = 48+1
 
 static size_t get_target_n(const string &ident) {
     // ident starts with "vnbinning_v2_..." or "vnbinning_v3_..."
@@ -85,7 +85,7 @@ static void write_array(ofstream &os, const string &ident,
 }
 
 void generate_vnbinning_header(
-    const char *input_dir  = "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_Mar16_v1/output",
+    const char *input_dir  = "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_Apr1_v0/output",
     const char *out_header = "/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/vnbinning_generated.h"
 )
 {
