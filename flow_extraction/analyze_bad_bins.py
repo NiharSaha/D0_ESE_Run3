@@ -83,7 +83,7 @@ def print_report(entries, skip_low_stats, show_tail):
             subset = [e for e in subset if e["reason"] != "low_stats"]
 
         print("=" * 72)
-        print(f"  {region}  [{reasons_shown}]  —  {len(subset)} bad bins")
+        print(f"  {region}  [{reasons_shown}]  --  {len(subset)} bad bins")
         print("=" * 72)
 
         if not subset:
@@ -116,7 +116,7 @@ def print_report(entries, skip_low_stats, show_tail):
             print(f"  {vtype:<4}  q={i_q:<3}  {pt_range:>10}  {iv_str}")
 
         # --- count summary table ---
-        print(f"\n\n  Summary counts — {region}")
+        print(f"\n\n  Summary counts -- {region}")
         print(f"  {'Centrality':<15}  {'v2 bad':>7}  {'v3 bad':>7}  {'total':>7}")
         print(f"  {'-'*15}  {'-'*7}  {'-'*7}  {'-'*7}")
         cen_order = sorted(set((e["i_cen"], e["cen_name"]) for e in subset))
