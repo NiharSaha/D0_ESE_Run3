@@ -1347,11 +1347,11 @@ int fit_mass_and_flow(int target_cent = -1)
 
         mean_val_v2[i_pt] = h_v2_hist[i_cen][i_q][i_pt]->GetMean();
         //mean_error_v2[i_pt] = h_v2_hist[i_cen][i_q][i_pt]->GetMeanError();
-        mean_error_v2[i_pt] = WeightedMeanError(N_VBINS_V2, v2_x_store[i_cen][i_pt], yield_v2, yield_error_v2, v2_x_err_store[i_cen][i_pt]);
+        mean_error_v2[i_pt] = WeightedMeanError(N_VBINS_V2, mean_val_v2[i_pt], v2_x_store[i_cen][i_pt], yield_v2, yield_error_v2, v2_x_err_store[i_cen][i_pt]);
 
         mean_val_v3[i_pt] = h_v3_hist[i_cen][i_q][i_pt]->GetMean();
         //mean_error_v3[i_pt] = h_v3_hist[i_cen][i_q][i_pt]->GetMeanError();
-        mean_error_v3[i_pt] = WeightedMeanError(N_VBINS_V3, v3_x_store[i_cen][i_pt], yield_v3, yield_error_v3, v3_x_err_store[i_cen][i_pt]);
+        mean_error_v3[i_pt] = WeightedMeanError(N_VBINS_V3, mean_val_v3[i_pt], v3_x_store[i_cen][i_pt], yield_v3, yield_error_v3, v3_x_err_store[i_cen][i_pt]);
 
         v2_vs_q_val[i_cen][i_pt][i_q] = mean_val_v2[i_pt];
         v2_vs_q_err[i_cen][i_pt][i_q] = mean_error_v2[i_pt];

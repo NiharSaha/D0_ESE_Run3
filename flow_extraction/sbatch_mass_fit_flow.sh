@@ -21,7 +21,7 @@ JOB_ID="${SLURM_ARRAY_JOB_ID:-${SLURM_JOB_ID:-unknown}}"
 SRC="/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/fit_mass_and_flow.C"
 SRC_DIR="$(dirname "$SRC")"
 
-SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_Apr7_v2}"
+SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_Apr7_v3}"
 LOG_DIR="${SCRATCH_BASE}/logs"
 BUILD_DIR="${SCRATCH_BASE}/build/${JOB_ID}_${TASK_ID}"
 OUT_DIR="${SCRATCH_BASE}/output"

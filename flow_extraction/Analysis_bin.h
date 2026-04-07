@@ -169,20 +169,16 @@ static const double* vnb_v3_table[N_CENTBINS][N_PTBINS] = {
 
 };
 
-inline double WeightedMeanError(int n, const double* Vi,const double* Yi,const double* dYi,const double* dVi)
+inline double WeightedMeanError(int n, double V, const double* Vi, const double* Yi, const double* dYi, const double* dVi)
 {
     double sumY = 0.0;
     for (int i = 0; i < n; ++i) sumY += Yi[i];
     if (sumY <= 0.0) return 0.0;
 
-    double V = 0.0;
-    for (int i = 0; i < n; ++i) V += Yi[i] * Vi[i];
-    V /= sumY;
-
     double var = 0.0;
     for (int i = 0; i < n; ++i) {
         double dV = Vi[i] - V;
-        var += (dV * dV * dYi[i] * dYi[i])+ (Yi[i] * Yi[i] * dVi[i] * dVi[i]);        
+        var += (dV * dV * dYi[i] * dYi[i]) + (Yi[i] * Yi[i] * dVi[i] * dVi[i]);
     }
     return std::sqrt(var / (sumY * sumY));
 }
