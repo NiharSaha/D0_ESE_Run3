@@ -1,3 +1,53 @@
+//======================================================================
+// PURPOSE:
+//   Step 1 of the SP-binning pipeline for D0 flow analysis.
+//   Reads the D0 candidate ntuple and computes the v2/v3 bin edges
+//   used to divide events into equal-statistics SP quantile bins.
+//   Writes one text file per (centrality, pT) job with C-array
+//   initializer lines that are later assembled into vnbinning_generated.h
+//   by generate_vnbinning_header.C.
+//
+// INPUT:
+//   TNtuple "nt" in
+//   /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/
+//   SP_MB0to31_Apr29_FullStat/ROOT/flow_Analysis_out_combined.root
+//   Branches used: cent, pT, mass, dca, y, v2, v3
+//
+// OUTPUT (per job):
+//   vnbinning_c<C>_pt<P>[_job<J>_task<T>].txt
+//     - v2 line  (always):          v2_cent<X>to<Y>_pT<A>to<B>[43]={...}
+//     - v3 line  (only if PT < 8):  v3_cent<X>to<Y>_pT<A>to<B>[49]={...}
+//   vnbinning_c<C>_pt<P>[_job<J>_task<T>]_vndist.root
+//     - TH1D histograms of the v2/v3 distributions for QA
+//
+// BIN LAYOUT:
+//   v2:  9 pT bins  {2,3,4,5,6,8,10,15,30,100}       GeV, N_VBINS_V2=42
+//   v3:  7 pT bins  {2,4,6,8,10,20,50,100}            GeV, N_VBINS_V3=48
+//   Both: 6 centrality bins  {0,10,20,30,40,50,80} %
+//
+// BIN EDGE CONSTRUCTION (per histogram):
+//   1) Fixed negative-side edges  (vnbinning_side_v2/v3, N_SIDE_EDGES_V2/V3 per side)
+//   2) N_EDGES-1 equal-statistics quantile edges from the negative half
+//   3) Zero edge placed at index N_SIDE_EDGES + N_EDGES - 2
+//   4) Positive side mirrored from negative side
+//   Missing/duplicate edges are repaired by fill_missing_edges / fix_bin_edges.
+//
+// USAGE:
+//   Standalone:    ./save_vnbinning_to_txt [cen_idx] [pt_idx]
+//   SLURM array:   sbatch sbatch_vnbinning.sh
+//     Array index maps as:  CENT_IDX = TASK_ID / 9,   PT_IDX = TASK_ID % 9
+//     (54 tasks total: 6 centralities x 9 pT indices)
+//
+// PIPELINE:
+//   save_vnbinning_to_txt.C  ->  generate_vnbinning_header.C
+//   ->  vnbinning_generated.h  ->  Analysis_bin.h  ->  fit_mass_and_flow.C
+//
+// NOTE:
+//   Defines SKIP_VNBINNING_GENERATED before including Analysis_bin.h so
+//   that vnbinning_generated.h and quantile_cuts_2023_MB0to31.h are not
+//   pulled in (they do not exist / are not needed at this stage).
+//======================================================================
+
 #include <cstdlib>
 #include <iostream>
 #include <map>
@@ -27,6 +77,7 @@
 #include <algorithm> //
 #include <iomanip>
 
+#define SKIP_VNBINNING_GENERATED
 #include "Analysis_bin.h"
 
 using namespace std;
@@ -98,8 +149,8 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
   static const char* cen_name[N_CENTBINS] = {"cent0to10", "cent10to20", "cent20to30", "cent30to40", "cent40to50", "cent50to80"};
 
 
-  Double_t vnbinning_v2[N_CENTBINS][N_PTBINS][N_VBINS_V2+1];
-  Double_t vnbinning_v3[N_CENTBINS][N_PTBINS][N_VBINS_V3+1];
+  Double_t vnbinning_v2[N_CENTBINS][N_PTBINS_V2][N_VBINS_V2+1];
+  Double_t vnbinning_v3[N_CENTBINS][N_PTBINS_V3][N_VBINS_V3+1];
   //Double_t vnbinning_side[16] = {-10,-8.2,-6.6,-5.2,-4.0,-3.5,-3.0,-2.3,2.3,3.0,3.5,4.0,5.2,6.6,8.2,10};
   //Double_t vnbinning_side_v3[24] = {-15.0,-10.0,-6.0,-4.5,-3.5,-2.8,-2.2,-1.8,-1.5,-1.3,-1.25,-1.2,1.2, 1.25, 1.3, 1.5, 1.8, 2.2, 2.8, 3.5, 4.5, 6.0, 10.0, 15.0};
   //Double_t vnbinning_side_v3[24] = {-20.0, -15,  -8.2, -6.2, -5.4, -4.6, -4.0, -3.4, -2.9, -2.4, 1.2, 1.6, 2.0, 2.4, 2.9, 3.4, 4.0, 4.6, 5.4, 6.2, 8.2, 10.0};
@@ -109,7 +160,7 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
   
   
     // open input ntuple (adjust path if needed)
-  TFile *f = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/SP_MB11to21_Feb20_v4/ROOT/Flow_combined.root");
+  TFile *f = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/SP_MB0to31_Apr29_FullStat/ROOT/flow_Analysis_out_combined.root");
   if (!f || f->IsZombie()) { std::cerr << "Cannot open ntuple file\n"; return 1; }
   TNtuple *nt = (TNtuple*)f->Get("nt");
   if (!nt) { std::cerr<<"Cannot find TNtuple 'nt'\n"; return 1; }
@@ -118,8 +169,10 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
   
       const Double_t SENTINEL = -1e9;
   for (int i=0; i<N_CENTBINS; ++i){
-    for (int j=0; j<N_PTBINS; ++j) {
+    for (int j=0; j<N_PTBINS_V2; ++j) {
       for (int k=0; k<=N_VBINS_V2; ++k) vnbinning_v2[i][j][k] = SENTINEL;
+    }
+    for (int j=0; j<N_PTBINS_V3; ++j) {
       for (int k=0; k<=N_VBINS_V3; ++k) vnbinning_v3[i][j][k] = SENTINEL;
     }
     }
@@ -166,148 +219,88 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
 
 
   // Use TTree::Draw to fill histogram with selection string for each centrality group and pt bin.
+  // --- v2 loop: N_PTBINS_V2 bins ---
     for (int i_cen=0; i_cen<N_CENTBINS; ++i_cen) {
       if (target_cen_group >= 0 && i_cen != target_cen_group) continue;
-      
-      for (int i_pt=0; i_pt<N_PTBINS; ++i_pt) {
+      for (int i_pt=0; i_pt<N_PTBINS_V2; ++i_pt) {
 	if (target_pt >= 0 && i_pt != target_pt) continue;
-	
-	
-	cuts = TString::Format("dca<0.0085 && mass<2.0 && mass>1.74 && fabs(y)<1.0 && cent>=%d && cent<%d && pT>=%g && pT<%g", cen_edges[i_cen], cen_edges[i_cen+1], pt_edges[i_pt], pt_edges[i_pt+1]);
-	
-	
-	std::cout << std::endl << std::endl << cuts << std::endl;
-	
-	h_v2_bin->Reset(); h_v3_bin->Reset();
+	cuts = TString::Format("dca<0.0085 && mass<2.0 && mass>1.74 && fabs(y)<1.0 && cent>=%d && cent<%d && pT>=%g && pT<%g", cen_edges[i_cen], cen_edges[i_cen+1], pt_edges_v2[i_pt], pt_edges_v2[i_pt+1]);
+	std::cout << std::endl << "[v2] " << cuts << std::endl;
+	h_v2_bin->Reset();
 	nt->Draw("v2>>h_v2_bin", cuts, "goff");
-	nt->Draw("v3>>h_v3_bin", cuts, "goff");
-	Int_t n_v2 = static_cast<Int_t>(h_v2_bin->GetEntries());
-	Int_t n_v3 = static_cast<Int_t>(h_v3_bin->GetEntries());
+	Int_t n_v2_entries = static_cast<Int_t>(h_v2_bin->GetEntries());
+	if (n_v2_entries == 0)
+	  std::cerr << "WARNING: zero v2 entries for i_cen=" << i_cen << " i_pt=" << i_pt << " cuts=" << cuts << std::endl;
 	
-	if (n_v2 == 0)
-	  std::cerr << "WARNING: zero v2 entries for i_cen=" << i_cen
-		    << " i_pt=" << i_pt << " cuts=" << cuts << std::endl;
-	if (n_v3 == 0)
-	  std::cerr << "WARNING: zero v3 entries for i_cen=" << i_cen
-		    << " i_pt=" << i_pt << " cuts=" << cuts << std::endl;
-	
-    
-    
-	// 1) fixed negative side edges
+    // 1) fixed negative side edges
 	for (int i_bin=0; i_bin < N_SIDE_EDGES_V2; ++i_bin)
         vnbinning_v2[i_cen][i_pt][i_bin] = vnbinning_side_v2[i_bin];
-      for (int i_bin=0; i_bin < N_SIDE_EDGES_V3; ++i_bin)
-        vnbinning_v3[i_cen][i_pt][i_bin] = vnbinning_side_v3[i_bin];
-	
 	double total2 = h_v2_bin->Integral(1, N_BINS);
-	double total3 = h_v3_bin->Integral(1, N_BINS);
-
-	// h_v2_bin and h_v3_bin are your working histograms for v2 and v3, respectively
-	
-	  
-	  for (int i_edge=1; i_edge<N_EDGES; ++i_edge) {
+	for (int i_edge=1; i_edge<N_EDGES; ++i_edge) {
         const double thr2 = i_edge * total2 / double(N_EDGES-1);
-        const double thr3 = i_edge * total3 / double(N_EDGES-1);
-        for (int i_bin=1; i_bin<N_BINS; ++i_bin) {
+        for (int i_bin=1; i_bin<N_BINS; ++i_bin)
           if (h_v2_bin->Integral(1,i_bin) <= thr2 && h_v2_bin->Integral(1,i_bin+1) > thr2)
             vnbinning_v2[i_cen][i_pt][i_edge + N_SIDE_EDGES_V2 - 1] = h_v2_bin->GetBinLowEdge(i_bin+1);
-          if (h_v3_bin->Integral(1,i_bin) <= thr3 && h_v3_bin->Integral(1,i_bin+1) > thr3)
-            vnbinning_v3[i_cen][i_pt][i_edge + N_SIDE_EDGES_V3 - 1] = h_v3_bin->GetBinLowEdge(i_bin+1);
-        }
       }
 	
-	// 3) zero edge
-	    const int idx_zero_v2 = N_SIDE_EDGES_V2 + N_EDGES - 2;  // = 31
-      const int idx_zero_v3 = N_SIDE_EDGES_V3 + N_EDGES - 2;  // = 33
+      // 3) zero edge
+	const int idx_zero_v2 = N_SIDE_EDGES_V2 + N_EDGES - 2;
       vnbinning_v2[i_cen][i_pt][idx_zero_v2] = 0.0;
-      vnbinning_v3[i_cen][i_pt][idx_zero_v3] = 0.0;
-
       fill_missing_edges(vnbinning_v2[i_cen][i_pt], idx_zero_v2, SENTINEL);
-      fill_missing_edges(vnbinning_v3[i_cen][i_pt], idx_zero_v3, SENTINEL);
-	
 	// 4) mirror to positive side
 	for (int i_v=0; i_v<=N_VBINS_V2; ++i_v)
-        if (i_v >= N_SIDE_EDGES_V2 + N_EDGES - 1)  // idx >= 32
+        if (i_v >= N_SIDE_EDGES_V2 + N_EDGES - 1)
           vnbinning_v2[i_cen][i_pt][i_v] = -vnbinning_v2[i_cen][i_pt][N_VBINS_V2 - i_v];
-
-      for (int i_v=0; i_v<=N_VBINS_V3; ++i_v)
-        if (i_v >= N_SIDE_EDGES_V3 + N_EDGES - 1)  // idx >= 34
-          vnbinning_v3[i_cen][i_pt][i_v] = -vnbinning_v3[i_cen][i_pt][N_VBINS_V3 - i_v];
-
       fill_missing_edges(vnbinning_v2[i_cen][i_pt], N_VBINS_V2, SENTINEL);
-      fill_missing_edges(vnbinning_v3[i_cen][i_pt], N_VBINS_V3, SENTINEL);
       fix_bin_edges(vnbinning_v2[i_cen][i_pt], N_VBINS_V2);
-      fix_bin_edges(vnbinning_v3[i_cen][i_pt], N_VBINS_V3);
-
-    
-
-  // fill full-range distributions
-    TString hname_v2 = TString::Format("h_v2_dist_%s_%s", cen_name[i_cen], pt_name[i_pt]);
-    TString hname_v3 = TString::Format("h_v3_dist_%s_%s", cen_name[i_cen], pt_name[i_pt]);
-    TH1D *h_v2_full = new TH1D(hname_v2, TString::Format("v2 dist %s %s;v2;Counts", cen_name[i_cen], pt_name[i_pt]), 80, -20, 20);
-    TH1D *h_v3_full = new TH1D(hname_v3, TString::Format("v3 dist %s %s;v3;Counts", cen_name[i_cen], pt_name[i_pt]), 80, -20, 20);
+    TString hname_v2 = TString::Format("h_v2_dist_%s_%s", cen_name[i_cen], pt_name_v2[i_pt]);
+    TH1D *h_v2_full = new TH1D(hname_v2, TString::Format("v2 dist %s %s;v2;Counts", cen_name[i_cen], pt_name_v2[i_pt]), 80, -20, 20);
     nt->Draw(TString::Format("v2>>%s", hname_v2.Data()), cuts, "goff");
-    nt->Draw(TString::Format("v3>>%s", hname_v3.Data()), cuts, "goff");
-
     fout->cd();
     h_v2_full->Write();
-    h_v3_full->Write();
-
-
-    // --- save v2 to PDF ---
-    /*cv2->cd();
-    cv2->Clear();
-    gPad->SetLogy(1);
-    gPad->SetLeftMargin(0.12);
-    gPad->SetBottomMargin(0.12);
-    h_v2_full->SetLineColor(kBlue+1);
-    h_v2_full->SetLineWidth(2);
-    h_v2_full->GetXaxis()->SetTitle("v_{2}");
-    h_v2_full->GetYaxis()->SetTitle("Counts");
-    h_v2_full->GetXaxis()->SetTitleSize(0.05);
-    h_v2_full->GetYaxis()->SetTitleSize(0.05);
-    h_v2_full->Draw("HIST");
-    TLatex lat2;
-    lat2.SetNDC(); lat2.SetTextSize(0.04);
-    lat2.DrawLatex(0.15, 0.88, TString::Format("cent %d-%d%%  p_{T}=%s GeV",
-        cen_edges[i_cen], cen_edges[i_cen+1], pt_label[i_pt]));
-    lat2.DrawLatex(0.15, 0.82, TString::Format("Entries=%.0f  Mean=%.3f  RMS=%.3f",
-        h_v2_full->GetEntries(), h_v2_full->GetMean(), h_v2_full->GetRMS()));
-    {
-      std::string pdfname = plotdir + TString::Format("/v2dist_c%d_pt%d.pdf", i_cen, i_pt).Data();
-      cv2->SaveAs(pdfname.c_str());
-      std::cout << "[INFO] Saved v2 plot: " << pdfname << std::endl;
-    }
-    // --- save v3 to PDF ---
-    cv3->cd();
-    cv3->Clear();
-    gPad->SetLogy(1);
-    gPad->SetLeftMargin(0.12);
-    gPad->SetBottomMargin(0.12);
-    h_v3_full->SetLineColor(kRed+1);
-    h_v3_full->SetLineWidth(2);
-    h_v3_full->GetXaxis()->SetTitle("v_{3}");
-    h_v3_full->GetYaxis()->SetTitle("Counts");
-    h_v3_full->GetXaxis()->SetTitleSize(0.05);
-    h_v3_full->GetYaxis()->SetTitleSize(0.05);
-    h_v3_full->Draw("HIST");
-    TLatex lat3;
-    lat3.SetNDC(); lat3.SetTextSize(0.04);
-    lat3.DrawLatex(0.15, 0.88, TString::Format("cent %d-%d%%  p_{T}=%s GeV",
-        cen_edges[i_cen], cen_edges[i_cen+1], pt_label[i_pt]));
-    lat3.DrawLatex(0.15, 0.82, TString::Format("Entries=%.0f  Mean=%.3f  RMS=%.3f",
-        h_v3_full->GetEntries(), h_v3_full->GetMean(), h_v3_full->GetRMS()));
-    {
-      std::string pdfname = plotdir + TString::Format("/v3dist_c%d_pt%d.pdf", i_cen, i_pt).Data();
-      cv3->SaveAs(pdfname.c_str());
-      std::cout << "[INFO] Saved v3 plot: " << pdfname << std::endl;
-      }*/
-
     delete h_v2_full;
+      }//i_pt v2
+    }//i_cen v2
+
+  // --- v3 loop: N_PTBINS_V3 bins ---
+    for (int i_cen=0; i_cen<N_CENTBINS; ++i_cen) {
+      if (target_cen_group >= 0 && i_cen != target_cen_group) continue;
+      for (int i_pt=0; i_pt<N_PTBINS_V3; ++i_pt) {
+	if (target_pt >= 0 && i_pt != target_pt) continue;
+	cuts = TString::Format("dca<0.0085 && mass<2.0 && mass>1.74 && fabs(y)<1.0 && cent>=%d && cent<%d && pT>=%g && pT<%g", cen_edges[i_cen], cen_edges[i_cen+1], pt_edges_v3[i_pt], pt_edges_v3[i_pt+1]);
+	std::cout << std::endl << "[v3] " << cuts << std::endl;
+	h_v3_bin->Reset();
+	nt->Draw("v3>>h_v3_bin", cuts, "goff");
+	Int_t n_v3_entries = static_cast<Int_t>(h_v3_bin->GetEntries());
+	if (n_v3_entries == 0)
+	  std::cerr << "WARNING: zero v3 entries for i_cen=" << i_cen << " i_pt=" << i_pt << " cuts=" << cuts << std::endl;
+	for (int i_bin=0; i_bin < N_SIDE_EDGES_V3; ++i_bin)
+        vnbinning_v3[i_cen][i_pt][i_bin] = vnbinning_side_v3[i_bin];
+	double total3 = h_v3_bin->Integral(1, N_BINS);
+	for (int i_edge=1; i_edge<N_EDGES; ++i_edge) {
+        const double thr3 = i_edge * total3 / double(N_EDGES-1);
+        for (int i_bin=1; i_bin<N_BINS; ++i_bin)
+          if (h_v3_bin->Integral(1,i_bin) <= thr3 && h_v3_bin->Integral(1,i_bin+1) > thr3)
+            vnbinning_v3[i_cen][i_pt][i_edge + N_SIDE_EDGES_V3 - 1] = h_v3_bin->GetBinLowEdge(i_bin+1);
+      }
+	const int idx_zero_v3 = N_SIDE_EDGES_V3 + N_EDGES - 2;
+      vnbinning_v3[i_cen][i_pt][idx_zero_v3] = 0.0;
+      fill_missing_edges(vnbinning_v3[i_cen][i_pt], idx_zero_v3, SENTINEL);
+	for (int i_v=0; i_v<=N_VBINS_V3; ++i_v)
+        if (i_v >= N_SIDE_EDGES_V3 + N_EDGES - 1)
+          vnbinning_v3[i_cen][i_pt][i_v] = -vnbinning_v3[i_cen][i_pt][N_VBINS_V3 - i_v];
+      fill_missing_edges(vnbinning_v3[i_cen][i_pt], N_VBINS_V3, SENTINEL);
+      fix_bin_edges(vnbinning_v3[i_cen][i_pt], N_VBINS_V3);
+    TString hname_v3 = TString::Format("h_v3_dist_%s_%s", cen_name[i_cen], pt_name_v3[i_pt]);
+    TH1D *h_v3_full = new TH1D(hname_v3, TString::Format("v3 dist %s %s;v3;Counts", cen_name[i_cen], pt_name_v3[i_pt]), 80, -20, 20);
+    nt->Draw(TString::Format("v3>>%s", hname_v3.Data()), cuts, "goff");
+    fout->cd();
+    h_v3_full->Write();
     delete h_v3_full;
 
-      }//
-    }
+
+      }//i_pt v3
+    }//i_cen v3
 
     //=====================
     // write to text file
@@ -317,33 +310,35 @@ int save_vnbinning_to_txt(int target_cen_group = -1, int target_pt = -1)
     // print only the requested (cen,pt) pair if provided; otherwise print all
     out << std::fixed << std::setprecision(3);
 
-    auto print_array_line = [&](std::ofstream &os, const char *type, int i_cen, int i_pt,
-                                Double_t arr[], int nBins) {
-      os << type << "_cent" << cen_edges[i_cen] << "to" << cen_edges[i_cen+1]
-         << "_" << pt_name[i_pt]
-         << "[" << nBins+1 << "]"       // <-- array size e.g. [63] or [67]
-         << "={";
-      for (int ib=0; ib<=nBins; ++ib) {
-        os << arr[ib];
-        if (ib < nBins) os << ", ";
-      }
+    auto print_array_v2 = [&](std::ofstream &os, int i_cen, int i_pt, Double_t arr[], int nBins) {
+      os << "v2_cent" << cen_edges[i_cen] << "to" << cen_edges[i_cen+1]
+         << "_" << pt_name_v2[i_pt] << "[" << nBins+1 << "]={";
+      for (int ib=0; ib<=nBins; ++ib) { os << arr[ib]; if (ib < nBins) os << ", "; }
+      os << "}\n";
+    };
+    auto print_array_v3 = [&](std::ofstream &os, int i_cen, int i_pt, Double_t arr[], int nBins) {
+      os << "v3_cent" << cen_edges[i_cen] << "to" << cen_edges[i_cen+1]
+         << "_" << pt_name_v3[i_pt] << "[" << nBins+1 << "]={";
+      for (int ib=0; ib<=nBins; ++ib) { os << arr[ib]; if (ib < nBins) os << ", "; }
       os << "}\n";
     };
 
     if (target_cen_group >= 0 && target_pt >= 0) {
-        print_array_line(out, "v2", target_cen_group, target_pt,
-                         vnbinning_v2[target_cen_group][target_pt], N_VBINS_V2);
-        print_array_line(out, "v3", target_cen_group, target_pt,
+        print_array_v2(out, target_cen_group, target_pt,
+                       vnbinning_v2[target_cen_group][target_pt], N_VBINS_V2);
+        if (target_pt < N_PTBINS_V3)
+          print_array_v3(out, target_cen_group, target_pt,
                          vnbinning_v3[target_cen_group][target_pt], N_VBINS_V3);
     } else {
         for (int i_cen=0; i_cen<N_CENTBINS; ++i_cen) {
             if (target_cen_group >= 0 && i_cen != target_cen_group) continue;
-            for (int i_pt=0; i_pt<N_PTBINS; ++i_pt) {
+            for (int i_pt=0; i_pt<N_PTBINS_V2; ++i_pt) {
                 if (target_pt >= 0 && i_pt != target_pt) continue;
-                print_array_line(out, "v2", i_cen, i_pt,
-                                 vnbinning_v2[i_cen][i_pt], N_VBINS_V2);   // N_VBINS_V2=62 -> [63]
-                print_array_line(out, "v3", i_cen, i_pt,
-                                 vnbinning_v3[i_cen][i_pt], N_VBINS_V3);   // N_VBINS_V3=66 -> [67]
+                print_array_v2(out, i_cen, i_pt, vnbinning_v2[i_cen][i_pt], N_VBINS_V2);
+            }
+            for (int i_pt=0; i_pt<N_PTBINS_V3; ++i_pt) {
+                if (target_pt >= 0 && i_pt != target_pt) continue;
+                print_array_v3(out, i_cen, i_pt, vnbinning_v3[i_cen][i_pt], N_VBINS_V3);
             }
         }
     }
@@ -377,8 +372,8 @@ int main(int argc, char **argv)
       std::cerr << "ERROR: target_cen_group must be 0-5, got " << cen_idx << std::endl;
       return 1;
     }
-    if (pt_idx < 0 || pt_idx > 11) {
-      std::cerr << "ERROR: target_pt must be 0-11, got " << pt_idx << std::endl;
+    if (pt_idx < 0 || pt_idx > 8) {
+      std::cerr << "ERROR: target_pt must be 0-8 (v2 has 9 bins, v3 has 7 bins), got " << pt_idx << std::endl;
       return 1;
     }
     

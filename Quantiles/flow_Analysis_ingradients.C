@@ -27,9 +27,9 @@
 #include <climits>
 #include <iomanip>
 
-#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/BDTHandler.h"
-#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/BDTHandler.cc"
-#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/ESE_Cuts_MB11to21_Jan22.h"
+#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/BDTHandler.h"
+#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/BDTHandler.cc"
+#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/quantile_cuts_2023_MB0to31.h" // For 99% stat
 
 using namespace std;
 
@@ -66,7 +66,8 @@ void flow_Analysis_latest(TString input_txt, TString output_path, int istart, in
   hn_v2->Sumw2();
   hn_v3->Sumw2();
   */
-  auto file_res = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Resolution_MB11to21_Jan26/ROOT/Resolution_out_combined.root");
+  //auto file_res = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Resolution_MB11to21_Jan26/ROOT/Resolution_out_combined.root");
+  auto file_res = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Resolution_MB0to31_Apr27_FullStat/ROOT/Resolution_out_combined.root");
 
   Double_t v2_den_Dy_plus[N_CENTBINS_1][N_QBINS];
   Double_t v2_den_Dy_minus[N_CENTBINS_1][N_QBINS];
@@ -285,7 +286,7 @@ void flow_Analysis_latest(TString input_txt, TString output_path, int istart, in
   // =====================================================================
   // DIAGNOSTIC: Print event counts per (1% cent, iq) bin
   // =====================================================================
-  std::cout << "\n========================================================" << std::endl;
+  /*std::cout << "\n========================================================" << std::endl;
   std::cout << "  EVENT COUNTS per (1% cent bin, q-bin)" << std::endl;
   std::cout << "========================================================" << std::endl;
 
@@ -371,7 +372,7 @@ void flow_Analysis_latest(TString input_txt, TString output_path, int istart, in
       cf.close();
       std::cout << "==> Partial counts written to: " << counts_path << std::endl;
     }
-  }
+  }*/
   // =====================================================================
 
   //============================

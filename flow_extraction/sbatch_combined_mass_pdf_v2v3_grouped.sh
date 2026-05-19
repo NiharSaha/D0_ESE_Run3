@@ -4,8 +4,8 @@
 #SBATCH --error=stitch_%j.err
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=64
-#SBATCH --mem=64G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=16G
 #SBATCH --time=01:00:00
 #SBATCH -A physics
 #SBATCH -p cpu
@@ -16,11 +16,11 @@ module --force purge
 module load texlive parallel
 
 # --- CONFIGURATION ---
-PLOT_SOURCE_DIR="/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_Apr1_v0/output/prompt_mass_plot_withchi2_sigma"
-GRID_V2="6x6"
-GRID_V3="7x7"
-FINAL_OUTPUT_V2="All_Plots_Combined_v2_Apr6_v0.pdf"
-FINAL_OUTPUT_V3="All_Plots_Combined_v3_Apr6_v0.pdf"
+PLOT_SOURCE_DIR="/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_FullStat_May19_v0/output/prompt_mass_plot_withchi2_sigma"
+GRID_V2="7x6"   # 7 cols x 6 rows = 42 = N_VBINS_V2 (one page per group)
+GRID_V3="8x6"   # 8 cols x 6 rows = 48 = N_VBINS_V3 (one page per group)
+FINAL_OUTPUT_V2="All_Plots_Combined_v2_FullStat_May19_v1.pdf"
+FINAL_OUTPUT_V3="All_Plots_Combined_v3_FullStat_May19_v1.pdf"
 TEMP_DIR_V2="temp_parallel_v2_$SLURM_JOB_ID"
 TEMP_DIR_V3="temp_parallel_v3_$SLURM_JOB_ID"
 
@@ -31,38 +31,43 @@ unset PERL5LIB
 mkdir -p "$TEMP_DIR_V2" "$TEMP_DIR_V3"
 
 # --- Binning definitions ---
-CEN_IDS="0 1 2 3 4 5"
-PT_NAMES="pT1to2 pT2to3 pT3to4 pT4to5 pT5to6 pT6to8 pT8to10 pT10to15 pT15to20 pT20to40 pT40to60 pT60to100"
+CEN_NAMES="cent0to10 cent10to20 cent20to30 cent30to40 cent40to50 cent50to80"
+# v2: 9 pT bins matching pt_name_v2[] in Analysis_bin.h
+PT_NAMES_V2="pT2to3 pT3to4 pT4to5 pT5to6 pT6to8 pT8to10 pT10to15 pT15to30 pT30to100"
+# v3: 7 pT bins matching pt_name_v3[] in Analysis_bin.h
+PT_NAMES_V3="pT2to4 pT4to6 pT6to8 pT8to10 pT10to20 pT20to50 pT50to100"
 N_QBINS=10
-N_VBINS=62
+N_VBINS_V2=42   # N_VBINS_V2 in Analysis_bin.h
+N_VBINS_V3=48   # N_VBINS_V3 in Analysis_bin.h
 
 echo "Job started on $(hostname)"
 
 # --- Worker function: one page per (centrality, pT, qbin) combination ---
-# Args: cen_id pt iq n_vbins vtag qtag temp_dir job_id source_dir grid seq_num
+# Args: cen_idx cen_name pt iq n_vbins vtag qtag temp_dir job_id source_dir grid seq_num
 process_group() {
     unset PERL5LIB
-    local cen_id=$1
-    local pt=$2
-    local iq=$3
-    local n_vbins=$4
-    local vtag=$5        # "v2" or "v3"
-    local qtag=$6        # "q2" or "q3"
-    local temp_dir=$7
-    local job_id=$8
-    local source_dir=$9
-    local grid=${10}
-    local seq_num=${11}
+    local cen_idx=$1
+    local cen_name=$2
+    local pt=$3
+    local iq=$4
+    local n_vbins=$5
+    local vtag=$6        # "v2" or "v3"
+    local qtag=$7        # "q2" or "q3"
+    local temp_dir=$8
+    local job_id=$9
+    local source_dir=${10}
+    local grid=${11}
+    local seq_num=${12}
 
     local output_page
     output_page=$(printf "%s/page_%06d.pdf" "$temp_dir" "$seq_num")
-    local file_list="list_${job_id}_${vtag}_${cen_id}_${pt}_${qtag}bin_${iq}.txt"
+    local file_list="list_${job_id}_${vtag}_${cen_name}_${pt}_${qtag}bin_${iq}.txt"
 
     # Collect all SP-bin (vbin) plots for this (cen, pT, qbin) combination, in order
     > "$file_list"
     for (( iv=0; iv<n_vbins; iv++ )); do
         local found
-        found=$(ls "${source_dir}/${cen_id}_hmassfit_${pt}_"*"_${qtag}bin_${iq}_${vtag}bin_${iv}.pdf" 2>/dev/null | head -1)
+        found=$(ls "${source_dir}/${cen_idx}_hmassfit_${pt}_${cen_name}_${qtag}bin_${iq}_${vtag}bin_${iv}.pdf" 2>/dev/null | head -1)
         [ -n "$found" ] && echo "$found" >> "$file_list"
     done
 
@@ -74,21 +79,35 @@ process_group() {
         return 0
     fi
 
-    # Build page label (flow harmonic number extracted from vtag last char)
+    # Build physics-style label with LaTeX math formatting.
+    # Parse centrality from cen_name: "cent0to10" -> lo=0, hi=10
+    local cent_stripped="${cen_name#cent}"
+    local cent_lo="${cent_stripped%%to*}"
+    local cent_hi="${cent_stripped##*to}"
+    # Parse pT from pt name: "pT2to3" -> lo=2, hi=3
+    local pt_stripped="${pt#pT}"
+    local pt_lo="${pt_stripped%%to*}"
+    local pt_hi="${pt_stripped##*to}"
     local qnum="${qtag: -1}"
-    local label="Cen: ${cen_id}  |  pT: ${pt}  |  Q${qnum}bin: ${iq}  (${count} SP bins)"
+    # \$ in bash double-quoted string gives literal $ for LaTeX math mode
+    local label="\$${cent_lo} < Cent < ${cent_hi}\\%\$  |  \$${pt_lo} < p_{T} < ${pt_hi}\$ GeV/c  |  \$q_{${qnum}}\$ bin = ${iq}  (${count} SP bins)"
 
-    # Create the grid page with a centered title at the top of the 20in x 20in page.
-    # TMPDIR is set to our writable scratch space so pdflatex temp files land there.
-    # tikz overlay (remember picture + overlay) places the title as a zero-size node
-    # anchored to page.north — it does not affect the pdfpages grid layout at all.
-    # \usepackage{tikz} is loaded via --preamble; tikz is always present in texlive 2022.
+    # Paper size matched to grid aspect ratio (square ROOT plots) to minimise blank space.
+    # v2 grid 7x6: width:height = 7:6; add 1in height for title -> {28in,25in}
+    # v3 grid 8x6: width:height = 8:6; add 1in height for title -> {32in,25in}
+    local papersize
+    if [ "$vtag" = "v2" ]; then
+        papersize='{28in,25in}'
+    else
+        papersize='{32in,25in}'
+    fi
+
     TMPDIR="$temp_dir" pdfjam $(cat "$file_list") \
         --nup "$grid" \
-        --papersize '{20in,20in}' \
-        --scale 0.92 \
+        --papersize "$papersize" \
+        --scale 0.95 \
         --preamble "\\usepackage{eso-pic}" \
-        --pagecommand "{\\AddToShipoutPictureFG*{\\AtPageUpperLeft{\\raisebox{-0.5in}{\\makebox[\\paperwidth][c]{\\Large\\bfseries ${label}}}}}}" \
+        --pagecommand "{\\AddToShipoutPictureFG*{\\AtPageUpperLeft{\\raisebox{-0.85in}{\\makebox[\\paperwidth][c]{\\fontsize{36}{44}\\selectfont\\bfseries ${label}}}}}}" \
         --outfile "$output_page" 2>> "${temp_dir}/pdfjam_errors.log" > /dev/null
 
     # On failure: find and save the pdflatex log for diagnostics
@@ -113,25 +132,37 @@ JOBS_V2="jobs_v2_$SLURM_JOB_ID.txt"
 JOBS_V3="jobs_v3_$SLURM_JOB_ID.txt"
 > "$JOBS_V2"
 > "$JOBS_V3"
-for cen_id in $CEN_IDS; do
-  for pt in $PT_NAMES; do
+cen_idx=0
+for cen_name in $CEN_NAMES; do
+  for pt in $PT_NAMES_V2; do
     for (( iq=0; iq<N_QBINS; iq++ )); do
-      echo "$cen_id $pt $iq" >> "$JOBS_V2"
-      echo "$cen_id $pt $iq" >> "$JOBS_V3"
+      echo "$cen_idx $cen_name $pt $iq" >> "$JOBS_V2"
     done
   done
+  (( cen_idx++ ))
+done
+cen_idx=0
+for cen_name in $CEN_NAMES; do
+  for pt in $PT_NAMES_V3; do
+    for (( iq=0; iq<N_QBINS; iq++ )); do
+      echo "$cen_idx $cen_name $pt $iq" >> "$JOBS_V3"
+    done
+  done
+  (( cen_idx++ ))
 done
 
-TOTAL_GROUPS=$(wc -l < "$JOBS_V2")
-echo "Groups per stream (cen x pT x Qbin): $TOTAL_GROUPS"
+TOTAL_GROUPS_V2=$(wc -l < "$JOBS_V2")
+TOTAL_GROUPS_V3=$(wc -l < "$JOBS_V3")
+echo "V2 groups (cen x pT x Q2bin): $TOTAL_GROUPS_V2"
+echo "V3 groups (cen x pT x Q3bin): $TOTAL_GROUPS_V3"
 echo "Using $SLURM_CPUS_PER_TASK cores ($HALF_CORES per stream)."
 
 # --- Process V2 in background ---
 (
-    echo "[V2] Processing $TOTAL_GROUPS groups (cen x pT x Q2bin), each page = all v2bins..."
+    echo "[V2] Processing $TOTAL_GROUPS_V2 groups (cen x pT x Q2bin), each page = all v2bins..."
     parallel --env process_group -j "$HALF_CORES" \
         --colsep ' ' \
-        process_group {1} {2} {3} "$N_VBINS" "v2" "q2" \
+        process_group {1} {2} {3} {4} "$N_VBINS_V2" "v2" "q2" \
             "$TEMP_DIR_V2" "$SLURM_JOB_ID" "$PLOT_SOURCE_DIR" "$GRID_V2" {#} \
         :::: "$JOBS_V2"
 
@@ -156,10 +187,10 @@ PID_V2=$!
 
 # --- Process V3 in background ---
 (
-    echo "[V3] Processing $TOTAL_GROUPS groups (cen x pT x Q3bin), each page = all v3bins..."
+    echo "[V3] Processing $TOTAL_GROUPS_V3 groups (cen x pT x Q3bin), each page = all v3bins..."
     parallel --env process_group -j "$HALF_CORES" \
         --colsep ' ' \
-        process_group {1} {2} {3} "$N_VBINS" "v3" "q3" \
+        process_group {1} {2} {3} {4} "$N_VBINS_V3" "v3" "q3" \
             "$TEMP_DIR_V3" "$SLURM_JOB_ID" "$PLOT_SOURCE_DIR" "$GRID_V3" {#} \
         :::: "$JOBS_V3"
 
@@ -196,6 +227,6 @@ rm -rf "$TEMP_DIR_V2" "$TEMP_DIR_V3" "$JOBS_V2" "$JOBS_V3"
 
 echo "============================="
 echo "All done."
-echo "V2 PDF : $FINAL_OUTPUT_V2  ($TOTAL_GROUPS pages)"
-echo "V3 PDF : $FINAL_OUTPUT_V3  ($TOTAL_GROUPS pages)"
+echo "V2 PDF : $FINAL_OUTPUT_V2  ($TOTAL_GROUPS_V2 pages)"
+echo "V3 PDF : $FINAL_OUTPUT_V3  ($TOTAL_GROUPS_V3 pages)"
 echo "============================="

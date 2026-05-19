@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=save_vnbinning
-#SBATCH --array=0-71%72
+#SBATCH --array=0-53%54
 #SBATCH --time=04:00:00
 #SBATCH --mem=8G
 #SBATCH --cpus-per-task=2
@@ -13,7 +13,7 @@
 set -euo pipefail
 
 SRC="/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/save_vnbinning_to_txt.C"
-SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_Apr1_v0}"
+SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_May4_v0}"
 LOG_DIR="${SCRATCH_BASE}/logs"
 BUILD_DIR="${SCRATCH_BASE}/build"
 #BUILD_DIR="${SCRATCH_BASE}/build_job${SLURM_ARRAY_JOB_ID:-${SLURM_JOB_ID:-unknown}}_task${SLURM_ARRAY_TASK_ID:-0}"
@@ -29,9 +29,9 @@ STDOUT_FILE="${LOG_DIR}/save_vnbinning_${JOB_ID}_${TASK_ID}.out"
 STDERR_FILE="${LOG_DIR}/save_vnbinning_${JOB_ID}_${TASK_ID}.err"
 exec 1>>"$STDOUT_FILE" 2>>"$STDERR_FILE"
 
-# map array index (0..71) -> centrality (0..6) and pT (0..11)
-CENT_IDX=$(( TASK_ID / 12 ))
-PT_IDX=$(( TASK_ID % 12 ))
+# map array index (0..53) -> centrality (0..5) and pT (0..8)
+CENT_IDX=$(( TASK_ID / 9 ))
+PT_IDX=$(( TASK_ID % 9 ))
 
 echo "JOB_ID=${JOB_ID} TASK_ID=${TASK_ID} CENT_IDX=${CENT_IDX} PT_IDX=${PT_IDX}"
 echo "BUILD_DIR=${BUILD_DIR} OUT_DIR=${OUT_DIR} LOG_DIR=${LOG_DIR}"

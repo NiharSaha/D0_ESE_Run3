@@ -21,15 +21,16 @@ JOB_ID="${SLURM_ARRAY_JOB_ID:-${SLURM_JOB_ID:-unknown}}"
 SRC="/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/fit_mass_and_flow.C"
 SRC_DIR="$(dirname "$SRC")"
 
-SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_Apr7_v3}"
+SCRATCH_BASE="${SCRATCH_BASE:-/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Flow_output_FullStat_May19_v1}"
 LOG_DIR="${SCRATCH_BASE}/logs"
 BUILD_DIR="${SCRATCH_BASE}/build/${JOB_ID}_${TASK_ID}"
 OUT_DIR="${SCRATCH_BASE}/output"
 PLOT_DIR="${OUT_DIR}/prompt_mass_plot_withchi2_sigma"
+YIELD_PLOT_DIR="${OUT_DIR}/yield_vs_spbin_plots"
 EXEC="${BUILD_DIR}/fit_mass_exec"
 
 # create required folders (per-task build dir prevents concurrent cp/overwrite races)
-mkdir -p "$LOG_DIR" "$BUILD_DIR" "$OUT_DIR" "$PLOT_DIR"
+mkdir -p "$LOG_DIR" "$BUILD_DIR" "$OUT_DIR" "$PLOT_DIR" "$YIELD_PLOT_DIR"
 cd "$BUILD_DIR"
 
 # redirect stdout/stderr to files under SCRATCH_BASE/logs
@@ -65,13 +66,21 @@ echo "Running in $(pwd)"
 mv "$BUILD_DIR"/*.root "$OUT_DIR"/ 2>/dev/null || true
 mv "$BUILD_DIR"/*.log  "$OUT_DIR"/ 2>/dev/null || true
 
-# PDFs are inside the subdirectory created by gSystem->mkdir()
+# PDFs are inside the subdirectories created by gSystem->mkdir()
 if [ -d "$BUILD_DIR/prompt_mass_plot_withchi2_sigma" ]; then
   find "$BUILD_DIR/prompt_mass_plot_withchi2_sigma" -name "*.pdf" | while read f; do
     fname="$(basename "$f")"
     cp "$f" "${PLOT_DIR}/${TASK_ID}_${fname}"   # prefix with task id to avoid collisions
   done
   rm -rf "$BUILD_DIR/prompt_mass_plot_withchi2_sigma"
+fi
+
+if [ -d "$BUILD_DIR/yield_vs_spbin_plots" ]; then
+  find "$BUILD_DIR/yield_vs_spbin_plots" -name "*.pdf" | while read f; do
+    fname="$(basename "$f")"
+    cp "$f" "${YIELD_PLOT_DIR}/${TASK_ID}_${fname}"
+  done
+  rm -rf "$BUILD_DIR/yield_vs_spbin_plots"
 fi
 
 echo "Finished fit_mass_and_flow for centrality index ${TASK_ID}"

@@ -1,7 +1,7 @@
 #include "BDTHandler.h"
 
 BDTHandler::BDTHandler() {
-  string bdt_cuts_path = "/home/saha115/D0_ESE/CMSSW_13_2_11/src/bdt_cuts.csv";
+  string bdt_cuts_path = "/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/bdt_cuts.csv";
   loadCuts(bdt_cuts_path);
 }
 

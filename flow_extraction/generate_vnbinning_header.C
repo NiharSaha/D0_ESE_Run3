@@ -25,10 +25,17 @@ static const vector<string> CEN_ORDER = {
     "cent0to10", "cent10to20", "cent20to30", "cent30to40", "cent40to50", "cent50to80"
 };
 
-static const vector<string> PT_ORDER = {
-    "pT1to2",   "pT2to3",   "pT3to4",   "pT4to5",
-    "pT5to6",   "pT6to8",   "pT8to10",  "pT10to15",
-    "pT15to20", "pT20to40", "pT40to60", "pT60to100"
+// v2 pT bins: {2,3,4,5,6,8,10,15,30,100} -> 9 bins
+static const vector<string> PT_ORDER_V2 = {
+    "pT2to3",   "pT3to4",   "pT4to5",   "pT5to6",
+    "pT6to8",   "pT8to10",  "pT10to15",
+    "pT15to30", "pT30to100"
+};
+
+// v3 pT bins: {2,4,6,8,10,20,50,100} -> 7 bins
+static const vector<string> PT_ORDER_V3 = {
+    "pT2to4",  "pT4to6",  "pT6to8",
+    "pT8to10", "pT10to20","pT20to50","pT50to100"
 };
 
 static const vector<string> VN_ORDER = {"v2", "v3"};
@@ -46,12 +53,13 @@ static size_t get_target_n(const string &ident) {
 
 static int get_sort_key(const string &ident) {
     for (int iv = 0; iv < (int)VN_ORDER.size(); ++iv) {
+        const vector<string> &pt_order = (VN_ORDER[iv] == "v2") ? PT_ORDER_V2 : PT_ORDER_V3;
         for (int ic = 0; ic < (int)CEN_ORDER.size(); ++ic) {
-            for (int ip = 0; ip < (int)PT_ORDER.size(); ++ip) {
+            for (int ip = 0; ip < (int)pt_order.size(); ++ip) {
                 string expected = sanitize_ident(
                     string("vnbinning_") + VN_ORDER[iv]
                     + "_" + CEN_ORDER[ic]
-                    + "_" + PT_ORDER[ip]
+                    + "_" + pt_order[ip]
                 );
                 if (ident == expected)
                     return iv * 10000 + ic * 100 + ip;
@@ -85,7 +93,7 @@ static void write_array(ofstream &os, const string &ident,
 }
 
 void generate_vnbinning_header(
-    const char *input_dir  = "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_Apr1_v0/output",
+    const char *input_dir  = "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/save_vnbinning_outputs_May4_v0/output",
     const char *out_header = "/home/saha115/D0_ESE/CMSSW_13_2_11/src/flow_extraction/vnbinning_generated.h"
 )
 {

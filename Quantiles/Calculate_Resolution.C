@@ -25,7 +25,8 @@
 #include "THnSparse.h"
 
 // Include your auto-generated quantile cuts header
-#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/ESE_Cuts_MB11to21_Jan22.h"
+//#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/ESE_Cuts_MB11to21_Jan22.h" //For 1/3 stat
+#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/Quantiles/quantile_cuts_2023_MB0to31.h" //For 99% stat
 
 using namespace std;
 
@@ -33,8 +34,8 @@ void Calculate_Resolution(TString input_txt, TString output_path, int istart, in
     
     // --- 1. CONFIGURATION ---
     const int N_CENTBIN = 4;
-    Int_t min_centbin[N_CENTBIN] = {0, 10, 30, 50};
-    Int_t max_centbin[N_CENTBIN] = {10, 30, 50, 90};
+    //Int_t min_centbin[N_CENTBIN] = {0, 10, 30, 50};
+    //Int_t max_centbin[N_CENTBIN] = {10, 30, 50, 90};
     const int N_CENTBIN_1 = 90;
     const int N_QBINS = 10;
 
@@ -149,27 +150,23 @@ void Calculate_Resolution(TString input_txt, TString output_path, int istart, in
 	    TComplex aux_Q3_HFp(ephfpQ[2]*TMath::Cos(3.0*ephfpAngle[2]), ephfpQ[2]*TMath::Sin(3.0*ephfpAngle[2]), 0);
 	    TComplex aux_Q3_Trk(eptkQ[1]*TMath::Cos(3.0*eptkAngle[1]), eptkQ[1]*TMath::Sin(3.0*eptkAngle[1]), 0);
 
+	    if ((ephfpSumW[1] + ephfmSumW[1]) <= 0 || (ephfpSumW[2] + ephfmSumW[2]) <= 0) continue;
+
 	    q2_hf_total = (ephfpQ[1] + ephfmQ[1]) / (ephfpSumW[1] + ephfmSumW[1]);
 	    q3_hf_total = (ephfpQ[2] + ephfmQ[2]) / (ephfpSumW[2] + ephfmSumW[2]);
 
-	    for(int i_cen=0; i_cen<N_CENTBIN_1; i_cen++){
+	    int q2_bin = TMath::BinarySearch(11, q2_cuts[cent], (double)q2_hf_total);
+	    if (q2_bin >= 0 && q2_bin < 10) {
+	        hist_Q2Q2_HFmHFp_Re_centbin[cent][q2_bin]->Fill((aux_Q2_HFm * TComplex::Conjugate(aux_Q2_HFp)).Re());
+	        hist_Q2Q2_HFmTrk_Re_centbin[cent][q2_bin]->Fill((aux_Q2_HFm * TComplex::Conjugate(aux_Q2_Trk)).Re());
+	        hist_Q2Q2_HFpTrk_Re_centbin[cent][q2_bin]->Fill((aux_Q2_HFp * TComplex::Conjugate(aux_Q2_Trk)).Re());
+	    }
 
-		int q2_bin = TMath::BinarySearch(11, q2_cuts[cent], (double)q2_hf_total);
-
-		if (q2_bin >= 0 && q2_bin < 10) {
-		  hist_Q2Q2_HFmHFp_Re_centbin[i_cen][q2_bin]->Fill((aux_Q2_HFm * TComplex::Conjugate(aux_Q2_HFp)).Re());
-		  hist_Q2Q2_HFmTrk_Re_centbin[i_cen][q2_bin]->Fill((aux_Q2_HFm * TComplex::Conjugate(aux_Q2_Trk)).Re());
-		  hist_Q2Q2_HFpTrk_Re_centbin[i_cen][q2_bin]->Fill((aux_Q2_HFp * TComplex::Conjugate(aux_Q2_Trk)).Re());
-		}
-		
-		int q3_bin = TMath::BinarySearch(11, q3_cuts[cent], (double)q3_hf_total);
-		
-		if (q3_bin >= 0 && q3_bin < 10) {
-		  hist_Q3Q3_HFmHFp_Re_centbin[i_cen][q3_bin]->Fill((aux_Q3_HFm * TComplex::Conjugate(aux_Q3_HFp)).Re());
-		  hist_Q3Q3_HFmTrk_Re_centbin[i_cen][q3_bin]->Fill((aux_Q3_HFm * TComplex::Conjugate(aux_Q3_Trk)).Re());
-		  hist_Q3Q3_HFpTrk_Re_centbin[i_cen][q3_bin]->Fill((aux_Q3_HFp * TComplex::Conjugate(aux_Q3_Trk)).Re());
-		}
-	      
+	    int q3_bin = TMath::BinarySearch(11, q3_cuts[cent], (double)q3_hf_total);
+	    if (q3_bin >= 0 && q3_bin < 10) {
+	        hist_Q3Q3_HFmHFp_Re_centbin[cent][q3_bin]->Fill((aux_Q3_HFm * TComplex::Conjugate(aux_Q3_HFp)).Re());
+	        hist_Q3Q3_HFmTrk_Re_centbin[cent][q3_bin]->Fill((aux_Q3_HFm * TComplex::Conjugate(aux_Q3_Trk)).Re());
+	        hist_Q3Q3_HFpTrk_Re_centbin[cent][q3_bin]->Fill((aux_Q3_HFp * TComplex::Conjugate(aux_Q3_Trk)).Re());
 	    }
 	}// -- Event loop --
 	

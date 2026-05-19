@@ -6,22 +6,22 @@ import time
 # 1. USER CONFIGURATION (Everything you need to change is here)
 # ==============================================================================
 #---For qn quantiles ---
-STEP="Quantiles"
-DATE_tag= "Mar30" # include version here!!
-DATASET= "MB0to31"
-SOURCE_CODE_NAME="make_q2_slices_PbPb2023.C"
+#STEP="Quantiles"
+#DATE_tag= "Mar30" # include version here!!
+#DATASET= "MB0to31"
+#SOURCE_CODE_NAME="make_q2_slices_PbPb2023.C"
 
 #--- Resolution ---
 #STEP="Resolution"
-#DATE_tag= "Jan29" # include version here!!
-#DATASET= "MB11to21"
+#DATE_tag= "Apr27_FullStat" # include version here!!
+#DATASET= "MB0to31"
 #SOURCE_CODE_NAME="Calculate_Resolution.C"
 
 #--- SP ingradients ---
-#STEP="SP"
-#DATE_tag= "Feb20_v4" # include version here!!
-#DATASET= "MB11to21"
-#SOURCE_CODE_NAME="flow_Analysis_ingradients.C"
+STEP="SP"
+DATE_tag= "May9_FullStat" # include version here!!
+DATASET= "MB0to31"
+SOURCE_CODE_NAME="flow_Analysis_ingradients.C"
 
 #extra!
 #STEP="MC_template"
