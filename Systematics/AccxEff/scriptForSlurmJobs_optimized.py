@@ -5,31 +5,11 @@ import time
 # ==============================================================================
 # 1. USER CONFIGURATION (Everything you need to change is here)
 # ==============================================================================
-#---For qn quantiles ---
-#STEP="Quantiles"
-#DATE_tag= "Apr12" # include version here!!
-#DATASET= "MB0to1"
-#SOURCE_CODE_NAME="make_q2_slices_PbPb2023.C"
-
-#--- Resolution ---
-#STEP="Resolution"
-#DATASET= "MB0to1"
-#DATE_tag= "Apr27_charge_pub_v0" # include version here!!
-#SOURCE_CODE_NAME="Calculate_Resolution_incl.C"
-#SOURCE_CODE_NAME="Calculate_Resolution_qbin.C"
-
-#--- SP ingradients ---
-STEP="Flow"
-DATASET= "MB0to1"
-DATE_tag= "June1_charge_v1" # include version here!!
-SOURCE_CODE_NAME="flow_Analysis_chg.C"
-
-#extra!
-#STEP="MC_template"
-#DATE_tag= "Feb16_v2" # include version here!!
-#DATASET= "MC2023"
-#SOURCE_CODE_NAME="make_q2_slices_PbPb2018.C"
-#SOURCE_CODE_NAME="AnalyzeD0MC.C"
+#--- Eff ingradients ---
+STEP="Eff"
+DATE_tag= "Jun8" # include version here!!
+DATASET= "MC_all"
+SOURCE_CODE_NAME="getEfficiency.C"
 
 
 IS_DRY_RUN  = False  # True: Only generate .sub files. False: Ready to submit.
@@ -37,7 +17,7 @@ IS_TEST_RUN = False   # True: Only submit first 10 files (2 jobs). False: FULL R
 
 USERNAME    = "saha115"
 CMSSW_DIR   = f"/home/{USERNAME}/D0_ESE/CMSSW_13_2_11/src"
-INPUT_FLIST = f"{CMSSW_DIR}/charge_vn/inputFiles_charge_MB0to1.txt"
+INPUT_FLIST = f"{CMSSW_DIR}/Systematics/AccxEff/MC_TTree_wMVA.txt"
 OUTPUT_BASE = f"/scratch/negishi/{USERNAME}/D0_ESE_out/CMSSW_13_2_11/src/{STEP}_{DATASET}_{DATE_tag}"
 
 
@@ -47,10 +27,8 @@ SOURCE_CODE = f"{SOURCE_CODE_NAME}"
 SLURM_ACCOUNT   = "physics"      
 SLURM_PARTITION = "cpu"
 SLURM_TIME      = "04:00:00"
-SLURM_QOS       = "standby"
-#SLURM_QOS       = "normal"
-N_FILES_PER_JOB = 10
-MAX_JOBS_QUEUE  = 1500  
+N_FILES_PER_JOB = 100
+MAX_JOBS_QUEUE  = 1000  
 
 # GRID PROXY
 PROXY_PATH      = f"/home/{USERNAME}/myproxy"
@@ -109,8 +87,7 @@ class JobsSubmission:
             f.write(f"#SBATCH --job-name=\"{job_name}\"\n")
             f.write(f"#SBATCH --partition={SLURM_PARTITION}\n")
             f.write(f"#SBATCH -A {SLURM_ACCOUNT}\n")
-            f.write(f"#SBATCH --time={SLURM_TIME}\n")
-            f.write(f"#SBATCH --qos={SLURM_QOS}\n\n")
+            f.write(f"#SBATCH --time={SLURM_TIME}\n\n")
             
             # CMSSW / Environment setup
             f.write("export SCRAM_ARCH=el8_amd64_gcc12\n")

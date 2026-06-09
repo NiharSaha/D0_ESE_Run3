@@ -1,0 +1,191 @@
+Found 6 log file(s): ['sigma_bad_bins_cent0to10.log', 'sigma_bad_bins_cent10to20.log', 'sigma_bad_bins_cent20to30.log', 'sigma_bad_bins_cent30to40.log', 'sigma_bad_bins_cent40to50.log', 'sigma_bad_bins_cent50to80.log']
+
+Parsed 224 low_sigma rejection entries.
+
+==============================================================================================================
+  LOW-SIGMA REJECTION REPORT  (sigma <= 1 criterion)
+  One entry per (flow_type, centrality, pT bin)
+  'unique SP bins' = distinct SP bin indices rejected across ALL q-bins
+  'fraction'       = unique SP bins / total SP bins in that flow type
+==============================================================================================================
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                   [[ V2 ]]                                                 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Centrality     pT bin         unique SP bins  / total  fraction    sigma min  sigma mean  sigma max
+  ----------------------------------------------------------------------------------------------------------
+  cent0to10      pT2to3                      8       42     19.0%        0.006       0.355      0.750
+    └─ q-bin breakdown: q2:1  q4:1  q5:1  q6:2  q7:1  q8:2  q9:1
+    └─ rejected SP bin indices: [5, 6, 7, 8, 33, 34, 35, 38]
+  cent0to10      pT3to4                      8       42     19.0%        0.119       0.443      0.952
+    └─ q-bin breakdown: q0:1  q1:1  q8:3  q9:3
+    └─ rejected SP bin indices: [0, 7, 8, 9, 31, 32, 33, 39]
+  cent0to10      pT4to5                      3       42      7.1%        0.844       0.909      0.974
+    └─ q-bin breakdown: q3:1  q6:1  q9:1
+    └─ rejected SP bin indices: [31, 35, 37]
+  cent0to10      pT5to6                      7       42     16.7%        0.087       0.550      0.872
+    └─ q-bin breakdown: q1:1  q4:2  q5:1  q7:1  q9:2
+    └─ rejected SP bin indices: [4, 10, 31, 34, 35, 37, 39]
+  cent0to10      pT10to15                    1       42      2.4%        0.963       0.963      0.963
+    └─ q-bin breakdown: q3:1
+    └─ rejected SP bin indices: [37]
+  cent0to10      pT15to30                    2       42      4.8%        0.372       0.601      0.830
+    └─ q-bin breakdown: q5:1  q9:1
+    └─ rejected SP bin indices: [30, 35]
+  cent0to10      pT30to100                   4       42      9.5%        0.346       0.589      0.960
+    └─ q-bin breakdown: q0:1  q5:1  q7:2  q8:1
+    └─ rejected SP bin indices: [2, 8, 10, 11]
+  cent10to20     pT2to3                      6       42     14.3%        0.015       0.397      0.649
+    └─ q-bin breakdown: q0:1  q4:1  q5:1  q6:1  q7:1  q8:1  q9:2
+    └─ rejected SP bin indices: [5, 11, 12, 13, 29, 31]
+  cent10to20     pT3to4                      4       42      9.5%        0.174       0.553      0.818
+    └─ q-bin breakdown: q3:1  q4:1  q5:1  q9:1
+    └─ rejected SP bin indices: [10, 11, 29, 30]
+  cent10to20     pT4to5                      2       42      4.8%        0.464       0.665      0.865
+    └─ q-bin breakdown: q4:1  q5:1
+    └─ rejected SP bin indices: [11, 30]
+  cent10to20     pT5to6                      1       42      2.4%        0.717       0.717      0.717
+    └─ q-bin breakdown: q1:1
+    └─ rejected SP bin indices: [33]
+  cent10to20     pT10to15                    1       42      2.4%        0.787       0.787      0.787
+    └─ q-bin breakdown: q6:1
+    └─ rejected SP bin indices: [12]
+  cent10to20     pT30to100                   1       42      2.4%        0.856       0.856      0.856
+    └─ q-bin breakdown: q4:1
+    └─ rejected SP bin indices: [29]
+  cent20to30     pT2to3                      4       42      9.5%        0.261       0.682      0.922
+    └─ q-bin breakdown: q0:1  q1:1  q5:1  q9:1
+    └─ rejected SP bin indices: [9, 12, 29, 35]
+  cent20to30     pT4to5                      1       42      2.4%        0.862       0.862      0.862
+    └─ q-bin breakdown: q6:1
+    └─ rejected SP bin indices: [29]
+  cent20to30     pT8to10                     1       42      2.4%        0.329       0.329      0.329
+    └─ q-bin breakdown: q3:1
+    └─ rejected SP bin indices: [30]
+  cent20to30     pT10to15                    1       42      2.4%        0.736       0.736      0.736
+    └─ q-bin breakdown: q5:1
+    └─ rejected SP bin indices: [12]
+  cent20to30     pT30to100                   1       42      2.4%        0.348       0.348      0.348
+    └─ q-bin breakdown: q4:1
+    └─ rejected SP bin indices: [13]
+  cent30to40     pT2to3                      2       42      4.8%        0.707       0.790      0.879
+    └─ q-bin breakdown: q0:1  q7:1  q9:1
+    └─ rejected SP bin indices: [5, 12]
+  cent30to40     pT4to5                      2       42      4.8%        0.759       0.797      0.835
+    └─ q-bin breakdown: q2:1  q7:1
+    └─ rejected SP bin indices: [29, 32]
+  cent30to40     pT15to30                    1       42      2.4%        0.853       0.853      0.853
+    └─ q-bin breakdown: q8:1
+    └─ rejected SP bin indices: [13]
+  cent30to40     pT30to100                   1       42      2.4%        0.459       0.459      0.459
+    └─ q-bin breakdown: q0:1
+    └─ rejected SP bin indices: [7]
+  cent40to50     pT2to3                      4       42      9.5%        0.287       0.600      0.962
+    └─ q-bin breakdown: q1:1  q2:1  q4:1  q6:1
+    └─ rejected SP bin indices: [6, 9, 31, 34]
+  cent40to50     pT3to4                      3       42      7.1%        0.439       0.739      0.889
+    └─ q-bin breakdown: q1:1  q3:1  q9:1
+    └─ rejected SP bin indices: [6, 8, 30]
+  cent40to50     pT15to30                    2       42      4.8%        0.656       0.774      0.892
+    └─ q-bin breakdown: q4:1  q6:1
+    └─ rejected SP bin indices: [10, 11]
+  cent40to50     pT30to100                   1       42      2.4%        0.843       0.843      0.843
+    └─ q-bin breakdown: q6:1
+    └─ rejected SP bin indices: [28]
+  cent50to80     pT2to3                      2       42      4.8%        0.371       0.584      0.797
+    └─ q-bin breakdown: q5:1  q8:1
+    └─ rejected SP bin indices: [39, 41]
+  cent50to80     pT3to4                      1       42      2.4%        0.975       0.975      0.975
+    └─ q-bin breakdown: q3:1
+    └─ rejected SP bin indices: [0]
+  cent50to80     pT4to5                      3       42      7.1%        0.427       0.709      0.912
+    └─ q-bin breakdown: q4:1  q5:1  q7:1  q9:1
+    └─ rejected SP bin indices: [1, 40, 41]
+  cent50to80     pT5to6                      2       42      4.8%        0.308       0.537      0.766
+    └─ q-bin breakdown: q4:1  q6:1
+    └─ rejected SP bin indices: [40, 41]
+  cent50to80     pT6to8                      4       42      9.5%        0.440       0.690      0.919
+    └─ q-bin breakdown: q7:1  q8:1  q9:2
+    └─ rejected SP bin indices: [1, 38, 39, 41]
+  cent50to80     pT8to10                     4       42      9.5%        0.272       0.477      0.789
+    └─ q-bin breakdown: q4:1  q5:1  q6:1  q7:1
+    └─ rejected SP bin indices: [2, 39, 40, 41]
+  cent50to80     pT10to15                    5       42     11.9%        0.282       0.617      0.925
+    └─ q-bin breakdown: q2:1  q3:2  q4:2  q7:1  q8:1
+    └─ rejected SP bin indices: [0, 3, 39, 40, 41]
+  cent50to80     pT15to30                    4       42      9.5%        0.386       0.540      0.785
+    └─ q-bin breakdown: q2:1  q3:1  q5:1  q8:1  q9:1
+    └─ rejected SP bin indices: [1, 2, 3, 6]
+  cent50to80     pT30to100                  13       42     31.0%        0.266       0.626      0.999
+    └─ q-bin breakdown: q0:4  q1:3  q2:3  q4:1  q6:2  q7:2  q8:2  q9:3
+    └─ rejected SP bin indices: [2, 4, 6, 7, 8, 9, 28, 29, 31, 32, 35, 37, 41]
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                   [[ V3 ]]                                                 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Centrality     pT bin         unique SP bins  / total  fraction    sigma min  sigma mean  sigma max
+  ----------------------------------------------------------------------------------------------------------
+  cent0to10      pT2to4                      5       48     10.4%        0.387       0.705      0.942
+    └─ q-bin breakdown: q0:1  q3:1  q7:2  q9:1
+    └─ rejected SP bin indices: [2, 6, 9, 11, 13]
+  cent0to10      pT4to6                      5       48     10.4%        0.435       0.566      0.682
+    └─ q-bin breakdown: q1:1  q3:2  q4:1  q8:1
+    └─ rejected SP bin indices: [5, 7, 8, 36, 40]
+  cent0to10      pT50to100                  13       48     27.1%        0.224       0.549      0.982
+    └─ q-bin breakdown: q0:5  q1:6  q2:1  q3:1  q4:1  q5:1
+    └─ rejected SP bin indices: [7, 12, 13, 15, 24, 26, 29, 32, 33, 34, 36, 37, 38]
+  cent10to20     pT6to8                      1       48      2.1%        0.592       0.592      0.592
+    └─ q-bin breakdown: q9:1
+    └─ rejected SP bin indices: [13]
+  cent10to20     pT50to100                  18       48     37.5%        0.251       0.668      0.989
+    └─ q-bin breakdown: q0:3  q1:5  q2:4  q3:2  q4:2  q5:2  q6:2  q8:1
+    └─ rejected SP bin indices: [5, 8, 9, 11, 12, 15, 16, 17, 19, 23, 25, 30, 31, 33, 34, 35, 40, 41]
+  cent20to30     pT2to4                      2       48      4.2%        0.528       0.600      0.673
+    └─ q-bin breakdown: q5:1  q8:1
+    └─ rejected SP bin indices: [8, 10]
+  cent20to30     pT4to6                      1       48      2.1%        0.493       0.493      0.493
+    └─ q-bin breakdown: q0:1
+    └─ rejected SP bin indices: [2]
+  cent20to30     pT50to100                  21       48     43.8%        0.284       0.610      0.984
+    └─ q-bin breakdown: q0:4  q1:8  q2:4  q3:3  q4:6  q5:4  q6:1  q7:1  q8:3  q9:1
+    └─ rejected SP bin indices: [7, 8, 9, 10, 12, 14, 15, 16, 17, 18, 19, 20, 23, 24, 26, 27, 31, 32, 34, 38, 40]
+  cent30to40     pT2to4                      3       48      6.2%        0.528       0.616      0.699
+    └─ q-bin breakdown: q2:1  q8:1  q9:1
+    └─ rejected SP bin indices: [5, 37, 38]
+  cent30to40     pT4to6                      2       48      4.2%        0.766       0.822      0.879
+    └─ q-bin breakdown: q0:1  q9:1
+    └─ rejected SP bin indices: [1, 37]
+  cent30to40     pT20to50                    1       48      2.1%        0.874       0.874      0.874
+    └─ q-bin breakdown: q9:1
+    └─ rejected SP bin indices: [35]
+  cent30to40     pT50to100                   5       48     10.4%        0.361       0.662      0.910
+    └─ q-bin breakdown: q2:1  q4:1  q5:1  q6:1  q8:1
+    └─ rejected SP bin indices: [10, 12, 13, 27, 34]
+  cent40to50     pT8to10                     1       48      2.1%        0.780       0.780      0.780
+    └─ q-bin breakdown: q2:1
+    └─ rejected SP bin indices: [43]
+  cent40to50     pT20to50                    1       48      2.1%        0.899       0.899      0.899
+    └─ q-bin breakdown: q9:1
+    └─ rejected SP bin indices: [37]
+
+==============================================================================================================
+
+  FLAGGED: groups with > 50% of SP bins rejected (likely low statistics)
+
+  None — all (cent, pT) groups have <= 50% low-sigma rejection.
+
+==============================================================================================================
+
+  Total low_sigma rejections  (incl. last pT bin):
+    V2 :    126 /  14700  (0.9%)   [35 cent-pT groups × 10 q-bins × 42 SP bins]
+    V3 :     98 /   6720  (1.5%)   [14 cent-pT groups × 10 q-bins × 48 SP bins]
+    All:    224 /  21420  (1.0%)
+
+  Total low_sigma rejections  (excl. last pT bin — V2: pT30to100, V3: pT50to100):
+    V2 :     97 /  12180  (0.8%)   [29 cent-pT groups × 10 q-bins × 42 SP bins]
+    V3 :     22 /   4800  (0.5%)   [10 cent-pT groups × 10 q-bins × 48 SP bins]
+    All:    119 /  16980  (0.7%)
+
+  Sigma value range of rejected bins: [0.0059, 0.9993]
+  Mean sigma of rejected bins:         0.6101
+

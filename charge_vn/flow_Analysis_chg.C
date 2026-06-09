@@ -48,9 +48,14 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
     const double MAX_ETA_ANA = 1.0;
 
     // pT binning for ESE profiles (0.5–3.0 GeV, 25 x 0.1 GeV bins)
-    const int    N_PTBINS_ESE = 25;
+    const int    N_PTBINS_ESE = 10;
     const double PT_MIN_ESE   = 0.5;
     const double PT_MAX_ESE   = 3.0;
+
+    // pT binning for broad-cent (10%) ESE profiles (0–10 GeV, 20 x 0.5 GeV bins)
+    const int    N_PTBINS_BROAD = 20;
+    const double PT_MIN_BROAD   = 0.0;
+    const double PT_MAX_BROAD   = 10.0;
 
     // pT binning for inclusive profiles (variable bins, wider range)
     const int N_PTBINS_INCL = 18;
@@ -61,7 +66,42 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
     TProfile *hp_v3[N_CENTBINS_1][N_QBINS];
     TH1D *hnevt_q2[N_CENTBINS_1][N_QBINS];
     TH1D *hnevt_q3[N_CENTBINS_1][N_QBINS];
+    // v2/v3 vs pT per (10% cent bin, q-bin) — broader binning, extended pT 0–10 GeV
+    TProfile *hp_v2_broad[N_CENTBINS][N_QBINS];
+    TProfile *hp_v3_broad[N_CENTBINS][N_QBINS];
+    
 
+    TH1D *hres_v2_incl_plus;
+    TH1D *hres_v2_incl_minus;
+    TH1D *hres_v3_incl_plus;
+    TH1D *hres_v3_incl_minus;
+
+    TH2D *hQ2_trk_vs_HFp[N_CENTBINS];
+    TH2D *hQ2_trk_vs_HFm[N_CENTBINS];
+    TH2D *hQ2_trk_vs_HFpHm[N_CENTBINS];
+    TH2D *hQ3_trk_vs_HFp[N_CENTBINS];
+    TH2D *hQ3_trk_vs_HFm[N_CENTBINS];
+    TH2D *hQ3_trk_vs_HFpHm[N_CENTBINS];
+
+    TH2D *hQ2_trk_vs_HFp_all;
+    TH2D *hQ2_trk_vs_HFm_all;
+    TH2D *hQ2_trk_vs_HFpHm_all;
+    TH2D *hQ3_trk_vs_HFp_all;
+    TH2D *hQ3_trk_vs_HFm_all;
+    TH2D *hQ3_trk_vs_HFpHm_all;
+    // Exact resolution denominators per cent vs q-bin (2D overview)
+    TH2D *hres_v2_plus_cent_vs_q;
+    TH2D *hres_v2_minus_cent_vs_q;
+    TH2D *hres_v3_plus_cent_vs_q;
+    TH2D *hres_v3_minus_cent_vs_q;
+    TH2D *hres_v2_eff_cent_vs_q;   // geometric mean: sqrt(plus * minus)
+    TH2D *hres_v3_eff_cent_vs_q;
+    // Combined (geometric mean) resolution vs q-bin, one TH1D per 1% cent bin
+    TH1D *hres_v2_eff_vsq[N_CENTBINS_1];
+    TH1D *hres_v3_eff_vsq[N_CENTBINS_1];
+    // Combined inclusive resolution per broad cent bin
+    TH1D *hres_v2_incl_eff;
+    TH1D *hres_v3_incl_eff;
     // v2/v3 vs pT per broad cent bin (q-integrated) — for comparison with published results
     TProfile *hp_v2_incl[N_CENTBINS];
     TProfile *hp_v3_incl[N_CENTBINS];
@@ -79,9 +119,11 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
 
     Double_t v2_den_Dy_plus[N_CENTBINS_1][N_QBINS];
     Double_t v2_den_Dy_minus[N_CENTBINS_1][N_QBINS];
+    Double_t v2_den_Dy_eff[N_CENTBINS_1][N_QBINS];  // geometric mean: sqrt(plus * minus)
 
     Double_t v3_den_Dy_plus[N_CENTBINS_1][N_QBINS];
     Double_t v3_den_Dy_minus[N_CENTBINS_1][N_QBINS];
+    Double_t v3_den_Dy_eff[N_CENTBINS_1][N_QBINS];  // geometric mean: sqrt(plus * minus)
 
     Float_t q2_hf_total, q3_hf_total;
 
@@ -113,9 +155,11 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
 
             v2_den_Dy_plus[i][j] = TMath::Sqrt((hQ2Q2_HFmHFp[i][j]->GetMean() * hQ2Q2_HFmTrk[i][j]->GetMean()) / (hQ2Q2_HFpTrk[i][j]->GetMean()));
             v2_den_Dy_minus[i][j] = TMath::Sqrt((hQ2Q2_HFmHFp[i][j]->GetMean() * hQ2Q2_HFpTrk[i][j]->GetMean()) / (hQ2Q2_HFmTrk[i][j]->GetMean()));
+            v2_den_Dy_eff[i][j] = TMath::Sqrt(v2_den_Dy_plus[i][j] * v2_den_Dy_minus[i][j]);
 
             v3_den_Dy_plus[i][j] = TMath::Sqrt((hQ3Q3_HFmHFp[i][j]->GetMean() * hQ3Q3_HFmTrk[i][j]->GetMean()) / (hQ3Q3_HFpTrk[i][j]->GetMean()));
             v3_den_Dy_minus[i][j] = TMath::Sqrt((hQ3Q3_HFmHFp[i][j]->GetMean() * hQ3Q3_HFpTrk[i][j]->GetMean()) / (hQ3Q3_HFmTrk[i][j]->GetMean()));
+            v3_den_Dy_eff[i][j] = TMath::Sqrt(v3_den_Dy_plus[i][j] * v3_den_Dy_minus[i][j]);
         }
     }
     file_res->Close();
@@ -130,8 +174,10 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
     // e.g. "Q2Q2_HFmHFp_Re_cent0to10", "Q2Q2_HFmHFp_Re_cent10to30", ...
     Double_t v2_den_incl_plus[N_CENTBINS];
     Double_t v2_den_incl_minus[N_CENTBINS];
+    Double_t v2_den_incl_eff[N_CENTBINS];   // geometric mean: sqrt(plus * minus)
     Double_t v3_den_incl_plus[N_CENTBINS];
     Double_t v3_den_incl_minus[N_CENTBINS];
+    Double_t v3_den_incl_eff[N_CENTBINS];   // geometric mean: sqrt(plus * minus)
 
     for (Int_t ib = 0; ib < N_CENTBINS; ib++)
     {
@@ -145,8 +191,10 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
 
         v2_den_incl_plus[ib] = TMath::Sqrt((hQ2_mm->GetMean() * hQ2_mt->GetMean()) / hQ2_pt->GetMean());
         v2_den_incl_minus[ib] = TMath::Sqrt((hQ2_mm->GetMean() * hQ2_pt->GetMean()) / hQ2_mt->GetMean());
+        v2_den_incl_eff[ib] = TMath::Sqrt(v2_den_incl_plus[ib] * v2_den_incl_minus[ib]);
         v3_den_incl_plus[ib] = TMath::Sqrt((hQ3_mm->GetMean() * hQ3_mt->GetMean()) / hQ3_pt->GetMean());
         v3_den_incl_minus[ib] = TMath::Sqrt((hQ3_mm->GetMean() * hQ3_pt->GetMean()) / hQ3_mt->GetMean());
+        v3_den_incl_eff[ib] = TMath::Sqrt(v3_den_incl_plus[ib] * v3_den_incl_minus[ib]);
     }
     file_res_incl->Close();
 
@@ -159,11 +207,12 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
     // Create output subdirectories first, then book histograms inside them
     // so ROOT registers them in the correct directory (not at the file root).
     TDirectory *dir_ese_prof  = fout->mkdir("ESE_TProfile");
-    TDirectory *dir_ese_gr    = fout->mkdir("ESE_TGraphErrors");
+    //TDirectory *dir_ese_gr    = fout->mkdir("ESE_TGraphErrors");
     TDirectory *dir_incl_prof = fout->mkdir("Inclusive_TProfile");
-    TDirectory *dir_incl_gr   = fout->mkdir("Inclusive_TGraphErrors");
+    //TDirectory *dir_incl_gr   = fout->mkdir("Inclusive_TGraphErrors");
     TDirectory *dir_vsq       = fout->mkdir("vsQbin_TProfile");
     TDirectory *dir_ntrk      = fout->mkdir("NTrack_QBin");
+    TDirectory *dir_checks = fout->mkdir("Diagnostics");
 
     dir_ese_prof->cd();
     for (int ic = 0; ic < N_CENTBINS_1; ++ic)
@@ -175,6 +224,17 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
             hp_v3[ic][iq] = new TProfile(n3, n3, N_PTBINS_ESE, PT_MIN_ESE, PT_MAX_ESE);
             hp_v2[ic][iq]->Sumw2();
             hp_v3[ic][iq]->Sumw2();
+        }
+    // Book broad-cent (10%) profiles with extended pT range 0–10 GeV
+    for (int ib = 0; ib < N_CENTBINS; ++ib)
+        for (int iq = 0; iq < N_QBINS; ++iq)
+        {
+            TString nb2 = TString::Format("hp_v2_broad_%s_q2bin%d", cent_label[ib].Data(), iq);
+            TString nb3 = TString::Format("hp_v3_broad_%s_q3bin%d", cent_label[ib].Data(), iq);
+            hp_v2_broad[ib][iq] = new TProfile(nb2, nb2, N_PTBINS_BROAD, PT_MIN_BROAD, PT_MAX_BROAD);
+            hp_v3_broad[ib][iq] = new TProfile(nb3, nb3, N_PTBINS_BROAD, PT_MIN_BROAD, PT_MAX_BROAD);
+            hp_v2_broad[ib][iq]->Sumw2();
+            hp_v3_broad[ib][iq]->Sumw2();
         }
 
     dir_incl_prof->cd();
@@ -215,6 +275,90 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
             hnevt_q2[ic][iq] = new TH1D(nq2, nq2, N_PTBINS_ESE, PT_MIN_ESE, PT_MAX_ESE);
             hnevt_q3[ic][iq] = new TH1D(nq3, nq3, N_PTBINS_ESE, PT_MIN_ESE, PT_MAX_ESE);
         }
+
+    // Diagnostics directory and histograms for resolution vs centrality and Q-correlation
+    dir_checks->cd();
+
+    hres_v2_incl_plus  = new TH1D("hres_v2_incl_plus",  "v2 res+ vs broad cent;centrality;R_{2}^{+}", N_CENTBINS, 0, N_CENTBINS);
+    hres_v2_incl_minus = new TH1D("hres_v2_incl_minus", "v2 res- vs broad cent;centrality;R_{2}^{-}", N_CENTBINS, 0, N_CENTBINS);
+    hres_v3_incl_plus  = new TH1D("hres_v3_incl_plus",  "v3 res+ vs broad cent;centrality;R_{3}^{+}", N_CENTBINS, 0, N_CENTBINS);
+    hres_v3_incl_minus = new TH1D("hres_v3_incl_minus", "v3 res- vs broad cent;centrality;R_{3}^{-}", N_CENTBINS, 0, N_CENTBINS);
+    hres_v2_incl_eff   = new TH1D("hres_v2_incl_eff",   "v2 eff res (geom. mean) vs broad cent;centrality;R_{2}^{eff}", N_CENTBINS, 0, N_CENTBINS);
+    hres_v3_incl_eff   = new TH1D("hres_v3_incl_eff",   "v3 eff res (geom. mean) vs broad cent;centrality;R_{3}^{eff}", N_CENTBINS, 0, N_CENTBINS);
+    hres_v2_incl_plus->Sumw2(); hres_v2_incl_minus->Sumw2(); hres_v3_incl_plus->Sumw2(); hres_v3_incl_minus->Sumw2();
+    hres_v2_incl_eff->Sumw2(); hres_v3_incl_eff->Sumw2();
+
+    // Fill inclusive resolution histograms with cent bin labels
+    for (int ib = 0; ib < N_CENTBINS; ++ib) {
+        hres_v2_incl_plus->GetXaxis()->SetBinLabel(ib+1,  cent_label[ib].Data());
+        hres_v2_incl_minus->GetXaxis()->SetBinLabel(ib+1, cent_label[ib].Data());
+        hres_v3_incl_plus->GetXaxis()->SetBinLabel(ib+1,  cent_label[ib].Data());
+        hres_v3_incl_minus->GetXaxis()->SetBinLabel(ib+1, cent_label[ib].Data());
+        hres_v2_incl_eff->GetXaxis()->SetBinLabel(ib+1,   cent_label[ib].Data());
+        hres_v3_incl_eff->GetXaxis()->SetBinLabel(ib+1,   cent_label[ib].Data());
+        hres_v2_incl_plus->SetBinContent(ib+1,  v2_den_incl_plus[ib]);
+        hres_v2_incl_minus->SetBinContent(ib+1, v2_den_incl_minus[ib]);
+        hres_v3_incl_plus->SetBinContent(ib+1,  v3_den_incl_plus[ib]);
+        hres_v3_incl_minus->SetBinContent(ib+1, v3_den_incl_minus[ib]);
+        hres_v2_incl_eff->SetBinContent(ib+1,   v2_den_incl_eff[ib]);
+        hres_v3_incl_eff->SetBinContent(ib+1,   v3_den_incl_eff[ib]);
+    }
+
+
+    // Create 2D Q correlation histograms per broad centrality and aggregate
+    for (int ib = 0; ib < N_CENTBINS; ++ib) {
+        TString tag = cent_label[ib].Data();
+        hQ3_trk_vs_HFp[ib] = new TH2D(TString::Format("hQ3_trk_vs_HFp_%s", tag.Data()), TString::Format("|Q3| Trk vs |Q3| HF+ %s;|Q3 Trk|;|Q3 HF+|", tag.Data()), 200, 0, 500, 200, 0, 500);
+        hQ3_trk_vs_HFm[ib] = new TH2D(TString::Format("hQ3_trk_vs_HFm_%s", tag.Data()), TString::Format("|Q3| Trk vs |Q3| HF- %s;|Q3 Trk|;|Q3 HF-|", tag.Data()), 200, 0, 500, 200, 0, 500);
+        hQ3_trk_vs_HFpHm[ib] = new TH2D(TString::Format("hQ3_trk_vs_HFpHm_%s", tag.Data()), TString::Format("|Q3| Trk vs |Q3(HF+ + HF-)| %s;|Q3 Trk|;|Q3(HF+ + HF-)|", tag.Data()), 200, 0, 500, 200, 0, 500);
+
+        hQ2_trk_vs_HFp[ib] = new TH2D(TString::Format("hQ2_trk_vs_HFp_%s", tag.Data()), TString::Format("Q2 Trk vs Q2 HF+ %s;Re(Q2 Trk);Re(Q2 HF+)", tag.Data()), 200, 0, 500, 200, 0, 500);
+        hQ2_trk_vs_HFm[ib] = new TH2D(TString::Format("hQ2_trk_vs_HFm_%s", tag.Data()), TString::Format("Q2 Trk vs Q2 HF- %s;Re(Q2 Trk);Re(Q2 HF-)", tag.Data()), 200, 0, 500, 200, 0, 500);
+        hQ2_trk_vs_HFpHm[ib] = new TH2D(TString::Format("hQ2_trk_vs_HFpHm_%s", tag.Data()), TString::Format("Q2 Trk vs Q2 HF+HF- %s;Re(Q2 Trk);Re(Q2 (HF+ + HF-))", tag.Data()), 200, 0, 500, 200, 0, 500);
+        hQ3_trk_vs_HFp[ib]->Sumw2(); hQ3_trk_vs_HFm[ib]->Sumw2(); hQ3_trk_vs_HFpHm[ib]->Sumw2();
+        hQ2_trk_vs_HFp[ib]->Sumw2(); hQ2_trk_vs_HFm[ib]->Sumw2(); hQ2_trk_vs_HFpHm[ib]->Sumw2();
+    }
+
+    hQ3_trk_vs_HFp_all = new TH2D("hQ3_trk_vs_HFp_all","|Q3| Trk vs |Q3| HF+ (all cent);|Q3 Trk|;|Q3 HF+|",200,0,500,200,0,500);
+    hQ3_trk_vs_HFm_all = new TH2D("hQ3_trk_vs_HFm_all","|Q3| Trk vs |Q3| HF- (all cent);|Q3 Trk|;|Q3 HF-|",200,0,500,200,0,500);
+    hQ3_trk_vs_HFpHm_all = new TH2D("hQ3_trk_vs_HFpHm_all","|Q3| Trk vs |Q3(HF+ + HF-)| (all cent);|Q3 Trk|;|Q3(HF+ + HF-)|",200,0,500,200,0,500);
+    hQ2_trk_vs_HFp_all = new TH2D("hQ2_trk_vs_HFp_all","Q2 Trk vs Q2 HF+ (all cent)",200,0,500,200,0,500);
+    hQ2_trk_vs_HFm_all = new TH2D("hQ2_trk_vs_HFm_all","Q2 Trk vs Q2 HF- (all cent)",200,0,500,200,0,500);
+    hQ2_trk_vs_HFpHm_all = new TH2D("hQ2_trk_vs_HFpHm_all","Q2 Trk vs Q2 HF+HF- (all cent)",200,0,500,200,0,500);
+    hQ3_trk_vs_HFp_all->Sumw2(); hQ3_trk_vs_HFm_all->Sumw2(); hQ3_trk_vs_HFpHm_all->Sumw2();
+    hQ2_trk_vs_HFp_all->Sumw2(); hQ2_trk_vs_HFm_all->Sumw2(); hQ2_trk_vs_HFpHm_all->Sumw2();
+
+    // Create 2D histograms that contain the exact resolution denominators
+    hres_v2_plus_cent_vs_q  = new TH2D("hres_v2_plus_cent_vs_q",  "v2 res plus vs cent (1%) vs q-bin",          N_CENTBINS_1, 0, N_CENTBINS_1, N_QBINS, 0, N_QBINS);
+    hres_v2_minus_cent_vs_q = new TH2D("hres_v2_minus_cent_vs_q", "v2 res minus vs cent (1%) vs q-bin",         N_CENTBINS_1, 0, N_CENTBINS_1, N_QBINS, 0, N_QBINS);
+    hres_v3_plus_cent_vs_q  = new TH2D("hres_v3_plus_cent_vs_q",  "v3 res plus vs cent (1%) vs q-bin",          N_CENTBINS_1, 0, N_CENTBINS_1, N_QBINS, 0, N_QBINS);
+    hres_v3_minus_cent_vs_q = new TH2D("hres_v3_minus_cent_vs_q", "v3 res minus vs cent (1%) vs q-bin",         N_CENTBINS_1, 0, N_CENTBINS_1, N_QBINS, 0, N_QBINS);
+    hres_v2_eff_cent_vs_q   = new TH2D("hres_v2_eff_cent_vs_q",   "v2 eff res (geom. mean) vs cent (1%) vs q-bin", N_CENTBINS_1, 0, N_CENTBINS_1, N_QBINS, 0, N_QBINS);
+    hres_v3_eff_cent_vs_q   = new TH2D("hres_v3_eff_cent_vs_q",   "v3 eff res (geom. mean) vs cent (1%) vs q-bin", N_CENTBINS_1, 0, N_CENTBINS_1, N_QBINS, 0, N_QBINS);
+
+    // Fill these 2D histograms from the precomputed resolution arrays
+    for (int ic = 0; ic < N_CENTBINS_1; ++ic) {
+        for (int jq = 0; jq < N_QBINS; ++jq) {
+            if (v2_den_Dy_plus[ic][jq]>0) hres_v2_plus_cent_vs_q->SetBinContent(ic+1, jq+1, v2_den_Dy_plus[ic][jq]);
+            if (v2_den_Dy_minus[ic][jq]>0) hres_v2_minus_cent_vs_q->SetBinContent(ic+1, jq+1, v2_den_Dy_minus[ic][jq]);
+            if (v3_den_Dy_plus[ic][jq]>0) hres_v3_plus_cent_vs_q->SetBinContent(ic+1, jq+1, v3_den_Dy_plus[ic][jq]);
+            if (v3_den_Dy_minus[ic][jq]>0) hres_v3_minus_cent_vs_q->SetBinContent(ic+1, jq+1, v3_den_Dy_minus[ic][jq]);
+            if (v2_den_Dy_eff[ic][jq]>0) hres_v2_eff_cent_vs_q->SetBinContent(ic+1, jq+1, v2_den_Dy_eff[ic][jq]);
+            if (v3_den_Dy_eff[ic][jq]>0) hres_v3_eff_cent_vs_q->SetBinContent(ic+1, jq+1, v3_den_Dy_eff[ic][jq]);
+        }
+    }
+
+    // 1D combined resolution per 1% cent bin (vs q-bin)
+    for (int ic = 0; ic < N_CENTBINS_1; ++ic) {
+        TString nv2e = TString::Format("hres_v2_eff_vsq_cen%d", ic);
+        TString nv3e = TString::Format("hres_v3_eff_vsq_cen%d", ic);
+        hres_v2_eff_vsq[ic] = new TH1D(nv2e, TString::Format("v2 eff res vs q-bin cent%d;q-bin;R2_eff", ic), N_QBINS, 0, N_QBINS);
+        hres_v3_eff_vsq[ic] = new TH1D(nv3e, TString::Format("v3 eff res vs q-bin cent%d;q-bin;R3_eff", ic), N_QBINS, 0, N_QBINS);
+        for (int jq = 0; jq < N_QBINS; ++jq) {
+            if (v2_den_Dy_eff[ic][jq]>0) hres_v2_eff_vsq[ic]->SetBinContent(jq+1, v2_den_Dy_eff[ic][jq]);
+            if (v3_den_Dy_eff[ic][jq]>0) hres_v3_eff_vsq[ic]->SetBinContent(jq+1, v3_den_Dy_eff[ic][jq]);
+        }
+    }
 
     // Maximum number of tracks per event
     const int MAXTRK = 50000;
@@ -342,6 +486,37 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
             Double_t res3_incl_plus = (broad_cent_idx >= 0) ? v3_den_incl_plus[broad_cent_idx] : 0.0;
             Double_t res3_incl_minus = (broad_cent_idx >= 0) ? v3_den_incl_minus[broad_cent_idx] : 0.0;
 
+            // Fill per-event Q-correlation 2D histograms (modulus for Q3, real part for Q2)
+            double q3_trk_mod   = TComplex::Abs(aux_Q3_Trk);
+            double q3_hfp_mod   = TComplex::Abs(aux_Q3_HFp);
+            double q3_hfm_mod   = TComplex::Abs(aux_Q3_HFm);
+            double q3_hfphm_mod = TComplex::Abs(aux_Q3_HFp + aux_Q3_HFm);
+            
+            double q2_trk_mod  = TComplex::Abs(aux_Q2_Trk);
+            double q2_hfp_mod  = TComplex::Abs(aux_Q2_HFp);
+            double q2_hfm_mod  = TComplex::Abs(aux_Q2_HFm);
+            double q2_hfphm_mod = TComplex::Abs(aux_Q2_HFp + aux_Q2_HFm);
+
+            // aggregate across all centralities
+            hQ3_trk_vs_HFp_all->Fill(q3_trk_mod, q3_hfp_mod);
+            hQ3_trk_vs_HFm_all->Fill(q3_trk_mod, q3_hfm_mod);
+            hQ3_trk_vs_HFpHm_all->Fill(q3_trk_mod, q3_hfphm_mod);
+
+            hQ2_trk_vs_HFp_all->Fill(q2_trk_mod, q2_hfp_mod);
+            hQ2_trk_vs_HFm_all->Fill(q2_trk_mod, q2_hfm_mod);
+            hQ2_trk_vs_HFpHm_all->Fill(q2_trk_mod, q2_hfphm_mod);
+
+            // fill per broad centrality bin if applicable
+            if (broad_cent_idx >= 0) {
+                hQ3_trk_vs_HFp[broad_cent_idx]->Fill(q3_trk_mod, q3_hfp_mod);
+                hQ3_trk_vs_HFm[broad_cent_idx]->Fill(q3_trk_mod, q3_hfm_mod);
+                hQ3_trk_vs_HFpHm[broad_cent_idx]->Fill(q3_trk_mod, q3_hfphm_mod);
+
+                hQ2_trk_vs_HFp[broad_cent_idx]->Fill(q2_trk_mod, q2_hfp_mod);
+                hQ2_trk_vs_HFm[broad_cent_idx]->Fill(q2_trk_mod, q2_hfm_mod);
+                hQ2_trk_vs_HFpHm[broad_cent_idx]->Fill(q2_trk_mod, q2_hfphm_mod);
+            }
+
             for (int itrk = 0; itrk < trk_mult; ++itrk)
             {
                 float Eta = eta[itrk];
@@ -390,6 +565,15 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
                     if (res3_incl_final > 0)
                         hp_v3_incl[broad_cent_idx]->Fill(Pt, v3_obs / res3_incl_final);
 
+                    // v2/v3 vs pT per (10% cent bin, q-bin), extended pT 0–10 GeV
+                    if (Pt >= PT_MIN_BROAD && Pt < PT_MAX_BROAD)
+                    {
+                        if (res2_final > 0)
+                            hp_v2_broad[broad_cent_idx][q2_idx]->Fill(Pt, v2_obs / res2_final);
+                        if (res3_final > 0)
+                            hp_v3_broad[broad_cent_idx][q3_idx]->Fill(Pt, v3_obs / res3_final);
+                    }
+
                     // v2/v3 vs q-bin integrated over 0.5-3.0 GeV/c
                     if (Pt >= PT_MIN_ESE && Pt < PT_MAX_ESE)
                     {
@@ -422,7 +606,7 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
     //============================
 
     // Helper: convert a TProfile to a TGraphErrors (skips empty bins)
-    auto ProfileToGraph = [](TProfile *hp, const char *gname) -> TGraphErrors *
+    /*auto ProfileToGraph = [](TProfile *hp, const char *gname) -> TGraphErrors *
     {
         int n = hp->GetNbinsX();
         std::vector<double> vx, vy, vex, vey;
@@ -442,7 +626,7 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
     };
 
     // --- ESE TGraphErrors ---
-    /*dir_ese_gr->cd();
+    dir_ese_gr->cd();
     for (int ic = 0; ic < N_CENTBINS_1; ++ic)
         for (int iq = 0; iq < N_QBINS; ++iq)
         {
