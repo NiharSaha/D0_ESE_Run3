@@ -16,8 +16,10 @@ void make_q2_slices_PbPb2018(TString input_txt, TString output_path, int istart,
     TH1::SetDefaultSumw2();
 
     ifstream file_stream(input_txt.Data());
-    TString outfile = TString::Format("%s/ROOT/Quantiles_ESE_%d_%d.root", output_path.Data(), istart, iend);
-    TFile *fout = new TFile(outfile, "RECREATE");
+    TString outfile_ntup = TString::Format("%s/ROOT/Quantiles_ESE_ntuples_%d_%d.root", output_path.Data(), istart, iend);
+    TString outfile_hist = TString::Format("%s/ROOT/Quantiles_ESE_hists_%d_%d.root", output_path.Data(), istart, iend);
+    TFile *fout_ntup = new TFile(outfile_ntup, "RECREATE");
+    TFile *fout_hist = new TFile(outfile_hist, "RECREATE");
     string filename;
     int ifile = 0;
 
@@ -98,31 +100,32 @@ void make_q2_slices_PbPb2018(TString input_txt, TString output_path, int istart,
 
 
 
-    fout->cd();
-    fout->mkdir("Q_ntuple");
-    fout->cd("Q_ntuple");
+    fout_ntup->cd();
+    fout_ntup->mkdir("Q_ntuple");
+    fout_ntup->cd("Q_ntuple");
     //nt_ese_global->Write();
     for(int i_cen=0; i_cen<N_CENTBINS_1PC; i_cen++){
       nt[i_cen]->Write();
     }
 
-    fout->cd();
-    fout->mkdir("q2_raw_1pc");
-    fout->cd("q2_raw_1pc");
+    fout_hist->cd();
+    fout_hist->mkdir("q2_raw_1pc");
+    fout_hist->cd("q2_raw_1pc");
 
     for (int j = 0; j < N_CENTBINS_1PC; ++j){
       if (hist_q2_tot[j]->GetEntries() > 0) hist_q2_tot[j]->Write();
     }
 
-    /*fout->cd();
-    fout->mkdir("q3_raw_1pc");
-    fout->cd("q3_raw_1pc");
+    /*fout_hist->cd();
+    fout_hist->mkdir("q3_raw_1pc");
+    fout_hist->cd("q3_raw_1pc");
     for (int i = 0; i < N_CENTBIN; ++i){ 
       for (int j = 0; j < N_CENTBIN_1PC; ++j){
 	if (hist_q3_tot[i][j]->GetEntries() > 0) hist_q3_tot[i][j]->Write();
       }
       }*/
-    fout->Close();
+    fout_ntup->Close();
+    fout_hist->Close();
 }
 
 
