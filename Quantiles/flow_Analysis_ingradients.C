@@ -40,32 +40,12 @@ void flow_Analysis_latest(TString input_txt, TString output_path, int istart, in
 
   const int N_QBINS = 10;
   const int N_CENTBINS_1 = 90;
-  // const int N_CENTBIN = 4;
-  // Int_t min_centbin[N_CENTBIN]={0, 10, 30, 50};
-  // Int_t max_centbin[N_CENTBIN]={10, 30, 50, 90};
-  // TString label_centbin[N_CENTBIN]={"cent0to10", "cent10to30", "cent30to50", "cent50to90"};
-  // TString centbin[N_CENTBIN]={"0 <= cent < 10 %", "10 <= cent < 30 %", "30 <= cent < 50 %", "50 <= cent < 90 %"};
-
-  // const int N_PTBIN = 10;
-  // Float_t min_pTbin[N_PTBIN]={1.0, 2.0, 3.0, 4.0, 5.0, 6.0,8.0,10.0,15.0, 20.0};
-  // Float_t max_pTbin[N_PTBIN]={2.0, 3.0, 4.0, 5.0, 6.0,8.0,10.0,15.0,20.0, 40.0};
-  // TString label_pTbin[N_PTBIN]={"pT1to2", "pT2to3", "pT3to4","pT4to5", "pT5to6","pT6to8","pT8to10","pT10to15","pT15to20", "pT20to40"};
-  // TString pTbin[N_PTBIN]={"1.0 < pT < 2.0 GeV", "2.0 < pT < 3.0 GeV", "3.0 < pT < 4.0 GeV", "4.0 < pT < 5.0 GeV", "5.0 < pT < 6.0 GeV","6.0 < pT < 8.0","8.0 < pT < 10.0 GeV","10.0 < pT < 15.0 GeV","15.0 < pT < 20.0 GeV", "20.0 < pT < 40.0 GeV"};
 
   const double MAX_PT_ANA = 100.0;
   const double MIN_PT_ANA = 1.0;
   const double MAX_Y_ANA = 2.4;
 
-  // 2. DEFINE SPARSE (Exactly your structure)
-  /*const int nDim = 6;
-  Int_t bins6D[nDim] = {60, 8, 90, 10, 2, 200};
-  Double_t mins6D[nDim] = {1.7, 0, 0, 0, 0, -10.0};
-  Double_t maxs6D[nDim] = {2.0, 8.0, 90.0, 10.0, 2.0, 10.0};
-  THnSparseD *hn_v2 = new THnSparseD("hn_v2", "D0 v2 ESE;Mass;pT;Cent;q2;ObsType;SP_Value", 6, bins6D, mins6D, maxs6D);
-  THnSparseD *hn_v3 = new THnSparseD("hn_v3", "D0 v3 ESE;Mass;pT;Cent;q3;ObsType;SP_Value", 6, bins6D, mins6D, maxs6D);
-  hn_v2->Sumw2();
-  hn_v3->Sumw2();
-  */
+  
   //auto file_res = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Resolution_MB11to21_Jan26/ROOT/Resolution_out_combined.root");
   auto file_res = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Resolution_MB0to31_Apr27_FullStat/ROOT/Resolution_out_combined.root");
 

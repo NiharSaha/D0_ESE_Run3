@@ -23,8 +23,10 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 PATHS_TO_KEEP=(
     # Primary scratch working area
-    "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Eff_MC_all_Jun8/ROOT"
-
+    "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Quantiles_MB0to1_Apr12/ROOT"
+    "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Resolution_MB11to21_Jan26/ROOT/"
+    "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Resolution_MB0to1_Apr27_charge_pub_v0/ROOT/"
+    "/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Resolution_MB0to1_Apr15_charge_pub_v0/ROOT/"
     # Add your specific analysis input directories below:
     # "/scratch/negishi/$USER/ePIC/ToF_material_scan/input"
     # "/scratch/negishi/$USER/CMS/data/Run3"

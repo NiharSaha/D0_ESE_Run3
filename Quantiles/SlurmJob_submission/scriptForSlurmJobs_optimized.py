@@ -7,7 +7,7 @@ import time
 # ==============================================================================
 #---For qn quantiles ---
 STEP="Quantiles"
-DATE_tag= "Jun10_FullStat" # include version here!!
+DATE_tag= "Jun11_FullStat_v3" # include version here!!
 DATASET= "MB0to31"
 SOURCE_CODE_NAME="make_q2_slices_PbPb2023.C"
 
@@ -47,6 +47,8 @@ SOURCE_CODE = f"../{SOURCE_CODE_NAME}"
 SLURM_ACCOUNT   = "physics"      
 SLURM_PARTITION = "cpu"
 SLURM_TIME      = "04:00:00"
+SLURM_QOS       = "standby"
+#SLURM_QOS       = "normal"
 N_FILES_PER_JOB = 200
 MAX_JOBS_QUEUE  = 1500  
 
@@ -108,6 +110,7 @@ class JobsSubmission:
             f.write(f"#SBATCH --partition={SLURM_PARTITION}\n")
             f.write(f"#SBATCH -A {SLURM_ACCOUNT}\n")
             f.write(f"#SBATCH --time={SLURM_TIME}\n\n")
+            f.write(f"#SBATCH --qos={SLURM_QOS}\n\n")
             
             # CMSSW / Environment setup
             f.write("export SCRAM_ARCH=el8_amd64_gcc12\n")

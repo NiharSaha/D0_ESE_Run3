@@ -26,7 +26,7 @@ void make_q2_slices(TString input_txt, TString output_path, int istart, int iend
     const int N_CENTBIN = 4;
     Int_t min_centbin[N_CENTBIN] = {0, 10, 30, 50};
     Int_t max_centbin[N_CENTBIN] = {10, 30, 50, 90};
-    const int N_CENTBINS_1PC = 90;
+    const int N_CENTBINS_1PC = 50;
     
     // Define your 1% histograms exactly as before
     TH1D *hist_q2_tot[N_CENTBINS_1PC];
@@ -34,8 +34,10 @@ void make_q2_slices(TString input_txt, TString output_path, int istart, int iend
 
 
     for (int j = 0; j < N_CENTBINS_1PC; ++j) {
-      hist_q2_tot[j] = new TH1D(Form("hist_q2_tot_cent%i_%i", j, j+1), Form("hist_q2_tot_cent%i_%i", j, j+1), 7000, 0.0, 0.70);
-      hist_q3_tot[j] = new TH1D(Form("hist_q3_tot_cent%i_%i", j, j+1), Form("hist_q3_tot_cent%i_%i", j, j+1), 7000, 0.0, 0.70);
+      hist_q2_tot[j] = new TH1D(Form("hist_q2_tot_cent%i_%i", j, j+1), Form("hist_q2_tot_cent%i_%i", j, j+1), 35000, 0.0, 0.70);
+      hist_q2_tot[j]->SetDirectory(0);
+      hist_q3_tot[j] = new TH1D(Form("hist_q3_tot_cent%i_%i", j, j+1), Form("hist_q3_tot_cent%i_%i", j, j+1), 35000, 0.0, 0.70);
+      hist_q3_tot[j]->SetDirectory(0);
     }
 
 
@@ -45,6 +47,7 @@ void make_q2_slices(TString input_txt, TString output_path, int istart, int iend
     for (int i_cen=0; i_cen<N_CENTBINS_1PC; i_cen++)
       {
         nt[i_cen] = new TNtuple(Form("nt_qn_cent%i_%i",i_cen,i_cen+1),Form("nt_qn_cent%i_%i",i_cen,i_cen+1),"q2_hfp:q2_hfm:q3_hfp:q3_hfm:q2_hf_total:q3_hf_total:q2_hfp_w:q2_hfm_w:q3_hfp_w:q3_hfm_w:q2_hf_total_w:q3_hf_total_w");
+        nt[i_cen]->SetDirectory(0);
       }
 
     while (file_stream >> filename) {
@@ -105,16 +108,6 @@ void make_q2_slices(TString input_txt, TString output_path, int istart, int iend
     }
 
 
-
-
-    fout_ntup->cd();
-    fout_ntup->mkdir("Q_ntuple");
-    fout_ntup->cd("Q_ntuple");
-    //nt_ese_global->Write();
-    for(int i_cen=0; i_cen<N_CENTBINS_1PC; i_cen++){
-      nt[i_cen]->Write();
-    }
-
     fout_hist->cd();
     fout_hist->mkdir("q2_raw_1pc");
     fout_hist->cd("q2_raw_1pc");
@@ -131,8 +124,16 @@ void make_q2_slices(TString input_txt, TString output_path, int istart, int iend
       if (hist_q3_tot[j]->GetEntries() > 0) hist_q3_tot[j]->Write();
     }
 
-    fout_ntup->Close();
+    fout_ntup->cd();
+    fout_ntup->mkdir("Q_ntuple");
+    fout_ntup->cd("Q_ntuple");
+    //nt_ese_global->Write();
+    for(int i_cen=0; i_cen<N_CENTBINS_1PC; i_cen++){
+      nt[i_cen]->Write();
+    }
+    
     fout_hist->Close();
+    fout_ntup->Close();
 }
 
 

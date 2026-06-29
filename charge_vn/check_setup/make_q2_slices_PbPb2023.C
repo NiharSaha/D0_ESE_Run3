@@ -1,0 +1,174 @@
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include "TFile.h"
+#include "TTree.h"
+#include "TString.h"
+#include "TH1.h"
+#include "TMath.h"
+#include "TNtuple.h"
+
+using namespace std;
+
+void make_q2_slices(TString input_txt, TString output_path, int istart, int iend)
+{
+
+  TH1::SetDefaultSumw2();
+
+  ifstream file_stream(input_txt.Data());
+  TString outfile_ntup = TString::Format("%s/ROOT/Quantiles_ESE_ntuples_%d_%d.root", output_path.Data(), istart, iend);
+  TString outfile_hist = TString::Format("%s/ROOT/Quantiles_ESE_hists_%d_%d.root", output_path.Data(), istart, iend);
+  TFile *fout_ntup = new TFile(outfile_ntup, "RECREATE");
+  TFile *fout_hist = new TFile(outfile_hist, "RECREATE");
+  string filename;
+  int ifile = 0;
+
+  const int N_CENTBIN = 10;
+  Int_t min_centbin[N_CENTBIN] = {0, 5, 10, 15, 20, 25, 30, 35, 40, 45};
+  Int_t max_centbin[N_CENTBIN] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
+  const int N_CENTBINS = 10;
+
+  // Define your 1% histograms exactly as before
+  TH1D *hist_q2_tot[N_CENTBINS];
+  TH1D *hist_q3_tot[N_CENTBINS];
+
+  for (int j = 0; j < N_CENTBINS; ++j)
+  {
+    hist_q2_tot[j] = new TH1D(Form("hist_q2_tot_cent%i_%i", min_centbin[j], max_centbin[j]), Form("hist_q2_tot_cent%i_%i", min_centbin[j], max_centbin[j]), 7000, 0.0, 0.70);
+    hist_q2_tot[j]->SetDirectory(0);
+    hist_q3_tot[j] = new TH1D(Form("hist_q3_tot_cent%i_%i", min_centbin[j], max_centbin[j]), Form("hist_q3_tot_cent%i_%i", min_centbin[j], max_centbin[j]), 7000, 0.0, 0.70);
+    hist_q3_tot[j]->SetDirectory(0);
+  }
+
+  // TNtuple *nt_ese_global = new TNtuple("nt_global", "nt_global", "centrality:q2_hfp:q2_hfm:q3_hfp:q3_hfm:q2_total:q3_total");
+  
+  TNtuple *nt[N_CENTBINS];
+  for (int i_cen = 0; i_cen < N_CENTBINS; i_cen++)
+  {
+    nt[i_cen] = new TNtuple(Form("nt_qn_cent%i_%i", min_centbin[i_cen], max_centbin[i_cen]), Form("nt_qn_cent%i_%i", min_centbin[i_cen], max_centbin[i_cen]), "q2_hfp:q2_hfm:q3_hfp:q3_hfm:q2_hf_total:q3_hf_total:q2_hfp_w:q2_hfm_w:q3_hfp_w:q3_hfm_w:q2_hf_total_w:q3_hf_total_w");
+    nt[i_cen]->SetDirectory(0);
+  }
+
+  while (file_stream >> filename)
+  {
+    if (ifile < istart)
+    {
+      ifile++;
+      continue;
+    }
+    if (ifile >= iend)
+      break;
+
+    TFile *fin = TFile::Open(filename.c_str());
+    if (!fin || fin->IsZombie())
+    {
+      ifile++;
+      continue;
+    }
+    
+
+    std::cout << ">>> Processing ifile=" << ifile << " : " << filename << std::endl;
+
+    TTree *t_eventinfoana = (TTree *)fin->Get("Ana/ntEvtInfo");
+    Int_t centrality;
+    Float_t ephfmQ[3], ephfpQ[3], ephfmSumW[3], ephfpSumW[3];
+    t_eventinfoana->SetBranchAddress("centrality", &centrality);
+    t_eventinfoana->SetBranchAddress("ephfmQ", ephfmQ);
+    t_eventinfoana->SetBranchAddress("ephfpQ", ephfpQ);
+    t_eventinfoana->SetBranchAddress("ephfmSumW", ephfmSumW);
+    t_eventinfoana->SetBranchAddress("ephfpSumW", ephfpSumW);
+
+    Int_t n_entries = t_eventinfoana->GetEntries();
+    std::cout << "Nevents = " << n_entries << std::endl;
+
+    for (Long64_t ii = 0; ii < n_entries; ii++)
+    {
+      t_eventinfoana->GetEntry(ii);
+
+      if (ii % 10000 == 0)
+        printf("Current entry of the loop = %lld out of %d : %.3f %%\n", ii, n_entries, (Double_t)ii / n_entries * 100);
+
+      Int_t cent = centrality / 2;
+      if (cent >= 50)
+        continue;
+
+      Double_t q2_hfp = (ephfpSumW[1] > 0) ? ephfpQ[1] / ephfpSumW[1] : -999;
+      Double_t q2_hfm = (ephfmSumW[1] > 0) ? ephfmQ[1] / ephfmSumW[1] : -999;
+      Double_t q3_hfp = (ephfpSumW[2] > 0) ? ephfpQ[2] / ephfpSumW[2] : -999;
+      Double_t q3_hfm = (ephfmSumW[2] > 0) ? ephfmQ[2] / ephfmSumW[2] : -999;
+      Double_t q2_total_norm = (ephfmSumW[1] + ephfpSumW[1] > 0) ? (ephfmQ[1] + ephfpQ[1]) / (ephfmSumW[1] + ephfpSumW[1]) : -999;
+      Double_t q3_total_norm = (ephfmSumW[2] + ephfpSumW[2] > 0) ? (ephfmQ[2] + ephfpQ[2]) / (ephfmSumW[2] + ephfpSumW[2]) : -999;
+
+      // nt_ese_global->Fill(cent, q2_hfp, q2_hfm, q3_hfp, q3_hfm, q2_total_norm, q3_total_norm);
+
+      for (int i_cen = 0; i_cen < N_CENTBINS; i_cen++)
+      {
+        if (cent >= min_centbin[i_cen] && cent < max_centbin[i_cen])
+        {
+          hist_q2_tot[i_cen]->Fill(q2_total_norm);
+          hist_q3_tot[i_cen]->Fill(q3_total_norm);
+          nt[i_cen]->Fill(q2_hfp, q2_hfm, q3_hfp, q3_hfm, q2_total_norm, q3_total_norm, ephfpSumW[1], ephfmSumW[1], ephfpSumW[2], ephfmSumW[2], (ephfmSumW[1] + ephfpSumW[1]), (ephfmSumW[2] + ephfpSumW[2]));
+        }
+      }
+
+    } // -- evt loop --
+    fin->Close();
+    delete fin;
+    ifile++;
+  }
+
+  
+
+  fout_hist->cd();
+  fout_hist->mkdir("q2_raw_1pc");
+  fout_hist->cd("q2_raw_1pc");
+
+  for (int j = 0; j < N_CENTBINS; ++j)
+  {
+    if (hist_q2_tot[j]->GetEntries() > 0)
+      hist_q2_tot[j]->Write();
+  }
+
+  fout_hist->cd();
+  fout_hist->mkdir("q3_raw_1pc");
+  fout_hist->cd("q3_raw_1pc");
+
+  for (int j = 0; j < N_CENTBINS; ++j)
+  {
+    if (hist_q3_tot[j]->GetEntries() > 0)
+      hist_q3_tot[j]->Write();
+  }
+
+  fout_ntup->cd();
+  fout_ntup->mkdir("Q_ntuple");
+  fout_ntup->cd("Q_ntuple");
+  // nt_ese_global->Write();
+  for (int i_cen = 0; i_cen < N_CENTBINS; i_cen++)
+  {
+    nt[i_cen]->Write();
+  }
+
+  fout_ntup->Close();
+  fout_hist->Close();
+}
+
+int main(int argc, char *argv[])
+{
+  if (argc == 5) // Expecting 4 arguments: input_txt, output_path, istart, iend
+
+  {
+    TString input_txt = argv[1];
+    TString output_path = argv[2];
+    int istart = std::stoi(argv[3]);
+    int iend = std::stoi(argv[4]);
+
+    make_q2_slices(input_txt, output_path, istart, iend);
+  }
+  else
+  {
+    std::cout << "Usage: ./your_program input_txt output_path istart iend" << std::endl;
+    return 1;
+  }
+  return 0;
+}
