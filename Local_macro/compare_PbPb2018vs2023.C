@@ -7,9 +7,9 @@
 // OPTION 6: q2 Weight ratio
 //=======================================================
 
-void compare_PbPb2018vs2023(int option = 6) {
+void compare_PbPb2018vs2023(int option = 1) {
     TFile *f18 = TFile::Open("hist_out_weight_PbPb2018.root");
-    TFile *f23 = TFile::Open("hist_out_weight_PbPb2023.root");
+    TFile *f23 = TFile::Open("hist_out_weight_PbPb2023_Sept14.root");
 
     if (!f18 || !f23) {
         cout << "Check file paths! Ensure hist_out_2018.root and hist_out_2023.root are in this folder." << endl;

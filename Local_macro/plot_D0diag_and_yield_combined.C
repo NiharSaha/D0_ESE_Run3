@@ -67,23 +67,23 @@ static const double gPtEdgesV2[NPT_V2 + 1] = {
 };
 
 // --- v3: 7 bins ---
-static const int NPT_V3 = 7;
+static const int NPT_V3 = 6;
 static const char* gPtTagV3  [NPT_V3] = {
     "pT2to4","pT4to6","pT6to8",
-    "pT8to10","pT10to20","pT20to50","pT50to100"
+    "pT8to10","pT10to20","pT20to50"
 };
 static const char* gPtLabelV3[NPT_V3] = {
     "2-4","4-6","6-8",
-    "8-10","10-20","20-50","50-100"
+    "8-10","10-20","20-50"
 };
 static const double gPtEdgesV3[NPT_V3 + 1] = {
-    2, 4, 6, 8, 10, 20, 50, 100
+    2, 4, 6, 8, 10, 20, 50
 };
 
 // ============================================================================
 // Shared: q-bin count
 // ============================================================================
-static const int N_QBINS = 10;   // indices 0–9
+static const int N_QBINS = 12;   // indices 0–11
 
 // ============================================================================
 // Global counter for unique object names
@@ -124,7 +124,7 @@ void drawCombinedCell(TVirtualPad* cell,
     int uid = gUID++;
 
     // ── Shared x-range ──────────────────────────────────────────────────────
-    double xlo = -0.5, xhi = 41.5;
+    double xlo = -0.5, xhi = N_QBINS - 0.5;
     if (gChi2 && gChi2->GetN() > 0) {
         double xmn = 1e30, xmx = -1e30;
         for (int i = 0; i < gChi2->GetN(); i++) {
@@ -306,10 +306,10 @@ void drawCombinedPage(TCanvas* cv,
         Form("v_{%d}   Centrality: %s   p_{T}: %s GeV/c", vn, cl, pl));
     cv->cd();
 
-    // Grid pad: 5 cols × 2 rows = 10 cells
+    // Grid pad: 4 cols × 3 rows = 12 cells
     TPad* gridPad = new TPad("gridpad", "", 0.0, 0.0, 1.0, 0.965);
     gridPad->SetFillColor(0); gridPad->SetBorderMode(0); gridPad->Draw();
-    gridPad->Divide(5, 2, 0.001, 0.001);
+    gridPad->Divide(4, 3, 0.001, 0.001);
 
     // pT tag for yield directory lookup (numeric: e.g. "pT10to15")
     TString ptYield = Form("pT%dto%d", (int)pt_edges[ip], (int)pt_edges[ip+1]);
@@ -339,9 +339,10 @@ void drawCombinedPage(TCanvas* cv,
 // Main
 // ============================================================================
 void plot_D0diag_and_yield_combined(
-    const char* in_file = "ROOT/Flow_MB0to31_May19_out_combined_v3.root",
-    const char* out_v2  = "D0_diag_yield_v2_May20.pdf",
-    const char* out_v3  = "D0_diag_yield_v3_May20.pdf")
+    //const char* in_file = "ROOT/Flow_MB0to31_May19_out_combined_v3.root", //For 10 Qbin v2 (final)
+    const char* in_file = "D0_Flow_12NUQbin_diffq2q3_out_combined_Jun26.root", //For 12 NU Qbin v2/v3 
+    const char* out_v2  = "D0_diag_yield_July6_forv2.pdf",
+    const char* out_v3  = "D0_diag_yield_July6_forv3.pdf")
 {
     setStyle();
     gROOT->SetBatch(kTRUE);
@@ -360,9 +361,9 @@ void plot_D0diag_and_yield_combined(
     if (!dYield)
         Printf("WARNING: yield_vs_spbin not found — yield panels will be blank");
 
-    // Canvas: 5 cols × 2 rows of combined cells
-    const int CW = 5 * 340;
-    const int CH = 2 * 500 + 40;
+    // Canvas: 4 cols × 3 rows of combined cells
+    const int CW = 4 * 340;
+    const int CH = 3 * 500 + 40;
     TCanvas* cv = new TCanvas("cv", "D0 diag + yield", CW, CH);
 
     // v2: 5 cent × 9 pT = 45 pages
