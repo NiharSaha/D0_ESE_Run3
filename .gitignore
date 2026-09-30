@@ -1,3 +1,11 @@
+# Ignore local macro sub directory
+ESE*/
+vn_vs_*/
+mc_*/
+test*/
+old_*/
+Check*/
+
 # Ignore heavy results specifically
 flow_extraction/*.pdf
 flow_extraction/*.root
