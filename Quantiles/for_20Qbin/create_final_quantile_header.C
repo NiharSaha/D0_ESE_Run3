@@ -7,13 +7,13 @@
 const int N_CENT_BINS = 50;
 
 
-void create_final_quantile_header(bool USE_NON_UNIFORM = true, const std::string& methodTag = "HIST_NU") {
+void create_final_quantile_header(bool USE_NON_UNIFORM = true, const std::string& methodTag = "HIST_NU_Aug23") {
     
     // Set bins based on uniform/non-uniform flag
     int activeQBins = USE_NON_UNIFORM ? 12 : 20;
 
     // 1. Dynamic Output Filename
-    std::string filename = "quantile_12NUQbin_diffq2q3_cuts_2023_MB0to31.h";
+    std::string filename = "quantile_12NUQbin_diffq2q3_cuts_2023_MB0to31_Aug23.h";
     std::ofstream hf(filename);
     if (!hf.is_open()) {
         std::cerr << "Error: Could not create file " << filename << std::endl;

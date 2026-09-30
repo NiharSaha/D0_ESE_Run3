@@ -11,13 +11,14 @@
 # Create necessary directories
 mkdir -p logs 
 
-INPUT_DIR="/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/D0_Quantiles_20Qbin_MB0to31_Jun15_FullStat/ROOT"
+INPUT_DIR="/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/NEW_D0_Quantiles_MB0to31_FullStat_Aug23/ROOT"
 
+OUT_NAME="HIST_NU_Aug23"
 
 # when USE_SORT_METHOD = true
-#mkdir -p temp_cuts_SORT temp_roots_SORT
-#root -l -b -q "ExtractQuantiles.C(${SLURM_ARRAY_TASK_ID}, \"${INPUT_DIR}\", \"SORT\", true, true)"
+#mkdir -p temp_cuts_${OUT_NAME} temp_roots_${OUT_NAME}
+#root -l -b -q "ExtractQuantiles.C(${SLURM_ARRAY_TASK_ID}, \"${INPUT_DIR}\", \"${OUT_NAME}\", true, true)"
 
 # when USE_SORT_METHOD = false
-mkdir -p temp_cuts_HIST_NU temp_roots_HIST_NU
-root -l -b -q "ExtractQuantiles.C(${SLURM_ARRAY_TASK_ID}, \"${INPUT_DIR}\", \"HIST_NU\", false, true)"
+mkdir -p temp_cuts_${OUT_NAME} temp_roots_${OUT_NAME}
+root -l -b -q "ExtractQuantiles.C(${SLURM_ARRAY_TASK_ID}, \"${INPUT_DIR}\", \"${OUT_NAME}\", false, true)"

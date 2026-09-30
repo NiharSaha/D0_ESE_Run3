@@ -28,7 +28,7 @@
 #include <climits>
 #include <iomanip>
 
-#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/charge_vn/for_20Qbin/quantile_12NUQbin_diffq2q3_cuts_2023_MB0to31.h"
+#include "/home/saha115/D0_ESE/CMSSW_13_2_11/src/charge_vn/for_20Qbin/quantile_12NUQbin_diffq2q3_cuts_2023_MB0to31_Aug23.h"
 
 using namespace std;
 
@@ -78,7 +78,7 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
     TH1D *hq3_dist[N_CENTBINS][N_QBINS];
 
     //auto file_res = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Charge_Resolution_20Qbin_MB0to1_Jun15_charge/ROOT/Resolution_qbin_out_combined.root");
-    auto file_res = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/Charge_Resolution_12NUQbin_diffq2q3_MB0to1_Jun24/ROOT/Resolution_12Qbin_diffq2q3_out_combined.root");
+    auto file_res = TFile::Open("/scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/NEW_Charge_Resolution_12NUQbin_diffq2q3_MB0to1_Aug23/ROOT/Resolution_out_combined.root");
 
 
     Double_t v2_den_Dy_plus[N_CENTBINS_1][N_QBINS];
@@ -225,7 +225,7 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
 
         std::cout << ">>> Processing ifile=" << ifile << " : " << filename << std::endl;
 
-        TTree *tree = (TTree *)fin->Get("Ana/ntEvtInfo");
+        TTree *tree = (TTree *)fin->Get("Ana/ntInfo");
 
         // Event-level variables
         Int_t centrality;
@@ -243,8 +243,8 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
         tree->SetBranchAddress("ephfpQ", ephfpQ);
         tree->SetBranchAddress("ephfmSumW", ephfmSumW);
         tree->SetBranchAddress("ephfpSumW", ephfpSumW);
-        tree->SetBranchAddress("eptkAngle", eptkAngle);
-        tree->SetBranchAddress("eptkQ", eptkQ);
+        tree->SetBranchAddress("eptkmidAngle", eptkAngle);
+        tree->SetBranchAddress("eptkmidQ", eptkQ);
         tree->SetBranchAddress("trk_mult", &trk_mult);
         tree->SetBranchAddress("pT", pT);
         tree->SetBranchAddress("eta", eta);
@@ -252,7 +252,7 @@ void flow_Analysis_chg(TString input_txt, TString output_path, int istart, int i
 
         tree->SetBranchStatus("*", 0);
         for (const auto &p : {"centrality", "ephfpAngle", "ephfmAngle", "ephfpQ", "ephfmQ",
-                              "eptkAngle", "eptkQ", "ephfmSumW", "ephfpSumW",
+                              "eptkmidAngle", "eptkmidQ", "ephfmSumW", "ephfpSumW",
                               "trk_mult", "pT", "eta", "phi"})
             tree->SetBranchStatus(p, 1);
 

@@ -1,0 +1,142 @@
+[2026-09-29 20:49:00] submitting resolution (Sept29_v2)
+Submitted batch job 43596060
+Submitted batch job 43596061
+Submitted batch job 43596062
+Submitted batch job 43596063
+Submitted batch job 43596064
+Submitted batch job 43596065
+Submitted batch job 43596066
+Submitted batch job 43596067
+Submitted batch job 43596068
+Submitted batch job 43596069
+Submitted batch job 43596070
+Submitted batch job 43596071
+Submitted batch job 43596072
+Submitted batch job 43596073
+Submitted batch job 43596074
+Submitted batch job 43596075
+Submitted batch job 43596076
+Submitted batch job 43596077
+Submitted batch job 43596078
+Submitted batch job 43596079
+Submitted batch job 43596080
+Submitted batch job 43596081
+Submitted batch job 43596082
+Submitted batch job 43596083
+Submitted batch job 43596084
+Submitted batch job 43596085
+------------------------------------------------------------
+>>> STAGE = resolution   (Calculate_Resolution_MC.C)
+>>> Proxy valid for 15 hours.
+>>> Compiling Calculate_Resolution_MC.C...
+>>> Compilation Successful.
+------------------------------------------------------------
+>>> MODE: FULL PRODUCTION (255 files)
+>>> 10 files/job | Total Jobs: 26
+Submitted 1/26 jobs...
+Submitted 11/26 jobs...
+Submitted 21/26 jobs...
+Submitted 26/26 jobs...
+
+>>> Submission complete.
+>>> When done:
+    hadd -f /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Resolution_MC_prompt_Sept29_v2/ROOT/Resolution_MC_combined.root /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Resolution_MC_prompt_Sept29_v2/ROOT/Resolution_MC_*_*.root
+    # then set STAGE='flow' (RES_FILE already points at that path)
+[2026-09-29 20:53:05] resolution combined
+[2026-09-29 20:53:05] submitting flow (Sept29_v2)
+Submitted batch job 43596188
+Submitted batch job 43596189
+Submitted batch job 43596190
+Submitted batch job 43596191
+Submitted batch job 43596192
+Submitted batch job 43596193
+Submitted batch job 43596194
+Submitted batch job 43596195
+Submitted batch job 43596196
+Submitted batch job 43596197
+Submitted batch job 43596198
+Submitted batch job 43596199
+Submitted batch job 43596200
+Submitted batch job 43596201
+Submitted batch job 43596202
+Submitted batch job 43596203
+Submitted batch job 43596204
+Submitted batch job 43596205
+Submitted batch job 43596206
+Submitted batch job 43596207
+Submitted batch job 43596208
+Submitted batch job 43596209
+Submitted batch job 43596210
+Submitted batch job 43596211
+Submitted batch job 43596212
+Submitted batch job 43596213
+------------------------------------------------------------
+>>> STAGE = flow   (flow_MC_BDT_sys.C)
+>>> Proxy valid for 15 hours.
+>>> Compiling flow_MC_BDT_sys.C...
+>>> Compilation Successful.
+>>> Compiling make_BDT_systematic.C ...
+------------------------------------------------------------
+>>> MODE: FULL PRODUCTION (255 files)
+>>> 10 files/job | Total Jobs: 26
+Submitted 1/26 jobs...
+Submitted 11/26 jobs...
+Submitted 21/26 jobs...
+Submitted 26/26 jobs...
+
+>>> Submission complete.
+>>> When done:
+    hadd -f /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v2/ROOT/flow_MC_BDT_out_combined.root /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v2/ROOT/flow_MC_BDT_sys_*_*.root
+    ./make_BDT_systematic.exe /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v2/ROOT/flow_MC_BDT_out_combined.root BDT_sys_output.root
+[2026-09-29 20:59:13] flow combined
+NEW: /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v2/ROOT/flow_MC_BDT_out_combined.root  [ivw]
+REF: /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v1/ROOT/flow_MC_BDT_out_combined.root  [stitch]
+
+==== v2  per-pT  (dvn with cent0to10 cut) ====
+pT       | vn(noBDT) NEW       pull  dpull | vn(noBDT) REF       pull  dpull | Neff n/r sig_d n/r
+2-3      | -0.0031+-0.0048   -0.6   -0.7 | -0.0028+-0.0048   -0.6   -0.7 |     1.00     1.00
+3-4      | -0.0008+-0.0047   -0.2   +1.4 | -0.0007+-0.0047   -0.1   +1.6 |     1.00     1.00
+4-5      | +0.0020+-0.0059   +0.3   +0.8 | +0.0019+-0.0059   +0.3   +0.9 |     1.01     1.00
+5-6      | +0.0165+-0.0080   +2.0   +1.8 | +0.0153+-0.0081   +1.9   +1.9 |     1.01     1.00
+6-8      | +0.0074+-0.0087   +0.9   -0.5 | +0.0076+-0.0087   +0.9   -0.4 |     1.01     1.00
+8-10     | -0.0231+-0.0137   -1.7   +2.7 | -0.0332+-0.0143   -2.3   +2.8 |     1.10     0.93
+10-15    | +0.0120+-0.0057   +2.1   +0.3 | +0.0425+-0.0184   +2.3   +2.1 |    11.27     0.31
+15-30    | +0.0173+-0.0060   +2.9   -2.6 | +0.0209+-0.0090   +2.3   -0.0 |     2.29     0.61
+30-100   | +0.0007+-0.0049   +0.1   -1.9 | +0.0138+-0.0080   +1.7   +0.3 |     2.70     0.51
+
+---- v2  summary per BDT-cut class ----
+class        chi2_wo    chi2_dvn     |p|>2  <dvn> (const fit)       
+cent0to10    21.1/9      24.3/9      2      -0.00216 +- 0.00131  NEW
+cent0to10    23.9/9      19.8/9      2      +0.00398 +- 0.00211  REF
+cent10to20   21.1/9      17.4/9      1      +0.00023 +- 0.00108  NEW
+cent10to20   23.9/9      21.0/9      2      +0.00519 +- 0.00203  REF
+cent20to30   21.1/9      17.4/9      1      +0.00023 +- 0.00108  NEW
+cent20to30   23.9/9      21.0/9      2      +0.00519 +- 0.00203  REF
+cent30to40   21.1/9      26.6/9      3      -0.00242 +- 0.00119  NEW
+cent30to40   23.9/9      18.1/9      1      +0.00233 +- 0.00185  REF
+cent40to50   21.1/9      26.6/9      3      -0.00242 +- 0.00119  NEW
+cent40to50   23.9/9      18.1/9      1      +0.00233 +- 0.00185  REF
+
+==== v3  per-pT  (dvn with cent0to10 cut) ====
+pT       | vn(noBDT) NEW       pull  dpull | vn(noBDT) REF       pull  dpull | Neff n/r sig_d n/r
+2-4      | -0.0021+-0.0046   -0.5   -2.7 | -0.0024+-0.0046   -0.5   -2.8 |     1.00     1.00
+4-6      | -0.0067+-0.0066   -1.0   -2.6 | -0.0074+-0.0066   -1.1   -2.7 |     1.01     1.00
+6-8      | -0.0131+-0.0119   -1.1   +1.5 | -0.0139+-0.0120   -1.2   +1.4 |     1.01     0.99
+8-10     | -0.0227+-0.0195   -1.2   -0.5 | -0.0239+-0.0204   -1.2   -0.7 |     1.10     0.94
+10-20    | -0.0143+-0.0069   -2.1   +1.7 | -0.0171+-0.0223   -0.8   -2.1 |    10.07     0.30
+20-50    | -0.0215+-0.0069   -3.1   +0.2 | -0.0287+-0.0086   -3.3   +0.8 |     1.56     0.74
+50-100   | +0.0066+-0.0091   +0.7   +0.0 | -0.0133+-0.0139   -1.0   +0.7 |     2.31     0.70
+
+---- v3  summary per BDT-cut class ----
+class        chi2_wo    chi2_dvn     |p|>2  <dvn> (const fit)       
+cent0to10    18.5/7      19.5/7      2      -0.00086 +- 0.00177  NEW
+cent0to10    17.0/7      23.1/7      3      -0.00290 +- 0.00240  REF
+cent10to20   18.5/7      18.5/7      2      -0.00228 +- 0.00138  NEW
+cent10to20   17.0/7      27.0/7      4      +0.00111 +- 0.00195  REF
+cent20to30   18.5/7      18.5/7      2      -0.00228 +- 0.00138  NEW
+cent20to30   17.0/7      27.0/7      4      +0.00111 +- 0.00195  REF
+cent30to40   18.5/7      18.4/7      2      +0.00035 +- 0.00161  NEW
+cent30to40   17.0/7      26.4/7      3      -0.00065 +- 0.00214  REF
+cent40to50   18.5/7      18.4/7      2      +0.00035 +- 0.00161  NEW
+cent40to50   17.0/7      26.4/7      3      -0.00065 +- 0.00214  REF
+[2026-09-29 20:59:16] done: /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v2/check_Sept29_v2.log

@@ -1,0 +1,43 @@
+======================================================================================================================
+WHY DOES "WL" NOT GIVE A VALID COVARIANCE? - diagnostic of the SP-bin fits (1M entries, cent10to20, withEff unless noted)
+======================================================================================================================
+WL corrected? per SP bin: R = err(WL fit) / (err(clone "L" fit) x sqrt(sum w^2/sum w)).  R~1 -> correction applied,
+              R~1/factor -> correction failed (error = plain L error). Only SP bins with factor > 1.3 are classified.
+cov = CovMatrixStatus of the fit: 0 not computed, 1 approximate, 2 forced pos-def, 3 accurate.
+
+--- V0  4 fits (production), TMinuit, bounded
+  SP-bin fits: 941   fit calls: 3764
+  WL correction applied: 0/941 (0%)   failed: 941 (100%)   in between: 0
+  first fit call : status 0 in 914/941 (97%) ; CovMatrixStatus 0/1/2/3 = 0/728/0/213 ; median EDM 1.49e-07
+  last  fit call : status 0 in 0/941 (0%) ; CovMatrixStatus 0/1/2/3 = 0/941/0/0
+  yield at its bound after last fit: 213/941
+  ROOT messages: no valid Cov 3671, cannot compute 241, not accurate 276, forced posdef 35, abnormal term 0
+  yield WL vs clone L (same start): median 0.00e+00 sigma
+
+--- V1  1 fit, TMinuit, bounded
+  SP-bin fits: 941   fit calls: 941
+  WL correction applied: 10/941 (1%)   failed: 889 (94%)   in between: 42
+  first fit call : status 0 in 914/941 (97%) ; CovMatrixStatus 0/1/2/3 = 0/728/0/213 ; median EDM 1.49e-07
+  last  fit call : status 0 in 914/941 (97%) ; CovMatrixStatus 0/1/2/3 = 0/728/0/213
+  yield at its bound after last fit: 199/941
+  ROOT messages: no valid Cov 961, cannot compute 218, not accurate 253, forced posdef 35, abnormal term 0
+  yield vs production V0, in units of the corrected error: median 0.000, 95% 0.513, >0.5 sigma in 51/926 SP bins
+  yield WL vs clone L (same start): median 1.11e-05 sigma
+
+--- V2  2 fits (no M), TMinuit, bounded
+  SP-bin fits: 941   fit calls: 1882
+  WL correction applied: 1/941 (0%)   failed: 933 (99%)   in between: 7
+  first fit call : status 0 in 914/941 (97%) ; CovMatrixStatus 0/1/2/3 = 0/728/0/213 ; median EDM 1.49e-07
+  last  fit call : status 0 in 911/941 (97%) ; CovMatrixStatus 0/1/2/3 = 0/918/0/23
+  yield at its bound after last fit: 209/941
+  ROOT messages: no valid Cov 1849, cannot compute 241, not accurate 276, forced posdef 35, abnormal term 0
+  yield vs production V0, in units of the corrected error: median 0.000, 95% 0.000, >0.5 sigma in 1/926 SP bins
+  yield WL vs clone L (same start): median 3.26e-06 sigma
+
+--- V0  4 fits, noEff (L, no weights) - status baseline
+  SP-bin fits: 941   fit calls: 3764
+  first fit call : status 0 in 938/941 (100%) ; CovMatrixStatus 0/1/2/3 = 0/814/0/127 ; median EDM 1.68e-07
+  last  fit call : status 0 in 0/941 (0%) ; CovMatrixStatus 0/1/2/3 = 0/941/0/0
+  yield at its bound after last fit: 183/941
+  ROOT messages: no valid Cov 0, cannot compute 0, not accurate 0, forced posdef 0, abnormal term 0
+

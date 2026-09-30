@@ -5,22 +5,22 @@ import time
 # ==============================================================================
 # 1. USER CONFIGURATION (Everything you need to change is here)
 # ==============================================================================
-#---For qn quantiles ---
-#STEP="Charge_Quantiles_20Qbin"
-#DATE_tag= "Jun15" # include version here!!
+#---For qn quantiles --- [No need to calculate separately for charge particles, we can use D0 case]
+#STEP="New_Charge_Quantiles"
+#DATE_tag= "July20" # include version here!!
 #DATASET= "MB0to1"
 #SOURCE_CODE_NAME="make_q2_slices_PbPb2023.C"
 
 #--- Resolution ---
-#STEP="Charge_Resolution_12NUQbin_diffq2q3"
+#STEP="NEW_Charge_Resolution_12NUQbin_diffq2q3"
 #DATASET= "MB0to1"
-#DATE_tag= "Jun24" # include version here!!
+#DATE_tag= "Aug23" # include version here!!
 #SOURCE_CODE_NAME="Calculate_Resolution_qbin.C"
 
 #--- SP ingradients ---
-STEP="Charge_Flow_12NUQbin_diffq2q3"
+STEP="NEW_Charge_Flow_12NUQbin_diffq2q3"
 DATASET= "MB0to1"
-DATE_tag= "June24_v0" # include version here!!
+DATE_tag= "Aug24" # include version here!!
 SOURCE_CODE_NAME="flow_Analysis_chg.C"
 
 #extra!
@@ -36,7 +36,7 @@ IS_TEST_RUN = False   # True: Only submit first 10 files (2 jobs). False: FULL R
 
 USERNAME    = "saha115"
 CMSSW_DIR   = f"/home/{USERNAME}/D0_ESE/CMSSW_13_2_11/src"
-INPUT_FLIST = f"{CMSSW_DIR}/charge_vn/for_20Qbin/inputFiles_charge_MB0to1.txt"
+INPUT_FLIST = f"{CMSSW_DIR}/charge_vn/for_20Qbin/inputFiles_charge_MB01_wEra_Aug20.txt"
 OUTPUT_BASE = f"/scratch/negishi/{USERNAME}/D0_ESE_out/CMSSW_13_2_11/src/{STEP}_{DATASET}_{DATE_tag}"
 
 
@@ -46,8 +46,8 @@ SOURCE_CODE = f"{SOURCE_CODE_NAME}"
 SLURM_ACCOUNT   = "physics"      
 SLURM_PARTITION = "cpu"
 SLURM_TIME      = "04:00:00"
-#SLURM_QOS       = "standby"
-SLURM_QOS       = "normal"
+SLURM_QOS       = "standby"
+#SLURM_QOS       = "normal"
 N_FILES_PER_JOB = 10
 MAX_JOBS_QUEUE  = 2000  
 

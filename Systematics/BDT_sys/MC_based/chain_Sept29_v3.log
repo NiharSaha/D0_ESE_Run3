@@ -1,0 +1,156 @@
+[2026-09-29 21:37:56] submitting resolution (Sept29_v3)
+Submitted batch job 43597121
+Submitted batch job 43597122
+Submitted batch job 43597123
+Submitted batch job 43597124
+Submitted batch job 43597125
+Submitted batch job 43597126
+Submitted batch job 43597127
+Submitted batch job 43597128
+Submitted batch job 43597129
+Submitted batch job 43597130
+Submitted batch job 43597131
+Submitted batch job 43597132
+Submitted batch job 43597133
+Submitted batch job 43597134
+Submitted batch job 43597135
+Submitted batch job 43597136
+Submitted batch job 43597137
+Submitted batch job 43597138
+Submitted batch job 43597139
+Submitted batch job 43597140
+Submitted batch job 43597141
+Submitted batch job 43597142
+Submitted batch job 43597143
+Submitted batch job 43597144
+Submitted batch job 43597145
+Submitted batch job 43597146
+------------------------------------------------------------
+>>> STAGE = resolution   (Calculate_Resolution_MC.C)
+>>> Proxy valid for 14 hours.
+>>> Compiling Calculate_Resolution_MC.C...
+>>> Compilation Successful.
+------------------------------------------------------------
+>>> MODE: FULL PRODUCTION (255 files)
+>>> 10 files/job | Total Jobs: 26
+Submitted 1/26 jobs...
+Submitted 11/26 jobs...
+Submitted 21/26 jobs...
+Submitted 26/26 jobs...
+
+>>> Submission complete.
+>>> When done:
+    hadd -f /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Resolution_MC_prompt_Sept29_v3/ROOT/Resolution_MC_combined.root /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Resolution_MC_prompt_Sept29_v3/ROOT/Resolution_MC_*_*.root
+    # then set STAGE='flow' (RES_FILE already points at that path)
+[2026-09-29 21:42:00] resolution combined
+[2026-09-29 21:42:00] submitting flow (Sept29_v3)
+Submitted batch job 43597259
+Submitted batch job 43597260
+Submitted batch job 43597261
+Submitted batch job 43597262
+Submitted batch job 43597263
+Submitted batch job 43597264
+Submitted batch job 43597265
+Submitted batch job 43597266
+Submitted batch job 43597267
+Submitted batch job 43597268
+Submitted batch job 43597269
+Submitted batch job 43597270
+Submitted batch job 43597271
+Submitted batch job 43597272
+Submitted batch job 43597273
+Submitted batch job 43597274
+Submitted batch job 43597275
+Submitted batch job 43597276
+Submitted batch job 43597277
+Submitted batch job 43597278
+Submitted batch job 43597279
+Submitted batch job 43597280
+Submitted batch job 43597281
+Submitted batch job 43597282
+Submitted batch job 43597283
+Submitted batch job 43597284
+------------------------------------------------------------
+>>> STAGE = flow   (flow_MC_BDT_sys.C)
+>>> Proxy valid for 14 hours.
+>>> Compiling flow_MC_BDT_sys.C...
+>>> Compilation Successful.
+>>> Compiling make_BDT_systematic.C ...
+------------------------------------------------------------
+>>> MODE: FULL PRODUCTION (255 files)
+>>> 10 files/job | Total Jobs: 26
+Submitted 1/26 jobs...
+Submitted 11/26 jobs...
+Submitted 21/26 jobs...
+Submitted 26/26 jobs...
+
+>>> Submission complete.
+>>> When done:
+    hadd -f /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v3/ROOT/flow_MC_BDT_out_combined.root /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v3/ROOT/flow_MC_BDT_sys_*_*.root
+    ./make_BDT_systematic.exe /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v3/ROOT/flow_MC_BDT_out_combined.root BDT_sys_output.root
+[2026-09-29 21:48:07] flow combined
+NEW: /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v3/ROOT/flow_MC_BDT_out_combined.root  [ivw]
+REF: /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v2/ROOT/flow_MC_BDT_out_combined.root  [ivw]
+
+==== v2  per-pT  (dvn with cent0to10 cut) ====
+pT       | vn(noBDT) NEW       pull  dpull | vn(noBDT) REF       pull  dpull | Neff n/r sig_d n/r
+2-3      | -0.0031+-0.0048   -0.6   -0.7 | -0.0031+-0.0048   -0.6   -0.7 |     1.00     1.00
+3-4      | -0.0008+-0.0047   -0.2   +1.4 | -0.0008+-0.0047   -0.2   +1.4 |     1.00     1.00
+4-5      | +0.0020+-0.0059   +0.3   +0.8 | +0.0020+-0.0059   +0.3   +0.8 |     1.00     1.00
+5-6      | +0.0165+-0.0080   +2.0   +1.8 | +0.0165+-0.0080   +2.0   +1.8 |     1.00     1.00
+6-8      | +0.0074+-0.0087   +0.9   -0.5 | +0.0074+-0.0087   +0.9   -0.5 |     1.00     1.00
+8-10     | -0.0231+-0.0137   -1.7   +2.7 | -0.0231+-0.0137   -1.7   +2.7 |     1.00     1.00
+10-15    | +0.0120+-0.0057   +2.1   +0.3 | +0.0120+-0.0057   +2.1   +0.3 |     1.00     1.00
+15-30    | +0.0173+-0.0060   +2.9   -2.6 | +0.0173+-0.0060   +2.9   -2.6 |     1.00     1.00
+30-100   | +0.0007+-0.0049   +0.1   -1.9 | +0.0007+-0.0049   +0.1   -1.9 |     1.00     1.00
+
+---- v2  summary per BDT-cut class ----
+class        chi2_wo    chi2_dvn     |p|>2  <dvn> (const fit)       
+cent0to10    21.1/9      24.3/9      2      -0.00216 +- 0.00131  NEW
+cent0to10    21.1/9      24.3/9      2      -0.00216 +- 0.00131  REF
+cent10to20   21.1/9      17.4/9      1      +0.00023 +- 0.00108  NEW
+cent10to20   21.1/9      17.4/9      1      +0.00023 +- 0.00108  REF
+cent20to30   21.1/9      17.4/9      1      +0.00023 +- 0.00108  NEW
+cent20to30   21.1/9      17.4/9      1      +0.00023 +- 0.00108  REF
+cent30to40   21.1/9      26.6/9      3      -0.00242 +- 0.00119  NEW
+cent30to40   21.1/9      26.6/9      3      -0.00242 +- 0.00119  REF
+cent40to50   21.1/9      26.6/9      3      -0.00242 +- 0.00119  NEW
+cent40to50   21.1/9      26.6/9      3      -0.00242 +- 0.00119  REF
+
+==== v3  per-pT  (dvn with cent0to10 cut) ====
+pT       | vn(noBDT) NEW       pull  dpull | vn(noBDT) REF       pull  dpull | Neff n/r sig_d n/r
+2-4      | -0.0021+-0.0046   -0.5   -2.7 | -0.0021+-0.0046   -0.5   -2.7 |     1.00     1.00
+4-6      | -0.0067+-0.0066   -1.0   -2.6 | -0.0067+-0.0066   -1.0   -2.6 |     1.00     1.00
+6-8      | -0.0131+-0.0119   -1.1   +1.5 | -0.0131+-0.0119   -1.1   +1.5 |     1.00     1.00
+8-10     | -0.0227+-0.0195   -1.2   -0.5 | -0.0227+-0.0195   -1.2   -0.5 |     1.00     1.00
+10-20    | -0.0143+-0.0069   -2.1   +1.7 | -0.0143+-0.0069   -2.1   +1.7 |     1.00     1.00
+20-50    | -0.0215+-0.0069   -3.1   +0.2 | -0.0215+-0.0069   -3.1   +0.2 |     1.00     1.00
+50-100   | +0.0066+-0.0091   +0.7   +0.0 | +0.0066+-0.0091   +0.7   +0.0 |     1.00     1.00
+
+---- v3  summary per BDT-cut class ----
+class        chi2_wo    chi2_dvn     |p|>2  <dvn> (const fit)       
+cent0to10    18.5/7      19.5/7      2      -0.00086 +- 0.00177  NEW
+cent0to10    18.5/7      19.5/7      2      -0.00086 +- 0.00177  REF
+cent10to20   18.5/7      18.5/7      2      -0.00228 +- 0.00138  NEW
+cent10to20   18.5/7      18.5/7      2      -0.00228 +- 0.00138  REF
+cent20to30   18.5/7      18.5/7      2      -0.00228 +- 0.00138  NEW
+cent20to30   18.5/7      18.5/7      2      -0.00228 +- 0.00138  REF
+cent30to40   18.5/7      18.4/7      2      +0.00035 +- 0.00161  NEW
+cent30to40   18.5/7      18.4/7      2      +0.00035 +- 0.00161  REF
+cent40to50   18.5/7      18.4/7      2      +0.00035 +- 0.00161  NEW
+cent40to50   18.5/7      18.4/7      2      +0.00035 +- 0.00161  REF
+
+==== random-cut control (20 replicas, per-sample IVW) ====
+v2 all pT     pulls: N=180 mean=+0.130 RMS=1.092 (+-0.058)  |p|>2: 6.1% (expect 4.6%)
+   chi2/ndf per replica (ndf=9): 13.2 9.9 9.1 5.9 7.4 14.2 9.5 11.2 5.6 6.2 10.3 7.8 13.7 10.2 16.9 10.9 8.2 18.1 15.2 14.4
+   BDT cent0to10 chi2 = 24.3/9 ; replicas with chi2 >= BDT: 0/20
+v2 pT<10      pulls: N=120 mean=+0.061 RMS=1.043 (+-0.067)  |p|>2: 5.0% (expect 4.6%)
+   chi2/ndf per replica (ndf=6): 5.9 6.2 5.6 2.3 4.8 8.0 6.4 3.8 1.8 3.3 7.5 5.9 10.3 7.1 11.3 6.7 5.5 8.6 12.7 7.2
+   BDT cent0to10 chi2 = 13.8/6 ; replicas with chi2 >= BDT: 0/20
+v3 all pT     pulls: N=140 mean=-0.043 RMS=1.002 (+-0.060)  |p|>2: 5.7% (expect 4.6%)
+   chi2/ndf per replica (ndf=7): 14.8 1.8 2.6 9.0 2.3 12.5 4.2 4.1 8.5 5.5 13.9 13.2 5.4 4.1 9.2 5.5 1.0 5.8 5.9 11.8
+   BDT cent0to10 chi2 = 19.5/7 ; replicas with chi2 >= BDT: 0/20
+v3 pT<10      pulls: N=80 mean=-0.109 RMS=0.937 (+-0.074)  |p|>2: 6.2% (expect 4.6%)
+   chi2/ndf per replica (ndf=4): 13.7 0.4 1.3 4.2 1.4 3.3 1.9 2.5 4.0 1.9 5.6 9.0 3.1 0.7 2.2 2.2 0.2 1.3 1.6 10.8
+   BDT cent0to10 chi2 = 16.6/4 ; replicas with chi2 >= BDT: 0/20
+[2026-09-29 21:48:10] done: /scratch/negishi/saha115/D0_ESE_out/CMSSW_13_2_11/src/BDT_sys_Flow_MC_prompt_Sept29_v3/check_Sept29_v3.log

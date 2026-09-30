@@ -7,10 +7,11 @@ REDIRECTOR = "root://eos.cms.rcac.purdue.edu/"
 # The base path on EOS (starting from /store/)
 #BASE_DIR = "/store/user/nsaha/D0_2023PbPb_skimEDM/"
 #BASE_DIR = "/store/user/wxie/D0_2023PbPb_skimEDM/"
-BASE_DIR = "/store/user/awesolek/D0_2023PbPb_skimEDM_1/"
+#BASE_DIR = "/store/user/awesolek/D0_2023PbPb_skimEDM_1/"
+BASE_DIR = "/store/user/awesolek/Run3_D0_MC_nonprompt_redo/"
 #BASE_DIR = "/scratch/negishi/chand140/d0output_Milan/dataoutput_lowpt/"
 # Output text file
-OUTPUT_FILE = "inputFiles_awesolek_MB0to4.txt"
+OUTPUT_FILE = "inputFiles_NonPromptMC.txt"
 
 def get_files_recursive(directory):
     """Recursively lists files using the xrdfs ls command."""
