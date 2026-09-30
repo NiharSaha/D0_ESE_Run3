@@ -5,6 +5,8 @@ mc_*/
 test*/
 old_*/
 Check*/
+Systematics/*/*.root
+Systematics/*/*.pdf
 
 # Ignore heavy results specifically
 flow_extraction/*.pdf

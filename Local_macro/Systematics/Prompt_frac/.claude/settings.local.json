@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(root -l -b -q 'PlotBestFitPages.C')",
+      "Bash(echo \"EXIT: $?\")"
+    ]
+  }
+}

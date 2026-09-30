@@ -1,0 +1,513 @@
+
+===== pT: pT2to3 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =    76140.2 +/-    878.4   Sig(Yield/Err) =    86.68   Sig(sideband) =   117.21
+  [1] DCA 0.0011-0.0024 : Yield =   207062.2 +/-   1103.9   Sig(Yield/Err) =   187.57   Sig(sideband) =   251.49
+  [2] DCA 0.0024-0.0039 : Yield =   207224.1 +/-    929.2   Sig(Yield/Err) =   223.02   Sig(sideband) =   312.12
+  [3] DCA 0.0039-0.0059 : Yield =   100652.4 +/-    616.1   Sig(Yield/Err) =   163.37   Sig(sideband) =   230.89
+  [4] DCA 0.0059-0.0085 : Yield =    19406.3 +/-    330.3   Sig(Yield/Err) =    58.75   Sig(sideband) =    86.12
+  [5] DCA 0.0085-0.0118 : Yield =      163.6 +/-    133.7   Sig(Yield/Err) =     1.22   Sig(sideband) =    19.86
+  [6] DCA 0.0118-0.0160 : Yield =        0.0 +/-     17.7   Sig(Yield/Err) =     0.00   Sig(sideband) =     5.67
+  [7] DCA 0.0160-0.0214 : Yield =        0.0 +/-    112.6   Sig(Yield/Err) =     0.00   Sig(sideband) =     4.85
+  [8] DCA 0.0214-0.0366 : Yield =        0.0 +/-      6.1   Sig(Yield/Err) =     0.00   Sig(sideband) =     0.12
+  [9] DCA 0.0366-0.1350 : Yield =        0.0 +/-     52.3   Sig(Yield/Err) =     0.00   Sig(sideband) =     3.83
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =    49257.5 +/-    456.2   Sig(Yield/Err) =   107.98   Sig(sideband) =   134.62
+  [1] DCA 0.0011-0.0024 : Yield =   133219.5 +/-    573.3   Sig(Yield/Err) =   232.36   Sig(sideband) =   292.10
+  [2] DCA 0.0024-0.0039 : Yield =   122113.6 +/-    441.2   Sig(Yield/Err) =   276.78   Sig(sideband) =   353.11
+  [3] DCA 0.0039-0.0059 : Yield =    49837.5 +/-    260.7   Sig(Yield/Err) =   191.16   Sig(sideband) =   243.73
+  [4] DCA 0.0059-0.0085 : Yield =     7520.1 +/-    126.9   Sig(Yield/Err) =    59.24   Sig(sideband) =    75.94
+  [5] DCA 0.0085-0.0118 : Yield =      522.4 +/-     52.1   Sig(Yield/Err) =    10.02   Sig(sideband) =    16.77
+  [6] DCA 0.0118-0.0160 : Yield =      106.3 +/-     34.1   Sig(Yield/Err) =     3.11   Sig(sideband) =     5.80
+  [7] DCA 0.0160-0.0214 : Yield =        0.0 +/-     49.6   Sig(Yield/Err) =     0.00   Sig(sideband) =     0.14
+  [8] DCA 0.0214-0.0366 : Yield =       29.7 +/-     26.6   Sig(Yield/Err) =     1.12   Sig(sideband) =     3.04
+  [9] DCA 0.0366-0.1350 : Yield =        0.0 +/-      3.2   Sig(Yield/Err) =     0.00   Sig(sideband) =     0.00
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =    34586.4 +/-    369.2   Sig(Yield/Err) =    93.67   Sig(sideband) =   114.44
+  [1] DCA 0.0011-0.0024 : Yield =    95492.8 +/-    467.8   Sig(Yield/Err) =   204.13   Sig(sideband) =   250.43
+  [2] DCA 0.0024-0.0039 : Yield =   101970.1 +/-    396.7   Sig(Yield/Err) =   257.05   Sig(sideband) =   321.74
+  [3] DCA 0.0039-0.0059 : Yield =    54026.2 +/-    253.1   Sig(Yield/Err) =   213.49   Sig(sideband) =   267.79
+  [4] DCA 0.0059-0.0085 : Yield =    10334.1 +/-    126.4   Sig(Yield/Err) =    81.78   Sig(sideband) =   101.88
+  [5] DCA 0.0085-0.0118 : Yield =      804.8 +/-     52.4   Sig(Yield/Err) =    15.35   Sig(sideband) =    21.17
+  [6] DCA 0.0118-0.0160 : Yield =      111.3 +/-     33.6   Sig(Yield/Err) =     3.31   Sig(sideband) =     5.58
+  [7] DCA 0.0160-0.0214 : Yield =       43.9 +/-     25.7   Sig(Yield/Err) =     1.71   Sig(sideband) =     3.69
+  [8] DCA 0.0214-0.0366 : Yield =       18.3 +/-     27.1   Sig(Yield/Err) =     0.67   Sig(sideband) =     2.83
+  [9] DCA 0.0366-0.1350 : Yield =        2.7 +/-     39.6   Sig(Yield/Err) =     0.07   Sig(sideband) =     4.41
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =    19213.5 +/-    187.3   Sig(Yield/Err) =   102.60   Sig(sideband) =   124.70
+  [1] DCA 0.0011-0.0024 : Yield =    50721.7 +/-    236.3   Sig(Yield/Err) =   214.61   Sig(sideband) =   259.50
+  [2] DCA 0.0024-0.0039 : Yield =    46467.8 +/-    185.7   Sig(Yield/Err) =   250.23   Sig(sideband) =   305.19
+  [3] DCA 0.0039-0.0059 : Yield =    18748.5 +/-    110.5   Sig(Yield/Err) =   169.66   Sig(sideband) =   207.88
+  [4] DCA 0.0059-0.0085 : Yield =     2733.0 +/-     53.1   Sig(Yield/Err) =    51.46   Sig(sideband) =    64.35
+  [5] DCA 0.0085-0.0118 : Yield =      170.1 +/-     22.9   Sig(Yield/Err) =     7.42   Sig(sideband) =     8.31
+  [6] DCA 0.0118-0.0160 : Yield =       29.7 +/-     17.0   Sig(Yield/Err) =     1.75   Sig(sideband) =     2.47
+  [7] DCA 0.0160-0.0214 : Yield =        7.2 +/-     14.6   Sig(Yield/Err) =     0.49   Sig(sideband) =     2.81
+  [8] DCA 0.0214-0.0366 : Yield =        7.7 +/-     16.8   Sig(Yield/Err) =     0.46   Sig(sideband) =     2.13
+  [9] DCA 0.0366-0.1350 : Yield =        0.0 +/-      4.6   Sig(Yield/Err) =     0.00   Sig(sideband) =     0.00
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =    11951.9 +/-    164.0   Sig(Yield/Err) =    72.88   Sig(sideband) =    88.05
+  [1] DCA 0.0011-0.0024 : Yield =    32613.2 +/-    205.0   Sig(Yield/Err) =   159.11   Sig(sideband) =   188.86
+  [2] DCA 0.0024-0.0039 : Yield =    37907.6 +/-    189.8   Sig(Yield/Err) =   199.70   Sig(sideband) =   244.43
+  [3] DCA 0.0039-0.0059 : Yield =    23022.9 +/-    128.5   Sig(Yield/Err) =   179.12   Sig(sideband) =   219.16
+  [4] DCA 0.0059-0.0085 : Yield =     5472.0 +/-     65.6   Sig(Yield/Err) =    83.44   Sig(sideband) =   102.96
+  [5] DCA 0.0085-0.0118 : Yield =      564.2 +/-     26.6   Sig(Yield/Err) =    21.19   Sig(sideband) =    23.92
+  [6] DCA 0.0118-0.0160 : Yield =      102.3 +/-     17.2   Sig(Yield/Err) =     5.97   Sig(sideband) =     6.77
+  [7] DCA 0.0160-0.0214 : Yield =       59.0 +/-     13.9   Sig(Yield/Err) =     4.23   Sig(sideband) =     3.96
+  [8] DCA 0.0214-0.0366 : Yield =        5.7 +/-     16.1   Sig(Yield/Err) =     0.35   Sig(sideband) =     1.10
+  [9] DCA 0.0366-0.1350 : Yield =        0.0 +/-     22.4   Sig(Yield/Err) =     0.00   Sig(sideband) =     1.79
+
+===== pT: pT3to4 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =    79204.8 +/-    578.4   Sig(Yield/Err) =   136.95   Sig(sideband) =   158.27
+  [1] DCA 0.0011-0.0024 : Yield =   207569.4 +/-    708.1   Sig(Yield/Err) =   293.14   Sig(sideband) =   345.27
+  [2] DCA 0.0024-0.0039 : Yield =   197263.4 +/-    575.7   Sig(Yield/Err) =   342.62   Sig(sideband) =   412.27
+  [3] DCA 0.0039-0.0059 : Yield =    94288.9 +/-    371.9   Sig(Yield/Err) =   253.53   Sig(sideband) =   308.00
+  [4] DCA 0.0059-0.0085 : Yield =    18749.3 +/-    192.7   Sig(Yield/Err) =    97.30   Sig(sideband) =   118.14
+  [5] DCA 0.0085-0.0118 : Yield =     2574.9 +/-     99.3   Sig(Yield/Err) =    25.92   Sig(sideband) =    27.61
+  [6] DCA 0.0118-0.0160 : Yield =      342.4 +/-     51.0   Sig(Yield/Err) =     6.71   Sig(sideband) =    12.38
+  [7] DCA 0.0160-0.0214 : Yield =      152.5 +/-     36.4   Sig(Yield/Err) =     4.19   Sig(sideband) =     6.66
+  [8] DCA 0.0214-0.0366 : Yield =       14.8 +/-     34.6   Sig(Yield/Err) =     0.43   Sig(sideband) =     4.69
+  [9] DCA 0.0366-0.1350 : Yield =        0.0 +/-      2.5   Sig(Yield/Err) =     0.00   Sig(sideband) =     0.00
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =    53740.3 +/-    287.6   Sig(Yield/Err) =   186.83   Sig(sideband) =   204.68
+  [1] DCA 0.0011-0.0024 : Yield =   131216.6 +/-    352.4   Sig(Yield/Err) =   372.39   Sig(sideband) =   420.78
+  [2] DCA 0.0024-0.0039 : Yield =   106356.5 +/-    263.5   Sig(Yield/Err) =   403.57   Sig(sideband) =   465.31
+  [3] DCA 0.0039-0.0059 : Yield =    37917.2 +/-    150.5   Sig(Yield/Err) =   251.95   Sig(sideband) =   295.74
+  [4] DCA 0.0059-0.0085 : Yield =     5438.0 +/-     69.2   Sig(Yield/Err) =    78.61   Sig(sideband) =    92.24
+  [5] DCA 0.0085-0.0118 : Yield =      518.7 +/-     30.3   Sig(Yield/Err) =    17.14   Sig(sideband) =    19.64
+  [6] DCA 0.0118-0.0160 : Yield =      126.5 +/-     20.8   Sig(Yield/Err) =     6.08   Sig(sideband) =     7.71
+  [7] DCA 0.0160-0.0214 : Yield =       28.0 +/-     15.9   Sig(Yield/Err) =     1.76   Sig(sideband) =     3.42
+  [8] DCA 0.0214-0.0366 : Yield =        0.0 +/-    481.2   Sig(Yield/Err) =     0.00   Sig(sideband) =     2.45
+  [9] DCA 0.0366-0.1350 : Yield =        0.0 +/-      2.4   Sig(Yield/Err) =     0.00   Sig(sideband) =     0.13
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =    38878.3 +/-    238.1   Sig(Yield/Err) =   163.29   Sig(sideband) =   180.02
+  [1] DCA 0.0011-0.0024 : Yield =   100929.9 +/-    302.6   Sig(Yield/Err) =   333.58   Sig(sideband) =   372.00
+  [2] DCA 0.0024-0.0039 : Yield =    93436.9 +/-    244.0   Sig(Yield/Err) =   382.99   Sig(sideband) =   434.93
+  [3] DCA 0.0039-0.0059 : Yield =    42443.0 +/-    152.2   Sig(Yield/Err) =   278.88   Sig(sideband) =   322.40
+  [4] DCA 0.0059-0.0085 : Yield =     7438.1 +/-     73.4   Sig(Yield/Err) =   101.39   Sig(sideband) =   115.71
+  [5] DCA 0.0085-0.0118 : Yield =     1047.2 +/-     39.3   Sig(Yield/Err) =    26.67   Sig(sideband) =    28.32
+  [6] DCA 0.0118-0.0160 : Yield =      153.4 +/-     23.0   Sig(Yield/Err) =     6.67   Sig(sideband) =     9.53
+  [7] DCA 0.0160-0.0214 : Yield =       88.6 +/-     18.9   Sig(Yield/Err) =     4.70   Sig(sideband) =     5.98
+  [8] DCA 0.0214-0.0366 : Yield =       24.8 +/-     20.2   Sig(Yield/Err) =     1.23   Sig(sideband) =     2.61
+  [9] DCA 0.0366-0.1350 : Yield =        0.9 +/-     85.8   Sig(Yield/Err) =     0.01   Sig(sideband) =     2.87
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =    22633.4 +/-    134.5   Sig(Yield/Err) =   168.26   Sig(sideband) =   184.83
+  [1] DCA 0.0011-0.0024 : Yield =    56448.1 +/-    173.3   Sig(Yield/Err) =   325.72   Sig(sideband) =   360.31
+  [2] DCA 0.0024-0.0039 : Yield =    47791.4 +/-    139.6   Sig(Yield/Err) =   342.37   Sig(sideband) =   385.38
+  [3] DCA 0.0039-0.0059 : Yield =    18122.7 +/-     84.4   Sig(Yield/Err) =   214.74   Sig(sideband) =   249.06
+  [4] DCA 0.0059-0.0085 : Yield =     2701.0 +/-     39.3   Sig(Yield/Err) =    68.79   Sig(sideband) =    78.72
+  [5] DCA 0.0085-0.0118 : Yield =      307.2 +/-     18.7   Sig(Yield/Err) =    16.44   Sig(sideband) =    17.26
+  [6] DCA 0.0118-0.0160 : Yield =       68.8 +/-     14.6   Sig(Yield/Err) =     4.72   Sig(sideband) =     5.26
+  [7] DCA 0.0160-0.0214 : Yield =       34.8 +/-     12.9   Sig(Yield/Err) =     2.71   Sig(sideband) =     3.07
+  [8] DCA 0.0214-0.0366 : Yield =       24.8 +/-     15.2   Sig(Yield/Err) =     1.63   Sig(sideband) =     3.01
+  [9] DCA 0.0366-0.1350 : Yield =        3.2 +/-     15.3   Sig(Yield/Err) =     0.21   Sig(sideband) =     1.46
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =    14130.5 +/-    115.5   Sig(Yield/Err) =   122.39   Sig(sideband) =   132.60
+  [1] DCA 0.0011-0.0024 : Yield =    38280.4 +/-    149.3   Sig(Yield/Err) =   256.47   Sig(sideband) =   282.07
+  [2] DCA 0.0024-0.0039 : Yield =    40278.6 +/-    136.4   Sig(Yield/Err) =   295.32   Sig(sideband) =   332.02
+  [3] DCA 0.0039-0.0059 : Yield =    22292.8 +/-     95.1   Sig(Yield/Err) =   234.30   Sig(sideband) =   265.33
+  [4] DCA 0.0059-0.0085 : Yield =     4806.1 +/-     48.1   Sig(Yield/Err) =    99.84   Sig(sideband) =   113.32
+  [5] DCA 0.0085-0.0118 : Yield =      703.9 +/-     24.8   Sig(Yield/Err) =    28.34   Sig(sideband) =    30.63
+  [6] DCA 0.0118-0.0160 : Yield =      165.8 +/-     14.6   Sig(Yield/Err) =    11.38   Sig(sideband) =    10.24
+  [7] DCA 0.0160-0.0214 : Yield =       72.2 +/-     12.3   Sig(Yield/Err) =     5.89   Sig(sideband) =     6.05
+  [8] DCA 0.0214-0.0366 : Yield =       34.6 +/-     14.5   Sig(Yield/Err) =     2.38   Sig(sideband) =     3.69
+  [9] DCA 0.0366-0.1350 : Yield =        0.0 +/-      7.7   Sig(Yield/Err) =     0.00   Sig(sideband) =     1.03
+
+===== pT: pT4to5 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =    48702.8 +/-    329.7   Sig(Yield/Err) =   147.74   Sig(sideband) =   160.76
+  [1] DCA 0.0011-0.0024 : Yield =   122242.7 +/-    396.6   Sig(Yield/Err) =   308.26   Sig(sideband) =   339.62
+  [2] DCA 0.0024-0.0039 : Yield =   107947.6 +/-    315.1   Sig(Yield/Err) =   342.55   Sig(sideband) =   383.12
+  [3] DCA 0.0039-0.0059 : Yield =    46309.6 +/-    197.6   Sig(Yield/Err) =   234.36   Sig(sideband) =   265.60
+  [4] DCA 0.0059-0.0085 : Yield =     8867.8 +/-     97.7   Sig(Yield/Err) =    90.72   Sig(sideband) =   101.72
+  [5] DCA 0.0085-0.0118 : Yield =     1594.7 +/-     50.7   Sig(Yield/Err) =    31.45   Sig(sideband) =    32.52
+  [6] DCA 0.0118-0.0160 : Yield =      453.0 +/-     27.4   Sig(Yield/Err) =    16.54   Sig(sideband) =    18.45
+  [7] DCA 0.0160-0.0214 : Yield =      223.6 +/-     20.0   Sig(Yield/Err) =    11.17   Sig(sideband) =    12.62
+  [8] DCA 0.0214-0.0366 : Yield =       80.8 +/-     17.5   Sig(Yield/Err) =     4.61   Sig(sideband) =     6.01
+  [9] DCA 0.0366-0.1350 : Yield =        5.8 +/-     10.1   Sig(Yield/Err) =     0.57   Sig(sideband) =     2.32
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =    37657.1 +/-    195.3   Sig(Yield/Err) =   192.86   Sig(sideband) =   207.15
+  [1] DCA 0.0011-0.0024 : Yield =    91372.6 +/-    246.2   Sig(Yield/Err) =   371.20   Sig(sideband) =   403.42
+  [2] DCA 0.0024-0.0039 : Yield =    73615.3 +/-    191.5   Sig(Yield/Err) =   384.50   Sig(sideband) =   424.93
+  [3] DCA 0.0039-0.0059 : Yield =    27538.9 +/-    113.7   Sig(Yield/Err) =   242.26   Sig(sideband) =   272.50
+  [4] DCA 0.0059-0.0085 : Yield =     4433.9 +/-     52.1   Sig(Yield/Err) =    85.12   Sig(sideband) =    95.34
+  [5] DCA 0.0085-0.0118 : Yield =      869.5 +/-     27.7   Sig(Yield/Err) =    31.38   Sig(sideband) =    32.68
+  [6] DCA 0.0118-0.0160 : Yield =      250.9 +/-     15.8   Sig(Yield/Err) =    15.90   Sig(sideband) =    17.19
+  [7] DCA 0.0160-0.0214 : Yield =       92.9 +/-     11.5   Sig(Yield/Err) =     8.04   Sig(sideband) =     8.70
+  [8] DCA 0.0214-0.0366 : Yield =       52.3 +/-     10.0   Sig(Yield/Err) =     5.22   Sig(sideband) =     5.37
+  [9] DCA 0.0366-0.1350 : Yield =        3.4 +/-      5.2   Sig(Yield/Err) =     0.66   Sig(sideband) =     1.89
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =    29502.1 +/-    171.1   Sig(Yield/Err) =   172.44   Sig(sideband) =   182.07
+  [1] DCA 0.0011-0.0024 : Yield =    73963.5 +/-    216.7   Sig(Yield/Err) =   341.27   Sig(sideband) =   368.73
+  [2] DCA 0.0024-0.0039 : Yield =    67027.7 +/-    181.6   Sig(Yield/Err) =   369.16   Sig(sideband) =   403.36
+  [3] DCA 0.0039-0.0059 : Yield =    30342.8 +/-    117.3   Sig(Yield/Err) =   258.72   Sig(sideband) =   285.72
+  [4] DCA 0.0059-0.0085 : Yield =     5807.0 +/-     57.1   Sig(Yield/Err) =   101.63   Sig(sideband) =   110.08
+  [5] DCA 0.0085-0.0118 : Yield =     1147.1 +/-     31.1   Sig(Yield/Err) =    36.93   Sig(sideband) =    38.58
+  [6] DCA 0.0118-0.0160 : Yield =      329.5 +/-     18.4   Sig(Yield/Err) =    17.91   Sig(sideband) =    18.20
+  [7] DCA 0.0160-0.0214 : Yield =      160.9 +/-     14.7   Sig(Yield/Err) =    10.93   Sig(sideband) =    11.66
+  [8] DCA 0.0214-0.0366 : Yield =       98.7 +/-     15.6   Sig(Yield/Err) =     6.31   Sig(sideband) =     6.80
+  [9] DCA 0.0366-0.1350 : Yield =        0.0 +/-     23.5   Sig(Yield/Err) =     0.00   Sig(sideband) =     0.90
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =    18153.7 +/-    101.1   Sig(Yield/Err) =   179.51   Sig(sideband) =   191.32
+  [1] DCA 0.0011-0.0024 : Yield =    44707.4 +/-    135.2   Sig(Yield/Err) =   330.71   Sig(sideband) =   356.34
+  [2] DCA 0.0024-0.0039 : Yield =    37399.3 +/-    113.9   Sig(Yield/Err) =   328.38   Sig(sideband) =   356.97
+  [3] DCA 0.0039-0.0059 : Yield =    14586.2 +/-     71.1   Sig(Yield/Err) =   205.01   Sig(sideband) =   225.31
+  [4] DCA 0.0059-0.0085 : Yield =     2365.4 +/-     33.1   Sig(Yield/Err) =    71.45   Sig(sideband) =    78.19
+  [5] DCA 0.0085-0.0118 : Yield =      390.9 +/-     15.9   Sig(Yield/Err) =    24.53   Sig(sideband) =    24.84
+  [6] DCA 0.0118-0.0160 : Yield =      148.2 +/-     12.3   Sig(Yield/Err) =    12.08   Sig(sideband) =    13.26
+  [7] DCA 0.0160-0.0214 : Yield =       53.5 +/-     10.1   Sig(Yield/Err) =     5.30   Sig(sideband) =     6.08
+  [8] DCA 0.0214-0.0366 : Yield =       48.9 +/-     11.8   Sig(Yield/Err) =     4.14   Sig(sideband) =     5.20
+  [9] DCA 0.0366-0.1350 : Yield =        7.3 +/-     13.3   Sig(Yield/Err) =     0.55   Sig(sideband) =     2.07
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =    12182.2 +/-     89.5   Sig(Yield/Err) =   136.07   Sig(sideband) =   143.83
+  [1] DCA 0.0011-0.0024 : Yield =    31499.2 +/-    117.3   Sig(Yield/Err) =   268.50   Sig(sideband) =   289.34
+  [2] DCA 0.0024-0.0039 : Yield =    31711.1 +/-    109.7   Sig(Yield/Err) =   289.08   Sig(sideband) =   314.44
+  [3] DCA 0.0039-0.0059 : Yield =    16901.8 +/-     78.3   Sig(Yield/Err) =   215.84   Sig(sideband) =   234.57
+  [4] DCA 0.0059-0.0085 : Yield =     3723.5 +/-     40.3   Sig(Yield/Err) =    92.36   Sig(sideband) =   101.29
+  [5] DCA 0.0085-0.0118 : Yield =      640.7 +/-     18.5   Sig(Yield/Err) =    34.69   Sig(sideband) =    34.91
+  [6] DCA 0.0118-0.0160 : Yield =      245.8 +/-     13.1   Sig(Yield/Err) =    18.76   Sig(sideband) =    19.72
+  [7] DCA 0.0160-0.0214 : Yield =      147.7 +/-     10.7   Sig(Yield/Err) =    13.77   Sig(sideband) =    13.51
+  [8] DCA 0.0214-0.0366 : Yield =       80.5 +/-     11.8   Sig(Yield/Err) =     6.82   Sig(sideband) =     8.31
+  [9] DCA 0.0366-0.1350 : Yield =       27.3 +/-     12.9   Sig(Yield/Err) =     2.10   Sig(sideband) =     3.94
+
+===== pT: pT5to6 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =    23488.9 +/-    142.0   Sig(Yield/Err) =   165.36   Sig(sideband) =   176.42
+  [1] DCA 0.0011-0.0024 : Yield =    55571.8 +/-    179.5   Sig(Yield/Err) =   309.63   Sig(sideband) =   337.37
+  [2] DCA 0.0024-0.0039 : Yield =    43942.1 +/-    146.0   Sig(Yield/Err) =   301.01   Sig(sideband) =   334.44
+  [3] DCA 0.0039-0.0059 : Yield =    17448.3 +/-     92.5   Sig(Yield/Err) =   188.72   Sig(sideband) =   215.46
+  [4] DCA 0.0059-0.0085 : Yield =     3426.8 +/-     45.0   Sig(Yield/Err) =    76.10   Sig(sideband) =    87.27
+  [5] DCA 0.0085-0.0118 : Yield =      835.1 +/-     24.0   Sig(Yield/Err) =    34.79   Sig(sideband) =    39.66
+  [6] DCA 0.0118-0.0160 : Yield =      340.7 +/-     13.8   Sig(Yield/Err) =    24.78   Sig(sideband) =    25.89
+  [7] DCA 0.0160-0.0214 : Yield =      170.7 +/-      9.7   Sig(Yield/Err) =    17.59   Sig(sideband) =    18.37
+  [8] DCA 0.0214-0.0366 : Yield =       91.2 +/-      8.0   Sig(Yield/Err) =    11.39   Sig(sideband) =    12.78
+  [9] DCA 0.0366-0.1350 : Yield =       13.1 +/-      4.0   Sig(Yield/Err) =     3.27   Sig(sideband) =     3.93
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =    20258.8 +/-    104.9   Sig(Yield/Err) =   193.13   Sig(sideband) =   205.77
+  [1] DCA 0.0011-0.0024 : Yield =    47617.0 +/-    139.5   Sig(Yield/Err) =   341.33   Sig(sideband) =   368.32
+  [2] DCA 0.0024-0.0039 : Yield =    37949.5 +/-    115.9   Sig(Yield/Err) =   327.39   Sig(sideband) =   358.52
+  [3] DCA 0.0039-0.0059 : Yield =    14986.2 +/-     73.0   Sig(Yield/Err) =   205.30   Sig(sideband) =   230.69
+  [4] DCA 0.0059-0.0085 : Yield =     2778.3 +/-     34.4   Sig(Yield/Err) =    80.85   Sig(sideband) =    90.32
+  [5] DCA 0.0085-0.0118 : Yield =      676.9 +/-     18.9   Sig(Yield/Err) =    35.85   Sig(sideband) =    40.48
+  [6] DCA 0.0118-0.0160 : Yield =      256.8 +/-     11.0   Sig(Yield/Err) =    23.42   Sig(sideband) =    23.73
+  [7] DCA 0.0160-0.0214 : Yield =      129.2 +/-      8.0   Sig(Yield/Err) =    16.10   Sig(sideband) =    16.20
+  [8] DCA 0.0214-0.0366 : Yield =       69.6 +/-      6.5   Sig(Yield/Err) =    10.67   Sig(sideband) =    11.22
+  [9] DCA 0.0366-0.1350 : Yield =        8.8 +/-      3.3   Sig(Yield/Err) =     2.69   Sig(sideband) =     2.43
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =    16847.8 +/-     95.2   Sig(Yield/Err) =   176.99   Sig(sideband) =   187.52
+  [1] DCA 0.0011-0.0024 : Yield =    41065.4 +/-    127.8   Sig(Yield/Err) =   321.44   Sig(sideband) =   345.93
+  [2] DCA 0.0024-0.0039 : Yield =    36086.5 +/-    113.6   Sig(Yield/Err) =   317.59   Sig(sideband) =   345.00
+  [3] DCA 0.0039-0.0059 : Yield =    16635.4 +/-     77.5   Sig(Yield/Err) =   214.63   Sig(sideband) =   235.77
+  [4] DCA 0.0059-0.0085 : Yield =     3509.8 +/-     39.1   Sig(Yield/Err) =    89.70   Sig(sideband) =    99.33
+  [5] DCA 0.0085-0.0118 : Yield =      914.9 +/-     22.0   Sig(Yield/Err) =    41.53   Sig(sideband) =    44.46
+  [6] DCA 0.0118-0.0160 : Yield =      426.0 +/-     15.7   Sig(Yield/Err) =    27.07   Sig(sideband) =    28.67
+  [7] DCA 0.0160-0.0214 : Yield =      197.5 +/-     10.4   Sig(Yield/Err) =    18.98   Sig(sideband) =    19.24
+  [8] DCA 0.0214-0.0366 : Yield =      134.5 +/-     10.1   Sig(Yield/Err) =    13.33   Sig(sideband) =    14.24
+  [9] DCA 0.0366-0.1350 : Yield =       25.1 +/-      8.7   Sig(Yield/Err) =     2.88   Sig(sideband) =     4.90
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =    11357.9 +/-     65.3   Sig(Yield/Err) =   173.90   Sig(sideband) =   185.22
+  [1] DCA 0.0011-0.0024 : Yield =    27169.8 +/-     91.3   Sig(Yield/Err) =   297.51   Sig(sideband) =   319.44
+  [2] DCA 0.0024-0.0039 : Yield =    22884.3 +/-     81.3   Sig(Yield/Err) =   281.36   Sig(sideband) =   304.61
+  [3] DCA 0.0039-0.0059 : Yield =     9741.7 +/-     54.1   Sig(Yield/Err) =   180.01   Sig(sideband) =   197.81
+  [4] DCA 0.0059-0.0085 : Yield =     1925.1 +/-     26.7   Sig(Yield/Err) =    72.15   Sig(sideband) =    79.69
+  [5] DCA 0.0085-0.0118 : Yield =      431.0 +/-     13.1   Sig(Yield/Err) =    32.83   Sig(sideband) =    33.40
+  [6] DCA 0.0118-0.0160 : Yield =      189.8 +/-      9.5   Sig(Yield/Err) =    19.89   Sig(sideband) =    20.22
+  [7] DCA 0.0160-0.0214 : Yield =      109.0 +/-      7.8   Sig(Yield/Err) =    14.00   Sig(sideband) =    15.24
+  [8] DCA 0.0214-0.0366 : Yield =       55.5 +/-      7.8   Sig(Yield/Err) =     7.09   Sig(sideband) =     8.02
+  [9] DCA 0.0366-0.1350 : Yield =       18.0 +/-      8.4   Sig(Yield/Err) =     2.14   Sig(sideband) =     3.49
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =     7886.3 +/-     56.8   Sig(Yield/Err) =   138.95   Sig(sideband) =   147.84
+  [1] DCA 0.0011-0.0024 : Yield =    19571.5 +/-     79.8   Sig(Yield/Err) =   245.41   Sig(sideband) =   263.32
+  [2] DCA 0.0024-0.0039 : Yield =    19144.5 +/-     77.2   Sig(Yield/Err) =   247.92   Sig(sideband) =   266.54
+  [3] DCA 0.0039-0.0059 : Yield =    10448.2 +/-     58.0   Sig(Yield/Err) =   180.20   Sig(sideband) =   194.91
+  [4] DCA 0.0059-0.0085 : Yield =     2456.3 +/-     27.7   Sig(Yield/Err) =    88.83   Sig(sideband) =    90.34
+  [5] DCA 0.0085-0.0118 : Yield =      615.0 +/-     15.5   Sig(Yield/Err) =    39.71   Sig(sideband) =    39.74
+  [6] DCA 0.0118-0.0160 : Yield =      343.9 +/-     13.3   Sig(Yield/Err) =    25.86   Sig(sideband) =    28.60
+  [7] DCA 0.0160-0.0214 : Yield =      174.7 +/-      8.9   Sig(Yield/Err) =    19.66   Sig(sideband) =    19.87
+  [8] DCA 0.0214-0.0366 : Yield =      146.7 +/-      9.1   Sig(Yield/Err) =    16.09   Sig(sideband) =    16.20
+  [9] DCA 0.0366-0.1350 : Yield =       21.5 +/-      8.2   Sig(Yield/Err) =     2.62   Sig(sideband) =     3.45
+
+===== pT: pT6to8 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =    22691.4 +/-    101.3   Sig(Yield/Err) =   223.95   Sig(sideband) =   239.91
+  [1] DCA 0.0011-0.0024 : Yield =    50545.3 +/-    135.7   Sig(Yield/Err) =   372.38   Sig(sideband) =   405.05
+  [2] DCA 0.0024-0.0039 : Yield =    37808.2 +/-    117.1   Sig(Yield/Err) =   322.77   Sig(sideband) =   361.54
+  [3] DCA 0.0039-0.0059 : Yield =    16649.1 +/-     81.2   Sig(Yield/Err) =   204.95   Sig(sideband) =   235.65
+  [4] DCA 0.0059-0.0085 : Yield =     4273.8 +/-     43.9   Sig(Yield/Err) =    97.38   Sig(sideband) =   112.59
+  [5] DCA 0.0085-0.0118 : Yield =     1377.2 +/-     25.8   Sig(Yield/Err) =    53.44   Sig(sideband) =    61.66
+  [6] DCA 0.0118-0.0160 : Yield =      749.2 +/-     16.5   Sig(Yield/Err) =    45.44   Sig(sideband) =    46.69
+  [7] DCA 0.0160-0.0214 : Yield =      432.1 +/-     12.6   Sig(Yield/Err) =    34.23   Sig(sideband) =    35.81
+  [8] DCA 0.0214-0.0366 : Yield =      319.7 +/-     12.8   Sig(Yield/Err) =    24.89   Sig(sideband) =    29.92
+  [9] DCA 0.0366-0.1350 : Yield =       56.2 +/-      5.5   Sig(Yield/Err) =    10.17   Sig(sideband) =    10.69
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =    20229.6 +/-     83.3   Sig(Yield/Err) =   242.99   Sig(sideband) =   259.32
+  [1] DCA 0.0011-0.0024 : Yield =    44843.8 +/-    116.0   Sig(Yield/Err) =   386.46   Sig(sideband) =   417.34
+  [2] DCA 0.0024-0.0039 : Yield =    33428.8 +/-    100.7   Sig(Yield/Err) =   331.86   Sig(sideband) =   366.24
+  [3] DCA 0.0039-0.0059 : Yield =    14451.2 +/-     68.7   Sig(Yield/Err) =   210.49   Sig(sideband) =   238.47
+  [4] DCA 0.0059-0.0085 : Yield =     3568.9 +/-     36.4   Sig(Yield/Err) =    98.01   Sig(sideband) =   111.72
+  [5] DCA 0.0085-0.0118 : Yield =     1144.4 +/-     21.7   Sig(Yield/Err) =    52.81   Sig(sideband) =    58.02
+  [6] DCA 0.0118-0.0160 : Yield =      612.4 +/-     16.3   Sig(Yield/Err) =    37.54   Sig(sideband) =    44.31
+  [7] DCA 0.0160-0.0214 : Yield =      359.5 +/-     11.2   Sig(Yield/Err) =    32.10   Sig(sideband) =    33.58
+  [8] DCA 0.0214-0.0366 : Yield =      235.3 +/-      9.8   Sig(Yield/Err) =    24.12   Sig(sideband) =    24.99
+  [9] DCA 0.0366-0.1350 : Yield =       61.3 +/-      5.4   Sig(Yield/Err) =    11.38   Sig(sideband) =    12.71
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =    17850.9 +/-     79.9   Sig(Yield/Err) =   223.45   Sig(sideband) =   238.16
+  [1] DCA 0.0011-0.0024 : Yield =    41111.2 +/-    110.6   Sig(Yield/Err) =   371.75   Sig(sideband) =   397.38
+  [2] DCA 0.0024-0.0039 : Yield =    33082.8 +/-    100.0   Sig(Yield/Err) =   330.75   Sig(sideband) =   359.87
+  [3] DCA 0.0039-0.0059 : Yield =    15339.6 +/-     71.6   Sig(Yield/Err) =   214.15   Sig(sideband) =   237.37
+  [4] DCA 0.0059-0.0085 : Yield =     4053.4 +/-     40.0   Sig(Yield/Err) =   101.39   Sig(sideband) =   113.36
+  [5] DCA 0.0085-0.0118 : Yield =     1300.5 +/-     24.2   Sig(Yield/Err) =    53.64   Sig(sideband) =    62.21
+  [6] DCA 0.0118-0.0160 : Yield =      765.9 +/-     18.6   Sig(Yield/Err) =    41.25   Sig(sideband) =    48.42
+  [7] DCA 0.0160-0.0214 : Yield =      484.6 +/-     14.9   Sig(Yield/Err) =    32.43   Sig(sideband) =    38.22
+  [8] DCA 0.0214-0.0366 : Yield =      400.4 +/-     14.4   Sig(Yield/Err) =    27.78   Sig(sideband) =    33.10
+  [9] DCA 0.0366-0.1350 : Yield =      101.9 +/-      8.5   Sig(Yield/Err) =    12.00   Sig(sideband) =    11.43
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =    12919.3 +/-     62.7   Sig(Yield/Err) =   206.06   Sig(sideband) =   220.42
+  [1] DCA 0.0011-0.0024 : Yield =    29354.9 +/-     88.7   Sig(Yield/Err) =   331.08   Sig(sideband) =   352.01
+  [2] DCA 0.0024-0.0039 : Yield =    23476.9 +/-     80.3   Sig(Yield/Err) =   292.20   Sig(sideband) =   316.00
+  [3] DCA 0.0039-0.0059 : Yield =    10866.0 +/-     57.0   Sig(Yield/Err) =   190.51   Sig(sideband) =   209.17
+  [4] DCA 0.0059-0.0085 : Yield =     2856.2 +/-     31.7   Sig(Yield/Err) =    90.00   Sig(sideband) =   100.87
+  [5] DCA 0.0085-0.0118 : Yield =      893.6 +/-     19.4   Sig(Yield/Err) =    46.12   Sig(sideband) =    52.02
+  [6] DCA 0.0118-0.0160 : Yield =      521.9 +/-     13.3   Sig(Yield/Err) =    39.39   Sig(sideband) =    40.15
+  [7] DCA 0.0160-0.0214 : Yield =      292.9 +/-     12.1   Sig(Yield/Err) =    24.27   Sig(sideband) =    28.70
+  [8] DCA 0.0214-0.0366 : Yield =      297.7 +/-     12.4   Sig(Yield/Err) =    24.00   Sig(sideband) =    26.75
+  [9] DCA 0.0366-0.1350 : Yield =       71.1 +/-      8.1   Sig(Yield/Err) =     8.76   Sig(sideband) =    10.70
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =     9260.7 +/-     54.2   Sig(Yield/Err) =   170.89   Sig(sideband) =   181.09
+  [1] DCA 0.0011-0.0024 : Yield =    22481.9 +/-     80.3   Sig(Yield/Err) =   280.01   Sig(sideband) =   298.07
+  [2] DCA 0.0024-0.0039 : Yield =    20091.8 +/-     76.7   Sig(Yield/Err) =   262.09   Sig(sideband) =   281.03
+  [3] DCA 0.0039-0.0059 : Yield =    10499.0 +/-     58.1   Sig(Yield/Err) =   180.74   Sig(sideband) =   195.53
+  [4] DCA 0.0059-0.0085 : Yield =     3057.0 +/-     34.5   Sig(Yield/Err) =    88.56   Sig(sideband) =    96.48
+  [5] DCA 0.0085-0.0118 : Yield =     1027.0 +/-     21.7   Sig(Yield/Err) =    47.25   Sig(sideband) =    51.94
+  [6] DCA 0.0118-0.0160 : Yield =      613.3 +/-     16.7   Sig(Yield/Err) =    36.77   Sig(sideband) =    40.79
+  [7] DCA 0.0160-0.0214 : Yield =      377.8 +/-     13.7   Sig(Yield/Err) =    27.65   Sig(sideband) =    31.91
+  [8] DCA 0.0214-0.0366 : Yield =      415.2 +/-     12.9   Sig(Yield/Err) =    32.21   Sig(sideband) =    32.95
+  [9] DCA 0.0366-0.1350 : Yield =      162.0 +/-     10.1   Sig(Yield/Err) =    16.11   Sig(sideband) =    16.31
+
+===== pT: pT8to10 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =    10002.1 +/-     51.5   Sig(Yield/Err) =   194.06   Sig(sideband) =   206.58
+  [1] DCA 0.0011-0.0024 : Yield =    21972.7 +/-     73.8   Sig(Yield/Err) =   297.66   Sig(sideband) =   317.86
+  [2] DCA 0.0024-0.0039 : Yield =    16936.4 +/-     66.0   Sig(Yield/Err) =   256.65   Sig(sideband) =   275.34
+  [3] DCA 0.0039-0.0059 : Yield =     8010.3 +/-     48.5   Sig(Yield/Err) =   165.30   Sig(sideband) =   179.00
+  [4] DCA 0.0059-0.0085 : Yield =     2556.7 +/-     30.1   Sig(Yield/Err) =    84.87   Sig(sideband) =    90.56
+  [5] DCA 0.0085-0.0118 : Yield =     1112.4 +/-     20.6   Sig(Yield/Err) =    54.12   Sig(sideband) =    59.82
+  [6] DCA 0.0118-0.0160 : Yield =      724.2 +/-     16.4   Sig(Yield/Err) =    44.16   Sig(sideband) =    49.62
+  [7] DCA 0.0160-0.0214 : Yield =      499.5 +/-     13.7   Sig(Yield/Err) =    36.59   Sig(sideband) =    41.14
+  [8] DCA 0.0214-0.0366 : Yield =      503.6 +/-     13.8   Sig(Yield/Err) =    36.51   Sig(sideband) =    40.03
+  [9] DCA 0.0366-0.1350 : Yield =      152.6 +/-      7.2   Sig(Yield/Err) =    21.14   Sig(sideband) =    22.31
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =     8983.8 +/-     46.2   Sig(Yield/Err) =   194.48   Sig(sideband) =   206.53
+  [1] DCA 0.0011-0.0024 : Yield =    19774.4 +/-     66.7   Sig(Yield/Err) =   296.62   Sig(sideband) =   314.62
+  [2] DCA 0.0024-0.0039 : Yield =    14931.3 +/-     59.3   Sig(Yield/Err) =   251.76   Sig(sideband) =   268.73
+  [3] DCA 0.0039-0.0059 : Yield =     6910.8 +/-     43.0   Sig(Yield/Err) =   160.77   Sig(sideband) =   172.82
+  [4] DCA 0.0059-0.0085 : Yield =     2112.3 +/-     26.3   Sig(Yield/Err) =    80.22   Sig(sideband) =    86.56
+  [5] DCA 0.0085-0.0118 : Yield =      890.3 +/-     18.0   Sig(Yield/Err) =    49.40   Sig(sideband) =    53.39
+  [6] DCA 0.0118-0.0160 : Yield =      623.5 +/-     14.7   Sig(Yield/Err) =    42.38   Sig(sideband) =    45.97
+  [7] DCA 0.0160-0.0214 : Yield =      407.6 +/-     10.8   Sig(Yield/Err) =    37.88   Sig(sideband) =    36.97
+  [8] DCA 0.0214-0.0366 : Yield =      410.0 +/-     11.1   Sig(Yield/Err) =    36.98   Sig(sideband) =    37.55
+  [9] DCA 0.0366-0.1350 : Yield =      129.8 +/-      6.7   Sig(Yield/Err) =    19.25   Sig(sideband) =    19.65
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =     7941.6 +/-     43.9   Sig(Yield/Err) =   181.09   Sig(sideband) =   191.46
+  [1] DCA 0.0011-0.0024 : Yield =    17688.9 +/-     63.7   Sig(Yield/Err) =   277.67   Sig(sideband) =   295.19
+  [2] DCA 0.0024-0.0039 : Yield =    13622.9 +/-     57.0   Sig(Yield/Err) =   238.79   Sig(sideband) =   254.30
+  [3] DCA 0.0039-0.0059 : Yield =     6482.7 +/-     42.4   Sig(Yield/Err) =   153.04   Sig(sideband) =   163.51
+  [4] DCA 0.0059-0.0085 : Yield =     2041.4 +/-     26.6   Sig(Yield/Err) =    76.61   Sig(sideband) =    80.44
+  [5] DCA 0.0085-0.0118 : Yield =      912.2 +/-     18.6   Sig(Yield/Err) =    49.17   Sig(sideband) =    51.32
+  [6] DCA 0.0118-0.0160 : Yield =      588.0 +/-     13.3   Sig(Yield/Err) =    44.34   Sig(sideband) =    44.57
+  [7] DCA 0.0160-0.0214 : Yield =      440.2 +/-     12.8   Sig(Yield/Err) =    34.37   Sig(sideband) =    37.34
+  [8] DCA 0.0214-0.0366 : Yield =      504.7 +/-     12.2   Sig(Yield/Err) =    41.38   Sig(sideband) =    41.36
+  [9] DCA 0.0366-0.1350 : Yield =      210.1 +/-      8.8   Sig(Yield/Err) =    23.83   Sig(sideband) =    24.82
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =     5711.3 +/-     35.3   Sig(Yield/Err) =   161.61   Sig(sideband) =   170.46
+  [1] DCA 0.0011-0.0024 : Yield =    12471.4 +/-     51.3   Sig(Yield/Err) =   242.97   Sig(sideband) =   256.98
+  [2] DCA 0.0024-0.0039 : Yield =     9378.5 +/-     45.5   Sig(Yield/Err) =   206.06   Sig(sideband) =   218.78
+  [3] DCA 0.0039-0.0059 : Yield =     4279.8 +/-     32.7   Sig(Yield/Err) =   130.79   Sig(sideband) =   140.21
+  [4] DCA 0.0059-0.0085 : Yield =     1336.0 +/-     20.3   Sig(Yield/Err) =    65.91   Sig(sideband) =    70.96
+  [5] DCA 0.0085-0.0118 : Yield =      501.1 +/-     12.0   Sig(Yield/Err) =    41.60   Sig(sideband) =    40.81
+  [6] DCA 0.0118-0.0160 : Yield =      352.6 +/-     10.0   Sig(Yield/Err) =    35.27   Sig(sideband) =    34.45
+  [7] DCA 0.0160-0.0214 : Yield =      278.8 +/-      9.9   Sig(Yield/Err) =    28.20   Sig(sideband) =    30.68
+  [8] DCA 0.0214-0.0366 : Yield =      293.3 +/-     10.6   Sig(Yield/Err) =    27.57   Sig(sideband) =    31.69
+  [9] DCA 0.0366-0.1350 : Yield =      118.5 +/-      6.7   Sig(Yield/Err) =    17.68   Sig(sideband) =    17.18
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =     4021.1 +/-     30.2   Sig(Yield/Err) =   133.00   Sig(sideband) =   139.61
+  [1] DCA 0.0011-0.0024 : Yield =     9265.3 +/-     45.2   Sig(Yield/Err) =   205.09   Sig(sideband) =   216.34
+  [2] DCA 0.0024-0.0039 : Yield =     7573.5 +/-     42.0   Sig(Yield/Err) =   180.33   Sig(sideband) =   191.95
+  [3] DCA 0.0039-0.0059 : Yield =     3668.1 +/-     31.3   Sig(Yield/Err) =   117.25   Sig(sideband) =   124.67
+  [4] DCA 0.0059-0.0085 : Yield =     1148.5 +/-     20.1   Sig(Yield/Err) =    57.24   Sig(sideband) =    61.55
+  [5] DCA 0.0085-0.0118 : Yield =      485.0 +/-     14.2   Sig(Yield/Err) =    34.25   Sig(sideband) =    36.26
+  [6] DCA 0.0118-0.0160 : Yield =      353.7 +/-     11.8   Sig(Yield/Err) =    29.94   Sig(sideband) =    31.90
+  [7] DCA 0.0160-0.0214 : Yield =      259.2 +/-     10.2   Sig(Yield/Err) =    25.42   Sig(sideband) =    27.33
+  [8] DCA 0.0214-0.0366 : Yield =      325.5 +/-     10.2   Sig(Yield/Err) =    32.06   Sig(sideband) =    32.38
+  [9] DCA 0.0366-0.1350 : Yield =      158.4 +/-      8.6   Sig(Yield/Err) =    18.43   Sig(sideband) =    19.80
+
+===== pT: pT10to15 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =    11930.7 +/-     55.9   Sig(Yield/Err) =   213.52   Sig(sideband) =   227.02
+  [1] DCA 0.0011-0.0024 : Yield =    24987.3 +/-     80.7   Sig(Yield/Err) =   309.68   Sig(sideband) =   329.28
+  [2] DCA 0.0024-0.0039 : Yield =    17592.0 +/-     70.0   Sig(Yield/Err) =   251.19   Sig(sideband) =   268.74
+  [3] DCA 0.0039-0.0059 : Yield =     7999.5 +/-     51.3   Sig(Yield/Err) =   156.08   Sig(sideband) =   166.39
+  [4] DCA 0.0059-0.0085 : Yield =     2817.1 +/-     34.5   Sig(Yield/Err) =    81.68   Sig(sideband) =    86.57
+  [5] DCA 0.0085-0.0118 : Yield =     1444.8 +/-     23.2   Sig(Yield/Err) =    62.23   Sig(sideband) =    61.70
+  [6] DCA 0.0118-0.0160 : Yield =     1103.5 +/-     22.2   Sig(Yield/Err) =    49.70   Sig(sideband) =    54.00
+  [7] DCA 0.0160-0.0214 : Yield =      883.4 +/-     19.5   Sig(Yield/Err) =    45.40   Sig(sideband) =    48.77
+  [8] DCA 0.0214-0.0366 : Yield =     1073.4 +/-     21.6   Sig(Yield/Err) =    49.76   Sig(sideband) =    54.84
+  [9] DCA 0.0366-0.1350 : Yield =      510.1 +/-     15.2   Sig(Yield/Err) =    33.45   Sig(sideband) =    37.30
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =    10832.2 +/-     52.1   Sig(Yield/Err) =   207.97   Sig(sideband) =   218.75
+  [1] DCA 0.0011-0.0024 : Yield =    22468.4 +/-     75.3   Sig(Yield/Err) =   298.58   Sig(sideband) =   316.78
+  [2] DCA 0.0024-0.0039 : Yield =    15559.2 +/-     64.6   Sig(Yield/Err) =   240.99   Sig(sideband) =   256.69
+  [3] DCA 0.0039-0.0059 : Yield =     6770.0 +/-     46.2   Sig(Yield/Err) =   146.61   Sig(sideband) =   156.33
+  [4] DCA 0.0059-0.0085 : Yield =     2330.9 +/-     30.9   Sig(Yield/Err) =    75.47   Sig(sideband) =    79.66
+  [5] DCA 0.0085-0.0118 : Yield =     1234.1 +/-     23.7   Sig(Yield/Err) =    52.16   Sig(sideband) =    57.32
+  [6] DCA 0.0118-0.0160 : Yield =      959.0 +/-     20.4   Sig(Yield/Err) =    47.06   Sig(sideband) =    51.31
+  [7] DCA 0.0160-0.0214 : Yield =      796.8 +/-     18.2   Sig(Yield/Err) =    43.83   Sig(sideband) =    47.28
+  [8] DCA 0.0214-0.0366 : Yield =      923.4 +/-     20.2   Sig(Yield/Err) =    45.83   Sig(sideband) =    50.18
+  [9] DCA 0.0366-0.1350 : Yield =      451.5 +/-     12.8   Sig(Yield/Err) =    35.19   Sig(sideband) =    35.39
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =     9256.0 +/-     48.2   Sig(Yield/Err) =   192.08   Sig(sideband) =   202.07
+  [1] DCA 0.0011-0.0024 : Yield =    19362.5 +/-     69.9   Sig(Yield/Err) =   277.08   Sig(sideband) =   293.93
+  [2] DCA 0.0024-0.0039 : Yield =    13319.7 +/-     60.2   Sig(Yield/Err) =   221.12   Sig(sideband) =   236.72
+  [3] DCA 0.0039-0.0059 : Yield =     5760.0 +/-     43.3   Sig(Yield/Err) =   133.06   Sig(sideband) =   140.83
+  [4] DCA 0.0059-0.0085 : Yield =     1920.6 +/-     26.1   Sig(Yield/Err) =    73.52   Sig(sideband) =    72.64
+  [5] DCA 0.0085-0.0118 : Yield =     1009.5 +/-     20.0   Sig(Yield/Err) =    50.40   Sig(sideband) =    49.78
+  [6] DCA 0.0118-0.0160 : Yield =      839.6 +/-     19.6   Sig(Yield/Err) =    42.84   Sig(sideband) =    45.98
+  [7] DCA 0.0160-0.0214 : Yield =      656.4 +/-     17.4   Sig(Yield/Err) =    37.68   Sig(sideband) =    41.61
+  [8] DCA 0.0214-0.0366 : Yield =      865.6 +/-     19.8   Sig(Yield/Err) =    43.68   Sig(sideband) =    47.15
+  [9] DCA 0.0366-0.1350 : Yield =      501.0 +/-     16.6   Sig(Yield/Err) =    30.10   Sig(sideband) =    34.01
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =     6546.3 +/-     39.4   Sig(Yield/Err) =   166.29   Sig(sideband) =   175.55
+  [1] DCA 0.0011-0.0024 : Yield =    13574.0 +/-     56.8   Sig(Yield/Err) =   238.90   Sig(sideband) =   251.57
+  [2] DCA 0.0024-0.0039 : Yield =     9189.7 +/-     48.5   Sig(Yield/Err) =   189.44   Sig(sideband) =   201.68
+  [3] DCA 0.0039-0.0059 : Yield =     3977.4 +/-     34.4   Sig(Yield/Err) =   115.65   Sig(sideband) =   121.99
+  [4] DCA 0.0059-0.0085 : Yield =     1297.0 +/-     22.6   Sig(Yield/Err) =    57.37   Sig(sideband) =    60.81
+  [5] DCA 0.0085-0.0118 : Yield =      682.7 +/-     17.5   Sig(Yield/Err) =    39.12   Sig(sideband) =    41.46
+  [6] DCA 0.0118-0.0160 : Yield =      521.2 +/-     15.1   Sig(Yield/Err) =    34.50   Sig(sideband) =    36.91
+  [7] DCA 0.0160-0.0214 : Yield =      414.5 +/-     13.5   Sig(Yield/Err) =    30.73   Sig(sideband) =    34.68
+  [8] DCA 0.0214-0.0366 : Yield =      529.5 +/-     15.4   Sig(Yield/Err) =    34.33   Sig(sideband) =    38.22
+  [9] DCA 0.0366-0.1350 : Yield =      330.2 +/-     11.5   Sig(Yield/Err) =    28.79   Sig(sideband) =    27.21
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =     4722.4 +/-     34.7   Sig(Yield/Err) =   136.15   Sig(sideband) =   144.25
+  [1] DCA 0.0011-0.0024 : Yield =    10065.7 +/-     50.5   Sig(Yield/Err) =   199.44   Sig(sideband) =   211.80
+  [2] DCA 0.0024-0.0039 : Yield =     7201.3 +/-     44.4   Sig(Yield/Err) =   162.36   Sig(sideband) =   173.26
+  [3] DCA 0.0039-0.0059 : Yield =     3130.4 +/-     32.2   Sig(Yield/Err) =    97.09   Sig(sideband) =   103.30
+  [4] DCA 0.0059-0.0085 : Yield =      966.9 +/-     19.1   Sig(Yield/Err) =    50.60   Sig(sideband) =    49.85
+  [5] DCA 0.0085-0.0118 : Yield =      539.5 +/-     16.8   Sig(Yield/Err) =    32.04   Sig(sideband) =    34.52
+  [6] DCA 0.0118-0.0160 : Yield =      423.1 +/-     14.7   Sig(Yield/Err) =    28.84   Sig(sideband) =    30.28
+  [7] DCA 0.0160-0.0214 : Yield =      314.4 +/-     11.4   Sig(Yield/Err) =    27.46   Sig(sideband) =    26.50
+  [8] DCA 0.0214-0.0366 : Yield =      454.4 +/-     13.7   Sig(Yield/Err) =    33.28   Sig(sideband) =    32.45
+  [9] DCA 0.0366-0.1350 : Yield =      347.2 +/-     15.3   Sig(Yield/Err) =    22.67   Sig(sideband) =    25.57
+
+===== pT: pT15to30 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =     6974.4 +/-     44.0   Sig(Yield/Err) =   158.52   Sig(sideband) =   168.78
+  [1] DCA 0.0011-0.0024 : Yield =    12976.2 +/-     61.7   Sig(Yield/Err) =   210.44   Sig(sideband) =   226.62
+  [2] DCA 0.0024-0.0039 : Yield =     7479.1 +/-     49.7   Sig(Yield/Err) =   150.39   Sig(sideband) =   163.60
+  [3] DCA 0.0039-0.0059 : Yield =     2869.0 +/-     31.5   Sig(Yield/Err) =    91.10   Sig(sideband) =    91.85
+  [4] DCA 0.0059-0.0085 : Yield =     1154.1 +/-     25.5   Sig(Yield/Err) =    45.25   Sig(sideband) =    48.30
+  [5] DCA 0.0085-0.0118 : Yield =      715.3 +/-     20.7   Sig(Yield/Err) =    34.51   Sig(sideband) =    36.38
+  [6] DCA 0.0118-0.0160 : Yield =      598.0 +/-     18.5   Sig(Yield/Err) =    32.32   Sig(sideband) =    34.41
+  [7] DCA 0.0160-0.0214 : Yield =      474.3 +/-     16.3   Sig(Yield/Err) =    29.11   Sig(sideband) =    31.63
+  [8] DCA 0.0214-0.0366 : Yield =      614.6 +/-     16.2   Sig(Yield/Err) =    37.87   Sig(sideband) =    38.01
+  [9] DCA 0.0366-0.1350 : Yield =      384.1 +/-     14.4   Sig(Yield/Err) =    26.58   Sig(sideband) =    29.23
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =     6322.4 +/-     41.1   Sig(Yield/Err) =   153.75   Sig(sideband) =   162.68
+  [1] DCA 0.0011-0.0024 : Yield =    11377.2 +/-     56.8   Sig(Yield/Err) =   200.19   Sig(sideband) =   214.08
+  [2] DCA 0.0024-0.0039 : Yield =     6355.0 +/-     45.2   Sig(Yield/Err) =   140.54   Sig(sideband) =   152.64
+  [3] DCA 0.0039-0.0059 : Yield =     2470.3 +/-     32.0   Sig(Yield/Err) =    77.26   Sig(sideband) =    83.94
+  [4] DCA 0.0059-0.0085 : Yield =      929.8 +/-     23.1   Sig(Yield/Err) =    40.18   Sig(sideband) =    43.17
+  [5] DCA 0.0085-0.0118 : Yield =      572.9 +/-     16.9   Sig(Yield/Err) =    33.91   Sig(sideband) =    34.06
+  [6] DCA 0.0118-0.0160 : Yield =      519.6 +/-     17.3   Sig(Yield/Err) =    30.10   Sig(sideband) =    32.68
+  [7] DCA 0.0160-0.0214 : Yield =      441.3 +/-     15.4   Sig(Yield/Err) =    28.58   Sig(sideband) =    29.54
+  [8] DCA 0.0214-0.0366 : Yield =      586.2 +/-     17.8   Sig(Yield/Err) =    32.92   Sig(sideband) =    34.37
+  [9] DCA 0.0366-0.1350 : Yield =      383.0 +/-     14.3   Sig(Yield/Err) =    26.77   Sig(sideband) =    28.86
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =     5154.3 +/-     37.3   Sig(Yield/Err) =   138.21   Sig(sideband) =   146.52
+  [1] DCA 0.0011-0.0024 : Yield =     9438.5 +/-     51.8   Sig(Yield/Err) =   182.28   Sig(sideband) =   194.83
+  [2] DCA 0.0024-0.0039 : Yield =     5202.7 +/-     41.3   Sig(Yield/Err) =   126.01   Sig(sideband) =   137.60
+  [3] DCA 0.0039-0.0059 : Yield =     2002.5 +/-     29.4   Sig(Yield/Err) =    68.09   Sig(sideband) =    74.25
+  [4] DCA 0.0059-0.0085 : Yield =      735.6 +/-     21.4   Sig(Yield/Err) =    34.42   Sig(sideband) =    36.39
+  [5] DCA 0.0085-0.0118 : Yield =      470.6 +/-     15.9   Sig(Yield/Err) =    29.69   Sig(sideband) =    28.60
+  [6] DCA 0.0118-0.0160 : Yield =      380.3 +/-     15.9   Sig(Yield/Err) =    23.85   Sig(sideband) =    25.61
+  [7] DCA 0.0160-0.0214 : Yield =      314.8 +/-     12.6   Sig(Yield/Err) =    24.95   Sig(sideband) =    24.67
+  [8] DCA 0.0214-0.0366 : Yield =      538.6 +/-     17.1   Sig(Yield/Err) =    31.41   Sig(sideband) =    33.22
+  [9] DCA 0.0366-0.1350 : Yield =      388.1 +/-     15.5   Sig(Yield/Err) =    25.01   Sig(sideband) =    27.37
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =     3677.3 +/-     31.5   Sig(Yield/Err) =   116.75   Sig(sideband) =   123.92
+  [1] DCA 0.0011-0.0024 : Yield =     6739.5 +/-     43.4   Sig(Yield/Err) =   155.15   Sig(sideband) =   164.95
+  [2] DCA 0.0024-0.0039 : Yield =     3754.8 +/-     34.4   Sig(Yield/Err) =   109.17   Sig(sideband) =   116.89
+  [3] DCA 0.0039-0.0059 : Yield =     1409.4 +/-     24.2   Sig(Yield/Err) =    58.28   Sig(sideband) =    64.27
+  [4] DCA 0.0059-0.0085 : Yield =      526.4 +/-     17.5   Sig(Yield/Err) =    30.07   Sig(sideband) =    32.05
+  [5] DCA 0.0085-0.0118 : Yield =      331.7 +/-     14.8   Sig(Yield/Err) =    22.42   Sig(sideband) =    25.48
+  [6] DCA 0.0118-0.0160 : Yield =      250.3 +/-     11.6   Sig(Yield/Err) =    21.64   Sig(sideband) =    20.90
+  [7] DCA 0.0160-0.0214 : Yield =      229.4 +/-     10.6   Sig(Yield/Err) =    21.66   Sig(sideband) =    21.27
+  [8] DCA 0.0214-0.0366 : Yield =      344.8 +/-     12.7   Sig(Yield/Err) =    27.20   Sig(sideband) =    26.06
+  [9] DCA 0.0366-0.1350 : Yield =      232.9 +/-     12.0   Sig(Yield/Err) =    19.36   Sig(sideband) =    19.29
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =     2470.8 +/-     26.5   Sig(Yield/Err) =    93.38   Sig(sideband) =    99.00
+  [1] DCA 0.0011-0.0024 : Yield =     4516.1 +/-     36.3   Sig(Yield/Err) =   124.49   Sig(sideband) =   132.70
+  [2] DCA 0.0024-0.0039 : Yield =     2610.0 +/-     29.5   Sig(Yield/Err) =    88.55   Sig(sideband) =    95.89
+  [3] DCA 0.0039-0.0059 : Yield =     1009.4 +/-     21.2   Sig(Yield/Err) =    47.66   Sig(sideband) =    52.16
+  [4] DCA 0.0059-0.0085 : Yield =      361.5 +/-     15.4   Sig(Yield/Err) =    23.48   Sig(sideband) =    26.57
+  [5] DCA 0.0085-0.0118 : Yield =      201.0 +/-     11.4   Sig(Yield/Err) =    17.70   Sig(sideband) =    18.04
+  [6] DCA 0.0118-0.0160 : Yield =      176.8 +/-     10.1   Sig(Yield/Err) =    17.51   Sig(sideband) =    17.12
+  [7] DCA 0.0160-0.0214 : Yield =      171.1 +/-      9.4   Sig(Yield/Err) =    18.25   Sig(sideband) =    18.15
+  [8] DCA 0.0214-0.0366 : Yield =      226.0 +/-     11.1   Sig(Yield/Err) =    20.39   Sig(sideband) =    20.07
+  [9] DCA 0.0366-0.1350 : Yield =      172.2 +/-     10.9   Sig(Yield/Err) =    15.81   Sig(sideband) =    14.72
+
+===== pT: pT30to100 =====
+-- cent0to10 --
+  [0] DCA 0.0000-0.0011 : Yield =      973.4 +/-     17.0   Sig(Yield/Err) =    57.29   Sig(sideband) =    63.42
+  [1] DCA 0.0011-0.0024 : Yield =     1496.7 +/-     19.8   Sig(Yield/Err) =    75.70   Sig(sideband) =    76.98
+  [2] DCA 0.0024-0.0039 : Yield =      670.2 +/-     16.4   Sig(Yield/Err) =    40.78   Sig(sideband) =    47.43
+  [3] DCA 0.0039-0.0059 : Yield =      252.2 +/-     10.2   Sig(Yield/Err) =    24.70   Sig(sideband) =    25.53
+  [4] DCA 0.0059-0.0085 : Yield =      113.0 +/-      7.9   Sig(Yield/Err) =    14.31   Sig(sideband) =    14.73
+  [5] DCA 0.0085-0.0118 : Yield =       66.1 +/-      6.6   Sig(Yield/Err) =    10.03   Sig(sideband) =    10.05
+  [6] DCA 0.0118-0.0160 : Yield =       73.3 +/-      6.3   Sig(Yield/Err) =    11.71   Sig(sideband) =    12.89
+  [7] DCA 0.0160-0.0214 : Yield =       54.7 +/-      5.5   Sig(Yield/Err) =     9.96   Sig(sideband) =    10.36
+  [8] DCA 0.0214-0.0366 : Yield =       70.5 +/-      6.3   Sig(Yield/Err) =    11.27   Sig(sideband) =    12.18
+  [9] DCA 0.0366-0.1350 : Yield =       47.3 +/-      5.2   Sig(Yield/Err) =     9.11   Sig(sideband) =     9.65
+-- cent10to20 --
+  [0] DCA 0.0000-0.0011 : Yield =      817.3 +/-     16.1   Sig(Yield/Err) =    50.86   Sig(sideband) =    56.40
+  [1] DCA 0.0011-0.0024 : Yield =     1227.5 +/-     18.3   Sig(Yield/Err) =    66.98   Sig(sideband) =    68.14
+  [2] DCA 0.0024-0.0039 : Yield =      513.1 +/-     13.2   Sig(Yield/Err) =    38.99   Sig(sideband) =    39.86
+  [3] DCA 0.0039-0.0059 : Yield =      192.2 +/-      9.3   Sig(Yield/Err) =    20.66   Sig(sideband) =    21.58
+  [4] DCA 0.0059-0.0085 : Yield =       77.2 +/-      6.9   Sig(Yield/Err) =    11.13   Sig(sideband) =    11.84
+  [5] DCA 0.0085-0.0118 : Yield =       52.2 +/-      5.8   Sig(Yield/Err) =     9.00   Sig(sideband) =     8.78
+  [6] DCA 0.0118-0.0160 : Yield =       38.1 +/-      5.0   Sig(Yield/Err) =     7.65   Sig(sideband) =     7.68
+  [7] DCA 0.0160-0.0214 : Yield =       40.9 +/-      4.6   Sig(Yield/Err) =     8.87   Sig(sideband) =     8.02
+  [8] DCA 0.0214-0.0366 : Yield =       51.0 +/-      5.3   Sig(Yield/Err) =     9.56   Sig(sideband) =     9.48
+  [9] DCA 0.0366-0.1350 : Yield =       32.1 +/-      4.2   Sig(Yield/Err) =     7.67   Sig(sideband) =     7.53
+-- cent20to30 --
+  [0] DCA 0.0000-0.0011 : Yield =      625.2 +/-     13.6   Sig(Yield/Err) =    45.82   Sig(sideband) =    46.31
+  [1] DCA 0.0011-0.0024 : Yield =     1009.4 +/-     19.9   Sig(Yield/Err) =    50.72   Sig(sideband) =    57.90
+  [2] DCA 0.0024-0.0039 : Yield =      407.9 +/-     14.2   Sig(Yield/Err) =    28.69   Sig(sideband) =    33.76
+  [3] DCA 0.0039-0.0059 : Yield =      135.5 +/-      8.4   Sig(Yield/Err) =    16.11   Sig(sideband) =    15.80
+  [4] DCA 0.0059-0.0085 : Yield =       56.8 +/-      6.3   Sig(Yield/Err) =     8.98   Sig(sideband) =     9.60
+  [5] DCA 0.0085-0.0118 : Yield =       41.3 +/-      5.3   Sig(Yield/Err) =     7.85   Sig(sideband) =     7.54
+  [6] DCA 0.0118-0.0160 : Yield =       19.3 +/-      4.3   Sig(Yield/Err) =     4.45   Sig(sideband) =     5.24
+  [7] DCA 0.0160-0.0214 : Yield =       27.2 +/-      4.1   Sig(Yield/Err) =     6.62   Sig(sideband) =     6.34
+  [8] DCA 0.0214-0.0366 : Yield =       31.5 +/-      4.8   Sig(Yield/Err) =     6.59   Sig(sideband) =     7.73
+  [9] DCA 0.0366-0.1350 : Yield =       36.0 +/-      4.5   Sig(Yield/Err) =     8.06   Sig(sideband) =     8.12
+-- cent30to40 --
+  [0] DCA 0.0000-0.0011 : Yield =      398.3 +/-      9.1   Sig(Yield/Err) =    43.87   Sig(sideband) =    44.06
+  [1] DCA 0.0011-0.0024 : Yield =      612.5 +/-     12.9   Sig(Yield/Err) =    47.66   Sig(sideband) =    52.31
+  [2] DCA 0.0024-0.0039 : Yield =      252.5 +/-      9.1   Sig(Yield/Err) =    27.60   Sig(sideband) =    31.55
+  [3] DCA 0.0039-0.0059 : Yield =       80.4 +/-      5.3   Sig(Yield/Err) =    15.09   Sig(sideband) =    14.75
+  [4] DCA 0.0059-0.0085 : Yield =       37.0 +/-      4.3   Sig(Yield/Err) =     8.66   Sig(sideband) =     9.46
+  [5] DCA 0.0085-0.0118 : Yield =       20.1 +/-      3.6   Sig(Yield/Err) =     5.61   Sig(sideband) =     4.64
+  [6] DCA 0.0118-0.0160 : Yield =       19.5 +/-      3.4   Sig(Yield/Err) =     5.78   Sig(sideband) =     5.94
+  [7] DCA 0.0160-0.0214 : Yield =       14.0 +/-      2.9   Sig(Yield/Err) =     4.83   Sig(sideband) =     3.67
+  [8] DCA 0.0214-0.0366 : Yield =       26.7 +/-      3.8   Sig(Yield/Err) =     7.07   Sig(sideband) =     8.29
+  [9] DCA 0.0366-0.1350 : Yield =       21.9 +/-      3.8   Sig(Yield/Err) =     5.74   Sig(sideband) =     5.61
+-- cent40to50 --
+  [0] DCA 0.0000-0.0011 : Yield =      245.2 +/-      7.5   Sig(Yield/Err) =    32.87   Sig(sideband) =    32.61
+  [1] DCA 0.0011-0.0024 : Yield =      374.5 +/-      9.6   Sig(Yield/Err) =    39.17   Sig(sideband) =    39.15
+  [2] DCA 0.0024-0.0039 : Yield =      166.4 +/-      6.7   Sig(Yield/Err) =    24.67   Sig(sideband) =    24.77
+  [3] DCA 0.0039-0.0059 : Yield =       55.2 +/-      4.6   Sig(Yield/Err) =    11.93   Sig(sideband) =    11.70
+  [4] DCA 0.0059-0.0085 : Yield =       25.1 +/-      3.7   Sig(Yield/Err) =     6.78   Sig(sideband) =     7.76
+  [5] DCA 0.0085-0.0118 : Yield =       16.4 +/-      3.1   Sig(Yield/Err) =     5.26   Sig(sideband) =     5.09
+  [6] DCA 0.0118-0.0160 : Yield =       16.6 +/-      2.9   Sig(Yield/Err) =     5.77   Sig(sideband) =     6.01
+  [7] DCA 0.0160-0.0214 : Yield =       17.9 +/-      2.7   Sig(Yield/Err) =     6.57   Sig(sideband) =     7.34
+  [8] DCA 0.0214-0.0366 : Yield =       18.5 +/-      3.1   Sig(Yield/Err) =     6.01   Sig(sideband) =     7.02
+  [9] DCA 0.0366-0.1350 : Yield =       11.9 +/-      3.2   Sig(Yield/Err) =     3.68   Sig(sideband) =     5.16
